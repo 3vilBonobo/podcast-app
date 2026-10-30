@@ -27,7 +27,7 @@ export const routes: Routes = [
   },
   {
     path: 'extras/:slug',
-    title: 'Extras · Dumb & Dahmer',
+    title: 'titles.extrasDetail',
     loadComponent: () => import('./features/extras/detail').then((m) => m.ExtraDetailComponent),
   },
   {
@@ -42,7 +42,7 @@ export const routes: Routes = [
   },
   {
     path: 'plus',
-    title: 'Dumb & Dahmer Plus',
+    title: 'titles.plus',
     loadComponent: () => import('./features/plus/plus').then((m) => m.PlusComponent),
   },
   {

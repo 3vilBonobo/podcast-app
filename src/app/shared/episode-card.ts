@@ -40,7 +40,7 @@ import type { Episode } from '../core/models';
         <button
           class="text-button play-link"
           (click)="player.play(episode())"
-          [attr.aria-label]="(isPlaying() ? t('common.pause') : t('common.play')) + episode().title"
+          [attr.aria-label]="(isPlaying() ? t('common.pause') : t('common.play')) + ' ' + episode().title"
         >
           <dd-icon [name]="isPlaying() ? 'pause' : 'play'" />
           {{ isPlaying() ? t('common.playingNow') : record() && !record()?.completed ? t('common.continue') : t('common.listen') }}
@@ -49,7 +49,7 @@ import type { Episode } from '../core/models';
           <button
             class="icon-button small"
             (click)="library.enqueue(episode().id)"
-            [attr.aria-label]="t('common.queue') + episode().title"
+            [attr.aria-label]="t('common.queue') + ' ' + episode().title"
             [class.selected]="library.state().queue.includes(episode().id)"
           >
             <dd-icon name="queue" /></button
@@ -57,7 +57,7 @@ import type { Episode } from '../core/models';
             class="icon-button small"
             (click)="library.toggleFavorite(episode().id)"
             [attr.aria-pressed]="library.isFavorite(episode().id)"
-            [attr.aria-label]="t('common.favorite') + episode().title"
+            [attr.aria-label]="t('common.favorite') + ' ' + episode().title"
             [class.selected]="library.isFavorite(episode().id)"
           >
             <dd-icon name="heart" />
@@ -65,7 +65,7 @@ import type { Episode } from '../core/models';
         </div>
       </div>
       @if (record() && !record()?.completed) {
-        <div class="listening-progress" [attr.aria-label]="t('common.listeningProgress') + progress() + '%'" role="img">
+        <div class="listening-progress" [attr.aria-label]="t('common.listeningProgress') + ' ' + progress() + '%'" role="img">
           <span [style.width.%]="progress()"></span>
         </div>
       }

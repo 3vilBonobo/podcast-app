@@ -96,7 +96,7 @@ describe('IndexedDB library boundary', () => {
       throw new Error('blocked');
     });
     expect(await repository.read()).toEqual(emptyLibrary());
-    expect(repository.error()).toContain('τοπική αποθήκευση');
+    expect(repository.error()).toBe('common.localStorageIsUnavailableChangesWillOnlyLast');
   });
 });
 class FakeAudio extends EventTarget {

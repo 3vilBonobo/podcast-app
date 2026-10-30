@@ -8,7 +8,9 @@
     "yourSpaceDumbDahmer": "Ο χώρος σου · Dumb & Dahmer",
     "welcomeDumbDahmer": "Καλώς ήρθες · Dumb & Dahmer",
     "nowPlayingDumbDahmer": "Τώρα ακούς · Dumb & Dahmer",
-    "pageNotFoundDumbDahmer": "Η σελίδα χάθηκε · Dumb & Dahmer"
+    "pageNotFoundDumbDahmer": "Η σελίδα χάθηκε · Dumb & Dahmer",
+    "extrasDetail": "Extras · Dumb & Dahmer",
+    "plus": "Dumb & Dahmer Plus"
   },
   "shell": {
     "skipToContent": "Μετάβαση στο περιεχόμενο",
@@ -325,10 +327,10 @@
     "defaultPlaybackSpeed": "Προεπιλεγμένη ταχύτητα",
     "interfaceLanguage": "Γλώσσα πλοήγησης",
     "greekAndEnglishInterfaceEpisodesStayInTheir": "Ελληνικό και αγγλικό περιβάλλον · τα επεισόδια μένουν στην αρχική τους γλώσσα.",
-    "message288": "Ελληνικά",
     "localStorageWithIndexeddb": "Τοπική αποθήκευση με IndexedDB.",
     "yourAccount": "Ο ΛΟΓΑΡΙΑΣΜΟΣ ΣΟΥ",
     "everyStoryHasANextChapter": "Κάθε ιστορία έχει συνέχεια.",
-    "realAccountsAndCrossDeviceSyncWillArrive": "Οι λογαριασμοί και ο συγχρονισμός μεταξύ συσκευών θα προστεθούν σε επόμενη φάση. Το demo δεν ενεργοποιεί συνδρομή ή προστατευμένο περιεχόμενο."
+    "realAccountsAndCrossDeviceSyncWillArrive": "Οι λογαριασμοί και ο συγχρονισμός μεταξύ συσκευών θα προστεθούν σε επόμενη φάση. Το demo δεν ενεργοποιεί συνδρομή ή προστατευμένο περιεχόμενο.",
+    "greek": "Ελληνικά"
   }
 }

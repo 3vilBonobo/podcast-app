@@ -107,7 +107,7 @@ import type { Theme, Language } from '../../core/models';
             [value]="i18n.language()"
             (change)="setLanguage($any($event.target).value)"
           >
-            <option value="el">{{ t('profile.message288') }}</option>
+            <option value="el">{{ t('profile.greek') }}</option>
             <option value="en">English</option>
           </select></label
         >

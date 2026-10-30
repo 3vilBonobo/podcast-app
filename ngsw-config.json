@@ -13,7 +13,7 @@
       "name": "catalog",
       "installMode": "lazy",
       "updateMode": "prefetch",
-      "resources": { "files": ["/data/**", "/images/**"] }
+      "resources": { "files": ["/data/**", "/images/**", "/media/**"] }
     }
   ]
 }

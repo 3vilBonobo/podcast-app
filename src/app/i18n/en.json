@@ -8,7 +8,9 @@
     "yourSpaceDumbDahmer": "Your space · Dumb & Dahmer",
     "welcomeDumbDahmer": "Welcome · Dumb & Dahmer",
     "nowPlayingDumbDahmer": "Now playing · Dumb & Dahmer",
-    "pageNotFoundDumbDahmer": "Page not found · Dumb & Dahmer"
+    "pageNotFoundDumbDahmer": "Page not found · Dumb & Dahmer",
+    "extrasDetail": "Extras · Dumb & Dahmer",
+    "plus": "Dumb & Dahmer Plus"
   },
   "shell": {
     "skipToContent": "Skip to content",
@@ -325,10 +327,10 @@
     "defaultPlaybackSpeed": "Default playback speed",
     "interfaceLanguage": "Interface language",
     "greekAndEnglishInterfaceEpisodesStayInTheir": "Greek and English interface · episodes stay in their original language.",
-    "message288": "Ελληνικά",
     "localStorageWithIndexeddb": "Local storage with IndexedDB.",
     "yourAccount": "YOUR ACCOUNT",
     "everyStoryHasANextChapter": "Every story has a next chapter.",
-    "realAccountsAndCrossDeviceSyncWillArrive": "Real accounts and cross-device sync will arrive in a future phase. The demo does not enable a subscription or protected content."
+    "realAccountsAndCrossDeviceSyncWillArrive": "Real accounts and cross-device sync will arrive in a future phase. The demo does not enable a subscription or protected content.",
+    "greek": "Ελληνικά"
   }
 }
