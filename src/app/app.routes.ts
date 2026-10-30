@@ -2,27 +2,27 @@ import type { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    title: 'Dumb & Dahmer — Έλα για τσάι.',
+    title: "titles.dumbDahmerComeForTea",
     loadComponent: () => import('./features/home/home').then((m) => m.HomeComponent),
   },
   {
     path: 'episodes',
-    title: 'Το αρχείο · Dumb & Dahmer',
+    title: "titles.theArchiveDumbDahmer",
     loadComponent: () => import('./features/episodes/episodes').then((m) => m.EpisodesComponent),
   },
   {
     path: 'episodes/:id',
-    title: 'Επεισόδιο · Dumb & Dahmer',
+    title: "titles.episodeDumbDahmer",
     loadComponent: () => import('./features/episodes/details').then((m) => m.EpisodeDetailsComponent),
   },
   {
     path: 'library',
-    title: 'Η βιβλιοθήκη σου · Dumb & Dahmer',
+    title: "titles.yourLibraryDumbDahmer",
     loadComponent: () => import('./features/library/library').then((m) => m.LibraryComponent),
   },
   {
     path: 'extras',
-    title: 'Πέρα από το μικρόφωνο · Dumb & Dahmer',
+    title: "titles.beyondTheMicrophoneDumbDahmer",
     loadComponent: () => import('./features/extras/extras').then((m) => m.ExtrasComponent),
   },
   {
@@ -32,12 +32,12 @@ export const routes: Routes = [
   },
   {
     path: 'profile',
-    title: 'Ο χώρος σου · Dumb & Dahmer',
+    title: "titles.yourSpaceDumbDahmer",
     loadComponent: () => import('./features/profile/profile').then((m) => m.ProfileComponent),
   },
   {
     path: 'auth/:mode',
-    title: 'Καλώς ήρθες · Dumb & Dahmer',
+    title: "titles.welcomeDumbDahmer",
     loadComponent: () => import('./features/auth/auth').then((m) => m.AuthComponent),
   },
   {
@@ -47,12 +47,12 @@ export const routes: Routes = [
   },
   {
     path: 'player',
-    title: 'Τώρα ακούς · Dumb & Dahmer',
+    title: "titles.nowPlayingDumbDahmer",
     loadComponent: () => import('./features/player/player').then((m) => m.PlayerComponent),
   },
   {
     path: '**',
-    title: 'Η σελίδα χάθηκε · Dumb & Dahmer',
+    title: "titles.pageNotFoundDumbDahmer",
     loadComponent: () => import('./features/not-found').then((m) => m.NotFoundComponent),
   },
 ];

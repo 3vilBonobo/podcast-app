@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ThemeService, MockAuthService, I18nService } from '../../core/preferences.service';
@@ -6,57 +7,57 @@ import { AudioPlayerService } from '../../core/audio-player.service';
 import { IconComponent } from '../../shared/icon';
 import type { Theme, Language } from '../../core/models';
 @Component({
-  imports: [RouterLink, IconComponent],
-  template: `<div class="page">
+  imports: [TranslocoDirective, RouterLink, IconComponent],
+  template: `<ng-container *transloco="let t"><div class="page">
     <div class="page-intro">
       <div>
-        <p class="eyebrow accent">ΣΑΝ ΣΤΟ ΣΠΙΤΙ ΣΟΥ. ΣΧΕΔΟΝ.</p>
-        <h1>Ο χώρος σου<span class="accent">.</span></h1>
-        <p class="intro-description">Οι ιστορίες σου, με τους δικούς σου όρους.</p>
+        <p class="eyebrow accent">{{ t('profile.makeYourselfAtHomeAlmost') }}</p>
+        <h1>{{ t('profile.yourSpace') }}<span class="accent">.</span></h1>
+        <p class="intro-description">{{ t('profile.yourStoriesOnYourTerms') }}</p>
       </div>
     </div>
     <section class="profile-card">
-      <div class="avatar large-avatar">{{ auth.guest() ? 'Ε' : 'Ν' }}</div>
+      <div class="avatar large-avatar">{{ auth.guest() ? t('shell.g') : t('shell.n') }}</div>
       <div>
         <p class="eyebrow accent">{{ auth.guest() ? 'GUEST LISTENER' : 'LOCAL DEMO ACCOUNT' }}</p>
-        <h2>{{ auth.user()?.displayName ?? 'Καλώς ήρθες, επισκέπτη.' }}</h2>
+        <h2>{{ auth.guest() ? t('profile.welcomeGuest') : t('common.nightListener') }}</h2>
         <p>
           {{
             auth.guest()
-              ? 'Η ακρόαση δεν χρειάζεται συστάσεις.'
-              : 'Ένα δοκιμαστικό προφίλ, μόνο σε αυτή τη συσκευή.'
+              ? t('profile.listeningNeedsNoIntroduction')
+              : t('profile.aDemoProfileOnlyOnThisDevice')
           }}
         </p>
       </div>
       @if (auth.guest()) {
-        <a routerLink="/auth/login" class="button secondary">Γνώρισέ μας <dd-icon name="arrow" /></a>
+        <a routerLink="/auth/login" class="button secondary">{{ t('profile.getToKnowUs') }} <dd-icon name="arrow" /></a>
       } @else {
-        <button class="button secondary" (click)="auth.logout()">Έξοδος από το demo</button>
+        <button class="button secondary" (click)="auth.logout()">{{ t('profile.leaveTheDemo') }}</button>
       }
     </section>
     <div class="stats-grid">
       <div>
-        <span class="eyebrow">ΛΕΠΤΑ ΑΚΡΟΑΣΗΣ</span><strong>{{ library.minutes() }}</strong
-        ><span>Πραγματικός χρόνος ακρόασης</span>
+        <span class="eyebrow">{{ t('profile.minutesListened') }}</span><strong>{{ library.minutes() }}</strong
+        ><span>{{ t('profile.actualListeningTime') }}</span>
       </div>
       <div>
-        <span class="eyebrow">ΥΠΟΘΕΣΕΙΣ ΠΟΥ ΕΚΛΕΙΣΑΝ</span><strong>{{ library.completed().length }}</strong
-        ><span>Ολοκληρωμένα επεισόδια</span>
+        <span class="eyebrow">{{ t('profile.casesClosed') }}</span><strong>{{ library.completed().length }}</strong
+        ><span>{{ t('profile.completedEpisodes') }}</span>
       </div>
       <a routerLink="/library"
-        ><span class="eyebrow">ΚΟΝΤΑ ΣΤΗΝ ΚΑΡΔΙΑ</span><strong>{{ library.state().favorites.length }}</strong
-        ><span>Αγαπημένες ιστορίες <dd-icon name="arrow" /></span
+        ><span class="eyebrow">{{ t('profile.closeToTheHeart') }}</span><strong>{{ library.state().favorites.length }}</strong
+        ><span>{{ t('profile.favoriteStories') }} <dd-icon name="arrow" /></span
       ></a>
     </div>
     @if (!library.records().length) {
-      <p class="privacy-note">Οι μετρητές ξεκινούν από το μηδέν. Η πρώτη σου ακρόαση θα γράψει την αρχή.</p>
+      <p class="privacy-note">{{ t('profile.theCountersStartAtZeroYourFirstListen') }}</p>
     }
     <div class="settings-grid">
       <section class="settings-panel">
         <p class="eyebrow">MAKE YOURSELF AT HOME</p>
-        <h2>Η δική σου ατμόσφαιρα</h2>
-        <p class="muted">Διάλεξε σε τι φως θα ακούσεις την επόμενη ιστορία.</p>
-        <div class="theme-grid" role="group" aria-label="Επιλογή θέματος">
+        <h2>{{ t('profile.yourOwnAtmosphere') }}</h2>
+        <p class="muted">{{ t('profile.chooseTheLightForYourNextStory') }}</p>
+        <div class="theme-grid" role="group" [attr.aria-label]="t('profile.chooseATheme')">
           @for (option of themes; track option.id) {
             <button
               class="theme-option"
@@ -66,7 +67,7 @@ import type { Theme, Language } from '../../core/models';
             >
               <span [class]="'theme-swatch swatch-' + option.id"><span></span><span></span><span></span></span
               ><strong>{{ option.name }}</strong
-              ><small>{{ option.description }}</small>
+              ><small>{{ t(option.description) }}</small>
               @if (theme.choice() === option.id) {
                 <dd-icon name="check" />
               }
@@ -78,18 +79,18 @@ import type { Theme, Language } from '../../core/models';
           (click)="theme.set('system')"
           [attr.aria-pressed]="theme.choice() === 'system'"
         >
-          <dd-icon [name]="theme.choice() === 'system' ? 'check' : 'sun'" /> Ακολούθησε το σύστημα
+          <dd-icon [name]="theme.choice() === 'system' ? 'check' : 'sun'" /> {{ t('profile.followTheSystem') }}
         </button>
       </section>
       <section class="settings-panel">
         <p class="eyebrow">JUST THE WAY YOU LIKE IT</p>
-        <h2>Προτιμήσεις ακρόασης</h2>
+        <h2>{{ t('profile.listeningPreferences') }}</h2>
         <label class="setting-row"
           ><span
-            ><strong>Ταχύτητα αναπαραγωγής</strong
-            ><small>Αποθηκεύεται για τις επόμενες ακροάσεις.</small></span
+            ><strong>{{ t('player.playbackSpeed') }}</strong
+            ><small>{{ t('profile.savedForYourNextListeningSessions') }}</small></span
           ><select
-            aria-label="Προεπιλεγμένη ταχύτητα"
+            [attr.aria-label]="t('profile.defaultPlaybackSpeed')"
             [value]="player.speed()"
             (change)="player.setSpeed(+$any($event.target).value)"
           >
@@ -99,40 +100,39 @@ import type { Theme, Language } from '../../core/models';
           </select></label
         ><label class="setting-row"
           ><span
-            ><strong>Γλώσσα πλοήγησης</strong
-            ><small>Προεπισκόπηση English · το περιεχόμενο παραμένει ελληνικό.</small></span
+            ><strong>{{ t('profile.interfaceLanguage') }}</strong
+            ><small>{{ t('profile.greekAndEnglishInterfaceEpisodesStayInTheir') }}</small></span
           ><select
-            aria-label="Γλώσσα πλοήγησης"
+            [attr.aria-label]="t('profile.interfaceLanguage')"
             [value]="i18n.language()"
             (change)="setLanguage($any($event.target).value)"
           >
-            <option value="el">Ελληνικά</option>
+            <option value="el">{{ t('profile.message288') }}</option>
             <option value="en">English</option>
           </select></label
         >
         <div class="setting-row">
-          <span><strong>Η βιβλιοθήκη σου</strong><small>Τοπική αποθήκευση με IndexedDB.</small></span
+          <span><strong>{{ t('home.yourLibrary') }}</strong><small>{{ t('profile.localStorageWithIndexeddb') }}</small></span
           ><span class="tag">ON DEVICE</span>
         </div>
       </section>
     </div>
     <section class="settings-panel account-panel">
       <div>
-        <p class="eyebrow">Ο ΛΟΓΑΡΙΑΣΜΟΣ ΣΟΥ</p>
-        <h2>Κάθε ιστορία έχει συνέχεια.</h2>
+        <p class="eyebrow">{{ t('profile.yourAccount') }}</p>
+        <h2>{{ t('profile.everyStoryHasANextChapter') }}</h2>
         <p>
-          Οι λογαριασμοί και ο συγχρονισμός μεταξύ συσκευών θα προστεθούν σε επόμενη φάση. Το demo δεν
-          ενεργοποιεί συνδρομή ή προστατευμένο περιεχόμενο.
+          {{ t('profile.realAccountsAndCrossDeviceSyncWillArrive') }}
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
         @if (auth.guest()) {
-          <button class="button secondary" (click)="auth.demoLogin()">Μπες στο Demo Account</button>
+          <button class="button secondary" (click)="auth.demoLogin()">{{ t('auth.enterDemoAccount') }}</button>
         }
-        <a routerLink="/plus" class="button primary">Πληροφορίες Plus <dd-icon name="arrow" /></a>
+        <a routerLink="/plus" class="button primary">{{ t('episodes.aboutPlus') }} <dd-icon name="arrow" /></a>
       </div>
     </section>
-  </div>`,
+  </div></ng-container>`,
 })
 export class ProfileComponent {
   readonly theme = inject(ThemeService);
@@ -142,9 +142,9 @@ export class ProfileComponent {
   readonly player = inject(AudioPlayerService);
   readonly speeds = [0.75, 1, 1.25, 1.5, 1.75, 2];
   readonly themes: { id: Theme; name: string; description: string }[] = [
-    { id: 'noir', name: 'Noir', description: 'Η κλασική σκοτεινή πλευρά' },
-    { id: 'archive', name: 'Archive', description: 'Μια ιστορία στο φως' },
-    { id: 'after-hours', name: 'After Hours', description: 'Για μετά τα μεσάνυχτα' },
+    { id: 'noir', name: 'Noir', description: "profile.blackVelvetBloodRedAccents" },
+    { id: 'archive', name: 'Archive', description: "profile.aStoryInTheLight" },
+    { id: 'after-hours', name: 'After Hours', description: "profile.forAfterMidnight" },
   ];
   setLanguage(value: string): void {
     this.i18n.set(value as Language);

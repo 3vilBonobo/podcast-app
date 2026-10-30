@@ -1,4 +1,6 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
+import { TranslocoService } from '@jsverse/transloco';
+import { TRANSLATIONS } from './transloco-loader';
 import type { DemoUser, Language, Theme } from './models';
 export function readPreference(key: string): string | null {
   try {
@@ -44,7 +46,7 @@ export class ThemeService {
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute(
         'content',
-        theme === 'archive' ? '#f2ede3' : theme === 'after-hours' ? '#101b23' : '#171817',
+        theme === 'archive' ? '#f2ede3' : theme === 'after-hours' ? '#101b23' : '#0c090c',
       );
   }
 }
@@ -63,20 +65,23 @@ export class MockAuthService {
     savePreference('demo', null);
   }
 }
-const translations = {
-  el: { home: 'Αρχική', episodes: 'Επεισόδια', library: 'Βιβλιοθήκη', extras: 'Extras', profile: 'Προφίλ' },
-  en: { home: 'Home', episodes: 'Episodes', library: 'Library', extras: 'Extras', profile: 'Profile' },
-} as const;
 @Injectable({ providedIn: 'root' })
 export class I18nService {
+  private readonly transloco = inject(TranslocoService);
   readonly language = signal<Language>(readPreference('language') === 'en' ? 'en' : 'el');
-  readonly nav = computed(() => translations[this.language()]);
+  readonly nav = computed(() => ({home: this.t('common.home'), episodes: this.t('common.episodes'), library: this.t('common.library'), extras: 'Extras', profile: this.t('common.profile')}));
   constructor() {
+    this.transloco.setTranslation(TRANSLATIONS.el, 'el');
+    this.transloco.setTranslation(TRANSLATIONS.en, 'en');
+    this.transloco.setActiveLang(this.language());
     document.documentElement.lang = this.language();
   }
   set(language: Language): void {
+    if (language !== 'el' && language !== 'en') return;
     this.language.set(language);
     savePreference('language', language);
     document.documentElement.lang = language;
+    this.transloco.setActiveLang(language);
   }
+  t(key: string, params?: Record<string, unknown>): string { this.language(); return this.transloco.translate(key, params); }
 }

@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, computed, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -7,17 +8,17 @@ import { EpisodeCardComponent } from '../../shared/episode-card';
 import { EmptyStateComponent } from '../../shared/empty-state';
 import { IconComponent } from '../../shared/icon';
 @Component({
-  imports: [EpisodeCardComponent, EmptyStateComponent, IconComponent, RouterLink],
-  template: `<div class="page">
+  imports: [TranslocoDirective, EpisodeCardComponent, EmptyStateComponent, IconComponent, RouterLink],
+  template: `<ng-container *transloco="let t"><div class="page">
     <div class="page-intro">
       <div>
-        <p class="eyebrow accent">ΤΟ ΠΡΟΣΩΠΙΚΟ ΣΟΥ ΑΡΧΕΙΟ</p>
-        <h1>Κράτα την ιστορία<span class="accent">.</span></h1>
-        <p class="intro-description">Τα αγαπημένα σου, οι επόμενες υποθέσεις και οι ιστορίες στη μέση.</p>
+        <p class="eyebrow accent">{{ t('library.yourPersonalArchive') }}</p>
+        <h1>{{ t('library.keepTheStory') }}<span class="accent">.</span></h1>
+        <p class="intro-description">{{ t('library.yourFavoritesUpcomingCasesAndUnfinishedStories') }}</p>
       </div>
-      <span class="local-badge"><dd-icon name="lock" /> ΜΟΝΟ ΣΕ ΑΥΤΗ ΤΗ ΣΥΣΚΕΥΗ</span>
+      <span class="local-badge"><dd-icon name="lock" /> {{ t('library.onlyOnThisDevice') }}</span>
     </div>
-    <div class="tab-list" role="tablist" aria-label="Κατηγορίες βιβλιοθήκης">
+    <div class="tab-list" role="tablist" [attr.aria-label]="t('library.libraryCategories')">
       @for (item of tabs; track item.id) {
         <button
           role="tab"
@@ -28,7 +29,7 @@ import { IconComponent } from '../../shared/icon';
           (click)="select(item.id)"
           (keydown)="tabKey($event, item.id)"
         >
-          {{ item.label }}
+          {{ t(item.label) }}
           @if (item.id === 'favorites') {
             <span>{{ library.state().favorites.length }}</span>
           }
@@ -40,12 +41,12 @@ import { IconComponent } from '../../shared/icon';
     </div>
     <section id="library-results" role="tabpanel" [attr.aria-labelledby]="'tab-' + tab()">
       @if (!library.loaded() || podcast.loading()) {
-        <div class="skeleton hero-skeleton" role="status" aria-label="Φόρτωση βιβλιοθήκης"></div>
+        <div class="skeleton hero-skeleton" role="status" [attr.aria-label]="t('library.loadingYourLibrary')"></div>
       } @else if (!episodes().length) {
         <dd-empty
           [icon]="tab() === 'favorites' ? 'heart' : tab() === 'queue' ? 'queue' : 'headphones'"
           [title]="emptyTitle()"
-          description="Όλα ξεκινούν με ένα επεισόδιο. Χωρίς λογαριασμό, χωρίς βιασύνη."
+          description="library.itAllStartsWithOneEpisodeNoAccount"
           link="/episodes"
         />
       } @else {
@@ -60,15 +61,15 @@ import { IconComponent } from '../../shared/icon';
                     (click)="library.moveInQueue(episode.id, -1)"
                     [disabled]="$first"
                   >
-                    ↑ Πάνω</button
+                    {{ t('library.moveUp') }}</button
                   ><button
                     class="text-button"
                     (click)="library.moveInQueue(episode.id, 1)"
                     [disabled]="$last"
                   >
-                    ↓ Κάτω</button
+                    {{ t('library.moveDown') }}</button
                   ><button class="text-button" (click)="library.removeFromQueue(episode.id)">
-                    Αφαίρεση <dd-icon name="close" />
+                    {{ t('library.remove') }} <dd-icon name="close" />
                   </button>
                 </div>
               }
@@ -78,10 +79,9 @@ import { IconComponent } from '../../shared/icon';
       }
     </section>
     <p class="privacy-note">
-      <dd-icon name="lock" /> Η βιβλιοθήκη αποθηκεύεται τοπικά στον browser σου. Η εκκαθάριση δεδομένων του
-      browser θα τη διαγράψει. <a routerLink="/profile">Ρυθμίσεις</a>
+      <dd-icon name="lock" /> {{ t('library.yourLibraryIsSavedLocallyInThisBrowser') }} <a routerLink="/profile">{{ t('library.settings') }}</a>
     </p>
-  </div>`,
+  </div></ng-container>`,
 })
 export class LibraryComponent {
   readonly library = inject(LibraryService);
@@ -89,11 +89,11 @@ export class LibraryComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   readonly tabs = [
-    { id: 'favorites', label: 'Αγαπημένα' },
-    { id: 'continue', label: 'Συνέχισε' },
-    { id: 'recent', label: 'Πρόσφατα' },
-    { id: 'completed', label: 'Ολοκληρωμένα' },
-    { id: 'queue', label: 'Στην ουρά' },
+    { id: 'favorites', label: "library.favorites" },
+    { id: 'continue', label: "library.continueListening" },
+    { id: 'recent', label: "library.recentlyPlayed" },
+    { id: 'completed', label: "library.completed" },
+    { id: 'queue', label: "library.inTheQueue" },
   ];
   private readonly params = toSignal(this.route.queryParamMap, {
     initialValue: this.route.snapshot.queryParamMap,
@@ -125,12 +125,12 @@ export class LibraryComponent {
   readonly emptyTitle = computed(
     () =>
       ({
-        favorites: 'Οι αγαπημένες σου ιστορίες, εδώ.',
-        continue: 'Καμία ιστορία στη μέση.',
-        recent: 'Η πρώτη ακρόαση σε περιμένει.',
-        completed: 'Κάθε τέλος, μια νέα υπόθεση.',
-        queue: 'Τι θα ακούσουμε μετά;',
-      })[this.tab()] ?? 'Το αρχείο είναι άδειο.',
+        favorites: "library.yourFavoriteStoriesBelongHere",
+        continue: "library.noStoriesLeftUnfinished",
+        recent: "library.yourFirstListenIsWaiting",
+        completed: "library.everyEndingANewCase",
+        queue: "library.whatShallWeListenToNext",
+      })[this.tab()] ?? "library.theArchiveIsEmpty",
   );
   select(tab: string): void {
     void this.router.navigate([], { queryParams: { tab }, replaceUrl: true });

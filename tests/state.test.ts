@@ -134,6 +134,8 @@ const episode = (id: string): Episode => ({
   explicit: false,
   episodeType: 'full',
   contentKind: 'public-episode',
+  categories: ['other'],
+  categorySource: 'editorial-keywords',
   link: '',
   access: 'public',
 });

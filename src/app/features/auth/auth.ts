@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -5,12 +6,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { MockAuthService } from '../../core/preferences.service';
 import { IconComponent } from '../../shared/icon';
 @Component({
-  imports: [ReactiveFormsModule, RouterLink, IconComponent],
-  template: `<div class="page auth-page">
+  imports: [TranslocoDirective, ReactiveFormsModule, RouterLink, IconComponent],
+  template: `<ng-container *transloco="let t"><div class="page auth-page">
     <div class="auth-editorial">
       <p class="eyebrow accent">THERE'S A PLACE FOR YOU HERE</p>
       <span class="auth-wordmark">dumb<br /><i>&</i> dahmer<span>.</span></span>
-      <p>Μια θέση στο τραπέζι.<br />Μια ιστορία που δεν τελειώνει.</p>
+      <p>{{ t('auth.aPlaceAtTheTable') }}<br />{{ t('auth.aStoryThatNeverEnds') }}</p>
       <span class="tiny-label">TRUE CRIME. DARK HUMOR. GOOD COMPANY.</span>
     </div>
     <section class="auth-panel">
@@ -18,24 +19,23 @@ import { IconComponent } from '../../shared/icon';
       <h1>
         {{
           mode() === 'register'
-            ? 'Έλα στην παρέα.'
+            ? t('auth.joinTheCompany')
             : mode() === 'forgot'
-              ? 'Χάθηκε ο κωδικός;'
-              : 'Σε περιμέναμε.'
+              ? t('auth.lostYourPassword')
+              : t('auth.weWereExpectingYou')
         }}
       </h1>
       <p class="muted">
         {{
           mode() === 'forgot'
-            ? 'Μια προεπισκόπηση ανάκτησης κωδικού.'
-            : 'Μπες για μια ματιά στον προσωπικό σου χώρο.'
+            ? t('auth.aPreviewOfPasswordRecovery')
+            : t('auth.takeALookAroundYourPersonalSpace')
         }}
       </p>
       <div class="prototype-notice">
         <dd-icon name="lock" />
         <p>
-          Η πραγματική σύνδεση δεν είναι ακόμα διαθέσιμη. Χρησιμοποίησε το Demo Account ή συνέχισε ως
-          επισκέπτης.
+          {{ t('auth.realSignInIsNotAvailableYetUse') }}
         </p>
       </div>
       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
@@ -52,62 +52,62 @@ import { IconComponent } from '../../shared/icon';
           />
         </div>
         @if (form.controls.email.touched && form.controls.email.invalid) {
-          <p id="email-error" class="field-error">Γράψε μια έγκυρη διεύθυνση email.</p>
+          <p id="email-error" class="field-error">{{ t('auth.enterAValidEmailAddress') }}</p>
         }
         @if (mode() !== 'forgot') {
-          <label for="auth-password">Κωδικός</label>
+          <label for="auth-password">{{ t('auth.password') }}</label>
           <div class="form-input">
             <dd-icon name="lock" /><input
               id="auth-password"
               [type]="showPassword() ? 'text' : 'password'"
               formControlName="password"
               [autocomplete]="mode() === 'register' ? 'new-password' : 'current-password'"
-              placeholder="Τουλάχιστον 8 χαρακτήρες"
+              [placeholder]="t('auth.atLeast8Characters')"
               [attr.aria-invalid]="form.controls.password.touched && form.controls.password.invalid"
               aria-describedby="password-error"
             /><button
               type="button"
               class="icon-button"
               (click)="showPassword.set(!showPassword())"
-              [attr.aria-label]="showPassword() ? 'Απόκρυψη κωδικού' : 'Εμφάνιση κωδικού'"
+              [attr.aria-label]="showPassword() ? t('auth.hidePassword') : t('auth.showPassword')"
               [attr.aria-pressed]="showPassword()"
             >
               <dd-icon name="eye" />
             </button>
           </div>
           @if (form.controls.password.touched && form.controls.password.invalid) {
-            <p id="password-error" class="field-error">Χρειάζονται τουλάχιστον 8 χαρακτήρες.</p>
+            <p id="password-error" class="field-error">{{ t('auth.useAtLeast8Characters') }}</p>
           }
           @if (mode() === 'login') {
-            <a routerLink="/auth/forgot" class="forgot-link">Ξέχασες τον κωδικό;</a>
+            <a routerLink="/auth/forgot" class="forgot-link">{{ t('auth.forgotYourPassword') }}</a>
           }
         }
         <button class="button primary full-width" type="submit">
-          {{ mode() === 'register' ? 'Εγγραφή' : mode() === 'forgot' ? 'Αποστολή οδηγιών' : 'Σύνδεση' }}
+          {{ mode() === 'register' ? t('auth.register') : mode() === 'forgot' ? t('auth.sendInstructions') : t('auth.signIn') }}
           <dd-icon name="arrow" />
         </button>
       </form>
       @if (message()) {
-        <div class="notice auth-message" role="status"><dd-icon name="check" />{{ message() }}</div>
+        <div class="notice auth-message" role="status"><dd-icon name="check" />{{ t(message()) }}</div>
       }
       @if (mode() !== 'forgot') {
-        <div class="auth-divider"><span>ή</span></div>
+        <div class="auth-divider"><span>{{ t('auth.or') }}</span></div>
         <button class="button secondary full-width" (click)="google()">
-          <span class="google-letter">G</span> Συνέχεια με Google
+          <span class="google-letter">G</span> {{ t('auth.continueWithGoogle') }}
         </button>
       }
       <button class="button demo-button full-width" (click)="demo()">
-        Μπες στο Demo Account <dd-icon name="arrow" /></button
-      ><a routerLink="/" class="guest-link">Συνέχισε ως επισκέπτης</a>
+        {{ t('auth.enterDemoAccount') }} <dd-icon name="arrow" /></button
+      ><a routerLink="/" class="guest-link">{{ t('auth.continueAsAGuest') }}</a>
       <p class="auth-switch">
-        {{ mode() === 'login' ? 'Πρώτη φορά εδώ;' : 'Έχεις ήδη λογαριασμό;' }}
+        {{ mode() === 'login' ? t('auth.firstTimeHere') : t('auth.alreadyHaveAnAccount') }}
         <a [routerLink]="mode() === 'login' ? '/auth/register' : '/auth/login'">{{
-          mode() === 'login' ? 'Εγγραφή' : 'Σύνδεση'
+          mode() === 'login' ? t('auth.register') : t('auth.signIn')
         }}</a>
       </p>
-      <p class="privacy-note">Δεν αποθηκεύουμε κωδικούς, στοιχεία σύνδεσης ή tokens.</p>
+      <p class="privacy-note">{{ t('auth.weDoNotStorePasswordsCredentialsOrTokens') }}</p>
     </section>
-  </div>`,
+  </div></ng-container>`,
 })
 export class AuthComponent {
   private readonly route = inject(ActivatedRoute);
@@ -133,20 +133,20 @@ export class AuthComponent {
     email.markAsTouched();
     if (this.mode() !== 'forgot') password.markAsTouched();
     if (email.invalid || (this.mode() !== 'forgot' && password.invalid)) {
-      this.message.set('Έλεγξε τα πεδία που έχουν επισημανθεί.');
+      this.message.set("auth.checkTheHighlightedFields");
       return;
     }
     password.reset();
     this.message.set(
       this.mode() === 'forgot'
-        ? 'Η φόρμα είναι έγκυρη. Δεν στάλθηκε email: η ανάκτηση κωδικού θα ενεργοποιηθεί σε επόμενη φάση.'
-        : 'Η φόρμα είναι έγκυρη. Η πραγματική σύνδεση και εγγραφή δεν είναι διαθέσιμες ακόμα. Μπες με το Demo Account.',
+        ? "auth.theFormIsValidNoEmailWasSent"
+        : "auth.theFormIsValidRealSignInAnd",
     );
   }
   google(): void {
     this.form.controls.password.reset();
     this.message.set(
-      'Το Google sign-in είναι προεπισκόπηση. Δεν έγινε σύνδεση με τη Google. Δοκίμασε το Demo Account.',
+      "auth.googleSignInIsAPreviewYouHave",
     );
   }
   demo(): void {

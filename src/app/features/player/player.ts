@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AudioPlayerService } from '../../core/audio-player.service';
@@ -7,61 +8,61 @@ import { IconComponent } from '../../shared/icon';
 import { TimePipe } from '../../shared/format';
 import { EmptyStateComponent } from '../../shared/empty-state';
 @Component({
-  imports: [RouterLink, IconComponent, TimePipe, EmptyStateComponent],
-  template: `<div class="page player-page">
+  imports: [TranslocoDirective, RouterLink, IconComponent, TimePipe, EmptyStateComponent],
+  template: `<ng-container *transloco="let t"><div class="page player-page">
     @if (player.current(); as episode) {
       <div class="full-player">
         <div class="player-topline">
-          <a routerLink="/episodes" class="icon-button" aria-label="Πίσω στα επεισόδια"
+          <a routerLink="/episodes" class="icon-button" [attr.aria-label]="t('player.backToEpisodes')"
             ><dd-icon name="down"
           /></a>
           <div>
             <span class="eyebrow">THE LISTENING ROOM</span>
             <p>
-              {{ player.busy() ? 'Ο ήχος φορτώνει…' : player.playing() ? 'Τώρα ακούς' : 'Μια μικρή παύση' }}
+              {{ player.busy() ? t('player.loadingAudio') : player.playing() ? t('player.nowPlaying') : t('player.aLittlePause') }}
             </p>
           </div>
           <a
             routerLink="/library"
             [queryParams]="{ tab: 'queue' }"
             class="icon-button"
-            aria-label="Ουρά ακρόασης"
+            [attr.aria-label]="t('shell.listeningQueue')"
             ><dd-icon name="queue"
           /></a>
         </div>
-        <div class="player-art"><img [src]="podcast.image(episode)" alt="Εξώφυλλο επεισοδίου" /></div>
+        <div class="player-art"><img [src]="podcast.image(episode)" [alt]="t('episodes.episodeArtwork')" /></div>
         <div class="player-title">
           <div>
             <p class="eyebrow accent">
               {{
-                episode.contentKind === 'promotional-preview' ? 'PLUS · ΔΗΜΟΣΙΟ PREVIEW' : 'PUBLIC EPISODE'
+                episode.contentKind === 'promotional-preview' ? t('episodes.plusPublicPreview') : 'PUBLIC EPISODE'
               }}
               @if (episode.season) {
-                · ΣΕΖΟΝ {{ episode.season }}
+                {{ t('episodes.season') }} {{ episode.season }}
               }
             </p>
             <a [routerLink]="['/episodes', episode.id]"
               ><h1>{{ episode.title }}</h1></a
             >
-            <p>Έλενα & Ειρηνέλλα · Dumb and Dahmer</p>
+            <p>{{ t('player.elenaEirinellaDumbAndDahmer') }}</p>
           </div>
           <button
             class="icon-button"
             (click)="library.toggleFavorite(episode.id)"
             [class.selected]="library.isFavorite(episode.id)"
             [attr.aria-pressed]="library.isFavorite(episode.id)"
-            aria-label="Αγαπημένο"
+            [attr.aria-label]="t('shell.favorite')"
           >
             <dd-icon name="heart" />
           </button>
         </div>
         @if (player.error()) {
           <div class="notice" role="alert">
-            {{ player.error() }}<button class="text-button" (click)="player.resume()">Δοκίμασε ξανά</button>
+            {{ t(player.error()) }}<button class="text-button" (click)="player.resume()">{{ t('home.tryAgain') }}</button>
           </div>
         }
         <label class="seek-label"
-          ><span class="sr-only">Θέση αναπαραγωγής</span
+          ><span class="sr-only">{{ t('shell.playbackPosition') }}</span
           ><input
             class="full-seek"
             type="range"
@@ -75,36 +76,36 @@ import { EmptyStateComponent } from '../../shared/empty-state';
           ><span>−{{ player.remaining() | time }}</span>
         </div>
         <div class="full-controls">
-          <button class="icon-button" (click)="player.previous()" aria-label="Προηγούμενο επεισόδιο">
+          <button class="icon-button" (click)="player.previous()" [attr.aria-label]="t('shell.previousEpisode')">
             <dd-icon name="previous" /></button
           ><button
             class="icon-button skip-control"
             (click)="player.skip(-15)"
-            aria-label="Πίσω 15 δευτερόλεπτα"
+            [attr.aria-label]="t('shell.skipBack15Seconds')"
           >
             <dd-icon name="back" /><small>15</small></button
           ><button
             class="play-button large-play"
             [class.is-buffering]="player.busy()"
             (click)="player.toggle()"
-            [attr.aria-label]="player.playing() || player.busy() ? 'Παύση' : 'Αναπαραγωγή'"
+            [attr.aria-label]="player.playing() || player.busy() ? t('shell.pause') : t('shell.play')"
           >
             <dd-icon [name]="player.playing() || player.busy() ? 'pause' : 'play'" /></button
           ><button
             class="icon-button skip-control"
             (click)="player.skip(30)"
-            aria-label="Μπροστά 30 δευτερόλεπτα"
+            [attr.aria-label]="t('shell.skipForward30Seconds')"
           >
             <dd-icon name="forward" /><small>30</small></button
-          ><button class="icon-button" (click)="player.next()" aria-label="Επόμενο επεισόδιο">
+          ><button class="icon-button" (click)="player.next()" [attr.aria-label]="t('shell.nextEpisode')">
             <dd-icon name="next" />
           </button>
         </div>
         <div class="player-options">
           <label
-            ><span><dd-icon name="headphones" /> Ταχύτητα</span
+            ><span><dd-icon name="headphones" /> {{ t('player.speed') }}</span
             ><select
-              aria-label="Ταχύτητα αναπαραγωγής"
+              [attr.aria-label]="t('player.playbackSpeed')"
               [value]="player.speed()"
               (change)="player.setSpeed(+$any($event.target).value)"
             >
@@ -115,18 +116,18 @@ import { EmptyStateComponent } from '../../shared/empty-state';
           ><label
             ><span><dd-icon name="moon" /> Sleep timer</span
             ><select
-              aria-label="Χρονοδιακόπτης ύπνου"
+              [attr.aria-label]="t('player.sleepTimer')"
               [value]="player.sleepMinutes()"
               (change)="player.setSleep(+$any($event.target).value)"
             >
-              <option value="0">Κλειστός</option>
-              <option value="15">15 λεπτά</option>
-              <option value="30">30 λεπτά</option>
-              <option value="45">45 λεπτά</option>
-              <option value="60">60 λεπτά</option>
+              <option value="0">{{ t('player.off') }}</option>
+              <option value="15">{{ t('player.15Minutes') }}</option>
+              <option value="30">{{ t('player.30Minutes') }}</option>
+              <option value="45">{{ t('player.45Minutes') }}</option>
+              <option value="60">{{ t('player.60Minutes') }}</option>
             </select></label
           ><label class="volume-control"
-            ><span><dd-icon name="volume" /> Ένταση</span
+            ><span><dd-icon name="volume" /> {{ t('player.volume') }}</span
             ><input
               type="range"
               min="0"
@@ -134,36 +135,35 @@ import { EmptyStateComponent } from '../../shared/empty-state';
               step="0.05"
               [value]="player.volume()"
               (input)="player.setVolume(+$any($event.target).value)"
-              aria-label="Ένταση ήχου"
+              [attr.aria-label]="t('player.audioVolume')"
           /></label>
         </div>
         @if (player.sleepUntil()) {
           <p class="timer-note" role="status">
-            <dd-icon name="moon" /> Η αναπαραγωγή θα σταματήσει σε {{ player.sleepRemaining() | time
-            }}<button class="text-button" (click)="player.setSleep(0)">Ακύρωση</button>
+            <dd-icon name="moon" /> {{ t('player.playbackWillStopIn') }} {{ player.sleepRemaining() | time
+            }}<button class="text-button" (click)="player.setSleep(0)">{{ t('player.cancel') }}</button>
           </p>
         }
         <button class="text-button add-queue" (click)="library.enqueue(episode.id)">
           <dd-icon name="queue" />
           {{
             library.state().queue.includes(episode.id)
-              ? 'Προστέθηκε στην ουρά'
-              : 'Προσθήκη στην ουρά ακρόασης'
+              ? t('player.addedToQueue')
+              : t('player.addToListeningQueue')
           }}
         </button>
         <p class="privacy-note player-browser-note">
-          Ο ήχος παραδίδεται από το επίσημο Buzzsprout. Η αναπαραγωγή στο παρασκήνιο και η ένταση εξαρτώνται
-          από τον browser και τη συσκευή.
+          {{ t('player.audioIsDeliveredByTheOfficialBuzzsproutService') }}
         </p>
       </div>
     } @else {
       <dd-empty
-        title="Τι θα ακούσουμε απόψε;"
-        description="Διάλεξε μια ιστορία από το αρχείο για να ξεκινήσεις."
+        title="player.whatAreWeListeningToTonight"
+        description="player.chooseAStoryFromTheArchiveToStart"
         link="/episodes"
       />
     }
-  </div>`,
+  </div></ng-container>`,
 })
 export class PlayerComponent {
   readonly player = inject(AudioPlayerService);

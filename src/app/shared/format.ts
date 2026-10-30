@@ -1,4 +1,5 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { inject, Pipe, PipeTransform } from '@angular/core';
+import { I18nService } from '../core/preferences.service';
 @Pipe({ name: 'time' })
 export class TimePipe implements PipeTransform {
   transform(value: number): string {
@@ -8,10 +9,11 @@ export class TimePipe implements PipeTransform {
       : `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
   }
 }
-@Pipe({ name: 'minutes' })
+@Pipe({ name: 'minutes', pure: false })
 export class MinutesPipe implements PipeTransform {
+  private readonly i18n = inject(I18nService);
   transform(value: number): string {
     const minutes = Math.round(value / 60);
-    return `${minutes} ${minutes === 1 ? 'λεπτό' : 'λεπτά'}`;
+    return `${minutes} ${this.i18n.t(minutes === 1 ? 'common.minute' : 'common.minutes')}`;
   }
 }

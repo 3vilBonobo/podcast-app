@@ -37,7 +37,7 @@ export class LocalStorageRepository {
       });
     } catch {
       this.error.set(
-        'Η τοπική αποθήκευση δεν είναι διαθέσιμη. Οι αλλαγές ισχύουν μόνο για αυτή την επίσκεψη.',
+        "common.localStorageIsUnavailableChangesWillOnlyLast",
       );
       return emptyLibrary();
     }
@@ -53,7 +53,7 @@ export class LocalStorageRepository {
         transaction.onabort = () => reject(transaction.error);
       });
     } catch {
-      this.error.set('Οι αλλαγές δεν αποθηκεύτηκαν. Έλεγξε τον διαθέσιμο χώρο ή τις ρυθμίσεις του browser.');
+      this.error.set("common.yourChangesCouldNotBeSavedCheckAvailable");
     }
   }
 }

@@ -13,6 +13,8 @@ export interface Episode {
   explicit: boolean;
   episodeType: 'full' | 'trailer' | 'bonus';
   contentKind: 'public-episode' | 'promotional-preview';
+  categories: CrimeCategory[];
+  categorySource: 'editorial-keywords';
   link: string;
   access: 'public';
 }
@@ -47,3 +49,4 @@ export interface DemoUser {
 }
 export type Theme = 'noir' | 'archive' | 'after-hours';
 export type Language = 'el' | 'en';
+export type CrimeCategory = 'serial-killers' | 'cults' | 'robberies' | 'historical' | 'unsolved' | 'disappearances' | 'other';

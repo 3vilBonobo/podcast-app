@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, computed, inject, input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -9,8 +10,8 @@ import { MinutesPipe } from './format';
 import type { Episode } from '../core/models';
 @Component({
   selector: 'dd-episode-card',
-  imports: [DatePipe, RouterLink, IconComponent, MinutesPipe],
-  template: ` <article class="episode-card" [class.row-card]="layout() === 'row'">
+  imports: [TranslocoDirective, DatePipe, RouterLink, IconComponent, MinutesPipe],
+  template: `<ng-container *transloco="let t"> <article class="episode-card" [class.row-card]="layout() === 'row'">
     <a class="episode-art" [routerLink]="['/episodes', episode().id]" [attr.aria-label]="episode().title">
       <img [src]="podcast.image(episode())" alt="" loading="lazy" /><span class="art-number">{{
         episode().episodeNumber
@@ -20,10 +21,10 @@ import type { Episode } from '../core/models';
             : 'D&D'
       }}</span>
       @if (episode().contentKind === 'promotional-preview') {
-        <span class="preview-badge">PLUS · ΔΗΜΟΣΙΟ PREVIEW</span>
+        <span class="preview-badge">{{ t('episodes.plusPublicPreview') }}</span>
       }
       @if (record()?.completed) {
-        <span class="completed-badge"><dd-icon name="check" /> Ακούστηκε</span>
+        <span class="completed-badge"><dd-icon name="check" /> {{ t('common.listened') }}</span>
       }
     </a>
     <div class="episode-copy">
@@ -39,16 +40,16 @@ import type { Episode } from '../core/models';
         <button
           class="text-button play-link"
           (click)="player.play(episode())"
-          [attr.aria-label]="(isPlaying() ? 'Παύση: ' : 'Αναπαραγωγή: ') + episode().title"
+          [attr.aria-label]="(isPlaying() ? t('common.pause') : t('common.play')) + episode().title"
         >
           <dd-icon [name]="isPlaying() ? 'pause' : 'play'" />
-          {{ isPlaying() ? 'Παίζει τώρα' : record() && !record()?.completed ? 'Συνέχεια' : 'Άκουσέ το' }}
+          {{ isPlaying() ? t('common.playingNow') : record() && !record()?.completed ? t('common.continue') : t('common.listen') }}
         </button>
         <div class="flex items-center gap-2">
           <button
             class="icon-button small"
             (click)="library.enqueue(episode().id)"
-            [attr.aria-label]="'Στην ουρά: ' + episode().title"
+            [attr.aria-label]="t('common.queue') + episode().title"
             [class.selected]="library.state().queue.includes(episode().id)"
           >
             <dd-icon name="queue" /></button
@@ -56,7 +57,7 @@ import type { Episode } from '../core/models';
             class="icon-button small"
             (click)="library.toggleFavorite(episode().id)"
             [attr.aria-pressed]="library.isFavorite(episode().id)"
-            [attr.aria-label]="'Αγαπημένο: ' + episode().title"
+            [attr.aria-label]="t('common.favorite') + episode().title"
             [class.selected]="library.isFavorite(episode().id)"
           >
             <dd-icon name="heart" />
@@ -64,12 +65,12 @@ import type { Episode } from '../core/models';
         </div>
       </div>
       @if (record() && !record()?.completed) {
-        <div class="listening-progress" [attr.aria-label]="'Πρόοδος ακρόασης ' + progress() + '%'" role="img">
+        <div class="listening-progress" [attr.aria-label]="t('common.listeningProgress') + progress() + '%'" role="img">
           <span [style.width.%]="progress()"></span>
         </div>
       }
     </div>
-  </article>`,
+  </article></ng-container>`,
 })
 export class EpisodeCardComponent {
   readonly episode = input.required<Episode>();

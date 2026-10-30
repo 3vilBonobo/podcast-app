@@ -1,4 +1,5 @@
 import { XMLParser } from 'fast-xml-parser';
+import { classifyEpisode } from './crime-categories.mjs';
 
 export function durationSeconds(value) {
   const parts = String(value ?? '0')
@@ -68,6 +69,8 @@ export function normalizeFeed(xml, fetchedAt = new Date().toISOString()) {
           ? item['itunes:episodeType']
           : 'full',
         contentKind,
+        categories: classifyEpisode(plainText(item.title), description),
+        categorySource: 'editorial-keywords',
         link: https(item.link),
         access: 'public',
       },

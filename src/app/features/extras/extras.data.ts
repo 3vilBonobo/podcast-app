@@ -11,8 +11,8 @@ export const EXTRAS: Extra[] = [
   {
     slug: 'waking-machine',
     title: 'THE WAKING MACHINE',
-    greek: 'Μην κλείσεις τα μάτια.',
-    description: 'Μια διαδραστική εμπειρία μυστηρίου ετοιμάζεται. Η μηχανή δεν έχει ξυπνήσει ακόμα.',
+    greek: "extras.doNotCloseYourEyes",
+    description: "extras.anInteractiveMysteryIsTakingShapeTheMachine",
     icon: 'eye',
     number: '001',
     className: 'waking',
@@ -20,8 +20,8 @@ export const EXTRAS: Extra[] = [
   {
     slug: 'secret-archive',
     title: 'SECRET ARCHIVE',
-    greek: 'Δεν είναι όλα για το αρχείο.',
-    description: 'Ένας χώρος για μελλοντικά κρυμμένα στοιχεία και συλλεκτικό υλικό του podcast.',
+    greek: "extras.notEverythingBelongsInTheArchive",
+    description: "extras.aFutureHomeForHiddenCluesAndPodcast",
     icon: 'folder',
     number: '002',
     className: 'secret',
@@ -29,9 +29,9 @@ export const EXTRAS: Extra[] = [
   {
     slug: 'seasonal-events',
     title: 'SEASONAL EVENTS',
-    greek: 'Κάθε εποχή έχει τα φαντάσματά της.',
+    greek: "extras.everySeasonHasItsGhosts",
     description:
-      'Θεματικές εμπειρίες και μικρές εκπλήξεις, από το Halloween μέχρι την επόμενη σκοτεινή νύχτα.',
+      "extras.themedExperiencesAndLittleSurprisesFromHalloweenTo",
     icon: 'moon',
     number: '003',
     className: 'seasonal',
@@ -39,9 +39,9 @@ export const EXTRAS: Extra[] = [
   {
     slug: 'rewards',
     title: 'REWARDS',
-    greek: 'Για την αφοσίωση στο σκοτάδι.',
+    greek: "extras.forYourDevotionToTheDark",
     description:
-      'Μελλοντικές συλλογές από σήματα, εμφανίσεις και εμπειρίες. Οι κανόνες δεν έχουν οριστεί ακόμα.',
+      "extras.futureBadgesAppearancesAndExperiencesTheRulesHave",
     icon: 'gift',
     number: '004',
     className: 'rewards',
@@ -49,9 +49,9 @@ export const EXTRAS: Extra[] = [
   {
     slug: 'behind-the-mic',
     title: 'BEHIND THE MIC',
-    greek: 'Όταν σβήνει το κόκκινο φωτάκι.',
+    greek: "extras.whenTheRedLightGoesOut",
     description:
-      'Ένας μελλοντικός χώρος για παρασκήνια, φωτογραφίες και έξτρα υλικό από την Έλενα και την Ειρηνέλλα.',
+      "extras.aFutureSpaceForBehindTheScenesStories",
     icon: 'mic',
     number: '005',
     className: 'behind',

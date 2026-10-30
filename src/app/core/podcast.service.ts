@@ -28,14 +28,14 @@ export class PodcastService {
     this.http.get<Catalog>('/data/catalog.json').subscribe({
       next: (catalog) => {
         if (catalog.schemaVersion !== 1 || !Array.isArray(catalog.episodes)) {
-          this.error.set('Το αρχείο επεισοδίων δεν είναι έγκυρο.');
+          this.error.set("common.theEpisodeCatalogIsInvalid");
         } else {
           this.catalog.set(catalog);
         }
         this.loading.set(false);
       },
       error: () => {
-        this.error.set('Δεν μπορέσαμε να ανοίξουμε το αρχείο. Δοκίμασε ξανά.');
+        this.error.set("common.weCouldNotOpenTheArchivePleaseTry");
         this.loading.set(false);
       },
     });

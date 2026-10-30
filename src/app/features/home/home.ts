@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, computed, inject } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -8,30 +9,30 @@ import { EpisodeCardComponent } from '../../shared/episode-card';
 import { IconComponent } from '../../shared/icon';
 import { MinutesPipe } from '../../shared/format';
 @Component({
-  imports: [RouterLink, DatePipe, EpisodeCardComponent, IconComponent, MinutesPipe],
-  template: ` <div class="page home-page">
+  imports: [TranslocoDirective, RouterLink, DatePipe, EpisodeCardComponent, IconComponent, MinutesPipe],
+  template: `<ng-container *transloco="let t"> <div class="page home-page">
     <div class="page-intro">
       <div>
-        <p class="eyebrow accent">ΚΑΛΩΣ ΗΡΘΕΣ ΣΤΗ ΣΚΟΤΕΙΝΗ ΠΛΕΥΡΑ</p>
-        <h1>Έλα για τσάι<span class="accent">.</span></h1>
-        <p class="intro-description">Αληθινά εγκλήματα. Σκοτεινές ιστορίες. Καθόλου φίλτρο.</p>
+        <p class="eyebrow accent">{{ t('home.welcomeToTheDarkSide') }}</p>
+        <h1>{{ t('home.comeForTea') }}<span class="accent">.</span></h1>
+        <p class="intro-description">{{ t('home.trueCrimeDarkStoriesAbsolutelyNoFilter') }}</p>
       </div>
-      <span class="issue-note">THE LISTENING ROOM<br /><strong>ΜΕ ΤΗΝ ΕΛΕΝΑ & ΤΗΝ ΕΙΡΗΝΕΛΛΑ</strong></span>
+      <span class="issue-note">THE LISTENING ROOM<br /><strong>{{ t('home.withElenaEirinella') }}</strong></span>
     </div>
     @if (podcast.loading()) {
-      <div class="hero-skeleton skeleton" aria-label="Φόρτωση επεισοδίων" role="status"></div>
+      <div class="hero-skeleton skeleton" [attr.aria-label]="t('home.loadingEpisodes')" role="status"></div>
     }
     @if (podcast.error()) {
       <div class="notice" role="alert">
-        <p>{{ podcast.error() }}</p>
-        <button class="button secondary" (click)="podcast.load()">Δοκίμασε ξανά</button>
+        <p>{{ t(podcast.error()) }}</p>
+        <button class="button secondary" (click)="podcast.load()">{{ t('home.tryAgain') }}</button>
       </div>
     }
     @if (podcast.latest(); as latest) {
       <section class="hero">
         <div class="hero-copy">
           <div class="eyebrow">
-            <span class="on-air-dot"></span> ΤΕΛΕΥΤΑΙΟ ΕΠΕΙΣΟΔΙΟ
+            <span class="on-air-dot"></span> {{ t('home.latestEpisode') }}
             <span class="hero-index">{{
               latest.episodeNumber ? 'NO. ' + latest.episodeNumber : latest.episodeType.toUpperCase()
             }}</span>
@@ -44,21 +45,21 @@ import { MinutesPipe } from '../../shared/format';
             {{ latest.publishedAt | date: 'dd.MM.yyyy' }} <span>—</span> {{ latest.duration | minutes }}
             <span>—</span>
             <span>{{
-              latest.contentKind === 'promotional-preview' ? 'PLUS · ΔΗΜΟΣΙΟ PREVIEW' : 'PUBLIC EPISODE'
+              latest.contentKind === 'promotional-preview' ? t('episodes.plusPublicPreview') : 'PUBLIC EPISODE'
             }}</span>
           </div>
           <div class="hero-actions">
             <button class="button primary" (click)="player.play(latest)">
               <dd-icon [name]="player.current()?.id === latest.id && player.playing() ? 'pause' : 'play'" />
               {{
-                player.current()?.id === latest.id && player.playing() ? 'Παύση' : 'Βάλε να ακούσουμε'
+                player.current()?.id === latest.id && player.playing() ? t('shell.pause') : t('home.letSListen')
               }}</button
             ><button
               class="circle-button"
               (click)="library.toggleFavorite(latest.id)"
               [class.selected]="library.isFavorite(latest.id)"
               [attr.aria-pressed]="library.isFavorite(latest.id)"
-              aria-label="Αποθήκευση στα αγαπημένα"
+              [attr.aria-label]="t('home.saveToFavorites')"
             >
               <dd-icon name="heart" />
             </button>
@@ -67,13 +68,13 @@ import { MinutesPipe } from '../../shared/format';
         <a
           [routerLink]="['/episodes', latest.id]"
           class="hero-art"
-          aria-label="Λεπτομέρειες τελευταίου επεισοδίου"
+          [attr.aria-label]="t('home.latestEpisodeDetails')"
           ><span class="art-corner top-left"></span><span class="art-corner bottom-right"></span
-          ><img [src]="podcast.artwork()" alt="Το επίσημο εξώφυλλο του Dumb and Dahmer Podcast" /><span
+          ><img [src]="podcast.artwork()" [alt]="t('home.theOfficialDumbAndDahmerPodcastArtwork')" /><span
             class="art-stamp"
             >DARK STORIES.<br />GOOD COMPANY.</span
           ></a
-        ><span class="hero-bottom-label">ΑΚΟΥΜΕ ΜΑΖΙ. ΚΡΙΝΟΥΜΕ ΜΑΖΙ.</span>
+        ><span class="hero-bottom-label">{{ t('home.weListenTogetherWeJudgeTogether') }}</span>
       </section>
     }
     <div class="editorial-strip">
@@ -84,10 +85,10 @@ import { MinutesPipe } from '../../shared/format';
     <section class="content-section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">ΦΡΕΣΚΑ ΑΠΟ ΤΟ ΜΙΚΡΟΦΩΝΟ</p>
-          <h2>Οι τελευταίες ιστορίες</h2>
+          <p class="eyebrow">{{ t('home.freshFromTheMicrophone') }}</p>
+          <h2>{{ t('home.theLatestStories') }}</h2>
         </div>
-        <a routerLink="/episodes" class="text-button">Όλα τα επεισόδια <dd-icon name="arrow" /></a>
+        <a routerLink="/episodes" class="text-button">{{ t('home.allEpisodes') }} <dd-icon name="arrow" /></a>
       </div>
       <div class="episode-grid">
         @for (episode of podcast.episodes().slice(0, 4); track episode.id) {
@@ -99,11 +100,11 @@ import { MinutesPipe } from '../../shared/format';
       <section class="content-section">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">ΕΧΟΥΜΕ ΑΦΗΣΕΙ ΜΙΑ ΙΣΤΟΡΙΑ ΣΤΗ ΜΕΣΗ</p>
-            <h2>Από εκεί που μείναμε</h2>
+            <p class="eyebrow">{{ t('home.weLeftAStoryUnfinished') }}</p>
+            <h2>{{ t('home.whereWeLeftOff') }}</h2>
           </div>
           <a routerLink="/library" [queryParams]="{ tab: 'continue' }" class="text-button"
-            >Η βιβλιοθήκη σου <dd-icon name="arrow"
+            >{{ t('home.yourLibrary') }} <dd-icon name="arrow"
           /></a>
         </div>
         <div class="episode-grid two-cols">
@@ -116,54 +117,54 @@ import { MinutesPipe } from '../../shared/format';
     <section class="content-section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">ΑΝΟΙΞΕ ΤΟ ΑΡΧΕΙΟ</p>
-          <h2>Κάθε σεζόν, άλλη ιστορία.</h2>
+          <p class="eyebrow">{{ t('home.openTheArchive') }}</p>
+          <h2>{{ t('home.everySeasonAnotherStory') }}</h2>
         </div>
-        <span class="tiny-label">{{ podcast.episodes().length }} ΔΗΜΟΣΙΑ ΕΠΕΙΣΟΔΙΑ</span>
+        <span class="tiny-label">{{ podcast.episodes().length }} {{ t('home.publicEpisodes') }}</span>
       </div>
       <div class="season-grid">
         @for (season of podcast.seasons().slice(0, 3); track season) {
           <a routerLink="/episodes" [queryParams]="{ season: season }" class="season-card"
-            ><div class="eyebrow">ΤΟ ΑΡΧΕΙΟ <dd-icon name="arrow" /></div>
+            ><div class="eyebrow">{{ t('home.theArchive') }} <dd-icon name="arrow" /></div>
             <span class="season-number">{{ season.toString().padStart(2, '0') }}</span>
             <div>
-              <strong>Σεζόν {{ season }}</strong
+              <strong>{{ t('episodes.season105') }} {{ season }}</strong
               ><span
-                >{{ seasonCount(season) }} {{ seasonCount(season) === 1 ? 'επεισόδιο' : 'επεισόδια' }}</span
+                >{{ seasonCount(season) }} {{ seasonCount(season) === 1 ? t('home.episode') : t('home.episodes') }}</span
               >
             </div></a
           >
         }
         <a routerLink="/episodes" [queryParams]="{ season: 'all' }" class="season-card archive-season"
-          ><div class="eyebrow">ΧΩΡΙΣ ΧΡΟΝΙΚΟ ΟΡΙΟ <dd-icon name="arrow" /></div>
+          ><div class="eyebrow">{{ t('home.noTimeLimit') }} <dd-icon name="arrow" /></div>
           <dd-icon name="folder" />
-          <div><strong>Ολόκληρο το αρχείο</strong><span>Από την αρχή. Αν τολμάς.</span></div></a
+          <div><strong>{{ t('home.theEntireArchive') }}</strong><span>{{ t('home.fromTheBeginningIfYouDare') }}</span></div></a
         >
       </div>
     </section>
     <section class="content-section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">ΔΙΑΛΕΞΕ ΔΙΑΘΕΣΗ</p>
-          <h2>Μικρές συλλογές. Μεγάλες νύχτες.</h2>
+          <p class="eyebrow">{{ t('home.chooseYourMood') }}</p>
+          <h2>{{ t('home.smallCollectionsLongNights') }}</h2>
         </div>
-        <span class="tiny-label">ΕΠΙΛΟΓΕΣ ΤΗΣ ΕΦΑΡΜΟΓΗΣ</span>
+        <span class="tiny-label">{{ t('home.applicationCollections') }}</span>
       </div>
       <div class="collection-grid">
         <a routerLink="/episodes" [queryParams]="{ sort: 'oldest' }" class="collection-card"
           ><span class="collection-art"><span>01</span><dd-icon name="headphones" /></span>
           <div>
-            <span class="eyebrow">ΑΠΟ ΤΗΝ ΑΡΧΗ</span>
-            <h3>Η πρώτη σου υπόθεση</h3>
-            <p>Το δημόσιο αρχείο, με χρονολογική σειρά.</p>
+            <span class="eyebrow">{{ t('home.fromTheBeginning') }}</span>
+            <h3>{{ t('home.yourFirstCase') }}</h3>
+            <p>{{ t('home.thePublicArchiveInChronologicalOrder') }}</p>
           </div>
           <dd-icon name="arrow" /></a
         ><a routerLink="/episodes" [queryParams]="{ collection: 'long' }" class="collection-card"
           ><span class="collection-art moon-art"><dd-icon name="moon" /></span>
           <div>
-            <span class="eyebrow">ΓΙΑ ΜΕΓΑΛΕΣ ΝΥΧΤΕΣ</span>
-            <h3>Μία ώρα ακόμα</h3>
-            <p>Επεισόδια με διάρκεια πάνω από μία ώρα.</p>
+            <span class="eyebrow">{{ t('home.forTheLongNights') }}</span>
+            <h3>{{ t('home.oneMoreHour') }}</h3>
+            <p>{{ t('home.episodesWithAPublicDurationOfOverAn') }}</p>
           </div>
           <dd-icon name="arrow"
         /></a>
@@ -171,10 +172,10 @@ import { MinutesPipe } from '../../shared/format';
     </section>
     <section class="extras-teaser">
       <div>
-        <p class="eyebrow accent">ΕΚΤΟΣ ΗΧΟΓΡΑΦΗΣΗΣ</p>
-        <h2>Κάτι κινείται<br />στο παρασκήνιο<span class="accent">.</span></h2>
-        <p>Μικρά μυστήρια, κλειδωμένα συρτάρια και όσα ετοιμάζονται.</p>
-        <a routerLink="/extras" class="text-button">Μπες στα Extras <dd-icon name="arrow" /></a>
+        <p class="eyebrow accent">{{ t('extras.offTheRecord') }}</p>
+        <h2>{{ t('home.somethingIsStirring') }}<br />{{ t('home.behindTheScenes') }}<span class="accent">.</span></h2>
+        <p>{{ t('home.littleMysteriesLockedDrawersAndThingsInThe') }}</p>
+        <a routerLink="/extras" class="text-button">{{ t('home.enterExtras') }} <dd-icon name="arrow" /></a>
       </div>
       <a routerLink="/extras/waking-machine" class="machine-preview"
         ><span class="eyebrow">EXPERIENCE 001 · COMING SOON</span>
@@ -182,18 +183,18 @@ import { MinutesPipe } from '../../shared/format';
           <span class="orbit-ring"></span><span class="orbit-ring inner"></span><dd-icon name="eye" />
         </div>
         <strong>THE WAKING MACHINE</strong
-        ><span>Κάποιες ιστορίες δεν κοιμούνται ποτέ. <dd-icon name="arrow" /></span
+        ><span>{{ t('home.someStoriesNeverSleep') }} <dd-icon name="arrow" /></span
       ></a>
     </section>
     <a routerLink="/plus" class="plus-banner"
       ><div>
-        <span class="eyebrow">ΓΙΑ ΤΟΥΣ ΛΙΓΟ ΠΙΟ ΜΥΗΜΕΝΟΥΣ</span>
-        <h2>Η ιστορία συνεχίζεται στο <em>Plus.</em></h2>
-        <p>Μάθε για τη συνδρομή στο επίσημο Buzzsprout.</p>
+        <span class="eyebrow">{{ t('home.forTheMoreInitiated') }}</span>
+        <h2>{{ t('home.theStoryContinuesOn') }} <em>Plus.</em></h2>
+        <p>{{ t('home.learnAboutSubscribingOnTheOfficialBuzzsproutPage') }}</p>
       </div>
-      <span class="button secondary">Ανακάλυψε το Plus <dd-icon name="arrow" /></span
+      <span class="button secondary">{{ t('shell.discoverPlus') }} <dd-icon name="arrow" /></span
     ></a>
-  </div>`,
+  </div></ng-container>`,
 })
 export class HomeComponent {
   readonly podcast = inject(PodcastService);

@@ -231,7 +231,7 @@ export class AudioPlayerService {
   }
   private fail(): void {
     this.status.set('error');
-    this.error.set('Δεν ξεκίνησε ο ήχος. Έλεγξε τη σύνδεση και δοκίμασε ξανά.');
+    this.error.set("common.audioCouldNotStartCheckYourConnectionAnd");
     this.setMediaState('paused');
   }
   private setMetadata(episode: Episode): void {

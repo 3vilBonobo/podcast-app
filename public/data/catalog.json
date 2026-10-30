@@ -23,7 +23,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-090d55b42ca0c0c2.jpg"
+      "localArtwork": "/images/episode-090d55b42ca0c0c2.jpg",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19906280",
@@ -41,7 +45,11 @@
       "contentKind": "promotional-preview",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-3f3042afce141faf.jpg"
+      "localArtwork": "/images/episode-3f3042afce141faf.jpg",
+      "categories": [
+        "historical"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19783556",
@@ -59,7 +67,11 @@
       "contentKind": "promotional-preview",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-c7619203e9073a94.jpg"
+      "localArtwork": "/images/episode-c7619203e9073a94.jpg",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19613957",
@@ -77,7 +89,12 @@
       "contentKind": "promotional-preview",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-625ccc3d3937f4bc.jpg"
+      "localArtwork": "/images/episode-625ccc3d3937f4bc.jpg",
+      "categories": [
+        "historical",
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19480678",
@@ -95,7 +112,11 @@
       "contentKind": "promotional-preview",
       "link": "https://www.buzzsprout.com/2006539/subscribe",
       "access": "public",
-      "localArtwork": "/images/episode-82d05ef3d6556f61.jpg"
+      "localArtwork": "/images/episode-82d05ef3d6556f61.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19446450",
@@ -113,7 +134,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-904d87f05422395f.jpg"
+      "localArtwork": "/images/episode-904d87f05422395f.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19423461",
@@ -131,7 +156,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-bee0588c7875fa86.jpg"
+      "localArtwork": "/images/episode-bee0588c7875fa86.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19377506",
@@ -149,7 +178,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-b9ecbd0a62fc2afc.jpg"
+      "localArtwork": "/images/episode-b9ecbd0a62fc2afc.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19306538",
@@ -167,7 +200,12 @@
       "contentKind": "promotional-preview",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-d05ed2507dc2a208.jpg"
+      "localArtwork": "/images/episode-d05ed2507dc2a208.jpg",
+      "categories": [
+        "robberies",
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19272927",
@@ -185,7 +223,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-8d78c5f0d3f21e62.jpg"
+      "localArtwork": "/images/episode-8d78c5f0d3f21e62.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19225897",
@@ -203,7 +245,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-7b3cdbd4675eca4b.jpg"
+      "localArtwork": "/images/episode-7b3cdbd4675eca4b.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19187116",
@@ -221,7 +267,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-aa0996a5a1ad455c.jpg"
+      "localArtwork": "/images/episode-aa0996a5a1ad455c.jpg",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19152393",
@@ -239,7 +289,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-b67b31d64693bf1c.jpg"
+      "localArtwork": "/images/episode-b67b31d64693bf1c.jpg",
+      "categories": [
+        "robberies"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19152414",
@@ -257,7 +311,11 @@
       "contentKind": "promotional-preview",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-3bf207369f355e6d.jpg"
+      "localArtwork": "/images/episode-3bf207369f355e6d.jpg",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19115142",
@@ -275,7 +333,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-93d76ef237466e50.jpg"
+      "localArtwork": "/images/episode-93d76ef237466e50.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-19038757",
@@ -293,7 +355,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-fec1dee49ffa4dd2.jpg"
+      "localArtwork": "/images/episode-fec1dee49ffa4dd2.jpg",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18993862",
@@ -311,7 +377,11 @@
       "contentKind": "promotional-preview",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-56c934a40e6f784f.jpg"
+      "localArtwork": "/images/episode-56c934a40e6f784f.jpg",
+      "categories": [
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18921519",
@@ -329,7 +399,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-a28c2493d946b7dd.jpg"
+      "localArtwork": "/images/episode-a28c2493d946b7dd.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18883484",
@@ -347,7 +421,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-5c80330635174a83.jpg"
+      "localArtwork": "/images/episode-5c80330635174a83.jpg",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18805389",
@@ -365,7 +443,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-280745a8c3553804.jpg"
+      "localArtwork": "/images/episode-280745a8c3553804.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18834361",
@@ -383,7 +465,11 @@
       "contentKind": "promotional-preview",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-da6d22a105f8634c.jpg"
+      "localArtwork": "/images/episode-da6d22a105f8634c.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18794779",
@@ -401,7 +487,12 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-9c56bb9d3c26bfed.jpg"
+      "localArtwork": "/images/episode-9c56bb9d3c26bfed.jpg",
+      "categories": [
+        "unsolved",
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18765065",
@@ -419,7 +510,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-44bf337d15031b9b.jpg"
+      "localArtwork": "/images/episode-44bf337d15031b9b.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18725051",
@@ -437,7 +532,11 @@
       "contentKind": "public-episode",
       "link": "",
       "access": "public",
-      "localArtwork": "/images/episode-c541d881515ee64f.jpg"
+      "localArtwork": "/images/episode-c541d881515ee64f.jpg",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18692138",
@@ -454,7 +553,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18654703",
@@ -471,7 +574,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18639777",
@@ -488,7 +595,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18604010",
@@ -505,7 +616,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18565210",
@@ -522,7 +637,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18523063",
@@ -539,7 +658,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18484332",
@@ -556,7 +679,12 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers",
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18390978",
@@ -573,7 +701,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18350291",
@@ -590,7 +722,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18320139",
@@ -607,7 +743,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18311435",
@@ -624,7 +764,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18269875",
@@ -641,7 +785,12 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "robberies",
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18237790",
@@ -658,7 +807,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18195121",
@@ -675,7 +828,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18157002",
@@ -692,7 +849,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18154225",
@@ -709,7 +870,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18117776",
@@ -726,7 +891,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18072388",
@@ -743,7 +912,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-18031604",
@@ -760,7 +933,12 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers",
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17977077",
@@ -777,7 +955,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17971839",
@@ -794,7 +976,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17977045",
@@ -811,7 +997,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17970803",
@@ -828,7 +1018,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17816954",
@@ -845,7 +1039,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17610626",
@@ -862,7 +1060,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17460118",
@@ -879,7 +1081,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17380761",
@@ -896,7 +1102,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17353244",
@@ -913,7 +1123,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17304079",
@@ -930,7 +1144,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17299259",
@@ -947,7 +1165,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17260366",
@@ -964,7 +1186,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17221721",
@@ -981,7 +1207,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17137995",
@@ -998,7 +1228,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17149789",
@@ -1015,7 +1249,11 @@
       "episodeType": "full",
       "contentKind": "promotional-preview",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17094774",
@@ -1032,7 +1270,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-17050043",
@@ -1049,7 +1291,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16920851",
@@ -1066,7 +1312,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16882993",
@@ -1083,7 +1333,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16839380",
@@ -1100,7 +1354,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16799412",
@@ -1117,7 +1375,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16755252",
@@ -1134,7 +1396,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16677904",
@@ -1151,7 +1417,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16672808",
@@ -1168,7 +1438,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "robberies"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16630555",
@@ -1185,7 +1459,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16593524",
@@ -1202,7 +1480,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16546602",
@@ -1219,7 +1501,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16500447",
@@ -1236,7 +1522,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16418883",
@@ -1253,7 +1543,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16285696",
@@ -1270,7 +1564,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16237816",
@@ -1287,7 +1585,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16200107",
@@ -1304,7 +1606,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16168759",
@@ -1321,7 +1627,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16125983",
@@ -1338,7 +1648,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16075509",
@@ -1355,7 +1669,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-16045060",
@@ -1372,7 +1690,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15997366",
@@ -1389,7 +1711,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15949272",
@@ -1406,7 +1732,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15917614",
@@ -1423,7 +1753,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15872642",
@@ -1440,7 +1774,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15831295",
@@ -1457,7 +1795,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15790568",
@@ -1474,7 +1816,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15292997",
@@ -1491,7 +1837,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15257062",
@@ -1508,7 +1858,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15218265",
@@ -1525,7 +1879,12 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers",
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15141745",
@@ -1542,7 +1901,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15094583",
@@ -1559,7 +1922,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-15032749",
@@ -1576,7 +1943,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14925945",
@@ -1593,7 +1964,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14897560",
@@ -1610,7 +1985,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14832455",
@@ -1627,7 +2006,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14793109",
@@ -1644,7 +2027,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "robberies"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14750087",
@@ -1661,7 +2048,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14713852",
@@ -1678,7 +2069,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14660219",
@@ -1695,7 +2090,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14618238",
@@ -1712,7 +2111,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14536553",
@@ -1729,7 +2132,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14536454",
@@ -1746,7 +2153,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14460102",
@@ -1763,7 +2174,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14437120",
@@ -1780,7 +2195,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14399429",
@@ -1797,7 +2216,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14351821",
@@ -1814,7 +2237,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14305302",
@@ -1831,7 +2258,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14233963",
@@ -1848,7 +2279,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14172018",
@@ -1865,7 +2300,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14090634",
@@ -1882,7 +2321,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14086503",
@@ -1899,7 +2342,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14050153",
@@ -1916,7 +2363,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-14009604",
@@ -1933,7 +2384,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13664940",
@@ -1950,7 +2405,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13909265",
@@ -1967,7 +2426,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13879133",
@@ -1984,7 +2447,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "historical"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13836262",
@@ -2001,7 +2468,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13673303",
@@ -2018,7 +2489,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13647008",
@@ -2035,7 +2510,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13643882",
@@ -2052,7 +2531,12 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved",
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13202034",
@@ -2069,7 +2553,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13158832",
@@ -2086,7 +2574,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13117175",
@@ -2103,7 +2595,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13074520",
@@ -2120,7 +2616,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-13030944",
@@ -2137,7 +2637,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12988660",
@@ -2154,7 +2658,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12945305",
@@ -2171,7 +2679,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "robberies"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12903096",
@@ -2188,7 +2700,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12859364",
@@ -2205,7 +2721,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12814365",
@@ -2222,7 +2742,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12768544",
@@ -2239,7 +2763,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12719378",
@@ -2256,7 +2784,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12589652",
@@ -2273,7 +2805,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12531825",
@@ -2290,7 +2826,12 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers",
+        "historical"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12485548",
@@ -2307,7 +2848,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12439475",
@@ -2324,7 +2869,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12393322",
@@ -2341,7 +2890,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12344730",
@@ -2358,7 +2911,12 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "unsolved",
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12296211",
@@ -2375,7 +2933,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12251608",
@@ -2392,7 +2954,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12202651",
@@ -2409,7 +2975,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12177862",
@@ -2426,7 +2996,11 @@
       "episodeType": "bonus",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12154598",
@@ -2443,7 +3017,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12100817",
@@ -2460,7 +3038,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12061744",
@@ -2477,7 +3059,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-12015562",
@@ -2494,7 +3080,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11905155",
@@ -2511,7 +3101,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11864584",
@@ -2528,7 +3122,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11825857",
@@ -2545,7 +3143,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11774870",
@@ -2562,7 +3164,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11743316",
@@ -2579,7 +3185,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11697458",
@@ -2596,7 +3206,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11656303",
@@ -2613,7 +3227,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11602646",
@@ -2630,7 +3248,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11565592",
@@ -2647,7 +3269,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11522938",
@@ -2664,7 +3290,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11479462",
@@ -2681,7 +3311,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "historical"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11436196",
@@ -2698,7 +3332,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11393970",
@@ -2715,7 +3353,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11353597",
@@ -2732,7 +3374,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11309888",
@@ -2749,7 +3395,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11267809",
@@ -2766,7 +3416,12 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers",
+        "historical"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11222337",
@@ -2783,7 +3438,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11188961",
@@ -2800,7 +3459,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "disappearances"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11114778",
@@ -2817,7 +3480,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11107986",
@@ -2834,7 +3501,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11068028",
@@ -2851,7 +3522,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-11030815",
@@ -2868,7 +3543,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-10985630",
@@ -2885,7 +3564,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "cults"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-10939178",
@@ -2902,7 +3585,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-10906179",
@@ -2919,7 +3606,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-10860761",
@@ -2936,7 +3627,11 @@
       "episodeType": "full",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "serial-killers"
+      ],
+      "categorySource": "editorial-keywords"
     },
     {
       "id": "Buzzsprout-10852235",
@@ -2953,7 +3648,11 @@
       "episodeType": "trailer",
       "contentKind": "public-episode",
       "link": "",
-      "access": "public"
+      "access": "public",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords"
     }
   ],
   "localArtwork": "/images/podcast.jpg"

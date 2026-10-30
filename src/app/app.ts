@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
@@ -10,17 +11,17 @@ import { PodcastService } from './core/podcast.service';
 import { I18nService, MockAuthService, ThemeService } from './core/preferences.service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, IconComponent, TimePipe],
-  template: `
-    <a href="#main-content" class="skip-link">Μετάβαση στο περιεχόμενο</a>
+  imports: [TranslocoDirective, RouterOutlet, RouterLink, RouterLinkActive, IconComponent, TimePipe],
+  template: `<ng-container *transloco="let t">
+    <a href="#main-content" class="skip-link">{{ t('shell.skipToContent') }}</a>
     <aside class="sidebar">
-      <a routerLink="/" class="brand" aria-label="Dumb and Dahmer αρχική"
+      <a routerLink="/" class="brand" [attr.aria-label]="t('shell.dumbAndDahmerHome')"
         ><span class="brand-mark">d<span>&</span>d<span class="brand-dot">.</span></span
         ><span class="brand-caption">DUMB AND DAHMER<br /><small>THE PODCAST</small></span></a
       >
       <div class="sidebar-rule"></div>
-      <p class="nav-caption">Η ΔΙΚΗ ΣΟΥ ΣΥΧΝΟΤΗΤΑ</p>
-      <nav aria-label="Κύρια πλοήγηση">
+      <p class="nav-caption">{{ t('shell.yourOwnFrequency') }}</p>
+      <nav [attr.aria-label]="t('shell.mainNavigation')">
         @for (item of navigation; track item.path) {
           <a
             [routerLink]="item.path"
@@ -35,9 +36,9 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
         }
       </nav>
       <a routerLink="/plus" class="sidebar-plus"
-        ><span class="eyebrow">ΛΙΓΟ ΠΙΟ ΣΚΟΤΕΙΝΑ</span><strong>Dumb & Dahmer <i>+</i></strong>
-        <p>Για όσους θέλουν<br />λίγο παραπάνω.</p>
-        <span class="text-button">Ανακάλυψε το Plus <dd-icon name="arrow" /></span
+        ><span class="eyebrow">{{ t('shell.aLittleDarker') }}</span><strong>Dumb & Dahmer <i>+</i></strong>
+        <p>{{ t('shell.forThoseWhoWant') }}<br />{{ t('shell.aLittleMore') }}</p>
+        <span class="text-button">{{ t('shell.discoverPlus') }} <dd-icon name="arrow" /></span
       ></a>
       <div class="sidebar-bottom">
         <span class="on-air-dot"></span> MADE FOR YOUR DARK SIDE.<a
@@ -52,14 +53,14 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
       <header class="topbar">
         <a routerLink="/" class="mobile-brand">d&d.</a
         ><span class="topbar-note"
-          ><span class="on-air-dot"></span> TRUE CRIME. DARK HUMOR. ΚΑΙ ΛΙΓΟ ΤΣΑΪ.</span
+          ><span class="on-air-dot"></span> {{ t('shell.trueCrimeDarkHumorAndALittleTea') }}</span
         >
-        <div class="flex items-center gap-4">
-          <a routerLink="/episodes" class="icon-button" aria-label="Αναζήτηση επεισοδίων"
+        <div class="flex items-center gap-4"><button class="language-toggle" (click)="i18n.set(i18n.language() === 'el' ? 'en' : 'el')" [attr.aria-label]="t(i18n.language() === 'el' ? 'common.switchToEnglish' : 'common.switchToGreek')">{{ i18n.language() === 'el' ? 'EN' : 'EL' }}</button>
+          <a routerLink="/episodes" class="icon-button" [attr.aria-label]="t('shell.searchEpisodes')"
             ><dd-icon name="search" /></a
           ><a routerLink="/profile" class="profile-link"
-            ><span class="avatar small-avatar">{{ auth.guest() ? 'Ε' : 'Ν' }}</span
-            ><span>{{ auth.guest() ? 'Επισκέπτης' : 'Demo account' }}</span
+            ><span class="avatar small-avatar">{{ auth.guest() ? t('shell.g') : t('shell.n') }}</span
+            ><span>{{ auth.guest() ? t('shell.guest') : 'Demo account' }}</span
             ><dd-icon name="down"
           /></a>
         </div>
@@ -67,17 +68,17 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
       <main id="main-content" tabindex="-1"><router-outlet /></main>
       <footer class="site-footer">
         <a routerLink="/" class="footer-brand">dumb & dahmer.</a
-        ><span>Με την Έλενα και την Ειρηνέλλα. <span class="muted">Και τα κουλουράκια.</span></span
+        ><span>{{ t('shell.withElenaAndEirinella') }} <span class="muted">{{ t('shell.andTheCookies') }}</span></span
         ><a href="https://dumbanddahmer.buzzsprout.com/" target="_blank" rel="noopener noreferrer"
-          >Το επίσημο podcast <dd-icon name="external"
+          >{{ t('shell.theOfficialPodcast') }} <dd-icon name="external"
         /></a>
       </footer>
     </div>
     @if (library.repository.error()) {
-      <div class="storage-notice" role="status">{{ library.repository.error() }}</div>
+      <div class="storage-notice" role="status">{{ t(library.repository.error()) }}</div>
     }
     @if (player.current(); as episode) {
-      <section class="mini-player" aria-label="Μικρός player">
+      <section class="mini-player" [attr.aria-label]="t('shell.miniPlayer')">
         <div
           class="mini-progress"
           [style.width.%]="player.duration() ? (player.position() / player.duration()) * 100 : 0"
@@ -86,34 +87,34 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
           ><img [src]="podcast.image(episode)" alt="" />
           <div>
             <span class="eyebrow">{{
-              player.busy() ? 'ΦΟΡΤΩΣΗ…' : player.error() ? 'ΔΟΚΙΜΑΣΕ ΞΑΝΑ' : 'ΤΩΡΑ ΑΚΟΥΣ'
+              player.busy() ? t('shell.loading') : player.error() ? t('shell.tryAgain') : t('shell.nowPlaying')
             }}</span
             ><strong>{{ episode.title }}</strong>
           </div></a
         >
         <div class="mini-center">
           <div class="mini-controls">
-            <button class="icon-button" (click)="player.previous()" aria-label="Προηγούμενο επεισόδιο">
+            <button class="icon-button" (click)="player.previous()" [attr.aria-label]="t('shell.previousEpisode')">
               <dd-icon name="previous" /></button
             ><button
               class="icon-button skip-control"
               (click)="player.skip(-15)"
-              aria-label="Πίσω 15 δευτερόλεπτα"
+              [attr.aria-label]="t('shell.skipBack15Seconds')"
             >
               <dd-icon name="back" /><small>15</small></button
             ><button
               class="play-button"
               (click)="player.toggle()"
-              [attr.aria-label]="player.playing() || player.busy() ? 'Παύση' : 'Αναπαραγωγή'"
+              [attr.aria-label]="player.playing() || player.busy() ? t('shell.pause') : t('shell.play')"
             >
               <dd-icon [name]="player.playing() || player.busy() ? 'pause' : 'play'" /></button
             ><button
               class="icon-button skip-control"
               (click)="player.skip(30)"
-              aria-label="Μπροστά 30 δευτερόλεπτα"
+              [attr.aria-label]="t('shell.skipForward30Seconds')"
             >
               <dd-icon name="forward" /><small>30</small></button
-            ><button class="icon-button" (click)="player.next()" aria-label="Επόμενο επεισόδιο">
+            ><button class="icon-button" (click)="player.next()" [attr.aria-label]="t('shell.nextEpisode')">
               <dd-icon name="next" />
             </button>
           </div>
@@ -125,7 +126,7 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
               [max]="player.duration() || 1"
               [value]="player.position()"
               (input)="player.seek(+$any($event.target).value)"
-              aria-label="Θέση αναπαραγωγής"
+              [attr.aria-label]="t('shell.playbackPosition')"
             /><span>{{ player.duration() | time }}</span>
           </div>
         </div>
@@ -135,29 +136,29 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
             (click)="library.toggleFavorite(episode.id)"
             [attr.aria-pressed]="library.isFavorite(episode.id)"
             [class.selected]="library.isFavorite(episode.id)"
-            aria-label="Αγαπημένο"
+            [attr.aria-label]="t('shell.favorite')"
           >
             <dd-icon name="heart" /></button
           ><a
             routerLink="/library"
             [queryParams]="{ tab: 'queue' }"
             class="icon-button"
-            aria-label="Ουρά ακρόασης"
+            [attr.aria-label]="t('shell.listeningQueue')"
             ><dd-icon name="queue" /></a
-          ><a routerLink="/player" class="icon-button" aria-label="Άνοιγμα πλήρους player"
+          ><a routerLink="/player" class="icon-button" [attr.aria-label]="t('shell.openFullPlayer')"
             ><dd-icon name="chevron"
           /></a>
         </div>
         <button
           class="play-button mobile-play"
           (click)="player.toggle()"
-          [attr.aria-label]="player.playing() ? 'Παύση' : 'Αναπαραγωγή'"
+          [attr.aria-label]="player.playing() ? t('shell.pause') : t('shell.play')"
         >
           <dd-icon [name]="player.playing() || player.busy() ? 'pause' : 'play'" />
         </button>
       </section>
     }
-    <nav class="bottom-nav" aria-label="Πλοήγηση κινητού">
+    <nav class="bottom-nav" [attr.aria-label]="t('shell.mobileNavigation')">
       @for (item of navigation; track item.path) {
         <a
           [routerLink]="item.path"
@@ -168,7 +169,7 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
         >
       }
     </nav>
-  `,
+  </ng-container>`,
 })
 export class AppComponent {
   constructor() {

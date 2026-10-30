@@ -1,3 +1,4 @@
+import { TranslocoDirective } from '@jsverse/transloco';
 import { Component, computed, inject } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -9,17 +10,17 @@ import { IconComponent } from '../../shared/icon';
 import { MinutesPipe } from '../../shared/format';
 import { EmptyStateComponent } from '../../shared/empty-state';
 @Component({
-  imports: [RouterLink, DatePipe, IconComponent, MinutesPipe, EmptyStateComponent],
-  template: `<div class="page">
-    <a routerLink="/episodes" class="back-link">← Πίσω στο αρχείο</a>
+  imports: [TranslocoDirective, RouterLink, DatePipe, IconComponent, MinutesPipe, EmptyStateComponent],
+  template: `<ng-container *transloco="let t"><div class="page">
+    <a routerLink="/episodes" class="back-link">{{ t('episodes.backToTheArchive') }}</a>
     @if (episode(); as episode) {
       <section class="episode-detail">
-        <img class="detail-art" [src]="podcast.image(episode)" alt="Εξώφυλλο επεισοδίου" />
+        <img class="detail-art" [src]="podcast.image(episode)" [alt]="t('episodes.episodeArtwork')" />
         <div>
           <p class="eyebrow accent">
-            {{ episode.contentKind === 'promotional-preview' ? 'PLUS · ΔΗΜΟΣΙΟ PREVIEW' : 'PUBLIC EPISODE' }}
+            {{ episode.contentKind === 'promotional-preview' ? t('episodes.plusPublicPreview') : 'PUBLIC EPISODE' }}
             @if (episode.season) {
-              · ΣΕΖΟΝ {{ episode.season }}
+              {{ t('episodes.season') }} {{ episode.season }}
             }
             @if (episode.episodeNumber) {
               · #{{ episode.episodeNumber }}
@@ -39,21 +40,21 @@ import { EmptyStateComponent } from '../../shared/empty-state';
             <button class="button primary" (click)="player.play(episode)">
               <dd-icon [name]="player.current()?.id === episode.id && player.playing() ? 'pause' : 'play'" />
               {{
-                player.current()?.id === episode.id && player.playing() ? 'Παύση' : 'Άκουσε το επεισόδιο'
+                player.current()?.id === episode.id && player.playing() ? t('shell.pause') : t('episodes.listenToTheEpisode')
               }}</button
             ><button
               class="circle-button"
               (click)="library.toggleFavorite(episode.id)"
               [class.selected]="library.isFavorite(episode.id)"
               [attr.aria-pressed]="library.isFavorite(episode.id)"
-              aria-label="Αγαπημένο"
+              [attr.aria-label]="t('shell.favorite')"
             >
               <dd-icon name="heart" /></button
             ><button
               class="circle-button"
               (click)="library.enqueue(episode.id)"
               [class.selected]="library.state().queue.includes(episode.id)"
-              aria-label="Προσθήκη στην ουρά"
+              [attr.aria-label]="t('episodes.addToQueue')"
             >
               <dd-icon name="queue" />
             </button>
@@ -65,29 +66,28 @@ import { EmptyStateComponent } from '../../shared/empty-state';
           <div class="notice preview-info">
             <dd-icon name="lock" />
             <p>
-              Αυτό είναι δημόσιο προωθητικό απόσπασμα Plus. Η διάρκεια του player αφορά το δημόσιο clip, όχι
-              το πλήρες συνδρομητικό επεισόδιο.
+              {{ t('episodes.thisIsAPublicPlusPromotionalClipThe') }}
             </p>
-            <a routerLink="/plus" class="text-button">Πληροφορίες Plus <dd-icon name="arrow" /></a>
+            <a routerLink="/plus" class="text-button">{{ t('episodes.aboutPlus') }} <dd-icon name="arrow" /></a>
           </div>
         }
-        <p class="eyebrow">ΣΗΜΕΙΩΣΕΙΣ ΕΠΕΙΣΟΔΙΟΥ</p>
-        <h2>Ο φάκελος της υπόθεσης</h2>
+        <p class="eyebrow">{{ t('episodes.episodeNotes') }}</p>
+        <h2>{{ t('episodes.theCaseFile') }}</h2>
         <p class="preserve-lines">{{ episode.description }}</p>
         @if (episode.link) {
           <a [href]="episode.link" target="_blank" rel="noopener noreferrer" class="text-button"
-            >Το επεισόδιο στο Buzzsprout <dd-icon name="external"
+            >{{ t('episodes.thisEpisodeOnBuzzsprout') }} <dd-icon name="external"
           /></a>
         }
       </section>
     } @else if (!podcast.loading()) {
       <dd-empty
-        title="Ο φάκελος δεν βρέθηκε."
-        description="Το επεισόδιο μπορεί να έχει αφαιρεθεί από το δημόσιο RSS."
+        title="episodes.theCaseFileWasNotFound"
+        description="episodes.thisEpisodeMayHaveBeenRemovedFromThe"
         link="/episodes"
       />
     }
-  </div>`,
+  </div></ng-container>`,
 })
 export class EpisodeDetailsComponent {
   readonly podcast = inject(PodcastService);
