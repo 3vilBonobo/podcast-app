@@ -12,8 +12,19 @@ import { routes } from './app/app.routes';
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(),
-    provideTransloco({config:{availableLangs:['el','en'],defaultLang:'el',fallbackLang:'el',reRenderOnLangChange:true,prodMode:!isDevMode()},loader:BundledTranslationLoader}),
-    provideAppInitializer(() => { inject(I18nService); }),
+    provideTransloco({
+      config: {
+        availableLangs: ['el', 'en'],
+        defaultLang: 'el',
+        fallbackLang: 'el',
+        reRenderOnLangChange: true,
+        prodMode: !isDevMode(),
+      },
+      loader: BundledTranslationLoader,
+    }),
+    provideAppInitializer(() => {
+      inject(I18nService);
+    }),
     { provide: TitleStrategy, useClass: LocalizedTitleStrategy },
     provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
     provideServiceWorker('ngsw-worker.js', {

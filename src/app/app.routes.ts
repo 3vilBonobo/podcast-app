@@ -2,27 +2,27 @@ import type { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    title: "titles.dumbDahmerComeForTea",
+    title: 'titles.dumbDahmerComeForTea',
     loadComponent: () => import('./features/home/home').then((m) => m.HomeComponent),
   },
   {
     path: 'episodes',
-    title: "titles.theArchiveDumbDahmer",
+    title: 'titles.theArchiveDumbDahmer',
     loadComponent: () => import('./features/episodes/episodes').then((m) => m.EpisodesComponent),
   },
   {
     path: 'episodes/:id',
-    title: "titles.episodeDumbDahmer",
+    title: 'titles.episodeDumbDahmer',
     loadComponent: () => import('./features/episodes/details').then((m) => m.EpisodeDetailsComponent),
   },
   {
     path: 'library',
-    title: "titles.yourLibraryDumbDahmer",
+    title: 'titles.yourLibraryDumbDahmer',
     loadComponent: () => import('./features/library/library').then((m) => m.LibraryComponent),
   },
   {
     path: 'extras',
-    title: "titles.beyondTheMicrophoneDumbDahmer",
+    title: 'titles.beyondTheMicrophoneDumbDahmer',
     loadComponent: () => import('./features/extras/extras').then((m) => m.ExtrasComponent),
   },
   {
@@ -32,12 +32,12 @@ export const routes: Routes = [
   },
   {
     path: 'profile',
-    title: "titles.yourSpaceDumbDahmer",
+    title: 'titles.yourSpaceDumbDahmer',
     loadComponent: () => import('./features/profile/profile').then((m) => m.ProfileComponent),
   },
   {
     path: 'auth/:mode',
-    title: "titles.welcomeDumbDahmer",
+    title: 'titles.welcomeDumbDahmer',
     loadComponent: () => import('./features/auth/auth').then((m) => m.AuthComponent),
   },
   {
@@ -47,12 +47,12 @@ export const routes: Routes = [
   },
   {
     path: 'player',
-    title: "titles.nowPlayingDumbDahmer",
+    title: 'titles.nowPlayingDumbDahmer',
     loadComponent: () => import('./features/player/player').then((m) => m.PlayerComponent),
   },
   {
     path: '**',
-    title: "titles.pageNotFoundDumbDahmer",
+    title: 'titles.pageNotFoundDumbDahmer',
     loadComponent: () => import('./features/not-found').then((m) => m.NotFoundComponent),
   },
 ];

@@ -7,6 +7,8 @@ import en from '../i18n/en.json';
 /** Both dictionaries are bundled, so language switching also works offline. */
 @Injectable({ providedIn: 'root' })
 export class BundledTranslationLoader implements TranslocoLoader {
-  getTranslation(language: string) { return of<Translation>(language === 'en' ? en : el); }
+  getTranslation(language: string) {
+    return of<Translation>(language === 'en' ? en : el);
+  }
 }
 export const TRANSLATIONS = { el, en };

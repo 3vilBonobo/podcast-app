@@ -1,6 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import type { Catalog, Episode } from './models';
+import { assetUrl } from './asset-url';
 @Injectable({ providedIn: 'root' })
 export class PodcastService {
   private readonly http = inject(HttpClient);
@@ -18,24 +19,26 @@ export class PodcastService {
       ),
     ].sort((a, b) => b - a),
   );
-  readonly artwork = computed(() => this.catalog()?.localArtwork || this.catalog()?.artwork || '/icon.svg');
+  readonly artwork = computed(() =>
+    assetUrl(this.catalog()?.localArtwork || this.catalog()?.artwork || 'icon.svg'),
+  );
   constructor() {
     this.load();
   }
   load(): void {
     this.loading.set(true);
     this.error.set('');
-    this.http.get<Catalog>('/data/catalog.json').subscribe({
+    this.http.get<Catalog>(assetUrl('data/catalog.json')).subscribe({
       next: (catalog) => {
         if (catalog.schemaVersion !== 1 || !Array.isArray(catalog.episodes)) {
-          this.error.set("common.theEpisodeCatalogIsInvalid");
+          this.error.set('common.theEpisodeCatalogIsInvalid');
         } else {
           this.catalog.set(catalog);
         }
         this.loading.set(false);
       },
       error: () => {
-        this.error.set("common.weCouldNotOpenTheArchivePleaseTry");
+        this.error.set('common.weCouldNotOpenTheArchivePleaseTry');
         this.loading.set(false);
       },
     });
@@ -44,8 +47,9 @@ export class PodcastService {
     return this.episodes().find((e) => e.id === id);
   }
   image(episode: Episode): string {
-    return (
-      episode.localArtwork || (episode.artwork === this.catalog()?.artwork ? this.artwork() : episode.artwork)
+    return assetUrl(
+      episode.localArtwork ||
+        (episode.artwork === this.catalog()?.artwork ? this.artwork() : episode.artwork),
     );
   }
 }

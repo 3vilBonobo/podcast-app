@@ -36,9 +36,7 @@ export class LocalStorageRepository {
         request.onerror = () => reject(request.error);
       });
     } catch {
-      this.error.set(
-        "common.localStorageIsUnavailableChangesWillOnlyLast",
-      );
+      this.error.set('common.localStorageIsUnavailableChangesWillOnlyLast');
       return emptyLibrary();
     }
   }
@@ -53,7 +51,7 @@ export class LocalStorageRepository {
         transaction.onabort = () => reject(transaction.error);
       });
     } catch {
-      this.error.set("common.yourChangesCouldNotBeSavedCheckAvailable");
+      this.error.set('common.yourChangesCouldNotBeSavedCheckAvailable');
     }
   }
 }

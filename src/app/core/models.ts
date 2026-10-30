@@ -49,4 +49,11 @@ export interface DemoUser {
 }
 export type Theme = 'noir' | 'archive' | 'after-hours';
 export type Language = 'el' | 'en';
-export type CrimeCategory = 'serial-killers' | 'cults' | 'robberies' | 'historical' | 'unsolved' | 'disappearances' | 'other';
+export type CrimeCategory =
+  | 'serial-killers'
+  | 'cults'
+  | 'robberies'
+  | 'historical'
+  | 'unsolved'
+  | 'disappearances'
+  | 'other';

@@ -36,7 +36,8 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
         }
       </nav>
       <a routerLink="/plus" class="sidebar-plus"
-        ><span class="eyebrow">{{ t('shell.aLittleDarker') }}</span><strong>Dumb & Dahmer <i>+</i></strong>
+        ><span class="eyebrow">{{ t('shell.aLittleDarker') }}</span
+        ><strong>Dumb & Dahmer <i>+</i></strong>
         <p>{{ t('shell.forThoseWhoWant') }}<br />{{ t('shell.aLittleMore') }}</p>
         <span class="text-button">{{ t('shell.discoverPlus') }} <dd-icon name="arrow" /></span
       ></a>
@@ -55,7 +56,16 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
         ><span class="topbar-note"
           ><span class="on-air-dot"></span> {{ t('shell.trueCrimeDarkHumorAndALittleTea') }}</span
         >
-        <div class="flex items-center gap-4"><button class="language-toggle" (click)="i18n.set(i18n.language() === 'el' ? 'en' : 'el')" [attr.aria-label]="t(i18n.language() === 'el' ? 'common.switchToEnglish' : 'common.switchToGreek')">{{ i18n.language() === 'el' ? 'EN' : 'EL' }}</button>
+        <div class="flex items-center gap-4">
+          <button
+            class="language-toggle"
+            (click)="i18n.set(i18n.language() === 'el' ? 'en' : 'el')"
+            [attr.aria-label]="
+              t(i18n.language() === 'el' ? 'common.switchToEnglish' : 'common.switchToGreek')
+            "
+          >
+            {{ i18n.language() === 'el' ? 'EN' : 'EL' }}
+          </button>
           <a routerLink="/episodes" class="icon-button" [attr.aria-label]="t('shell.searchEpisodes')"
             ><dd-icon name="search" /></a
           ><a routerLink="/profile" class="profile-link"
@@ -68,7 +78,9 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
       <main id="main-content" tabindex="-1"><router-outlet /></main>
       <footer class="site-footer">
         <a routerLink="/" class="footer-brand">dumb & dahmer.</a
-        ><span>{{ t('shell.withElenaAndEirinella') }} <span class="muted">{{ t('shell.andTheCookies') }}</span></span
+        ><span
+          >{{ t('shell.withElenaAndEirinella') }}
+          <span class="muted">{{ t('shell.andTheCookies') }}</span></span
         ><a href="https://dumbanddahmer.buzzsprout.com/" target="_blank" rel="noopener noreferrer"
           >{{ t('shell.theOfficialPodcast') }} <dd-icon name="external"
         /></a>
@@ -87,14 +99,22 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
           ><img [src]="podcast.image(episode)" alt="" />
           <div>
             <span class="eyebrow">{{
-              player.busy() ? t('shell.loading') : player.error() ? t('shell.tryAgain') : t('shell.nowPlaying')
+              player.busy()
+                ? t('shell.loading')
+                : player.error()
+                  ? t('shell.tryAgain')
+                  : t('shell.nowPlaying')
             }}</span
             ><strong>{{ episode.title }}</strong>
           </div></a
         >
         <div class="mini-center">
           <div class="mini-controls">
-            <button class="icon-button" (click)="player.previous()" [attr.aria-label]="t('shell.previousEpisode')">
+            <button
+              class="icon-button"
+              (click)="player.previous()"
+              [attr.aria-label]="t('shell.previousEpisode')"
+            >
               <dd-icon name="previous" /></button
             ><button
               class="icon-button skip-control"

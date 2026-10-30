@@ -231,7 +231,7 @@ export class AudioPlayerService {
   }
   private fail(): void {
     this.status.set('error');
-    this.error.set("common.audioCouldNotStartCheckYourConnectionAnd");
+    this.error.set('common.audioCouldNotStartCheckYourConnectionAnd');
     this.setMediaState('paused');
   }
   private setMetadata(episode: Episode): void {

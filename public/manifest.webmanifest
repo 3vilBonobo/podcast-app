@@ -2,9 +2,9 @@
   "name": "Dumb and Dahmer Podcast",
   "short_name": "Dumb & Dahmer",
   "lang": "el",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#0c090c",
   "theme_color": "#0c090c",
-  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
 }

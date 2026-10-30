@@ -69,7 +69,13 @@ export class MockAuthService {
 export class I18nService {
   private readonly transloco = inject(TranslocoService);
   readonly language = signal<Language>(readPreference('language') === 'en' ? 'en' : 'el');
-  readonly nav = computed(() => ({home: this.t('common.home'), episodes: this.t('common.episodes'), library: this.t('common.library'), extras: 'Extras', profile: this.t('common.profile')}));
+  readonly nav = computed(() => ({
+    home: this.t('common.home'),
+    episodes: this.t('common.episodes'),
+    library: this.t('common.library'),
+    extras: 'Extras',
+    profile: this.t('common.profile'),
+  }));
   constructor() {
     this.transloco.setTranslation(TRANSLATIONS.el, 'el');
     this.transloco.setTranslation(TRANSLATIONS.en, 'en');
@@ -83,5 +89,8 @@ export class I18nService {
     document.documentElement.lang = language;
     this.transloco.setActiveLang(language);
   }
-  t(key: string, params?: Record<string, unknown>): string { this.language(); return this.transloco.translate(key, params); }
+  t(key: string, params?: Record<string, unknown>): string {
+    this.language();
+    return this.transloco.translate(key, params);
+  }
 }
