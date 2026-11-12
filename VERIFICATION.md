@@ -84,3 +84,73 @@ Production output was served locally at `http://127.0.0.1:4201/podcast-app/`, ma
 | Screenshot | PASS | Saved [paused-player evidence](docs/screenshots/milestone-1-paused-player-2026-11-12.jpg), a full-page capture at the observed 512×601 viewport |
 
 The first pass was interrupted by an empty browser inventory; the user reconnected access and testing resumed. An old service-worker version initially reproduced the already-fixed focus bug; the rebuilt module was then loaded and the focus checks passed. The final rebuild was also identified before checking the skip-link correction. This cache observation is not a new source regression; update UX remains a later PWA milestone. No physical-device, background/lock-screen, offline/install, complete runtime-exception detection or hosted GitHub Pages verification is claimed. Auth mode changes retaining previous feedback/visibility are a low-priority UX observation deferred to Milestone 2; no real authentication or email delivery is implied. Test tabs were closed, no viewport override was left, the test speed was restored to 1×, the UI returned to Greek/system theme, and playback was left paused. Existing library data was not cleared.
+
+## Milestone 2 — responsive design, UX and visual quality — 12 November 2026
+
+Milestone 1 was accepted and its changes were committed/pushed as `7fd1573` under the user's separate instruction. This entry records the subsequent, explicitly approved Milestone 2 work. Milestone 2 is implemented and locally verified, ready for user review. Milestone 3, backend and Android development were not started. No Milestone 2 changes were staged, committed, pushed or deployed. The original untracked IMPLEMENTATION_REPORT.md remains unchanged.
+
+### Findings and changes
+
+| Finding | Before | After / evidence |
+| --- | --- | --- |
+| Full-player obstruction and duplication | At 360px, the fixed mini-player occupied the area over the full player's primary controls | Mini-player is hidden on the full-player route; compact mobile artwork exposes the main controls above bottom navigation. It remains available on other routes. Player controls, seeking, speed, volume, timer and queue were exercised |
+| Small interaction targets | Episode play actions were approximately 19px high; some profile/player actions were about 22px | Shared action/icon/range/select targets now have 44px minimum sizing where applicable. The recorded main button/input/select samples have no dimension below 24px; inline text links are not included in that count |
+| Narrow Library tab strip | Queue tab extended outside the 360/390px viewport inside a horizontal scroller | Tabs wrap, remain visible and retain keyboard focus; Home/End/arrow behavior is preserved |
+| Theme contrast | Archive muted/faint text reached 3.99/3.40:1 on raised surfaces; After Hours faint text 3.63:1 and primary hover text 4.37:1 | Refined semantic colors, accessible control borders and decorative text colors. Measured results below |
+| Auth state leakage | Login → Register/Recovery retained obsolete feedback, visible-password choice and validation state | Mode changes clear feedback, password and visibility/validation state while keeping the email. Two new tests failed before the correction and pass afterward |
+| Form accessibility | Invalid submission left focus on Submit; description attributes could reference absent error nodes | First invalid field receives focus; description IDs exist only with their rendered errors; visible focus and mobile input sizing improved |
+| Player and empty-state semantics | Range values were raw numbers; empty player/404 lacked a primary heading; a translation key appeared as a host tooltip in the accessibility tree | Readable time/percentage range values, configurable primary headings, and removal of the unintended translation-key tooltip |
+| Mobile safe-area/scroll clearance | Bottom padding used fixed values in parts of the shell | Added safe-area-aware clearance, scroll margins and viewport-fit coverage. Hardware notch/virtual-keyboard behavior is not claimed |
+
+Code changed: `src/styles.css`, `src/index.html`, `src/app/app.ts`, `src/app/features/auth/auth.ts`, `src/app/features/player/player.ts`, `src/app/shared/empty-state.ts`, `src/app/features/not-found.ts`, and new `tests/auth-ux.test.ts`. Library/Extras layout refinements use existing shared CSS; their state logic is unchanged. No audio-service, RSS, IndexedDB schema, routing configuration, authentication backend or dependency changes were made. All Milestone 1 regressions remain present.
+
+### Browser and viewport coverage
+
+Testing used the in-app Chromium browser and actual rendered DOM/UI interactions. These are **simulated CSS viewports**, not physical-device results. Main matrix origin: Angular development preview `http://127.0.0.1:4202/`. Final optimized build: `http://127.0.0.1:4203/podcast-app/`; separate `localhost:4203` origin checked the empty player without clearing data.
+
+| Width | Main matrix height | Languages | Themes | Post-fix route samples |
+| --- | --- | --- | --- | --- |
+| 360 | 800 | Greek, English | Noir, Archive, After Hours | 102 |
+| 390 | 844 | Greek, English | Noir, Archive, After Hours | 102 |
+| 768 | 900 | Greek, English | Noir, Archive, After Hours | 102 |
+| 1024 | 900 | Greek, English | Noir, Archive, After Hours | 102 |
+| 1280 | 900 | Greek, English | Noir, Archive, After Hours | 102 |
+
+Each configuration covered 17 views: Home, Episodes, stable-GUID Episode Details with the long Greek Lead Masks title/notes, Library, Extras index, all five Extras details, Profile, Plus, Login, Register, Recovery, full player and not-found. All 510 post-fix samples passed the recorded horizontal page-overflow, measured control-size, off-screen measured-control and primary-heading checks. The 85-sample baseline and all 510 results are saved in [responsive matrix](docs/milestone-2-responsive-matrix.json). This is geometry evidence plus representative visual review; it does not imply exhaustive pixel review or every dynamic state in all 510 configurations.
+
+Actual interaction results, saved in [interaction evidence](docs/milestone-2-interaction-results.json):
+
+- PASS at all five widths: natural search typing retains focus; season/date/category controls update the query; Cults and Robberies can be combined; keyboard skip navigation keeps the route/query and focuses main.
+- PASS at all five widths: Library End selects and focuses Queue with its tab visible; keyboard focus outlines remain visible. The pre-existing navigation regressions continue to pass.
+- PASS at all five widths: invalid auth submission focuses Email with a real error-description target; changing mode clears obsolete feedback and password visibility/value; valid registration and recovery retain explicit prototype/no-email feedback. Greek production checks also confirm the reset; demo reload/logout still works.
+- PASS at all five widths: keyboard seeking, 1.25× speed, volume keyboard adjustment with `75%` value text, timer selection/cancellation, player keyboard focus and absence of the duplicate mini-player. Queue add/access/remove and its empty-state recovery were also exercised.
+- PASS: all five Extras inline previews opened and closed with Enter at each width (25 expanded-state checks), with correct expanded state and no measured horizontal overflow. There are no custom modal dialogs in this implementation; dropdowns are native selects.
+- PASS in the optimized build: full-player checks at all five widths, repo-relative navigation, natural typing/skip-link regression and auth-mode reset. A public Buzzsprout episode actually advanced to **0:33** after explicit Play; reload restored **0:33 paused**. A fresh origin had no player/audio selection, and an empty-player deep link displayed a primary heading. Startup remains free of autoplay.
+
+### Contrast, focus and motion
+
+Solid-background rendered-text checks covered 17 routes in each theme (51 samples), excluding disabled text and reporting gradients/images separately. No failures remained in those computed samples. This is a focused contrast check, not a WCAG certification or pixel-level artwork audit.
+
+| Theme | Minimum tested text-token contrast on four semantic surfaces | Primary hover text | Minimum tested control-boundary contrast |
+| --- | --- | --- | --- |
+| Noir | 4.58:1 | 6.16:1 | 3.87:1 |
+| Archive | 5.35:1 | 9.49:1 | 3.31:1 |
+| After Hours | 5.02:1 | 5.31:1 | 3.30:1 |
+
+Decorative gold text was also adjusted in Archive and After Hours; contrast against the respective bright hero-gradient endpoint is 4.63:1 and 5.14:1. Representative gradient/artwork views were visually reviewed; the computed text scan deliberately excludes those backgrounds. First-visit system-theme behavior is preserved. Recommendation: keep that behavior until a separate product decision approves any Noir-first default.
+
+PASS: actual keyboard focus outlines measured 2px on player/range controls; form focus boundaries are visible and have accessible description/state relationships. The shared reduced-motion media rule was inspected in the loaded stylesheet and suppresses animation/transitions and smooth scrolling. **UNVERIFIED:** actual reduced-motion preference emulation (the connected browser exposes viewport/visibility controls only), physical touch/hover behavior, hardware safe areas, virtual keyboards, and a real screen-reader session. Accessibility-tree roles/names/states were inspected; no assistive-technology certification is claimed.
+
+### Screenshots and automated checks
+
+- [Player before, 360px](docs/screenshots/milestone-2/player-360-before.jpg) → [Player after, 360px](docs/screenshots/milestone-2/player-360-after.jpg): the main playback controls are exposed and the duplicate bar is removed.
+- [Auth before, 360px](docs/screenshots/milestone-2/auth-360-before.jpg) → [Auth after, 360px](docs/screenshots/milestone-2/auth-360-after.jpg): obsolete validation feedback/visible-password state removed; clearer controls and spacing.
+- Representative [Archive tablet Home](docs/screenshots/milestone-2/archive-home-768.jpg) and [After Hours desktop Extras](docs/screenshots/milestone-2/after-hours-extras-1280.jpg) evidence.
+- PASS: `npm.cmd test` — **40 tests across eight files**, including all 38 Milestone 1 tests and two new auth regressions.
+- PASS: `npm.cmd run build -- --base-href=/podcast-app/` — optimized production build; approximately **469.3 kB raw / 118.0 kB estimated transfer** initial output, excluding lazy chunks/media.
+- PASS: final build identity confirmed in the browser (`main-A7T3OER5.js`, `styles-4E2LEXGO.css`); empty-player primary heading, absent raw-key tooltip, paused restored player and hidden duplicate bar verified. The prior preview service worker retained an older module during rebuilds, so the final check used Angular's supported `ngsw-bypass` query without clearing user data. Full update UX remains a Milestone 7 task.
+- Console review: no production warnings/errors captured in the exercised flows. Development recorded one Angular **NG0913** warning that a lazy-loaded episode image became LCP; image prioritization/performance measurement is retained for Milestone 7. No application runtime errors were captured; comprehensive uncaught-exception detection was not separately exercised.
+
+PASS: final diff/whitespace review and artifact inspection; Pages base/worker paths, 172 catalog entries and all 25 packaged artwork references remain valid. Test tabs were closed, viewport overrides reset, preferences returned to Greek/system theme/1×, and playback left paused. Temporary QA servers were stopped. No library data was cleared; IMPLEMENTATION_REPORT.md retains SHA-256 `C16664837543F8A36E72CF0F6CDB86AF46451FC309B25445B2AFC0C7028DADB2`.
+
+Remaining limitations: one Chromium engine; no physical iOS/Android, screen-reader session, actual reduced-motion emulation, background/lock-screen/network-interruption certification, offline/install or hosted Pages deployment test. Existing loading/error/empty UI is retained; this pass exercised library/queue and empty-player states but did not inject catalog/network failures. Milestone 3 should next address audio hydration/event races, failure/retry, persistence timing, rapid transitions, sleep-timer suspension and supported Media Session/device interruptions under separately approved scope. No Milestone 3 implementation was performed.

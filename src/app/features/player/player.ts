@@ -81,6 +81,7 @@ import { EmptyStateComponent } from '../../shared/empty-state';
               min="0"
               [max]="player.duration() || 1"
               [value]="player.position()"
+              [attr.aria-valuetext]="(player.position() | time) + ' / ' + (player.duration() | time)"
               (input)="player.seek(+$any($event.target).value)"
           /></label>
           <div class="player-times">
@@ -130,7 +131,7 @@ import { EmptyStateComponent } from '../../shared/empty-state';
                 }
               </select></label
             ><label
-              ><span><dd-icon name="moon" /> Sleep timer</span
+              ><span><dd-icon name="moon" /> {{ t('player.sleepTimer') }}</span
               ><select
                 [attr.aria-label]="t('player.sleepTimer')"
                 [value]="player.sleepMinutes()"
@@ -150,6 +151,7 @@ import { EmptyStateComponent } from '../../shared/empty-state';
                 max="1"
                 step="0.05"
                 [value]="player.volume()"
+                [attr.aria-valuetext]="(player.volume() * 100).toFixed(0) + '%'"
                 (input)="player.setVolume(+$any($event.target).value)"
                 [attr.aria-label]="t('player.audioVolume')"
             /></label>
@@ -174,6 +176,7 @@ import { EmptyStateComponent } from '../../shared/empty-state';
         </div>
       } @else {
         <dd-empty
+          [headingLevel]="1"
           title="player.whatAreWeListeningToTonight"
           description="player.chooseAStoryFromTheArchiveToStart"
           link="/episodes"

@@ -152,6 +152,7 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
               min="0"
               [max]="player.duration() || 1"
               [value]="player.position()"
+              [attr.aria-valuetext]="(player.position() | time) + ' / ' + (player.duration() | time)"
               (input)="player.seek(+$any($event.target).value)"
               [attr.aria-label]="t('shell.playbackPosition')"
             /><span>{{ player.duration() | time }}</span>

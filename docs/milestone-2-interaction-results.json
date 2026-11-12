@@ -1,0 +1,879 @@
+{
+  "date": "2026-11-12",
+  "catalogAndTabs": [
+    {
+      "width": 360,
+      "search": {
+        "focused": true,
+        "value": "Lead"
+      },
+      "filters": "http://127.0.0.1:4202/episodes?season=4&sort=oldest&category=cults,robberies",
+      "skip": {
+        "focus": "main-content",
+        "path": "/episodes",
+        "query": "?season=4&sort=oldest&category=cults,robberies"
+      },
+      "tab": [
+        {
+          "focused": true,
+          "left": 91.5625,
+          "right": 181.265625,
+          "text": " In the queue 0"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "search": {
+        "focused": true,
+        "value": "Lead"
+      },
+      "filters": "http://127.0.0.1:4202/episodes?season=4&sort=oldest&category=cults,robberies",
+      "skip": {
+        "focus": "main-content",
+        "path": "/episodes",
+        "query": "?season=4&sort=oldest&category=cults,robberies"
+      },
+      "tab": [
+        {
+          "focused": true,
+          "left": 91.5625,
+          "right": 181.265625,
+          "text": " In the queue 0"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "search": {
+        "focused": true,
+        "value": "Lead"
+      },
+      "filters": "http://127.0.0.1:4202/episodes?season=4&sort=oldest&category=cults,robberies",
+      "skip": {
+        "focus": "main-content",
+        "path": "/episodes",
+        "query": "?season=4&sort=oldest&category=cults,robberies"
+      },
+      "tab": [
+        {
+          "focused": true,
+          "left": 584.203125,
+          "right": 676.546875,
+          "text": " In the queue 0"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "search": {
+        "focused": true,
+        "value": "Lead"
+      },
+      "filters": "http://127.0.0.1:4202/episodes?season=4&sort=oldest&category=cults,robberies",
+      "skip": {
+        "focus": "main-content",
+        "path": "/episodes",
+        "query": "?season=4&sort=oldest&category=cults,robberies"
+      },
+      "tab": [
+        {
+          "focused": true,
+          "left": 655.703125,
+          "right": 760.390625,
+          "text": " In the queue 0"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "search": {
+        "focused": true,
+        "value": "Lead"
+      },
+      "filters": "http://127.0.0.1:4202/episodes?season=4&sort=oldest&category=cults,robberies",
+      "skip": {
+        "focus": "main-content",
+        "path": "/episodes",
+        "query": "?season=4&sort=oldest&category=cults,robberies"
+      },
+      "tab": [
+        {
+          "focused": true,
+          "left": 698.703125,
+          "right": 803.390625,
+          "text": " In the queue 0"
+        }
+      ]
+    }
+  ],
+  "auth": [
+    {
+      "width": 360,
+      "invalid": {
+        "described": "email-error",
+        "errorExists": true,
+        "focus": true,
+        "invalid": "true"
+      },
+      "reset": {
+        "described": null,
+        "invalid": "false",
+        "type": "password",
+        "value": ""
+      },
+      "stale": 0,
+      "feedback": "The form is valid. Real sign-in and registration are not available yet. Enter the Demo Account.",
+      "recovery": "The form is valid. No email was sent: password recovery will be available in a future phase."
+    },
+    {
+      "width": 390,
+      "invalid": {
+        "described": "email-error",
+        "errorExists": true,
+        "focus": true,
+        "invalid": "true"
+      },
+      "reset": {
+        "described": null,
+        "invalid": "false",
+        "type": "password",
+        "value": ""
+      },
+      "stale": 0,
+      "feedback": "The form is valid. Real sign-in and registration are not available yet. Enter the Demo Account.",
+      "recovery": "The form is valid. No email was sent: password recovery will be available in a future phase."
+    },
+    {
+      "width": 768,
+      "invalid": {
+        "described": "email-error",
+        "errorExists": true,
+        "focus": true,
+        "invalid": "true"
+      },
+      "reset": {
+        "described": null,
+        "invalid": "false",
+        "type": "password",
+        "value": ""
+      },
+      "stale": 0,
+      "feedback": "The form is valid. Real sign-in and registration are not available yet. Enter the Demo Account.",
+      "recovery": "The form is valid. No email was sent: password recovery will be available in a future phase."
+    },
+    {
+      "width": 1024,
+      "invalid": {
+        "described": "email-error",
+        "errorExists": true,
+        "focus": true,
+        "invalid": "true"
+      },
+      "reset": {
+        "described": null,
+        "invalid": "false",
+        "type": "password",
+        "value": ""
+      },
+      "stale": 0,
+      "feedback": "The form is valid. Real sign-in and registration are not available yet. Enter the Demo Account.",
+      "recovery": "The form is valid. No email was sent: password recovery will be available in a future phase."
+    },
+    {
+      "width": 1280,
+      "invalid": {
+        "described": "email-error",
+        "errorExists": true,
+        "focus": true,
+        "invalid": "true"
+      },
+      "reset": {
+        "described": null,
+        "invalid": "false",
+        "type": "password",
+        "value": ""
+      },
+      "stale": 0,
+      "feedback": "The form is valid. Real sign-in and registration are not available yet. Enter the Demo Account.",
+      "recovery": "The form is valid. No email was sent: password recovery will be available in a future phase."
+    }
+  ],
+  "player": [
+    {
+      "width": 360,
+      "timer": "Playback will stop in 15:00\nCancel",
+      "control": {
+        "focus": true,
+        "outline": "2px",
+        "text": "75%",
+        "value": "0.75"
+      },
+      "miniVisible": false,
+      "position": "0:01 / 1:50:09",
+      "keyboard": {
+        "label": "Skip forward 30 seconds",
+        "outline": "2px"
+      }
+    },
+    {
+      "width": 390,
+      "timer": "Playback will stop in 15:00\nCancel",
+      "control": {
+        "focus": true,
+        "outline": "2px",
+        "text": "75%",
+        "value": "0.75"
+      },
+      "miniVisible": false,
+      "position": "0:02 / 1:50:09",
+      "keyboard": {
+        "label": "Skip forward 30 seconds",
+        "outline": "2px"
+      }
+    },
+    {
+      "width": 768,
+      "timer": "Playback will stop in 15:00\nCancel",
+      "control": {
+        "focus": true,
+        "outline": "2px",
+        "text": "75%",
+        "value": "0.75"
+      },
+      "miniVisible": false,
+      "position": "0:03 / 1:50:09",
+      "keyboard": {
+        "label": "Skip forward 30 seconds",
+        "outline": "2px"
+      }
+    },
+    {
+      "width": 1024,
+      "timer": "Playback will stop in 15:00\nCancel",
+      "control": {
+        "focus": true,
+        "outline": "2px",
+        "text": "75%",
+        "value": "0.75"
+      },
+      "miniVisible": false,
+      "position": "0:04 / 1:50:09",
+      "keyboard": {
+        "label": "Skip forward 30 seconds",
+        "outline": "2px"
+      }
+    },
+    {
+      "width": 1280,
+      "timer": "Playback will stop in 15:00\nCancel",
+      "control": {
+        "focus": true,
+        "outline": "2px",
+        "text": "75%",
+        "value": "0.75"
+      },
+      "miniVisible": false,
+      "position": "0:05 / 1:50:09",
+      "keyboard": {
+        "label": "Skip forward 30 seconds",
+        "outline": "2px"
+      }
+    }
+  ],
+  "contrast": {
+    "method": "Rendered own-text nodes on solid composited backgrounds; disabled text excluded; gradients/images require manual review",
+    "routes": [
+      {
+        "theme": "Noir",
+        "path": "/",
+        "failures": [],
+        "gradients": 17
+      },
+      {
+        "theme": "Noir",
+        "path": "/episodes",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/episodes/Buzzsprout-19971494",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/library",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/extras",
+        "failures": [],
+        "gradients": 30
+      },
+      {
+        "theme": "Noir",
+        "path": "/extras/waking-machine",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Noir",
+        "path": "/extras/secret-archive",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Noir",
+        "path": "/extras/seasonal-events",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Noir",
+        "path": "/extras/rewards",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Noir",
+        "path": "/extras/behind-the-mic",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Noir",
+        "path": "/profile",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/plus",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Noir",
+        "path": "/auth/login",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/auth/register",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/auth/forgot",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/player",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Noir",
+        "path": "/m2-missing",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/",
+        "failures": [],
+        "gradients": 17
+      },
+      {
+        "theme": "Archive",
+        "path": "/episodes",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/episodes/Buzzsprout-19971494",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/library",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/extras",
+        "failures": [],
+        "gradients": 30
+      },
+      {
+        "theme": "Archive",
+        "path": "/extras/waking-machine",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Archive",
+        "path": "/extras/secret-archive",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Archive",
+        "path": "/extras/seasonal-events",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Archive",
+        "path": "/extras/rewards",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Archive",
+        "path": "/extras/behind-the-mic",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Archive",
+        "path": "/profile",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/plus",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "Archive",
+        "path": "/auth/login",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/auth/register",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/auth/forgot",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/player",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "Archive",
+        "path": "/m2-missing",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/",
+        "failures": [],
+        "gradients": 17
+      },
+      {
+        "theme": "After Hours",
+        "path": "/episodes",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/episodes/Buzzsprout-19971494",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/library",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/extras",
+        "failures": [],
+        "gradients": 30
+      },
+      {
+        "theme": "After Hours",
+        "path": "/extras/waking-machine",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "After Hours",
+        "path": "/extras/secret-archive",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "After Hours",
+        "path": "/extras/seasonal-events",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "After Hours",
+        "path": "/extras/rewards",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "After Hours",
+        "path": "/extras/behind-the-mic",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "After Hours",
+        "path": "/profile",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/plus",
+        "failures": [],
+        "gradients": 6
+      },
+      {
+        "theme": "After Hours",
+        "path": "/auth/login",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/auth/register",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/auth/forgot",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/player",
+        "failures": [],
+        "gradients": 0
+      },
+      {
+        "theme": "After Hours",
+        "path": "/m2-missing",
+        "failures": [],
+        "gradients": 0
+      }
+    ],
+    "tokens": [
+      {
+        "theme": "Noir",
+        "textMinimum": 4.581671001043464,
+        "buttonHover": 6.155920024680562,
+        "controlBoundaryMinimum": 3.8749781685267823
+      },
+      {
+        "theme": "Archive",
+        "textMinimum": 5.352728408132271,
+        "buttonHover": 9.48758022364407,
+        "controlBoundaryMinimum": 3.3116963802506616
+      },
+      {
+        "theme": "After Hours",
+        "textMinimum": 5.02197423775953,
+        "buttonHover": 5.311582439230238,
+        "controlBoundaryMinimum": 3.2990322803981242
+      }
+    ],
+    "gradientGoldMinimum": {
+      "archive": 4.633551597244068,
+      "afterHours": 5.138652096599188
+    }
+  },
+  "extras": [
+    {
+      "width": 360,
+      "path": "/extras/waking-machine",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 360,
+      "path": "/extras/secret-archive",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 360,
+      "path": "/extras/seasonal-events",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 360,
+      "path": "/extras/rewards",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 360,
+      "path": "/extras/behind-the-mic",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 390,
+      "path": "/extras/waking-machine",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 390,
+      "path": "/extras/secret-archive",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 390,
+      "path": "/extras/seasonal-events",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 390,
+      "path": "/extras/rewards",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 390,
+      "path": "/extras/behind-the-mic",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 768,
+      "path": "/extras/waking-machine",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 768,
+      "path": "/extras/secret-archive",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 768,
+      "path": "/extras/seasonal-events",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 768,
+      "path": "/extras/rewards",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 768,
+      "path": "/extras/behind-the-mic",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1024,
+      "path": "/extras/waking-machine",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1024,
+      "path": "/extras/secret-archive",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1024,
+      "path": "/extras/seasonal-events",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1024,
+      "path": "/extras/rewards",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1024,
+      "path": "/extras/behind-the-mic",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1280,
+      "path": "/extras/waking-machine",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1280,
+      "path": "/extras/secret-archive",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1280,
+      "path": "/extras/seasonal-events",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1280,
+      "path": "/extras/rewards",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    },
+    {
+      "width": 1280,
+      "path": "/extras/behind-the-mic",
+      "expanded": "true",
+      "preview": 1,
+      "overflow": 0,
+      "outside": 0
+    }
+  ],
+  "production": {
+    "basePath": "/podcast-app/",
+    "playerChecks": [
+      {
+        "client": 345,
+        "miniVisible": false,
+        "play": true,
+        "scroll": 345,
+        "width": 360
+      },
+      {
+        "client": 375,
+        "miniVisible": false,
+        "play": true,
+        "scroll": 375,
+        "width": 390
+      },
+      {
+        "client": 753,
+        "miniVisible": false,
+        "play": true,
+        "scroll": 753,
+        "width": 768
+      },
+      {
+        "client": 1009,
+        "miniVisible": false,
+        "play": true,
+        "scroll": 1009,
+        "width": 1024
+      },
+      {
+        "client": 1265,
+        "miniVisible": false,
+        "play": true,
+        "scroll": 1265,
+        "width": 1280
+      }
+    ],
+    "actualPublicPlaybackSeconds": 33,
+    "reloadRestoredPaused": true,
+    "authModeReset": true,
+    "noProductionConsoleWarningsOrErrors": true,
+    "finalModule": "main-A7T3OER5.js",
+    "finalStyles": "styles-4E2LEXGO.css",
+    "emptyPlayer": {
+      "headingLevel": 1,
+      "rawTranslationTooltip": null,
+      "autoplay": false
+    },
+    "finalAssetCheck": "Angular service-worker ngsw-bypass query used for final rebuild verification without clearing origin data"
+  },
+  "limitations": [
+    "Simulated viewports; no physical devices or screen-reader session",
+    "Reduced-motion CSS inspected; preference not emulated",
+    "Rendered contrast excludes gradients/images; separate visual and semantic-color review",
+    "One development Angular NG0913 lazy LCP image warning; performance follow-up in Milestone 7"
+  ]
+}

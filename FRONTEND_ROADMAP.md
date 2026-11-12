@@ -5,7 +5,7 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 ## Working scope and approval gates
 
 - Current product phase: complete the existing responsive web application and PWA.
-- Current milestone: **Milestone 1, audit and stabilization — complete within the approved local scope**. Pages branch/README and two reproduced keyboard navigation bugs are fixed locally. The final suite passes 38 tests across seven files, the Pages production build succeeds and the required browser smoke checks pass, including no autoplay on first opening/reload. See [VERIFICATION.md](VERIFICATION.md) for evidence and release-verification limits.
+- Current milestone: **Milestone 2, responsive design, UX and visual quality — implemented and locally verified, awaiting user review**. Milestone 1 was accepted and subsequently committed/pushed under explicit authorization (`7fd1573`). Its keyboard/no-autoplay fixes and tests remain intact. Milestone 2 adds responsive/player, theme contrast, touch-target and auth/accessibility refinements; see [VERIFICATION.md](VERIFICATION.md) for current results and limits. Milestone 3 remains unstarted.
 - Keep `master` as the branch convention. Preserve the existing architecture, Gothic Noir identity, public Buzzsprout audio delivery and local library.
 - The untracked `IMPLEMENTATION_REPORT.md` existed before this pass and must be preserved.
 - No staging, commits, pushes, branch operations, deployments, dependency installations or backend/native infrastructure are authorized by this document.
@@ -15,8 +15,8 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 
 | Milestone | Current status | Dependency / exit gate |
 | --- | --- | --- |
-| 1. Current-state audit and stabilization | Complete locally: fixes, 38 tests, production build and required browser checks pass | Review recorded results; no commit, push or deployment performed |
-| 2. Responsive design and UX | Existing responsive UI; new systematic size/accessibility review pending | Approval after Milestone 1 completion |
+| 1. Current-state audit and stabilization | Accepted; committed/pushed as `7fd1573` under separate authorization | Preserve the completed fixes and regressions |
+| 2. Responsive design and UX | Implemented and locally verified: 510 layout samples, browser interactions, 40 tests and production build pass | User review; physical devices and formal assistive-technology verification remain outside the executed checks |
 | 3. Audio player reliability | Functional player exists; expanded reliability audit pending | Approved scope; preserve working web playback and library |
 | 4. Catalog and RSS improvements | Existing catalog and filters; curated overrides and automation missing | Editorial decisions and approved refresh configuration |
 | 5. Library and frontend features | Existing local library; sharing and backup features missing | Stable persistence contract and approved import/merge behavior |
@@ -46,29 +46,37 @@ Acceptance criteria:
 - Existing tests pass and the production build succeeds under `/podcast-app/`, or any failure is documented with a reproducible blocker.
 - Core browser flows are checked without rewriting working features or changing persisted library schemas.
 - The initial untracked report is preserved; only approved files are modified; nothing is staged, committed, pushed or deployed.
-- Milestone 2 remains unstarted until review and approval.
+- Milestone 2 requires review and explicit approval after this gate (subsequently received; current results are in the Milestone 2 section).
 
 Relevant checks: `npm.cmd test`; `npm.cmd run build -- --base-href=/podcast-app/`; generated `index.html`/`ngsw.json` inspection; focused browser smoke checks. Seven test files cover state, RSS, localization, category classification, filters, asset URLs and navigation focus. Five new keyboard regressions failed before their corrections and pass afterward. Two startup tests verify no autoplay for an empty or restored library. The interrupted browser pass resumed, all required functional checks were completed, and final-production keyboard/paused-player evidence was recorded. Full device, offline/install, background playback and hosted deployment verification remain assigned to later release milestones.
 
 ## Milestone 2 — responsive design and UX
 
-Status: the responsive shell, screens, theme tokens and reduced-motion rules already exist. Current comprehensive visual verification is pending.
+Status: **implemented and locally verified within the approved scope**. The user authorized this milestone after accepting Milestone 1. No Milestone 2 changes have been staged, committed, pushed or deployed.
 
 Tasks:
 
-- Review every route at approximately 360, 390, 768 and 1280 CSS pixels.
+- Review every route at 360, 390, 768, 1024 and 1280 CSS pixels (completed: 17 route views × five widths × two languages × three themes = 510 post-fix layout samples, plus an 85-sample baseline).
 - Check navigation, safe areas, scrolling, mini-player clearance and the full player.
 - Check long Greek titles, forms, validation, overlays and empty/loading/error states.
 - Review touch targets, keyboard focus, theme contrast and reduced-motion behavior.
-- Review auth form state when changing between login/register/reset: prior feedback and password visibility currently persist across the reused component. Keep prototype behavior explicit.
+- Reset auth feedback, password visibility, password values and validation state when changing between login/register/reset, retaining the entered email (implemented; two red-to-green regressions and browser checks at all five widths).
 - Refine existing components and semantic tokens while retaining Gothic Noir branding.
-- Resolve the first-visit theme policy during this milestone if a forced Noir default is desired; current behavior follows the system when no explicit choice exists.
+- Preserve the first-visit system-theme policy. Recommendation: keep system-following for now; evaluate a Noir-first experience only through a separate product decision. No default-branding behavior was changed.
+
+Delivered refinements:
+
+- Full player owns its playback controls; the mini-player remains available on other routes. More compact mobile artwork, readable options and a single-column mobile settings layout keep the main controls accessible above bottom navigation.
+- Wrapped Library tabs expose every category on narrow screens. Shared touch targets, input sizes, focus outlines, scrolling clearance and safe-area padding were refined without changing routing or storage.
+- Archive and After Hours text/hover/decorative colors and control boundaries now meet the measured contrast thresholds for the tested semantic pairs. Noir retains its Gothic palette.
+- Auth errors have valid description references and focus the first invalid field. Player ranges expose readable time/percentage values. Empty player/404 views have a primary heading and no raw translation-key tooltip.
+- Before/after screenshots, the full geometry matrix and interaction/contrast evidence are in `docs/`; executed checks and limits are recorded in VERIFICATION.
 
 Acceptance: all reviewed routes are usable at the target widths; controls remain reachable; no unintended horizontal overflow or content obstruction; keyboard/focus and theme findings have evidence and recorded outcomes.
 
 Tests: focused browser flow checks and screenshots at each representative width; targeted regression checks for changed behavior. Physical mobile-browser checks remain distinct from desktop viewport simulation.
 
-Dependency: completed, approved Milestone 1. No redesign or new feature work is implied.
+Dependency: completed, accepted Milestone 1. No redesign, new feature, dependency, backend or native work was introduced. Formal screen-reader sessions, physical safe-area/keyboard behavior and actual reduced-motion preference emulation remain unverified. One development-only Angular lazy-LCP image warning is recorded for the Milestone 7 performance review.
 
 ## Milestone 3 — audio player reliability
 
@@ -87,7 +95,7 @@ Acceptance: reproduced failures have targeted fixes and tests; transitions are p
 
 Tests: expanded audio/state regressions and real-browser playback checks; website/PWA device matrix for Safari and Chrome.
 
-Dependency: approved scope and stable Milestone 1 baseline. Do not replace the existing audio architecture without evidence requiring it.
+Dependency: separate scope approval after review of Milestone 2. Recommended next scope is the reliability work above, prioritizing hydration/event races, network errors/retry, persistence timing and interruption behavior. Preserve paused startup and the current audio architecture; do not replace it without evidence requiring it. Milestone 3 has not begun.
 
 ## Milestone 4 — catalog and RSS improvements
 

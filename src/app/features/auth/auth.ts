@@ -1,5 +1,5 @@
 import { TranslocoDirective } from '@jsverse/transloco';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -49,7 +49,9 @@ import { IconComponent } from '../../shared/icon';
               autocomplete="email"
               placeholder="you@example.com"
               [attr.aria-invalid]="form.controls.email.touched && form.controls.email.invalid"
-              aria-describedby="email-error"
+              [attr.aria-describedby]="
+                form.controls.email.touched && form.controls.email.invalid ? 'email-error' : null
+              "
             />
           </div>
           @if (form.controls.email.touched && form.controls.email.invalid) {
@@ -65,7 +67,9 @@ import { IconComponent } from '../../shared/icon';
                 [autocomplete]="mode() === 'register' ? 'new-password' : 'current-password'"
                 [placeholder]="t('auth.atLeast8Characters')"
                 [attr.aria-invalid]="form.controls.password.touched && form.controls.password.invalid"
-                aria-describedby="password-error"
+                [attr.aria-describedby]="
+                  form.controls.password.touched && form.controls.password.invalid ? 'password-error' : null
+                "
               /><button
                 type="button"
                 class="icon-button"
@@ -137,6 +141,15 @@ export class AuthComponent {
       validators: [Validators.required, Validators.minLength(8)],
     }),
   });
+  constructor() {
+    effect(() => {
+      this.mode();
+      this.message.set('');
+      this.showPassword.set(false);
+      // Retain the email between prototypes, but never carry a password or stale validation.
+      this.form.reset({ email: this.form.controls.email.value, password: '' });
+    });
+  }
   submit(): void {
     const email = this.form.controls.email;
     const password = this.form.controls.password;
@@ -144,6 +157,7 @@ export class AuthComponent {
     if (this.mode() !== 'forgot') password.markAsTouched();
     if (email.invalid || (this.mode() !== 'forgot' && password.invalid)) {
       this.message.set('auth.checkTheHighlightedFields');
+      document.getElementById(email.invalid ? 'auth-email' : 'auth-password')?.focus();
       return;
     }
     password.reset();
