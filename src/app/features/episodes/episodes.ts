@@ -1,5 +1,5 @@
 import { TranslocoDirective } from '@jsverse/transloco';
-import { Component, computed, inject, linkedSignal } from '@angular/core';
+import { Component, computed, inject, linkedSignal, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { PodcastService } from '../../core/podcast.service';
@@ -14,21 +14,28 @@ import { TranslocoService } from '@jsverse/transloco';
 @Component({
   imports: [TranslocoDirective, EpisodeCardComponent, EmptyStateComponent, IconComponent],
   template: `<ng-container *transloco="let t"
-    ><div class="page">
+    ><div class="page catalog-page">
       <div class="page-intro">
         <div>
           <p class="eyebrow accent">{{ t('episodes.everyCaseHasItsPlace') }}</p>
           <h1>{{ t('episodes.theArchive') }}<span class="accent">.</span></h1>
           <p class="intro-description">
-            {{ podcast.episodes().length }} {{ t('episodes.publicEpisodesWhereWillTheNextStoryFind') }}
+            {{ collectionEpisodes().length }} {{ t(previews() ? 'discovery.previewDescription' : 'episodes.publicEpisodesWhereWillTheNextStoryFind') }}
           </p>
         </div>
-        <span class="issue-note">OPEN THE CASE FILE<br /><strong>PUBLIC RSS ARCHIVE</strong></span>
-      </div>
-      <div class="catalog-toolbar">
-        <button type="button" class="button secondary" [disabled]="podcast.loading()" (click)="podcast.load()">
-          {{ t('episodes.refreshEpisodes') }}
+        <button type="button" class="text-button refresh-control" [disabled]="podcast.refreshing()" (click)="refresh()">
+          <dd-icon name="refresh" /> {{ t(podcast.refreshing() ? 'discovery.checking' : 'episodes.refreshEpisodes') }}
         </button>
+      </div>
+      <div class="collection-switch" role="group" [attr.aria-label]="t('discovery.listenTo')">
+        <button type="button" [class.active]="!previews()" [attr.aria-pressed]="!previews()" (click)="setFilter('view', '')">{{ t('discovery.publicListening') }}</button>
+        <button type="button" [class.active]="previews()" [attr.aria-pressed]="previews()" (click)="setFilter('view', 'plus')">{{ t('discovery.plusPreviews') }}</button>
+      </div>
+      @if (manualRefresh() && podcast.refreshStatus() !== 'idle') {
+        <p class="refresh-feedback" role="status" aria-live="polite">{{ t(refreshMessage()) }}</p>
+      }
+      <div class="discovery-panel">
+      <div class="catalog-toolbar">
         <div class="search-field">
           <dd-icon name="search" /><input
             #searchField
@@ -43,14 +50,24 @@ import { TranslocoService } from '@jsverse/transloco';
           >{{ t('episodes.season105')
           }}<select [value]="season()" (change)="setFilter('season', $any($event.target).value)">
             <option value="all">{{ t('episodes.allSeasons') }}</option>
-            @for (season of podcast.seasons(); track season) {
+            @for (season of availableSeasons(); track season) {
               <option [value]="season" [selected]="season.toString() === this.season()">
                 {{ t('episodes.season105') }} {{ season }}
               </option>
             }
             <option value="none">{{ t('episodes.noSeasonListed') }}</option>
           </select></label
-        ><label class="select-label"
+        >
+        <label class="select-label country-filter">{{ t('discovery.country') }}
+          <span class="country-select">
+            <dd-icon name="case-country" />
+            <select [value]="country()" [attr.aria-label]="t('discovery.country')" [attr.title]="t('discovery.countryHelp')" (change)="setFilter('country', $any($event.target).value)">
+              <option value="">{{ t('discovery.allCountries') }}</option>
+              @for (code of countries(); track code) { <option [value]="code">{{ countryName(code) }}</option> }
+            </select>
+          </span>
+        </label>
+        <label class="select-label"
           >{{ t('episodes.sortBy')
           }}<select [value]="sort()" (change)="setFilter('sort', $any($event.target).value)">
             <option value="newest">{{ t('episodes.newestFirst') }}</option>
@@ -70,10 +87,9 @@ import { TranslocoService } from '@jsverse/transloco';
           </select>
         </label>
       }
-      <section class="category-section" [attr.aria-label]="t('episodes.crimeCategories')">
+      <section class="category-section" [attr.aria-label]="t('episodes.chooseYourCase')" [attr.aria-description]="t('discovery.selectionHelp')">
         <div class="category-topline">
           <p class="eyebrow">{{ t('episodes.chooseYourCase') }}</p>
-          <small>{{ t('episodes.applicationTagsYouCanChooseMoreThanOne') }}</small>
         </div>
         <div class="category-chips">
           <button
@@ -83,7 +99,7 @@ import { TranslocoService } from '@jsverse/transloco';
             (click)="setFilter('category', '')"
           >
             <dd-icon name="folder" />{{ t('episodes.allCases') }}
-            <small>{{ podcast.episodes().length }}</small>
+            <small>{{ collectionEpisodes().length }}</small>
           </button>
           @for (category of categories; track category.id) {
             <button
@@ -96,8 +112,12 @@ import { TranslocoService } from '@jsverse/transloco';
               <small>{{ categoryCount(category.id) }}</small>
             </button>
           }
+          @for (tag of discoveryTags; track tag) {
+            <button type="button" class="category-chip format-chip" [class.active]="selectedTags().includes(tag)" [attr.aria-pressed]="selectedTags().includes(tag)" (click)="toggleTag(tag)"><dd-icon [name]="tag" />{{ t(tagLabel(tag)) }}</button>
+          }
         </div>
       </section>
+      </div>
       <div class="results-line">
         <span role="status" aria-live="polite" aria-atomic="true"
           >{{ filtered().length }} {{ t('episodes.episodes') }}
@@ -117,7 +137,7 @@ import { TranslocoService } from '@jsverse/transloco';
           role="status"
           [attr.aria-label]="t('episodes.loadingTheArchive')"
         ></div>
-      } @else if (podcast.error()) {
+      } @else if (podcast.error() && !podcast.catalog()) {
         <div class="notice" role="alert">
           {{ t(podcast.error()) }}
           <button class="button secondary" (click)="podcast.load()">{{ t('episodes.tryAgain') }}</button>
@@ -163,6 +183,11 @@ import { TranslocoService } from '@jsverse/transloco';
   >`,
 })
 export class EpisodesComponent {
+  readonly manualRefresh = signal(false);
+  readonly refreshMessage = computed(() => 'discovery.refresh.' + this.podcast.refreshStatus());
+  tagLabel(tag: string): string { return 'discovery.tags.' + tag; }
+  refresh(): void { this.manualRefresh.set(true); this.podcast.load(); }
+  readonly discoveryTags = ['double-slashers', 'greek-cases', 'with-guests', 'bloopers', 'specials'];
   readonly categories = CRIME_CATEGORIES;
   readonly podcast = inject(PodcastService);
   private readonly route = inject(ActivatedRoute);
@@ -174,6 +199,14 @@ export class EpisodesComponent {
     initialValue: this.route.snapshot.queryParamMap,
   });
   readonly search = computed(() => this.params().get('q') ?? '');
+  readonly previews = computed(() => this.params().get('view') === 'plus');
+  readonly collectionEpisodes = computed(() => this.podcast.episodes().filter(e => (e.contentKind === 'promotional-preview') === this.previews()));
+  readonly availableSeasons = computed(() => [...new Set(this.collectionEpisodes().map(e => e.season).filter((s): s is number => s !== null))].sort((a,b) => b-a));
+  readonly countries = computed(() => [...new Set(this.collectionEpisodes().flatMap(e => e.countries ?? []))].sort());
+  readonly country = computed(() => this.params().get('country') ?? '');
+  readonly selectedTags = computed(() => (this.params().get('tag') ?? '').split(',').filter(t => this.discoveryTags.includes(t)));
+  countryName(code: string): string { return new Intl.DisplayNames([this.transloco.getActiveLang()], {type: 'region'}).of(code) ?? code; }
+  toggleTag(tag: string): void { this.setFilter('tag', (this.selectedTags().includes(tag) ? this.selectedTags().filter(t => t !== tag) : [...this.selectedTags(), tag]).join(',')); }
   readonly season = computed(() => {
     const value = this.params().get('season') ?? 'all';
     return value === 'none' ||
@@ -199,17 +232,19 @@ export class EpisodesComponent {
         this.season() !== 'all' ||
         this.collection() ||
         this.selectedCategories().length ||
+        this.selectedTags().length || this.country() || this.previews() ||
         this.sort() !== 'newest'
       ),
   );
   readonly addPage = (n: number): number => n + 20;
   readonly filtered = computed(() => {
     const curated = this.podcast.collections().find((c) => c.id === this.collection());
-    return this.podcast
-      .episodes()
+    return this.collectionEpisodes()
       .filter(
         (e) =>
           matchesSearch(this.search(), e.title, e.description, ...(e.tags ?? [])) &&
+          this.selectedTags().every(tag => e.tags?.includes(tag)) &&
+          (!this.country() || e.countries?.includes(this.country())) &&
           (this.season() === 'all' ||
             (this.season() === 'none' ? e.season === null : String(e.season) === this.season())) &&
           (this.collection() !== 'long' || e.duration >= 3600) &&
@@ -237,7 +272,7 @@ export class EpisodesComponent {
     );
   }
   categoryCount(category: CrimeCategory): number {
-    return this.podcast.episodes().filter((episode) => episode.categories.includes(category)).length;
+    return this.collectionEpisodes().filter((episode) => episode.categories.includes(category)).length;
   }
   setFilter(key: string, value: string): void {
     this.limit.set(20);

@@ -1,0 +1,76 @@
+{
+  "examinedMetadata": 173,
+  "public": 155,
+  "previews": 18,
+  "tags": {
+    "specials": 21,
+    "double-slashers": 12,
+    "with-guests": 16,
+    "bloopers": 5,
+    "greek-cases": 2
+  },
+  "categories": {
+    "other": 95,
+    "unsolved": 22,
+    "historical": 6,
+    "robberies": 6,
+    "serial-killers": 39,
+    "cults": 6,
+    "disappearances": 7
+  },
+  "countries": {
+    "US": 77,
+    "BR": 1,
+    "UA": 1,
+    "RU": 4,
+    "GR": 22,
+    "AU": 4,
+    "MY": 2,
+    "AT": 1,
+    "IT": 4,
+    "NO": 1,
+    "CA": 1,
+    "JP": 2,
+    "GB": 7,
+    "FI": 1,
+    "IN": 2,
+    "BE": 1,
+    "IE": 2,
+    "EG": 1,
+    "DE": 1,
+    "DK": 1,
+    "FR": 4,
+    "PL": 1,
+    "ES": 2,
+    "KR": 1,
+    "CO": 1,
+    "SE": 1,
+    "TW": 1,
+    "JM": 1,
+    "ZA": 1
+  },
+  "categoryReviewRequired": 104,
+  "countryReviewRequired": 27,
+  "seasonExceptions": [
+    {
+      "guid": "Buzzsprout-19906280",
+      "rss": 4,
+      "display": 5
+    },
+    {
+      "guid": "Buzzsprout-19783556",
+      "rss": 4,
+      "display": 5
+    },
+    {
+      "guid": "Buzzsprout-17816954",
+      "rss": 3,
+      "display": 4
+    },
+    {
+      "guid": "Buzzsprout-12531825",
+      "rss": 3,
+      "display": 1
+    }
+  ]
+}

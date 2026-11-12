@@ -137,7 +137,7 @@
     "newestFirst": "Newest first",
     "oldestFirst": "Oldest first",
     "crimeCategories": "Crime categories",
-    "chooseYourCase": "CHOOSE YOUR CASE",
+    "chooseYourCase": "Case categories",
     "applicationTagsYouCanChooseMoreThanOne": "Application tags · you can choose more than one",
     "allCases": "All cases",
     "episodes": "EPISODES",
@@ -373,7 +373,32 @@
     "featured": "Selected by the hosts",
     "reviewedCategories": "Categories reviewed by the hosts",
     "suggestedCategories": "Suggested categories · awaiting host review",
-    "reviewedTags": "Tags reviewed by the hosts"
+    "reviewedTags": "Tags reviewed by the hosts",
+    "listenTo": "Browse the archive",
+    "publicListening": "Public episodes",
+    "plusPreviews": "Plus previews",
+    "checking": "Checking…",
+    "formats": "Episode format",
+    "advanced": "Advanced filters",
+    "country": "Case location",
+    "allCountries": "All countries",
+    "countryHelp": "Verified case locations only. Episodes awaiting location review are excluded when a country is selected.",
+    "selectionHelp": "Crime categories match any selection. Each format tag and the country further narrow your results.",
+    "tags": {
+      "double-slashers": "Double Slashers",
+      "greek-cases": "Greek Cases",
+      "with-guests": "With Guests",
+      "bloopers": "Bloopers",
+      "specials": "Specials"
+    },
+    "refresh": {
+      "idle": "Ready to check",
+      "checking": "Checking the published archive…",
+      "updated": "New episodes or updated details are ready.",
+      "current": "You’re up to date with the published archive.",
+      "error": "Refresh failed. Your loaded archive is safe. Try Refresh Episodes again."
+    },
+    "previewDescription": "public promotional previews. Full Plus episodes are available through Buzzsprout."
   },
   "profile": {
     "blackVelvetBloodRedAccents": "Black velvet & blood-red accents",

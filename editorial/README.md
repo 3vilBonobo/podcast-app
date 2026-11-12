@@ -33,3 +33,9 @@ Overrides for episodes outside Other can be authored directly in JSON with the s
 Editorial metadata is bundled into the application through the existing Pages build. A reviewed metadata publication requires the normal build/deploy process and an application update for existing clients. Automatic RSS refresh remains independent: new catalog entries reach open clients using Milestone 3's network-first catalog cache/refresh, without an application feature release. RSS refresh does not invent new host metadata or alter this file. An older offline catalog safely ignores editorial GUIDs it has not received yet.
 
 These tools only write local files. They do not stage, commit, push, deploy or enable schedules.
+
+## Discovery metadata extension (12 November 2026)
+
+Reviewed GUID overrides may additionally contain `countries` (unique uppercase two-letter region codes), `guests` (unique verified display names), `season` (positive integer or null) and `evidence` (unique HTTPS references). Country is case geography, not nationality. Standard discovery tags are `double-slashers`, `greek-cases`, `with-guests`, `bloopers`, `specials`. The source season remains intact and derived exceptions expose `rssSeason`.
+
+`catalog-review.csv` inventories all 173 entries, including unresolved dimensions; it is a review aid, not a second runtime classifier or an automatically applied decision source. Edit accepted metadata in `overrides.json`; use the existing Other CSV workflow for category/tag decisions. That workflow preserves country/guest/season/evidence metadata. No new fields should be inferred from names or duration. See [research coverage and season decisions](../docs/CATALOG_UX_OVERHAUL.md) and `research-summary.json` for current counts and limitations. Existing text above describing empty overrides and category/tag-only validation is historical; this extension defines the current contract.

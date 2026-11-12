@@ -1,6 +1,1869 @@
 {
   "schemaVersion": 1,
-  "episodes": {},
+  "episodes": {
+    "Buzzsprout-20056589": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19971494": {
+      "reviewed": true,
+      "countries": [
+        "BR"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19906280": {
+      "reviewed": true,
+      "countries": [
+        "UA"
+      ],
+      "season": 5,
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19783556": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "season": 5,
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19613957": {
+      "reviewed": true,
+      "countries": [
+        "RU"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19480678": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://www.buzzsprout.com/2006539/subscribe"
+      ]
+    },
+    "Buzzsprout-19446450": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19423461": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19377506": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19306538": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19272927": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19225897": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19187116": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19152393": {
+      "reviewed": true,
+      "guests": [
+        "Βάσω"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "robberies"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19115142": {
+      "reviewed": true,
+      "guests": [
+        "Σμαρ"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "AU"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-19038757": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18993862": {
+      "reviewed": true,
+      "countries": [
+        "MY"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18921519": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18883484": {
+      "reviewed": true,
+      "countries": [
+        "AT"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18805389": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18834361": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18794779": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18765065": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18725051": {
+      "reviewed": true,
+      "countries": [
+        "IT"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18692138": {
+      "reviewed": true,
+      "countries": [
+        "NO"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18654703": {
+      "reviewed": true,
+      "countries": [
+        "CA"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18639777": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18604010": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18565210": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "JP"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18523063": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18484332": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18390978": {
+      "reviewed": true,
+      "tags": [
+        "bloopers",
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18350291": {
+      "reviewed": true,
+      "guests": [
+        "Νατάσα Ιντζόγλου"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18320139": {
+      "reviewed": true,
+      "countries": [
+        "MY"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18311435": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18269875": {
+      "reviewed": true,
+      "countries": [
+        "GB"
+      ],
+      "categories": [
+        "robberies"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18237790": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18195121": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18157002": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18154225": {
+      "reviewed": true,
+      "guests": [
+        "Άννα Κουρουπού"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18117776": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18072388": {
+      "reviewed": true,
+      "countries": [
+        "FI"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-18031604": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17977077": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17971839": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17977045": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17970803": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17816954": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "season": 4,
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17610626": {
+      "reviewed": true,
+      "countries": [
+        "IN"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17380761": {
+      "reviewed": true,
+      "guests": [
+        "Terror 404"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "AU"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17353244": {
+      "reviewed": true,
+      "countries": [
+        "BE"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17304079": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17299259": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17260366": {
+      "reviewed": true,
+      "countries": [
+        "IT"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17221721": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17137995": {
+      "reviewed": true,
+      "countries": [
+        "IE"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17149789": {
+      "reviewed": true,
+      "countries": [
+        "EG"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17094774": {
+      "reviewed": true,
+      "countries": [
+        "DE"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-17050043": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16920851": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16882993": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16839380": {
+      "reviewed": true,
+      "countries": [
+        "DK"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16799412": {
+      "reviewed": true,
+      "guests": [
+        "Κάκια Γκουδίνα"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16755252": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16677904": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16672808": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "robberies",
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16630555": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16593524": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16546602": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16500447": {
+      "reviewed": true,
+      "countries": [
+        "FR"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16418883": {
+      "reviewed": true,
+      "guests": [
+        "Μέχρι Θανάτου",
+        "True Crime Αλα Ελληνικά"
+      ],
+      "tags": [
+        "specials",
+        "with-guests"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16285696": {
+      "reviewed": true,
+      "tags": [
+        "bloopers",
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16237816": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16200107": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16168759": {
+      "reviewed": true,
+      "countries": [
+        "GB"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-16045060": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15997366": {
+      "reviewed": true,
+      "guests": [
+        "CreepyΠαίδεια"
+      ],
+      "tags": [
+        "specials",
+        "with-guests"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15949272": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15917614": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15872642": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15831295": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15790568": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15292997": {
+      "reviewed": true,
+      "guests": [
+        "Βάσω"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "GB"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15257062": {
+      "reviewed": true,
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15218265": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15141745": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15094583": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-15032749": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14925945": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14897560": {
+      "reviewed": true,
+      "countries": [
+        "PL"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14832455": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14793109": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "US",
+        "AU"
+      ],
+      "categories": [
+        "robberies"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14750087": {
+      "reviewed": true,
+      "guests": [
+        "Άννα Κουρουπού"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14713852": {
+      "reviewed": true,
+      "countries": [
+        "GB"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14660219": {
+      "reviewed": true,
+      "countries": [
+        "FR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14618238": {
+      "reviewed": true,
+      "guests": [
+        "Δρ. Θεόδωρος Παπακώστας"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14536553": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14536454": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14460102": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14437120": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14399429": {
+      "reviewed": true,
+      "countries": [
+        "GB"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14351821": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "ES",
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14305302": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14233963": {
+      "reviewed": true,
+      "tags": [
+        "bloopers",
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14172018": {
+      "reviewed": true,
+      "guests": [
+        "Αντώνης Κωνσταντάρας"
+      ],
+      "tags": [
+        "specials",
+        "with-guests"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14090634": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14086503": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14050153": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-14009604": {
+      "reviewed": true,
+      "countries": [
+        "KR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13664940": {
+      "reviewed": true,
+      "countries": [
+        "IT"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13909265": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13879133": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13836262": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13673303": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13647008": {
+      "reviewed": true,
+      "countries": [
+        "IE"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13643882": {
+      "reviewed": true,
+      "countries": [
+        "RU"
+      ],
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13202034": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13158832": {
+      "reviewed": true,
+      "countries": [
+        "CO"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13117175": {
+      "reviewed": true,
+      "countries": [
+        "SE"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-13030944": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12988660": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12945305": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "robberies"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12903096": {
+      "reviewed": true,
+      "countries": [
+        "FR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12859364": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12814365": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12768544": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12719378": {
+      "reviewed": true,
+      "countries": [
+        "FR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12589652": {
+      "reviewed": true,
+      "guests": [
+        "Crimegroupers"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12531825": {
+      "reviewed": true,
+      "season": 1,
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12485548": {
+      "reviewed": true,
+      "countries": [
+        "JP"
+      ],
+      "categories": [
+        "serial-killers",
+        "cults"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12439475": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12393322": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12344730": {
+      "reviewed": true,
+      "categories": [
+        "unsolved"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12296211": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12251608": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12202651": {
+      "reviewed": true,
+      "countries": [
+        "GB"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12177862": {
+      "reviewed": true,
+      "guests": [
+        "Mirto"
+      ],
+      "tags": [
+        "bloopers",
+        "specials",
+        "with-guests"
+      ],
+      "countries": [
+        "RU"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12154598": {
+      "reviewed": true,
+      "guests": [
+        "Mirto"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "RU"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12100817": {
+      "reviewed": true,
+      "countries": [
+        "ES"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12061744": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-12015562": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11905155": {
+      "reviewed": true,
+      "tags": [
+        "bloopers",
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11864584": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "TW"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11825857": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11774870": {
+      "reviewed": true,
+      "guests": [
+        "Επιεικείς Έφηβοι"
+      ],
+      "tags": [
+        "with-guests"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11743316": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11697458": {
+      "reviewed": true,
+      "countries": [
+        "IT"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11656303": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11602646": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11565592": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11522938": {
+      "reviewed": true,
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11479462": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11436196": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "IN",
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11393970": {
+      "reviewed": true,
+      "countries": [
+        "JM"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11353597": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11309888": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11267809": {
+      "reviewed": true,
+      "tags": [
+        "greek-cases"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11222337": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11188961": {
+      "reviewed": true,
+      "countries": [
+        "AU"
+      ],
+      "categories": [
+        "unsolved",
+        "disappearances"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11114778": {
+      "reviewed": true,
+      "countries": [
+        "GB"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11107986": {
+      "reviewed": true,
+      "tags": [
+        "greek-cases"
+      ],
+      "countries": [
+        "GR"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11068028": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-11030815": {
+      "reviewed": true,
+      "tags": [
+        "double-slashers"
+      ],
+      "countries": [
+        "ZA"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-10985630": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "cults"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-10939178": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-10906179": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-10860761": {
+      "reviewed": true,
+      "countries": [
+        "US"
+      ],
+      "categories": [
+        "serial-killers"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    },
+    "Buzzsprout-10852235": {
+      "reviewed": true,
+      "tags": [
+        "specials"
+      ],
+      "categories": [
+        "other"
+      ],
+      "evidence": [
+        "https://feeds.buzzsprout.com/2006539.rss"
+      ]
+    }
+  },
   "collections": [],
   "featured": []
 }

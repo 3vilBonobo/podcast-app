@@ -385,3 +385,13 @@ Recommended next steps: review the local implementation and backup contract, the
 - Verification: targeted catalog-refresh, discovery UI and localization tests cover startup, manual invocation, loading-state disabling, repeated refresh, invalid/503 preservation and translations. See terminal result for this run. The new button's rendered browser interaction remains UNVERIFIED; no full suite or production build was repeated for this investigation. Prior M5 full-suite/build results above predate this small addition.
 
 Targeted result: PASS — 11 tests across 3 files (catalog refresh, discovery UI, localization), exit 0.
+
+## Catalog and creative UX follow-up — 12 November 2026
+
+Final full unit suite: 155 tests across 20 files PASS. Production build PASS (/podcast-app/, main-P7F52DFI.js). Browser verified final production module and focused interactions; five requested Episodes viewport settings and desktop/mobile shared-route overflow checks passed. Shared theme controls and Greek/English switching worked. No user library reset, schema modification or Git publication. See [detailed evidence and limitations](docs/CATALOG_UX_OVERHAUL.md). The larger editorial research task remains explicitly incomplete: 104 category decisions retain suggested/unreviewed status and 27 entries lack reviewed countries. No physical-device or exhaustive cross-theme/route certification is claimed.
+
+### Unified category chips follow-up — 12 November 2026
+
+User-requested revision supersedes the earlier separate format row and Advanced disclosure: all five format/discovery tags now live inside Case Categories, each with an original SVG icon and blood-ink path. The country dropdown moved into the main toolbar between Season and Sort. Category OR / format AND behavior and URL state remain unchanged. On narrow screens Season/Country share a row and Sort spans the next row; icons remain visible in the scrolling chip group. Refinement CSS now resides in the existing watched src/styles.css entry, avoiding reliance on a newly added Angular stylesheet entry.
+
+PASS: 14 focused discovery/filter tests (2 files), production build, desktop/mobile browser interaction, five SVG blood paths, correct Greek/English field order and no document overflow at desktop 1280 and mobile 390 viewport settings. Double Slashers + Greece yielded 4 results; adding With Guests yielded the expected empty result and Clear Filters restored the list. Captured warning/error logs were empty. Existing 155-test full-suite result predates this small layout revision; it was not redundantly rerun. Screenshots: docs/screenshots/catalog-overhaul/unified-categories-desktop.png and unified-categories-mobile.png. No stage, commit, push or deployment.

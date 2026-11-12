@@ -40,7 +40,7 @@ export function validateEditorial(config, catalog) {
     if (
       !object(override) ||
       override.reviewed !== true ||
-      !keys(override, ['reviewed', 'categories', 'tags'])
+      !keys(override, ['reviewed', 'categories', 'tags', 'countries', 'guests', 'season', 'evidence'])
     )
       fail(`episode ${id} must be reviewed and may only override categories/tags`);
     if (
@@ -51,6 +51,10 @@ export function validateEditorial(config, catalog) {
     )
       fail(`categories for ${id}`);
     if (override.tags !== undefined && !uniqueStrings(override.tags)) fail(`tags for ${id}`);
+    if (override.countries !== undefined && (!uniqueStrings(override.countries) || !override.countries.every(c => /^[A-Z]{2}$/.test(c)))) fail(`countries for ${id}`);
+    if (override.guests !== undefined && !uniqueStrings(override.guests)) fail(`guests for ${id}`);
+    if (override.season !== undefined && override.season !== null && (!Number.isInteger(override.season) || override.season < 1 || override.season > 100)) fail(`season for ${id}`);
+    if (override.evidence !== undefined && (!uniqueStrings(override.evidence) || !override.evidence.every(s => { try { return new URL(s).protocol === 'https:'; } catch { return false; } }))) fail(`evidence for ${id}`);
   }
   const collectionIds = new Set();
   for (const collection of config.collections) {
@@ -81,9 +85,9 @@ export function applyEditorial(catalog, config) {
     ...catalog,
     episodes: catalog.episodes.map((episode) => {
       // These fields belong exclusively to the reviewed sidecar, never raw catalog input.
-      const { tags, suggestedCategories, ...source } = episode;
+      const { tags, suggestedCategories, countries, guests, rssSeason, ...source } = episode;
       const override = Object.hasOwn(config.episodes, episode.id) ? config.episodes[episode.id] : undefined;
-      if (!override) return tags === undefined && suggestedCategories === undefined ? episode : source;
+      if (!override) return [tags, suggestedCategories, countries, guests, rssSeason].every(v => v === undefined) ? episode : source;
       return {
         ...source,
         ...(override.categories
@@ -94,6 +98,9 @@ export function applyEditorial(catalog, config) {
             }
           : {}),
         ...(override.tags ? { tags: [...override.tags] } : {}),
+        ...(override.countries ? { countries: [...override.countries] } : {}),
+        ...(override.guests ? { guests: [...override.guests] } : {}),
+        ...(override.season !== undefined ? { rssSeason: episode.season, season: override.season } : {}),
       };
     }),
   };

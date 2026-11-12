@@ -13,6 +13,14 @@ import {
 const catalog = JSON.parse(readFileSync('public/data/catalog.json', 'utf8'));
 const config = () => ({ schemaVersion: 1, episodes: {}, collections: [], featured: [] });
 describe('host review CSV', () => {
+  it('preserves discovery evidence while allowing a CSV category override to be withdrawn', () => {
+    const rows=reviewRows(catalog,config()).slice(0,1),guid=rows[0].guid;
+    const existing={...config(),episodes:{[guid]:{reviewed:true,categories:['historical'],countries:['US'],season:2,evidence:['https://example.com/evidence']}}};
+    rows[0]={...rows[0],reviewed:'yes',categories:'',tags:'specials',featured:'no'};
+    const result=applyReview(catalog,existing,rows).episodes[guid];
+    expect(result).toMatchObject({countries:['US'],season:2,evidence:['https://example.com/evidence'],tags:['specials']});
+    expect(result.categories).toBeUndefined();
+  });
   it('round-trips Greek, quoted commas and multiline notes in spreadsheet CSV', () => {
     const rows = reviewRows(catalog, config()).slice(0, 1);
     rows[0].notes = 'Ελένη, "έλεγχος"\nδεύτερη γραμμή';

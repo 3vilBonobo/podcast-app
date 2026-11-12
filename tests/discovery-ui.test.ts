@@ -60,6 +60,7 @@ it('returns keyboard focus to search when clearing an empty result removes the a
           seasons: signal([]),
           collections: signal([]),
           loading: signal(false),
+          refreshing: signal(false), refreshStatus: signal('idle'),
           error: signal(''),
           catalog: signal(null),
           load: refresh,
@@ -77,15 +78,21 @@ it('returns keyboard focus to search when clearing an empty result removes the a
     fixture.detectChanges();
     await fixture.whenStable();
     fixture.detectChanges();
+    expect(fixture.nativeElement.querySelectorAll('.category-section .format-chip')).toHaveLength(5);
+    expect(fixture.nativeElement.querySelectorAll('.format-chip dd-icon')).toHaveLength(5);
+    expect(fixture.nativeElement.querySelector('.discovery-formats')).toBeNull();
+    expect(fixture.nativeElement.querySelector('.advanced-filters')).toBeNull();
+    expect(Array.from(fixture.nativeElement.querySelectorAll('.catalog-toolbar select')).map((select: any) => select.labels[0].firstChild.textContent.trim()))
+      .toEqual(['Season', 'Case location', 'Sort by']);
     const refreshButton = Array.from(fixture.nativeElement.querySelectorAll('button'))
       .find((button: any) => button.textContent.includes('Refresh Episodes')) as HTMLButtonElement;
     expect(refreshButton).toBeTruthy();
     refreshButton.click();
     expect(refresh).toHaveBeenCalledOnce();
-    TestBed.inject(PodcastService).loading.set(true);
+    TestBed.inject(PodcastService).refreshing.set(true);
     fixture.detectChanges();
     expect(refreshButton.disabled).toBe(true);
-    TestBed.inject(PodcastService).loading.set(false);
+    TestBed.inject(PodcastService).refreshing.set(false);
     fixture.detectChanges();
     const buttons = fixture.nativeElement.querySelectorAll('.load-more button');
     expect(buttons).toHaveLength(1);

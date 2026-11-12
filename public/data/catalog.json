@@ -1,12 +1,34 @@
 {
   "schemaVersion": 1,
   "source": "https://feeds.buzzsprout.com/2006539.rss",
-  "fetchedAt": "2026-10-30T14:31:01.414Z",
+  "fetchedAt": "2026-11-12T16:07:08.535Z",
   "fixture": false,
   "title": "Dumb and Dahmer Podcast",
   "description": "Ελάτε για τσάι με την Έλενα και την Ειρηνέλλα. Μαζί θα ξεδιπλώσουμε τις πιο σκοτεινές πτυχές της ανθρωπότητας αλλά και της ψυχής μας. Συζητάμε για αληθινά εγκλήματα, με έναν τόνο αισιοδοξίας (ή μήπως όχι;). Για περάστε, για περάστε και μη φοβάστε...έχουμε κουλουράκια!    \n\nInstagram: https://www.instagram.com/dumbanddahmer_podcast\nEmail: dumbanddahmerpod@gmail.com\nWebsite: https://dumbanddahmer.buzzsprout.com",
   "artwork": "https://storage.buzzsprout.com/69xolxab4x2m420v12xr2l1csdrf?.jpg",
   "episodes": [
+    {
+      "id": "Buzzsprout-20056589",
+      "title": "Υπόθεση OneTaste: Η Σκοτεινή Πλευρά του Οργασμού",
+      "description": "Ο οργασμός είναι δικαίωμα. Αλλά μήπως τελικά θέλει και… δόσεις;\nΣτο νέο επεισόδιο του Dumb and Dahmer, η Ειρηνέλλα μάς ξεναγεί στον υπέροχο κόσμο της OneTaste Incorporated, εκεί όπου η γυναικεία ενδυνάμωση συναντά τον οργασμικό διαλογισμό, τα πανάκριβα σεμινάρια και το επιχειρηματικό δαιμόνιο!\nΜια εταιρεία που υποσχόταν πνευματική αφύπνιση μέσα από 15 λεπτά διέγερσης της κλειτορίδας, αλλά πίσω από τις υποσχέσεις κρύβονταν χειραγώγηση, εκμετάλλευση και καταναγκασμός.\nΓιατί τελικά, όταν κάποιος σου υπόσχεται ότι θα σου αλλάξει τη ζωή με έναν οργασμό, καλό είναι να διαβάζεις πρώτα τα ψιλά γράμματα...\n\nSupport the show\nΣτηρίξτε αυτό το podcast: Dumb and Dahmer Plus , Buy me a coffee\nInstagram\nYouTube\nWebsite\nEmail: dumbanddahmerpod@gmail.com",
+      "publishedAt": "2026-11-04T03:00:00.000Z",
+      "duration": 6788,
+      "episodeNumber": 2,
+      "season": 5,
+      "artwork": "https://storage.buzzsprout.com/7fye9zvksvgbeg5fnjq6lk6g5861?.jpg",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/20056589-onetaste.mp3?token=wBzdCkQRHaHyS1gPERHgmevj",
+      "audioType": "audio/mpeg",
+      "explicit": true,
+      "episodeType": "full",
+      "contentKind": "public-episode",
+      "categories": [
+        "other"
+      ],
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-e847bc61f170973f.jpg"
+    },
     {
       "id": "Buzzsprout-19971494",
       "title": "Lead Masks Case: Χάπια, Μάσκες και Φώτα στον Ουρανό",
@@ -16,18 +38,18 @@
       "episodeNumber": 1,
       "season": 5,
       "artwork": "https://storage.buzzsprout.com/5ypo1ooz3d5xyf0w4ne14v0yqlmy?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19971494-lead-masks-case.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19971494-lead-masks-case.mp3?token=Kn9zw5igMngxiLe6a9hgaVob",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-090d55b42ca0c0c2.jpg",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-090d55b42ca0c0c2.jpg"
     },
     {
       "id": "Buzzsprout-19906280",
@@ -38,18 +60,18 @@
       "episodeNumber": 51,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/rq0vxostasfgtuilnizru8v1nvb9?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19906280-chernobyl-1986.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19906280-chernobyl-1986.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-3f3042afce141faf.jpg",
       "categories": [
         "historical"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-3f3042afce141faf.jpg"
     },
     {
       "id": "Buzzsprout-19783556",
@@ -60,18 +82,18 @@
       "episodeNumber": 50,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/r496ya516qf7nbvkk1raa85kemmk?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19783556-sexual-healing-family-trauma-marvin-gaye.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19783556-sexual-healing-family-trauma-marvin-gaye.mp3?token=Kn9zw5igMngxiLe6a9hgaVob",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-c7619203e9073a94.jpg",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-c7619203e9073a94.jpg"
     },
     {
       "id": "Buzzsprout-19613957",
@@ -82,19 +104,19 @@
       "episodeNumber": 48,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/8l00wo74lv7r8v5v38qp0he7bl55?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19613957-grigori-rasputin.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19613957-grigori-rasputin.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-625ccc3d3937f4bc.jpg",
       "categories": [
         "historical",
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-625ccc3d3937f4bc.jpg"
     },
     {
       "id": "Buzzsprout-19480678",
@@ -105,18 +127,18 @@
       "episodeNumber": 46,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/ke51hrlm23uxm4jfe5hzkv0w0j6g?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19480678-peter-porco.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19480678-peter-porco.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "https://www.buzzsprout.com/2006539/subscribe",
-      "access": "public",
-      "localArtwork": "/images/episode-82d05ef3d6556f61.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "https://www.buzzsprout.com/2006539/subscribe",
+      "access": "public",
+      "localArtwork": "/images/episode-82d05ef3d6556f61.jpg"
     },
     {
       "id": "Buzzsprout-19446450",
@@ -127,18 +149,18 @@
       "episodeNumber": 45,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/wgjdifllsvlfez8m670aze3muul4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19446450-season-finale.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19446450-season-finale.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-904d87f05422395f.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-904d87f05422395f.jpg"
     },
     {
       "id": "Buzzsprout-19423461",
@@ -149,18 +171,18 @@
       "episodeNumber": 44,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/ldhebfh9ek46l4o332xtljpose7h?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19423461-double-slasher.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19423461-double-slasher.mp3?token=Kn9zw5igMngxiLe6a9hgaVob",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-bee0588c7875fa86.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-bee0588c7875fa86.jpg"
     },
     {
       "id": "Buzzsprout-19377506",
@@ -171,18 +193,18 @@
       "episodeNumber": 43,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/sxn42wthrc0kgb1yh1mzs2hb49do?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19377506-anna-genovese-drag-queens.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19377506-anna-genovese-drag-queens.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-b9ecbd0a62fc2afc.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-b9ecbd0a62fc2afc.jpg"
     },
     {
       "id": "Buzzsprout-19306538",
@@ -193,19 +215,19 @@
       "episodeNumber": 42,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/xxecnpyj6scuiw575w6mcvoysoi6?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19306538-wonderland-murders.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19306538-wonderland-murders.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-d05ed2507dc2a208.jpg",
       "categories": [
         "robberies",
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-d05ed2507dc2a208.jpg"
     },
     {
       "id": "Buzzsprout-19272927",
@@ -216,18 +238,18 @@
       "episodeNumber": 40,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/fsh0uc9171xjwufiuu80m7nfxj1c?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19272927-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19272927-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-8d78c5f0d3f21e62.jpg",
       "categories": [
         "historical"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-8d78c5f0d3f21e62.jpg"
     },
     {
       "id": "Buzzsprout-19225897",
@@ -238,18 +260,18 @@
       "episodeNumber": 39,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/wfvknlirere3pow79uvpn4kacsik?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19225897-ruth-snyder-love-murder-life-insurance.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19225897-ruth-snyder-love-murder-life-insurance.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-7b3cdbd4675eca4b.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-7b3cdbd4675eca4b.jpg"
     },
     {
       "id": "Buzzsprout-19187116",
@@ -260,18 +282,18 @@
       "episodeNumber": 38,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/7ovtdi1yula9ibpyqi99io7r3e9u?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19187116-amanda-riley-scamanda-pray-like-donate.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19187116-amanda-riley-scamanda-pray-like-donate.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-aa0996a5a1ad455c.jpg",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-aa0996a5a1ad455c.jpg"
     },
     {
       "id": "Buzzsprout-19152393",
@@ -282,18 +304,18 @@
       "episodeNumber": 35,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/urjmnuawzk0elsnvupoa3od0hvkx?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19152393-brian-wells-pizza-bomber-special-thanks-to-john-celestus.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19152393-brian-wells-pizza-bomber-special-thanks-to-john-celestus.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-b67b31d64693bf1c.jpg",
       "categories": [
         "robberies"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-b67b31d64693bf1c.jpg"
     },
     {
       "id": "Buzzsprout-19152414",
@@ -304,18 +326,18 @@
       "episodeNumber": 37,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/8iv5f8f9io0g0my18dp6pigdomin?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19152414-chat.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19152414-chat.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-3bf207369f355e6d.jpg",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-3bf207369f355e6d.jpg"
     },
     {
       "id": "Buzzsprout-19115142",
@@ -326,18 +348,18 @@
       "episodeNumber": 34,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/ts6b3femmlo0n5hol7czzk4pqz02?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19115142-len-lawson-comic-feat.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19115142-len-lawson-comic-feat.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-93d76ef237466e50.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-93d76ef237466e50.jpg"
     },
     {
       "id": "Buzzsprout-19038757",
@@ -348,18 +370,18 @@
       "episodeNumber": 33,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/f1spe8po1c8lx8idwlfc1tzqus2z?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19038757-joe-metheny-burger-story.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/19038757-joe-metheny-burger-story.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-fec1dee49ffa4dd2.jpg",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-fec1dee49ffa4dd2.jpg"
     },
     {
       "id": "Buzzsprout-18993862",
@@ -370,18 +392,18 @@
       "episodeNumber": 32,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/rp9x7kslxj0893qrnozdhovj8om4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18993862-mona-fandey-pop-vibes-deadly-spells.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18993862-mona-fandey-pop-vibes-deadly-spells.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-56c934a40e6f784f.jpg",
       "categories": [
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-56c934a40e6f784f.jpg"
     },
     {
       "id": "Buzzsprout-18921519",
@@ -392,18 +414,18 @@
       "episodeNumber": 30,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/5lu49ua5yzbndr93ept8xga213iy?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18921519-shanna-liz-golyar-catfish.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18921519-shanna-liz-golyar-catfish.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-a28c2493d946b7dd.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-a28c2493d946b7dd.jpg"
     },
     {
       "id": "Buzzsprout-18883484",
@@ -414,18 +436,18 @@
       "episodeNumber": 29,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/aiaupt6xaekdghxwl5f1cs8betof?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18883484-josef-fritzl-24.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18883484-josef-fritzl-24.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-5c80330635174a83.jpg",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-5c80330635174a83.jpg"
     },
     {
       "id": "Buzzsprout-18805389",
@@ -436,18 +458,18 @@
       "episodeNumber": 27,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/mf2012p8qv67ieedwj1un11bps72?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18805389-jacob-stockdale-reality-show.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18805389-jacob-stockdale-reality-show.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-280745a8c3553804.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-280745a8c3553804.jpg"
     },
     {
       "id": "Buzzsprout-18834361",
@@ -458,18 +480,18 @@
       "episodeNumber": 28,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/9j736mqc4y2bbauhupvinlj0f831?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18834361-mary-vincent.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18834361-mary-vincent.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-da6d22a105f8634c.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-da6d22a105f8634c.jpg"
     },
     {
       "id": "Buzzsprout-18794779",
@@ -480,19 +502,19 @@
       "episodeNumber": 27,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/2rfqrnhdhcwdunvxommhlg16ch9d?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18794779-prime-time.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18794779-prime-time.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-9c56bb9d3c26bfed.jpg",
       "categories": [
         "unsolved",
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-9c56bb9d3c26bfed.jpg"
     },
     {
       "id": "Buzzsprout-18765065",
@@ -503,18 +525,18 @@
       "episodeNumber": 26,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/s33haejpdnzjha2mhsw9cd9v7t35?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18765065-brian-kocis-cobra.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18765065-brian-kocis-cobra.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-44bf337d15031b9b.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-44bf337d15031b9b.jpg"
     },
     {
       "id": "Buzzsprout-18725051",
@@ -525,18 +547,18 @@
       "episodeNumber": 25,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/0cuseyh2o7jw4lks9vuwpbuwpddn?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18725051-giulia-tofana.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18725051-giulia-tofana.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
-      "localArtwork": "/images/episode-c541d881515ee64f.jpg",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/episode-c541d881515ee64f.jpg"
     },
     {
       "id": "Buzzsprout-18692138",
@@ -547,17 +569,17 @@
       "episodeNumber": 24,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/k95pdfq7deqcs1d6ag63frjgnwep?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18692138-jennifer-fairgate.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18692138-jennifer-fairgate.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18654703",
@@ -568,17 +590,17 @@
       "episodeNumber": 23,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/jhnggze7kcb5gk4yc2jtwm83ygqv?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18654703-cindy-james.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18654703-cindy-james.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18639777",
@@ -589,17 +611,17 @@
       "episodeNumber": 23,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/6vm4lxph8t7f0zwn3rxaizq70uhl?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18639777-clara-harris.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18639777-clara-harris.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18604010",
@@ -610,17 +632,17 @@
       "episodeNumber": 22,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/594913nok6k1bk8pgh1hsakvsize?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18604010-walburga-oesterreich.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18604010-walburga-oesterreich.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18565210",
@@ -631,17 +653,17 @@
       "episodeNumber": 21,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/xhck38bazfcke26qs31jcuxdnovl?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18565210-double-slasher-setagaya-murders-mamoru-takuma.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18565210-double-slasher-setagaya-murders-mamoru-takuma.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18523063",
@@ -652,17 +674,17 @@
       "episodeNumber": 20,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/6pdfx4feo03yx5h6lj5xh8xuura0?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18523063-john-leonard-orr-firestarter.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18523063-john-leonard-orr-firestarter.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18484332",
@@ -673,18 +695,18 @@
       "episodeNumber": 19,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/0paziyvx5gfof404fpj6dyx7nuc8?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18484332-gloria-ramirez-the-toxic-lady-incident.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18484332-gloria-ramirez-the-toxic-lady-incident.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers",
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18390978",
@@ -695,17 +717,17 @@
       "episodeNumber": 17,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/6cty5rc1xn4jiwy0gcyv161od26d?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18390978-holiday-special-the-bloopers-edition.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18390978-holiday-special-the-bloopers-edition.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18350291",
@@ -716,17 +738,17 @@
       "episodeNumber": 16,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/q12k61usaceib0j7zwf9x8om39d4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18350291-ft.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18350291-ft.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18320139",
@@ -737,17 +759,17 @@
       "episodeNumber": 15,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/lqefhnxjxhbbefb6tjgwk1arfvy2?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18320139-kim-jong-nam.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18320139-kim-jong-nam.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18311435",
@@ -758,17 +780,17 @@
       "episodeNumber": 15,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/1il3xbiqtra4nu5x11qfg8i7kpaj?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18311435-robert-wone.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18311435-robert-wone.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18269875",
@@ -779,18 +801,18 @@
       "episodeNumber": 14,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/nur33h1hrvod6wnqu8rowuiu1px6?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18269875-hatton-garden-heist.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18269875-hatton-garden-heist.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "robberies",
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18237790",
@@ -801,17 +823,17 @@
       "episodeNumber": 13,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/g1rgkqfq15g7on38v31n9smyehqx?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18237790-lurleen-wallace.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18237790-lurleen-wallace.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18195121",
@@ -822,17 +844,17 @@
       "episodeNumber": 12,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/cd3trgchcxmmvbn97lvwqjqxd35e?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18195121-arthur-shawcross.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18195121-arthur-shawcross.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18157002",
@@ -843,17 +865,17 @@
       "episodeNumber": 11,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/tq1neplw8kaxey5xzolugd1tpuvj?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18157002-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18157002-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18154225",
@@ -864,17 +886,17 @@
       "episodeNumber": 9,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/ohekuit5ox14pe47xx3k7evi11jb?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18154225-nannie-doss-mini-guest.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18154225-nannie-doss-mini-guest.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18117776",
@@ -885,17 +907,17 @@
       "episodeNumber": 8,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/h84weaqxksnswmto6it0d6vjazoa?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18117776-blood-for-oil-the-osage-story.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18117776-blood-for-oil-the-osage-story.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18072388",
@@ -906,17 +928,17 @@
       "episodeNumber": 7,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/fm7fl16uaj9k99fm0t305o1rrb8e?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18072388-tattarisuo-stranger-things.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18072388-tattarisuo-stranger-things.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-18031604",
@@ -927,18 +949,18 @@
       "episodeNumber": 6,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/8etsuvq7bfenvml39i13n99qo8wf?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18031604-elisa-lam-cecil-hotel-check-in.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/18031604-elisa-lam-cecil-hotel-check-in.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers",
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17977077",
@@ -949,17 +971,17 @@
       "episodeNumber": 5,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/9lgnkx5gg48b3hynh9bpj730bwd7?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17977077-clementine-barnabet-voodoo.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17977077-clementine-barnabet-voodoo.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17971839",
@@ -970,17 +992,17 @@
       "episodeNumber": 2,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/q0xudhhxzwpqooc7ussz659538ho?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17971839-confess-season-4.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17971839-confess-season-4.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17977045",
@@ -991,17 +1013,17 @@
       "episodeNumber": 4,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/zhhk9u7yu46j5nep878d9qeydvvy?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17977045-delphine-lalaurie.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17977045-delphine-lalaurie.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17970803",
@@ -1012,17 +1034,17 @@
       "episodeNumber": 1,
       "season": 4,
       "artwork": "https://storage.buzzsprout.com/hiogcipjyo9jcplkhgmj0dla7911?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17970803-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17970803-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17816954",
@@ -1033,17 +1055,17 @@
       "episodeNumber": 46,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/rmj3gw39geme5747odq8os869vvl?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17816954-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17816954-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17610626",
@@ -1054,17 +1076,17 @@
       "episodeNumber": 44,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/qfz16m5iafe71ducsa4h6rbm8gym?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17610626-bhopal-tragedy.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17610626-bhopal-tragedy.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17460118",
@@ -1075,17 +1097,17 @@
       "episodeNumber": 43,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/3tk3ukvo1vou80ncc7swcwd56dgm?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17460118-nicholas-alahverdian.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17460118-nicholas-alahverdian.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17380761",
@@ -1096,17 +1118,17 @@
       "episodeNumber": 41,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/3rd78ud33op9adwy0xogac7dwsny?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17380761-snowtown-murders-season-finale-ft-terror-404.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17380761-snowtown-murders-season-finale-ft-terror-404.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17353244",
@@ -1117,17 +1139,17 @@
       "episodeNumber": 40,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/92rgmamf8icn51xo3mgwj2bakcri?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17353244-andras-pandy.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17353244-andras-pandy.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17304079",
@@ -1138,17 +1160,17 @@
       "episodeNumber": 39,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/ryw9ghhizbwn85tem994z9fleg0h?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17304079-frank-sinatra-jr.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17304079-frank-sinatra-jr.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17299259",
@@ -1159,17 +1181,17 @@
       "episodeNumber": 37,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/ob7ao972le26v36aqka668snovzw?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17299259-lisa-montgomery.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17299259-lisa-montgomery.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17260366",
@@ -1180,17 +1202,17 @@
       "episodeNumber": 36,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/65pbu82gm0ogbeu66nu23s6ojsyw?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17260366-biasio.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17260366-biasio.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17221721",
@@ -1201,17 +1223,17 @@
       "episodeNumber": 35,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/c3codx5wq0ocnkn7qsvfue3xxlnx?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17221721-mark-redwine.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17221721-mark-redwine.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17137995",
@@ -1222,17 +1244,17 @@
       "episodeNumber": 34,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/xtl5mde5u31z2gxrq0obw7zs4nxb?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17137995-magdalene-laundries.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17137995-magdalene-laundries.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17149789",
@@ -1243,17 +1265,17 @@
       "episodeNumber": 36,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/tegwqo1s5nhtxbsn4kvm4q7qdh8v?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17149789-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17149789-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": false,
       "episodeType": "full",
       "contentKind": "promotional-preview",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17094774",
@@ -1264,17 +1286,17 @@
       "episodeNumber": 33,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/7xrhsjanxa5sibwhgoyx90z47m3m?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17094774-joachim-kroll.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17094774-joachim-kroll.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-17050043",
@@ -1285,17 +1307,17 @@
       "episodeNumber": 32,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/i8eishfcf5myblws7082dx8wagct?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17050043-bernie-tiede.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/17050043-bernie-tiede.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16920851",
@@ -1306,17 +1328,17 @@
       "episodeNumber": 30,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/vp97g7untl7fp5ldxcv6htt5ue97?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16920851-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16920851-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16882993",
@@ -1327,17 +1349,17 @@
       "episodeNumber": 28,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/kq4hhsfl32edh8nfojm6tkg9z7g9?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16882993-double-slasher-challenger-columbia-disasters-special-thanks-mirto.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16882993-double-slasher-challenger-columbia-disasters-special-thanks-mirto.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16839380",
@@ -1348,17 +1370,17 @@
       "episodeNumber": 27,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/qjza1q47b5bpjg46yhrrskfypio5?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16839380-christina-aistrup-hansen.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16839380-christina-aistrup-hansen.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16799412",
@@ -1369,17 +1391,17 @@
       "episodeNumber": 26,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/u68elyx02su07lm73d96cyzw22ku?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16799412-william-desmond-taylor-hollywood-ft.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16799412-william-desmond-taylor-hollywood-ft.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16755252",
@@ -1390,17 +1412,17 @@
       "episodeNumber": 24,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/4phiyp599o24c99cag19u1e6h3c4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16755252-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16755252-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16677904",
@@ -1411,17 +1433,17 @@
       "episodeNumber": 23,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/75k5iosh58xvge9dsqb9is3rmvx9?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16677904-scott-amedure.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16677904-scott-amedure.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16672808",
@@ -1432,17 +1454,17 @@
       "episodeNumber": 22,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/u01w688umkxki4wocex9ohnptvju?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16672808-isabella-stewart-gardner.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16672808-isabella-stewart-gardner.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "robberies"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16630555",
@@ -1453,17 +1475,17 @@
       "episodeNumber": 21,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/p4gftxf0t685muhcralhv5xzynzi?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16630555-solarwinds-breach.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16630555-solarwinds-breach.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16593524",
@@ -1474,17 +1496,17 @@
       "episodeNumber": 19,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/c36ctmldc674vcyqn917bd7s08zo?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16593524-valentine-s-special-double-slasher-jeffrey-james-godfrey-penelope-jackson.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16593524-valentine-s-special-double-slasher-jeffrey-james-godfrey-penelope-jackson.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16546602",
@@ -1495,17 +1517,17 @@
       "episodeNumber": 18,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/f6m9or6k6ledqcyo8xk5wiqaib73?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16546602-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16546602-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16500447",
@@ -1516,17 +1538,17 @@
       "episodeNumber": 17,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/iw8ksubsbe6uuhowk2uromh03y15?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16500447-marcel-petiot.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16500447-marcel-petiot.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16418883",
@@ -1537,17 +1559,17 @@
       "episodeNumber": 16,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/znob33f5mj4ogdvoya3eqh7h0oin?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16418883-true-crime-2025-triple-threat-feat-true-crime.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16418883-true-crime-2025-triple-threat-feat-true-crime.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16285696",
@@ -1558,17 +1580,17 @@
       "episodeNumber": 15,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/tb5vouwq2lpi880s6rgv0v97qsyi?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16285696-the-xmas-episode-bloopers-creepy.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16285696-the-xmas-episode-bloopers-creepy.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16237816",
@@ -1579,17 +1601,17 @@
       "episodeNumber": 13,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/n04qlnan6ve0n6eikf309lsl0fvt?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16237816-belvedere.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16237816-belvedere.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16200107",
@@ -1600,17 +1622,17 @@
       "episodeNumber": 12,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/u9bnvrqgs6xxb2rqlqu06hngfzd4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16200107-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16200107-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16168759",
@@ -1621,17 +1643,17 @@
       "episodeNumber": 11,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/s207pfosqc58ixamuhevk9mi9iyd?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16168759-ruth-ellis.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16168759-ruth-ellis.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16125983",
@@ -1642,17 +1664,17 @@
       "episodeNumber": 10,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/lxd1k5clw24b7ltkfs9z6sqydahj?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16125983-rms-titanic.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16125983-rms-titanic.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16075509",
@@ -1663,17 +1685,17 @@
       "episodeNumber": 8,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/57ybabtlyr0rtbg7pkffb73e495u?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16075509-rms-titanic.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16075509-rms-titanic.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-16045060",
@@ -1684,17 +1706,17 @@
       "episodeNumber": 7,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/umcayldreu3npns9ib0d3gypj9zv?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16045060-lana-turner-johnny-stompanato.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/16045060-lana-turner-johnny-stompanato.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15997366",
@@ -1705,17 +1727,17 @@
       "episodeNumber": 6,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/la0419gs9symamlhha27aos7yu12?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15997366-halloween-specials-michael-myers-the-halloween-stuff-ft-creepy.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15997366-halloween-specials-michael-myers-the-halloween-stuff-ft-creepy.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15949272",
@@ -1726,17 +1748,17 @@
       "episodeNumber": 5,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/hqnx1m3nmf6az27ghu4t11kxhni9?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15949272-halloween-specials-the-greenbrier-ghost-murder-case.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15949272-halloween-specials-the-greenbrier-ghost-murder-case.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15917614",
@@ -1747,17 +1769,17 @@
       "episodeNumber": 4,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/sutybtnj8azlk4r2mudwb4qcr5c2?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15917614-halloween-specials-the-trick-or-treat-murder-of-peter-fabiano-special-thanks.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15917614-halloween-specials-the-trick-or-treat-murder-of-peter-fabiano-special-thanks.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15872642",
@@ -1768,17 +1790,17 @@
       "episodeNumber": 2,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/v83m9hpy4g7ldopks6ho5n6euh2p?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15872642-halloween-specials-johnny-frank-garrett-st-francis.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15872642-halloween-specials-johnny-frank-garrett-st-francis.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15831295",
@@ -1789,17 +1811,17 @@
       "episodeNumber": 1,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/p61je2ydn47miloq88f7b5odqwk0?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15831295-the-1999-honolulu-shootings-byran-koji-uyesugi.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15831295-the-1999-honolulu-shootings-byran-koji-uyesugi.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15790568",
@@ -1810,17 +1832,17 @@
       "episodeNumber": 1,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/217x9mdihfdksfgw2x8y61wy7z6w?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15790568-season-3-loading.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15790568-season-3-loading.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15292997",
@@ -1831,17 +1853,17 @@
       "episodeNumber": 33,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/1dj0q24635swubdfacqdkjjp8mb4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15292997-georgi-markov-season-finale-ft.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15292997-georgi-markov-season-finale-ft.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15257062",
@@ -1852,17 +1874,17 @@
       "episodeNumber": 32,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/f5lzkirwdh2addx1wdvoisrpc9g7?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15257062-jerry-brudos-the-shoe-fettish-slayer.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15257062-jerry-brudos-the-shoe-fettish-slayer.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15218265",
@@ -1873,18 +1895,18 @@
       "episodeNumber": 31,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/w8ajgzycojqgmjb7zok0zt2qdfaq?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15218265-james-ballard-fictional-character-crash.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15218265-james-ballard-fictional-character-crash.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers",
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15141745",
@@ -1895,17 +1917,17 @@
       "episodeNumber": 30,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/3x9x9c11elm2ais0kf6sw6qv7skt?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15141745-selena-quintanilla-part-2.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15141745-selena-quintanilla-part-2.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15094583",
@@ -1916,17 +1938,17 @@
       "episodeNumber": 29,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/h8ftwosmedzde4v8qx0y9107iut2?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15094583-selena-quintanilla-part-1.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15094583-selena-quintanilla-part-1.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-15032749",
@@ -1937,17 +1959,17 @@
       "episodeNumber": 28,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/fq7lfh2zof46qctnlb7m9pjl144f?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15032749-grady-stiles-a-k-a-lobster-boy.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/15032749-grady-stiles-a-k-a-lobster-boy.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14925945",
@@ -1958,17 +1980,17 @@
       "episodeNumber": 27,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/5pg5ciegap70n23kdo4clzph2cwj?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14925945-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14925945-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14897560",
@@ -1979,17 +2001,17 @@
       "episodeNumber": 26,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/2xzzv9ahsz2yfqt2nu5d5piq9vbx?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14897560-karl-denke.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14897560-karl-denke.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14832455",
@@ -2000,17 +2022,17 @@
       "episodeNumber": 25,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/148yiz3dcxraw6wmidfd1myxngb9?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14832455-corpsewood-manor.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14832455-corpsewood-manor.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14793109",
@@ -2021,17 +2043,17 @@
       "episodeNumber": 24,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/ovvnoj8w6r172fh68l004aee7zw2?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14793109-double-slasher-1995-greater-pittsburgh-bank-robberies-dirk.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14793109-double-slasher-1995-greater-pittsburgh-bank-robberies-dirk.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "robberies"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14750087",
@@ -2042,17 +2064,17 @@
       "episodeNumber": 23,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/ax697sdfqt93anvm2nnog6hj65mc?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14750087-aileen-wuornos-ft.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14750087-aileen-wuornos-ft.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14713852",
@@ -2063,17 +2085,17 @@
       "episodeNumber": 22,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/7a37ddfglfdck3umgulue6amaiqf?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14713852-kirk-anderson-joyce-mckinney.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14713852-kirk-anderson-joyce-mckinney.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14660219",
@@ -2084,17 +2106,17 @@
       "episodeNumber": 21,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/qj53y6ou0yymgnmkifi5ytkactwe?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14660219-toussaint-augustin-gouffe.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14660219-toussaint-augustin-gouffe.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14618238",
@@ -2105,17 +2127,17 @@
       "episodeNumber": 20,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/p97em78948zhz7fm642t9tc7m6o4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14618238-ft-archaeostoryteller.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14618238-ft-archaeostoryteller.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14536553",
@@ -2126,17 +2148,17 @@
       "episodeNumber": 19,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/l7j2rjxmnz15e7r5ppevuuvk3vxv?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14536553-jennifer.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14536553-jennifer.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14536454",
@@ -2147,17 +2169,17 @@
       "episodeNumber": 19,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/u1i8o7t5yafv1jf2soseh9hj2aep?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14536454-roman-polanski.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14536454-roman-polanski.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14460102",
@@ -2168,17 +2190,17 @@
       "episodeNumber": 18,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/xniyxzsrjdjuffhllpmkttnta51e?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14460102-stacey-schoeck-a-deadly-valentine-s-day.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14460102-stacey-schoeck-a-deadly-valentine-s-day.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14437120",
@@ -2189,17 +2211,17 @@
       "episodeNumber": 17,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/odwr8ebr4gqgw1gcorm4fx5euoq4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14437120-daniel-wozniak.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14437120-daniel-wozniak.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14399429",
@@ -2210,17 +2232,17 @@
       "episodeNumber": 16,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/ccdvkaxq21kp5wsqdajqtfopbnjb?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14399429-john-haig-the-acid-bath-murderer.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14399429-john-haig-the-acid-bath-murderer.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14351821",
@@ -2231,17 +2253,17 @@
       "episodeNumber": 15,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/fulzepk5jlbfitz2elpgekf7xeg2?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14351821-double-slasher-401-eastern-air-lines.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14351821-double-slasher-401-eastern-air-lines.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14305302",
@@ -2252,17 +2274,17 @@
       "episodeNumber": 14,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/bhyotyfvm5cvt401xrcr8y997csg?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14305302-lorena-john-bobbit.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14305302-lorena-john-bobbit.mp3?token=HLVJYzV8fWYRSbG49qzcbzvK",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14233963",
@@ -2273,17 +2295,17 @@
       "episodeNumber": 13,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/9mavuzmytaygr80tkn753zhpk802?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14233963-the-bloopers-episode-happy-new-year.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14233963-the-bloopers-episode-happy-new-year.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14172018",
@@ -2294,17 +2316,17 @@
       "episodeNumber": 12,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/0bx9q1xghpot71b4yoqvb2rtjjfc?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14172018-jack-torrance-the-shining-xmas-edition-crossover-episode-ft-podcast.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14172018-jack-torrance-the-shining-xmas-edition-crossover-episode-ft-podcast.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14090634",
@@ -2315,17 +2337,17 @@
       "episodeNumber": 11,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/6nvcgd4e0uz4pqtu8hdvg7orhum7?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14090634-samuel-little.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14090634-samuel-little.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14086503",
@@ -2336,17 +2358,17 @@
       "episodeNumber": 10,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/ezbqndkomkytvcfnrw65gq234g12?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14086503-artemus-ogletree.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14086503-artemus-ogletree.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14050153",
@@ -2357,17 +2379,17 @@
       "episodeNumber": 9,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/vwahp1esrtel1kz3g3vdazounswn?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14050153-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14050153-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-14009604",
@@ -2378,17 +2400,17 @@
       "episodeNumber": 8,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/pbdh125j8sys0p17w09r7hwtuias?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14009604-daegu-subway-fire-disaster.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/14009604-daegu-subway-fire-disaster.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13664940",
@@ -2399,17 +2421,17 @@
       "episodeNumber": 7,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/sxmtrvfty2d084n1wfnf9psfkh5n?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13664940-donato-bilancia-the-liguria-monster.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13664940-donato-bilancia-the-liguria-monster.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13909265",
@@ -2420,17 +2442,17 @@
       "episodeNumber": 6,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/dtv8y3z5u6ldjv1bkeu5foq15rhg?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13909265-natalie-wood.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13909265-natalie-wood.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13879133",
@@ -2441,17 +2463,17 @@
       "episodeNumber": 5,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/x92s5uowlt60qj6wodcj0q9v7tud?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13879133-double-slasher.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13879133-double-slasher.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "historical"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13836262",
@@ -2462,17 +2484,17 @@
       "episodeNumber": 4,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/nsl65imv0qi4y1odg3hppcfvzddw?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13836262-sante-kenneth-kimes.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13836262-sante-kenneth-kimes.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13673303",
@@ -2483,17 +2505,17 @@
       "episodeNumber": 3,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/mmoxttna65rrrhlidvssfze74c8i?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13673303-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13673303-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13647008",
@@ -2504,17 +2526,17 @@
       "episodeNumber": 2,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/srhnpkly7gdooulsewv1t3vpoz36?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13647008-elaine-o-hara-murder.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13647008-elaine-o-hara-murder.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13643882",
@@ -2525,18 +2547,18 @@
       "episodeNumber": 1,
       "season": 2,
       "artwork": "https://storage.buzzsprout.com/ki7kf7l4sbfepjt9b6e6c7xz26tv?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13643882-dyatlov-pass-incident.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13643882-dyatlov-pass-incident.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved",
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13202034",
@@ -2547,17 +2569,17 @@
       "episodeNumber": 50,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/56inhta9y155rkocn6lky48le1be?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13202034-special-summer-episode-season-finale.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13202034-special-summer-episode-season-finale.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13158832",
@@ -2568,17 +2590,17 @@
       "episodeNumber": 49,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/44730l66g34qygildoruc9duifz3?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13158832-andres-escobar.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13158832-andres-escobar.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13117175",
@@ -2589,17 +2611,17 @@
       "episodeNumber": 48,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/hut95bf00wneqontwp8aokt4jexg?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13117175-trollhattan-school-attack-anton-lundin-pettersson.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13117175-trollhattan-school-attack-anton-lundin-pettersson.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13074520",
@@ -2610,17 +2632,17 @@
       "episodeNumber": 47,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/4n8yl90f6mhps1qr6n5h1kbfx60y?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13074520-katherine-knight.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13074520-katherine-knight.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-13030944",
@@ -2631,17 +2653,17 @@
       "episodeNumber": 46,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/6khkpg40mcfvwwd8h7lfa27dntzy?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13030944-dennis-nilsen-the-swingers-episode.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/13030944-dennis-nilsen-the-swingers-episode.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12988660",
@@ -2652,17 +2674,17 @@
       "episodeNumber": 45,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/dp2awmmw944p9kvzo8hoe20s949d?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12988660-double-slasher.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12988660-double-slasher.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12945305",
@@ -2673,17 +2695,17 @@
       "episodeNumber": 44,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/z2f8lnwf4o1dh8be6kp9e589io1t?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12945305-the-dalton-gang.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12945305-the-dalton-gang.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "robberies"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12903096",
@@ -2694,17 +2716,17 @@
       "episodeNumber": 43,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/cq26zto9x1viy907s5i8ci40zgre?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12903096-christine-lea-papin.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12903096-christine-lea-papin.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12859364",
@@ -2715,17 +2737,17 @@
       "episodeNumber": 42,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/inoggjsgrrq96i64af1e91vr6pm7?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12859364-annie-wilkes-fictional-character-misery.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12859364-annie-wilkes-fictional-character-misery.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12814365",
@@ -2736,17 +2758,17 @@
       "episodeNumber": 41,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/ntixyq77ox2v4zwbjr3gdnmsj43g?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12814365-richard-ramirez-part-2.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12814365-richard-ramirez-part-2.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12768544",
@@ -2757,17 +2779,17 @@
       "episodeNumber": 40,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/215sf0r5nusr5n1zyn42lhhljpyu?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12768544-richard-ramirez-part-1.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12768544-richard-ramirez-part-1.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12719378",
@@ -2778,17 +2800,17 @@
       "episodeNumber": 39,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/wdpvl3rzxoro8v6x7w3jqa4cvbvb?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12719378-nicolas-claux-the-vampire-of-paris.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12719378-nicolas-claux-the-vampire-of-paris.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12589652",
@@ -2799,17 +2821,17 @@
       "episodeNumber": 38,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/gqyla9y2yliqf8crw31svm7tna64?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12589652-ft-crimegroupers.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12589652-ft-crimegroupers.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12531825",
@@ -2820,18 +2842,18 @@
       "episodeNumber": 37,
       "season": 3,
       "artwork": "https://storage.buzzsprout.com/cirsbbte3owlrw6fgybhnqwfkawi?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12531825-locusta.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12531825-locusta.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers",
         "historical"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12485548",
@@ -2842,17 +2864,17 @@
       "episodeNumber": 36,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/7ynekmzrrr1ko8tlf19u55uiaz12?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12485548-aum-shinrikyo-shoko-asahara.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12485548-aum-shinrikyo-shoko-asahara.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12439475",
@@ -2863,17 +2885,17 @@
       "episodeNumber": 35,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/l0ehwzecrsia1t77ma3f2fmc3mi4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12439475-double-slasher.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12439475-double-slasher.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12393322",
@@ -2884,17 +2906,17 @@
       "episodeNumber": 34,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/lqksk8n1shttl2adyiq5mg3bvb3h?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12393322-taylor-schabusiness.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12393322-taylor-schabusiness.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12344730",
@@ -2905,18 +2927,18 @@
       "episodeNumber": 33,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/ki1vrg5yhr05y9ug2mfccpqmg35e?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12344730-flannan-isles-lighthouse-mystery.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12344730-flannan-isles-lighthouse-mystery.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "unsolved",
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12296211",
@@ -2927,17 +2949,17 @@
       "episodeNumber": 32,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/ddsqdds0xumnol43wcfq9wmflkdb?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12296211-taliesin-massacre-frank-lloyd-wright-julian-carlton.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12296211-taliesin-massacre-frank-lloyd-wright-julian-carlton.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12251608",
@@ -2948,17 +2970,17 @@
       "episodeNumber": 31,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/0fvkcddcd7fdopwati5se5dugnnz?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12251608-lonely-hearts-killers-raymond-fernandez-martha-beck.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12251608-lonely-hearts-killers-raymond-fernandez-martha-beck.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12202651",
@@ -2969,17 +2991,17 @@
       "episodeNumber": 30,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/38a9ag1nubuwi2jtmkuxphvobbvr?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12202651-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12202651-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12177862",
@@ -2990,17 +3012,18 @@
       "episodeNumber": null,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/69xolxab4x2m420v12xr2l1csdrf?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12177862-bonus-short-irina-gaidamachuk-bloopers-feat-mirto.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12177862-bonus-short-irina-gaidamachuk-bloopers-feat-mirto.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "bonus",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/podcast.jpg"
     },
     {
       "id": "Buzzsprout-12154598",
@@ -3011,17 +3034,17 @@
       "episodeNumber": 29,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/2jmjmlkt10tfbglzr2dbkblqsm80?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12154598-irina-gaidamachuk-feat-mirto-true-crime.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12154598-irina-gaidamachuk-feat-mirto-true-crime.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12100817",
@@ -3032,17 +3055,17 @@
       "episodeNumber": 28,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/umxlgnctslg6ns56vsygq5j44mn6?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12100817-francisco-garcia-escalero.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12100817-francisco-garcia-escalero.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12061744",
@@ -3053,17 +3076,17 @@
       "episodeNumber": 27,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/jmmki42wq2i39mbn7lrwvvljm8tg?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12061744-daniel-laplante-a-k-a-the-boy-in-the-walls.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12061744-daniel-laplante-a-k-a-the-boy-in-the-walls.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-12015562",
@@ -3074,17 +3097,17 @@
       "episodeNumber": 26,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/mmfovs2wpdf51e1z805kl7rk3msb?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12015562-sweeney-todd.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/12015562-sweeney-todd.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11905155",
@@ -3095,17 +3118,17 @@
       "episodeNumber": 0,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/mcxjxnp78t3x9q65wl79rznxrnoh?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11905155-christmas-special-plus-bloopers.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11905155-christmas-special-plus-bloopers.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11864584",
@@ -3116,17 +3139,17 @@
       "episodeNumber": 25,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/5tv9wyxyyn0xpbxb8k9ql5kmuzeu?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11864584-double-slahser-chen-jui-chin-lin-yu-ju.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11864584-double-slahser-chen-jui-chin-lin-yu-ju.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11825857",
@@ -3137,17 +3160,17 @@
       "episodeNumber": 24,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/236z16wzc8ksn7c2yo1pkat1oqop?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11825857-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11825857-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11774870",
@@ -3158,17 +3181,17 @@
       "episodeNumber": 23,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/thnic0ij35m03phwci82hp63f6h4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11774870-the-crossover-feat.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11774870-the-crossover-feat.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11743316",
@@ -3179,17 +3202,17 @@
       "episodeNumber": 22,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/hdcxa0ltwqpvivqhae7mgm8p2e07?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11743316-carl-tanzler.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11743316-carl-tanzler.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11697458",
@@ -3200,17 +3223,17 @@
       "episodeNumber": 21,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/uii4dx0wy3g38o751jxjv6qmz61w?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11697458-leonarda-cianciulli.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11697458-leonarda-cianciulli.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11656303",
@@ -3221,17 +3244,17 @@
       "episodeNumber": 20,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/xd5np0ajxze1vzb0s3jfatuuoczf?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11656303-john-wayne-gacy-part-2.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11656303-john-wayne-gacy-part-2.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11602646",
@@ -3242,17 +3265,17 @@
       "episodeNumber": 19,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/4m3j7goyq8o6zbto1ioy0undt8gd?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11602646-john-wayne-gacy-part-1.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11602646-john-wayne-gacy-part-1.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11565592",
@@ -3263,17 +3286,17 @@
       "episodeNumber": 18,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/dt44cq1w3jbygh75i4m5o8f1zyz6?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11565592-ed-gein.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11565592-ed-gein.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11522938",
@@ -3284,17 +3307,17 @@
       "episodeNumber": 17,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/94wpeqd1dn5f1c3jknzpk5b0bg52?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11522938-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11522938-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11479462",
@@ -3305,17 +3328,17 @@
       "episodeNumber": 16,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/nwlhuc14lock1s1iyfuehi6l3zsf?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11479462-lizzie-borden.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11479462-lizzie-borden.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "historical"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11436196",
@@ -3326,17 +3349,17 @@
       "episodeNumber": 15,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/f5ktu0pifhxp1nz90vfy3j5apuof?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11436196-double-slahser-amarjeet-sada-alyssa-bustamante.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11436196-double-slahser-amarjeet-sada-alyssa-bustamante.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11393970",
@@ -3347,17 +3370,17 @@
       "episodeNumber": 14,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/aoeuqc75sv1m819b0ysq6chtghne?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11393970-lewis-hutchinson.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11393970-lewis-hutchinson.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11353597",
@@ -3368,17 +3391,17 @@
       "episodeNumber": 13,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/nshpyvcutckzds5snytnyn35n2ah?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11353597-jason-voorhes.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11353597-jason-voorhes.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11309888",
@@ -3389,17 +3412,17 @@
       "episodeNumber": 12,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/3ot3jyxdujbocsdq2fw4sh8cd5qw?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11309888-ted-kaczynski-unabomber.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11309888-ted-kaczynski-unabomber.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11267809",
@@ -3410,18 +3433,18 @@
       "episodeNumber": 11,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/kebm50cs7u2ghvojykqph3zitfw6?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11267809-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11267809-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers",
         "historical"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11222337",
@@ -3432,17 +3455,17 @@
       "episodeNumber": 10,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/qblfsw3md1zq9by7377b9zf7vzdl?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11222337-jeffrey-dahmer.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11222337-jeffrey-dahmer.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11188961",
@@ -3453,17 +3476,17 @@
       "episodeNumber": 9,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/9ca5hm0fbs2c46khwe9o7wwfyfe8?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11188961-paddy-moriarty.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11188961-paddy-moriarty.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "disappearances"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11114778",
@@ -3474,17 +3497,17 @@
       "episodeNumber": 8,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/utxpxhsf5o0ezvamiwiqsbcq3fdu?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11114778-alexander-litvinenko.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11114778-alexander-litvinenko.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11107986",
@@ -3495,17 +3518,17 @@
       "episodeNumber": 7,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/eougf8s5fw19h34g8r2kchmo679m?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11107986-.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11107986-.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11068028",
@@ -3516,17 +3539,17 @@
       "episodeNumber": 6,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/4205wbab5sujk2awcdu0nocxy7jf?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11068028-andrew-cunanan.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11068028-andrew-cunanan.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-11030815",
@@ -3537,17 +3560,17 @@
       "episodeNumber": 5,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/cf9z53xw4t1hm48y0xgl5yt7q10v?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11030815-double-slasher-abc-killer-doctor-death.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/11030815-double-slasher-abc-killer-doctor-death.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-10985630",
@@ -3558,17 +3581,17 @@
       "episodeNumber": 4,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/9e9ocmf2p0x6uw5e3ckbnbh8gvf2?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10985630-heaven-s-gate.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10985630-heaven-s-gate.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "cults"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-10939178",
@@ -3579,17 +3602,17 @@
       "episodeNumber": 3,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/fo8jmlwmy9419z1qxf7cnj4ssbtj?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10939178-dorothea-puente.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10939178-dorothea-puente.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-10906179",
@@ -3600,17 +3623,17 @@
       "episodeNumber": 2,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/tg0xmd9xis5x0j4y13oo96s0z6e9?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10906179-edmund-ed-kemper.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10906179-edmund-ed-kemper.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-10860761",
@@ -3621,17 +3644,17 @@
       "episodeNumber": 1,
       "season": 1,
       "artwork": "https://storage.buzzsprout.com/8iksf3ltrncv1x8mh23hdqcrqie4?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10860761-dean-corll-aka-candyman.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10860761-dean-corll-aka-candyman.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "full",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "serial-killers"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public"
     },
     {
       "id": "Buzzsprout-10852235",
@@ -3642,17 +3665,18 @@
       "episodeNumber": null,
       "season": null,
       "artwork": "https://storage.buzzsprout.com/69xolxab4x2m420v12xr2l1csdrf?.jpg",
-      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10852235-0-5-trailer.mp3",
+      "audioUrl": "https://www.buzzsprout.com/2006539/episodes/10852235-0-5-trailer.mp3?token=pP6mL77eUMG6Bu7PatGNms3e",
       "audioType": "audio/mpeg",
       "explicit": true,
       "episodeType": "trailer",
       "contentKind": "public-episode",
-      "link": "",
-      "access": "public",
       "categories": [
         "other"
       ],
-      "categorySource": "editorial-keywords"
+      "categorySource": "editorial-keywords",
+      "link": "",
+      "access": "public",
+      "localArtwork": "/images/podcast.jpg"
     }
   ],
   "localArtwork": "/images/podcast.jpg"

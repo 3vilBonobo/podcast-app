@@ -58,6 +58,22 @@ describe('catalog filters', () => {
   });
   afterEach(() => TestBed.resetTestingModule());
   const component = () => TestBed.runInInjectionContext(() => new EpisodesComponent());
+  it('separates verified previews and combines OR categories with AND format/country filters', () => {
+    const episodes = TestBed.inject(PodcastService).episodes as ReturnType<typeof signal<Episode[]>>;
+    episodes.set([
+      {...sample[0], countries:['GR'], tags:['double-slashers','with-guests']},
+      {...sample[1], countries:['US'], tags:['with-guests']},
+      {...sample[2], countries:['GR'], tags:['double-slashers'], contentKind:'promotional-preview'},
+    ]);
+    const view=component();
+    expect(view.collectionEpisodes().map(e=>e.id)).toEqual(['a','b']);
+    params.next(convertToParamMap({category:'cults,robberies',tag:'double-slashers,with-guests',country:'GR'}));
+    expect(view.filtered().map(e=>e.id)).toEqual(['a']);
+    params.next(convertToParamMap({view:'plus',tag:'double-slashers',country:'GR'}));
+    expect(view.filtered().map(e=>e.id)).toEqual(['c']);
+    expect(view.categoryCount('cults')).toBe(1);
+    expect(view.availableSeasons()).toEqual([2]);
+  });
   it('combines any selected crime category with season and search', () => {
     const view = component();
     params.next(convertToParamMap({ category: 'cults,robberies', season: '2', q: 'cult' }));

@@ -69,3 +69,7 @@ The user explicitly approved this scope, including the deployment configuration 
 ## Completion gate
 
 Automated checks, local corrections and the required functional browser checks pass. The final production module was verified after service-worker refresh; keyboard skip navigation retains `/episodes?q=Lead#main-content`, focuses main and preserves the search. Final console inspection captured no warnings/errors in the exercised routes. No uncaught-exception, physical-device or hosted deployment certification is implied. The final diff was reviewed and the original report checksum is unchanged. Milestone 2 remains unstarted and requires separate approval.
+
+## Current follow-up — catalog/discovery UX (12 November 2026)
+
+The historical M1 findings above are superseded where later milestone evidence documents fixes. The new local follow-up consolidates discovery controls, separates Plus previews, refreshes the snapshot to 173 entries and refines shared visual surfaces. Final 155 tests and production build pass. [Current report](docs/CATALOG_UX_OVERHAUL.md) records actual browser coverage and remaining editorial/release limits. The underlying independent case research is not complete; unresolved classifications remain flagged rather than invented.

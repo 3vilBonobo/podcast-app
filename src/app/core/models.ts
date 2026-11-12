@@ -17,6 +17,9 @@ export interface Episode {
   categorySource: 'editorial-keywords' | 'reviewed';
   suggestedCategories?: CrimeCategory[];
   tags?: string[];
+  countries?: string[];
+  guests?: string[];
+  rssSeason?: number | null;
   link: string;
   access: 'public';
 }

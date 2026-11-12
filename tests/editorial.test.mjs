@@ -7,6 +7,16 @@ const catalog = JSON.parse(readFileSync('public/data/catalog.json', 'utf8'));
 const empty = () => ({ schemaVersion: 1, episodes: {}, collections: [], featured: [] });
 const id = catalog.episodes[0].id;
 describe('reviewed editorial metadata', () => {
+  it('applies evidenced countries, guests and annual-cycle GUID exceptions without changing RSS', () => {
+    const original=structuredClone(catalog);
+    const config={...empty(),episodes:{[id]:{reviewed:true,season:2,countries:['GR','US'],guests:['Verified guest'],evidence:['https://example.com/evidence']}}};
+    const episode=applyEditorial(catalog,validateEditorial(config,catalog)).episodes[0];
+    expect(episode).toMatchObject({season:2,rssSeason:catalog.episodes[0].season,countries:['GR','US'],guests:['Verified guest'],audioUrl:catalog.episodes[0].audioUrl});
+    expect(catalog).toEqual(original);
+    for(const patch of [{season:-1},{countries:['Greece']},{guests:['same','same']},{evidence:['javascript:alert(1)']}]){
+      expect(()=>validateEditorial({...empty(),episodes:{[id]:{reviewed:true,...patch}}})).toThrow();
+    }
+  });
   it('validates checked-in host metadata and leaves RSS untouched with empty overrides', () => {
     const config = JSON.parse(readFileSync('editorial/overrides.json', 'utf8'));
     expect(() => validateEditorial(config, catalog)).not.toThrow();

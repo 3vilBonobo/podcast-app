@@ -182,3 +182,7 @@ See [VERIFICATION.md](./VERIFICATION.md) for the executed build, test and browse
 5. Give each Extras experience its own lazy feature when its behavior is defined. Do not infer reward or payment rules from these UI previews.
 
 No backend infrastructure has been added in this phase.
+
+## Local catalog refresh
+
+Run `npm run refresh:catalog` to refresh the development snapshot through the existing validated RSS importer. It preserves the prior catalog on invalid/incomplete imports. The Episodes Refresh control reads the latest published JSON; it cannot rewrite local assets or trigger GitHub publishing. Current discovery/editorial changes and known verification limits are documented in [Catalog UX overhaul](docs/CATALOG_UX_OVERHAUL.md).

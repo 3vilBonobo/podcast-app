@@ -100,7 +100,7 @@ import { MinutesPipe } from '../../shared/format';
           /></a>
         </div>
         <div class="episode-grid">
-          @for (episode of podcast.episodes().slice(0, 4); track episode.id) {
+          @for (episode of podcast.publicEpisodes().slice(0, 4); track episode.id) {
             <dd-episode-card [episode]="episode" />
           }
         </div>
@@ -141,7 +141,7 @@ import { MinutesPipe } from '../../shared/format';
             <p class="eyebrow">{{ t('home.openTheArchive') }}</p>
             <h2>{{ t('home.everySeasonAnotherStory') }}</h2>
           </div>
-          <span class="tiny-label">{{ podcast.episodes().length }} {{ t('home.publicEpisodes') }}</span>
+          <span class="tiny-label">{{ podcast.publicEpisodes().length }} {{ t('home.publicEpisodes') }}</span>
         </div>
         <div class="season-grid">
           @for (season of podcast.seasons().slice(0, 3); track season) {
@@ -236,6 +236,6 @@ export class HomeComponent {
       .filter((e) => e !== undefined),
   );
   seasonCount(season: number): number {
-    return this.podcast.episodes().filter((e) => e.season === season).length;
+    return this.podcast.publicEpisodes().filter((e) => e.season === season).length;
   }
 }

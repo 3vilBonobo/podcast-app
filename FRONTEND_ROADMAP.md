@@ -192,3 +192,7 @@ Dependencies: stable feature behavior from earlier approved milestones; approval
 ### RSS architecture decision — 12 November 2026
 
 Retain the existing Actions importer and published JSON. Buzzsprout's redirect and XML response allow CORS (*), but the requested local-origin browser fetch returned HTTP 504; successful browser fetching remains unverified. Startup already checks the public JSON without login. Episodes now exposes a bilingual manual refresh through the same loader. Both paths consume the latest published catalog and retain valid in-memory data on failure; they do not trigger a new RSS import. No architecture changes or publishing activation were performed. See VERIFICATION.md for evidence and limitations.
+
+## Catalog, discovery and creative UX refinement — 12 November 2026
+
+Local implementation after 96e688e: consolidated discovery panel, responsive chip rails, public/Plus separation, GUID-based country/guest/format/season metadata, validated cache warm-start and meaningful manual-refresh feedback. Live snapshot now 173 entries (155 public / 18 previews). Final tests: 155/20 PASS; production build PASS. See [the implementation and readiness report](docs/CATALOG_UX_OVERHAUL.md) for exact coverage, screenshots, tag counts and editorial gaps. This is ready for local design review, not a claim of completed independent research for every case. No later milestone, backend, Git publication or workflow activation was started.

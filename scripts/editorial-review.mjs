@@ -128,9 +128,10 @@ export function applyReview(catalog, config, rows) {
       collections = list(row.collections);
     if (collections.some((id) => !next.collections.some((c) => c.id === id)))
       throw new Error(`Define collection titles before assigning ${row.guid}`);
+    const { categories: oldCategories, tags: oldTags, ...discovery } = next.episodes[row.guid] ?? {};
     next.episodes = {
       ...next.episodes,
-      [row.guid]: { reviewed: true, ...(categories.length ? { categories } : {}), tags },
+      [row.guid]: { ...discovery, reviewed: true, ...(categories.length ? { categories } : {}), tags },
     };
     for (const collection of next.collections) {
       collection.episodeIds = collection.episodeIds.filter((id) => id !== row.guid);

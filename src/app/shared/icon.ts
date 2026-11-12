@@ -6,6 +6,13 @@ interface CrimeGlyph {
   blood: string;
 }
 const icons: Record<string, CrimeGlyph> = {
+  'double-slashers': { outline: 'M4 3l6 6-3 3-5-7ZM20 3l-6 6 3 3 5-7ZM8 11l10 10M16 11L6 21M4 19l3 3m10-3 3 3', blood: 'M10 7v5m4-5v5M12 16v5' },
+  'greek-cases': { outline: 'M3 9l9-6 9 6ZM5 11v8m5-8v8m4-8v8m5-8v8M3 21h18M2 10h20', blood: 'M8 4v3m9 7v6M12 20v3' },
+  'with-guests': { outline: 'M8 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM16 4a3 3 0 1 0 0 6M2 20v-4a6 6 0 0 1 12 0v4M17 12a5 5 0 0 1 5 5v3M5 20h6', blood: 'M7 12v4m12 1v5' },
+  bloopers: { outline: 'M4 8h16v13H4ZM3 3l17-1 1 5L4 8ZM7 3l3 4m3-5 3 4M8 14q4 5 8 0M8 11h1m6 0h1', blood: 'M5 17v5m13-4v5' },
+  specials: { outline: 'M12 2l3 6 7 1-5 5 1 8-6-4-6 4 1-8-5-5 7-1ZM12 7v6m0 3h.01', blood: 'M5 12v6m14-6v5M12 20v3' },
+  'case-country': { outline: 'M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7ZM9 9a3 3 0 1 0 6 0 3 3 0 0 0-6 0', blood: 'M12 12v5m5-9v5' },
+  refresh: { outline: 'M20 7v5h-5M4 17v-5h5M5 7a8 8 0 0 1 14-1M19 17a8 8 0 0 1-14 1', blood: 'M12 3v2M12 19v2' },
   share: { outline: 'M5 12h14M12 5l7 7-7 7M4 4v16', blood: 'M7 17v4m9-16v3' },
   copy: { outline: 'M8 7h12v14H8ZM4 17V3h12M11 11h6m-6 4h5', blood: 'M16 18v4M4 7h2' },
   backup: { outline: 'M4 4h16v17H4ZM8 4v6h8V4M8 21v-6h8v6', blood: 'M18 12v4M6 5v3' },

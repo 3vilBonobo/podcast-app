@@ -4,7 +4,7 @@ import { finalize, timeout } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import type { Catalog, Episode } from './models';
 import { assetUrl } from './asset-url';
-import { normalizeCatalog } from './catalog-contract.mjs';
+import { normalizeCatalog, meaningfulCatalog } from './catalog-contract.mjs';
 import { applyEditorial, validateEditorial } from './editorial.mjs';
 import editorialOverrides from '../../../editorial/overrides.json';
 @Injectable({ providedIn: 'root' })
@@ -26,9 +26,12 @@ export class PodcastService {
     this.editorial.featured.map((id) => this.find(id)).filter((e): e is Episode => !!e),
   );
   readonly loading = signal(true);
+  readonly refreshing = signal(false);
+  readonly refreshStatus = signal<'idle' | 'checking' | 'updated' | 'current' | 'error'>('idle');
   readonly error = signal('');
   readonly episodes = computed(() => this.catalog()?.episodes ?? []);
-  readonly latest = computed(() => this.episodes()[0]);
+  readonly publicEpisodes = computed(() => this.episodes().filter(e => e.contentKind !== 'promotional-preview'));
+  readonly latest = computed(() => this.episodes().find(e => e.contentKind !== 'promotional-preview'));
   readonly seasons = computed(() =>
     [
       ...new Set(
@@ -42,6 +45,15 @@ export class PodcastService {
     assetUrl(this.catalog()?.localArtwork || this.catalog()?.artwork || 'icon.svg'),
   );
   constructor() {
+    // Reuse the worker's validated public JSON cache; never cache audio or library data here.
+    if (typeof caches !== 'undefined') {
+      void caches.match(new URL(assetUrl('data/catalog.json'), document.baseURI).href, { ignoreSearch: true })
+        .then(async response => {
+          if (!response?.ok || this.rssCatalog()) return;
+          const cached = normalizeCatalog(await response.json());
+          if (cached && !this.rssCatalog()) { this.rssCatalog.set(cached); this.loading.set(false); this.error.set(''); }
+        }).catch(() => {});
+    }
     this.load();
     const refresh = () => {
       if (!document.hidden && Date.now() - this.lastCheckedAt >= 15 * 60_000) this.load(true);
@@ -56,8 +68,10 @@ export class PodcastService {
   load(background = false): void {
     if (this.inFlight) return;
     this.inFlight = true;
+    this.refreshing.set(true);
+    this.refreshStatus.set('checking');
     this.lastCheckedAt = Date.now();
-    if (!background) this.loading.set(true);
+    if (!background && !this.catalog()) this.loading.set(true);
     this.error.set('');
     this.http
       .get<unknown>(assetUrl('data/catalog.json'), { params: { v: String(Date.now()) } })
@@ -66,6 +80,7 @@ export class PodcastService {
         takeUntilDestroyed(this.destroyRef),
         finalize(() => {
           this.inFlight = false;
+          this.refreshing.set(false);
           this.loading.set(false);
         }),
       )
@@ -73,12 +88,17 @@ export class PodcastService {
         next: (value) => {
           const catalog = normalizeCatalog(value);
           if (!catalog) {
+            this.refreshStatus.set('error');
             if (!this.catalog()) this.error.set('common.theEpisodeCatalogIsInvalid');
           } else {
-            this.rssCatalog.set(catalog);
+            const previous = this.rssCatalog();
+            const changed = !previous || meaningfulCatalog(previous) !== meaningfulCatalog(catalog);
+            if (changed) this.rssCatalog.set(catalog);
+            this.refreshStatus.set(previous && changed ? 'updated' : 'current');
           }
         },
         error: () => {
+          this.refreshStatus.set('error');
           if (!this.catalog()) this.error.set('common.weCouldNotOpenTheArchivePleaseTry');
         },
       });

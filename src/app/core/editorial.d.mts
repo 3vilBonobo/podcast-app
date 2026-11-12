@@ -9,7 +9,7 @@ export interface EditorialCollection {
 }
 export interface EditorialConfig {
   schemaVersion: 1;
-  episodes: Record<string, { reviewed: true; categories?: CrimeCategory[]; tags?: string[] }>;
+  episodes: Record<string, { reviewed: true; categories?: CrimeCategory[]; tags?: string[]; countries?: string[]; guests?: string[]; season?: number | null; evidence?: string[] }>;
   collections: EditorialCollection[];
   featured: string[];
 }
