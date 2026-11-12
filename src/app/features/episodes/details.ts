@@ -7,11 +7,22 @@ import { PodcastService } from '../../core/podcast.service';
 import { AudioPlayerService } from '../../core/audio-player.service';
 import { LibraryService } from '../../core/library.service';
 import { IconComponent } from '../../shared/icon';
-import { MinutesPipe } from '../../shared/format';
+import { MinutesPipe, TimePipe } from '../../shared/format';
 import { EmptyStateComponent } from '../../shared/empty-state';
 import { CRIME_CATEGORIES } from '../../core/categories';
+import { EpisodeShareComponent } from '../../shared/episode-share';
+import { listeningProgress } from '../../core/listening-progress';
 @Component({
-  imports: [TranslocoDirective, RouterLink, DatePipe, IconComponent, MinutesPipe, EmptyStateComponent],
+  imports: [
+    TranslocoDirective,
+    RouterLink,
+    DatePipe,
+    IconComponent,
+    MinutesPipe,
+    TimePipe,
+    EmptyStateComponent,
+    EpisodeShareComponent,
+  ],
   template: `<ng-container *transloco="let t"
     ><div class="page">
       <a routerLink="/episodes" class="back-link">{{ t('episodes.backToTheArchive') }}</a>
@@ -64,13 +75,38 @@ import { CRIME_CATEGORIES } from '../../core/categories';
                 class="circle-button"
                 (click)="library.enqueue(episode.id)"
                 [class.selected]="library.state().queue.includes(episode.id)"
-                [attr.aria-label]="t('episodes.addToQueue')"
+                [attr.aria-label]="
+                  t(
+                    library.state().queue.includes(episode.id)
+                      ? 'libraryFeedback.alreadyQueued'
+                      : 'episodes.addToQueue'
+                  )
+                "
               >
                 <dd-icon name="queue" />
               </button>
             </div>
           </div>
         </section>
+        @if (record(); as saved) {
+          <p class="detail-meta">
+            {{ t('libraryFeedback.savedPosition') }} · {{ position() | time }}
+            @if (saved.completed) {
+              <span class="tag">{{ t('libraryFeedback.completed') }}</span>
+            }
+          </p>
+          <div
+            class="listening-progress"
+            role="progressbar"
+            [attr.aria-label]="t('libraryFeedback.progress')"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [attr.aria-valuenow]="progress()"
+          >
+            <span [style.width.%]="progress()"></span>
+          </div>
+        }
+        <dd-episode-share [episode]="episode" />
         <section class="detail-description">
           @if (episode.contentKind === 'promotional-preview') {
             <div class="notice preview-info">
@@ -137,4 +173,18 @@ export class EpisodeDetailsComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly params = toSignal(this.route.paramMap, { initialValue: this.route.snapshot.paramMap });
   readonly episode = computed(() => this.podcast.find(this.params().get('id') ?? ''));
+  readonly record = computed(() => this.library.record(this.episode()?.id ?? ''));
+  readonly position = computed(() =>
+    this.player.current()?.id === this.episode()?.id
+      ? this.player.position()
+      : (this.record()?.position ?? 0),
+  );
+  readonly progress = computed(() =>
+    listeningProgress(
+      this.position(),
+      this.player.current()?.id === this.episode()?.id
+        ? this.player.duration()
+        : this.record()?.duration || this.episode()?.duration || 0,
+    ),
+  );
 }

@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-12",
+  "scope": "Milestone 5 local implementation; remaining browser checks explicitly waived as unverified by user",
+  "automated": {
+    "tests": 151,
+    "files": 20,
+    "result": "PASS",
+    "productionBuild": "PASS",
+    "initialRawKb": 507.39,
+    "initialTransferKb": 124.98
+  },
+  "artifacts": {
+    "baseHref": "/podcast-app/",
+    "finalModule": "main-72UWME32.js",
+    "browserVerifiedModule": "main-QVKZACPJ.js",
+    "catalogEntries": 172,
+    "publicPlusPreviews": 18,
+    "packagedArtworkReferences": 25,
+    "catalogSha256": "8c6364af68c734299ffe512167756a4edc1d04aafbcf2f9ab8cba859e1981c66",
+    "originalReportSha256": "c16664837543f8a36e72cf0f6cdb86af46451fc309b25445b2afc0c7028dadb2",
+    "catalogExcludedFromAssetHashes": true,
+    "catalogDataPolicy": {
+      "name": "public-catalog",
+      "patterns": [
+        "\\/data\\/catalog\\.json"
+      ],
+      "strategy": "freshness",
+      "maxSize": 1,
+      "maxAge": 2592000000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true,
+        "ignoreSearch": true
+      },
+      "version": 1
+    },
+    "qaFailureInjectionAbsent": true,
+    "databaseVersionUnchanged": 1,
+    "objectStoreUnchanged": "library",
+    "snapshotKeyUnchanged": "snapshot"
+  },
+  "actualBrowser": {
+    "origin": "http://127.0.0.1:4208/podcast-app/",
+    "initialViewport": [
+      1280,
+      720
+    ],
+    "guest": true,
+    "greekInitialProfileRendered": true,
+    "interactionLanguage": "en",
+    "normalRoundTrip": "PASS",
+    "preferencesRoundTrip": "PASS after separate explicit actions",
+    "invalidJsonVersionAndOversized": "PASS; stored library and preferences unchanged",
+    "duplicateImports": "PASS; repeated application idempotent",
+    "recordConflict": "PASS; local newer position retained, max listening total 150, local current ID retained",
+    "unavailableGuid": "PASS retained in exported snapshot",
+    "allFiveLibraryViews": "PASS",
+    "queueMoveRemoveFocus": "PASS; removal focused next row",
+    "permalinkCopyAndDeepLinkReload": "PASS",
+    "nativeShareCancellation": "PASS; no recipient selected or message sent",
+    "shareFocusCorrection": "UNVERIFIED in browser; regression PASS",
+    "actualPublicAudio": "PASS; Lead Masks advanced 2:00 to 2:27 and restored paused after reload",
+    "statistics": "PASS derived from controlled imported records; synthetic fixture totals are not a claim of real listening minutes",
+    "capturedWarningsErrors": [],
+    "tabClosed": true,
+    "serversStopped": true
+  },
+  "exportEvidence": {
+    "referenceLibrarySha256": "5bd5fd58988c30859636128ba2c8015aa6d3958a628c96d848769f82c2f4034a",
+    "roundTripSnapshotEqual": true,
+    "roundTripPreferencesEqual": true,
+    "invalidImportPreserved": true,
+    "repeatDuplicateImportPreserved": true,
+    "referenceFavorites": 2,
+    "referenceQueue": 3,
+    "referenceRecords": 3,
+    "referenceCompleted": 1,
+    "mergeFavorites": 4,
+    "mergeQueue": 5,
+    "mergeMinutes": 4
+  },
+  "unverifiedBrowser": [
+    "mobile/tablet responsive interaction and touch targets",
+    "three-theme/two-language new-feature matrix",
+    "controlled native-browser IndexedDB abort and failed-restore UI",
+    "denied clipboard and manual-copy UI",
+    "live two-tab conflict/reload UI",
+    "post-fix native-share focus return",
+    "final production build browser rerun",
+    "fresh Milestone 5 HTTP 503 cache replay",
+    "physical devices and formal screen readers"
+  ],
+  "notes": [
+    "Browser automation repeatedly timed out before navigating to the prepared failure-test origin. No pass is inferred from that attempt.",
+    "A disposable QA build injected actual IDB transaction aborts and clipboard denial; production sources were restored and the final build contains neither injection.",
+    "Core abort/conflict/focus/failure cases passed automated tests using fake-indexeddb or mocked browser APIs, not native browser failure simulation.",
+    "No original user-origin data was cleared. Imports/replacements used a new isolated origin and controlled public-GUID fixtures.",
+    "Only owned QA sessions were stopped; no Git publishing or schedule operation was performed."
+  ]
+}

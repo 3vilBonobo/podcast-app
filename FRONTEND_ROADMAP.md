@@ -5,7 +5,7 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 ## Working scope and approval gates
 
 - Current product phase: complete the existing responsive web application and PWA.
-- Current milestone: **Milestone 4, episode catalog, discovery and editorial metadata — implemented and locally verified; ready for review**. Milestone 3 was accepted locally; its RSS automation was reviewed without rebuilding or activating it. Milestones 1 and 2 were committed/pushed under their separate authorizations (`7fd1573`, `a3794c3`). Their keyboard, responsive and no-autoplay fixes remain intact. Publication and schedule activation still require separate approval. Current evidence and limits are in [VERIFICATION.md](VERIFICATION.md).
+- Current milestone: **Milestone 5, library, sharing and frontend listening features — implementation delivered locally with passing automated checks and partial desktop browser verification**. After browser automation repeatedly timed out, the user explicitly chose to finish with remaining browser checks marked unverified. Milestones 3–4 were accepted locally and subsequently committed/pushed under separate authorization as `12fa35b`; milestones 1–2 as `7fd1573` and `a3794c3`. No Git publishing, deployment or schedule operation is authorized for Milestone 5. Current evidence and limits are in [VERIFICATION.md](VERIFICATION.md).
 - Keep `master` as the branch convention. Preserve the existing architecture, Gothic Noir identity, public Buzzsprout audio delivery and local library.
 - The untracked `IMPLEMENTATION_REPORT.md` existed before this pass and must be preserved.
 - No staging, commits, pushes, branch operations, deployments, dependency installations or backend/native infrastructure are authorized by this document.
@@ -17,9 +17,9 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 | --- | --- | --- |
 | 1. Current-state audit and stabilization | Accepted; committed/pushed as `7fd1573` under separate authorization | Preserve the completed fixes and regressions |
 | 2. Responsive design and UX | Delivered; committed/pushed as `a3794c3` under separate authorization | Preserve completed fixes; physical-device/assistive-technology limits remain documented |
-| 3. Audio reliability and approved RSS synchronization | Accepted locally; completed regressions preserved and automation reviewed again in Milestone 4 | Separate Git/publication/activation approval; real device/OS and hosted execution remain unverified |
-| 4. Catalog discovery and editorial improvements | Delivered locally; 108 tests/14 files, production build and actual browser discovery/metadata checks pass | Review; hosts must supply editorial decisions. Cold HTTP-error reload limitation documented |
-| 5. Library and frontend features | Existing local library; sharing and backup features missing | Stable persistence contract and approved import/merge behavior |
+| 3. Audio reliability and approved RSS synchronization | Accepted; included in separately authorized commit/push `12fa35b`; regressions preserved | No new publishing/activation action in Milestone 5; real device/OS and hosted execution remain unverified |
+| 4. Catalog discovery and editorial improvements | Accepted locally; included in `12fa35b` | Hosts still supply editorial decisions; cold HTTP-error reload limitation remains documented |
+| 5. Library and frontend features | Implemented locally; tests/build pass; actual desktop IndexedDB round trip and listening/sharing flows verified | Review the delivery and remaining unverified responsive/failure browser checks before release |
 | 6. Extras | Five intentional placeholders; no completed game | Product review of Waking Machine specification and supplied/approved content |
 | 7. PWA and release quality | Manifest/service worker exist; comprehensive release verification incomplete | Stable earlier milestones and a documented browser/device matrix |
 
@@ -128,21 +128,24 @@ Next gate: review Milestone 4. Milestone 5 remains the existing library/sharing/
 
 ## Milestone 5 — library and frontend features
 
-Status: favorites, continue/recent/completed views, editable queue and local statistics exist. Share/copy and library export/import are absent.
+Status: **implementation delivered locally; review required, with explicit browser verification limits**. The user approved this milestone and chose separate explicit playback-preference restoration. After repeated browser connection failures, the user instructed finishing with remaining browser checks marked unverified. This is not a claim of complete responsive or release verification. No Milestone 6 work has begun.
 
-Tasks:
+Delivered:
 
-- Refine existing library behavior and useful empty states.
-- Add share and copy-link controls using stable episode URLs and a browser-compatible fallback.
-- Define versioned JSON backup data and validate imported types, limits, IDs and numeric values.
-- Define preview/confirmation and merge/replace behavior before implementing import; preserve existing local data on invalid input or failed writes.
-- Add clear success/error feedback and preserve the guest experience.
+- Episode Details and full-player Share/Copy actions, base-relative encoded episode permalinks, native share/cancel handling, clipboard fallback and manual-copy recovery. Greek/English status messages and post-share focus restoration are included.
+- Profile backup controls available to guests. Version-1 JSON includes favorites, ordered queue, selected episode, progress, completion/history and speed/volume; no credentials, demo identity or unrelated profile data. No IndexedDB database/store/version or snapshot fields were added.
+- Size/type/version/feed/GUID/numeric validation, duplicate resolution, preview, default non-destructive merge and separately acknowledged replacement. One existing IndexedDB transaction writes the complete library; errors/aborts do not publish partial in-memory state. Current progress is flushed before applying, playback remains paused and stale transport events cannot recreate outgoing records.
+- Merge uses inspected `lastPlayed`, sticky `completed` and cumulative `listenedSeconds`: newer position/duration wins, local wins ties, completion is OR and listening time is max (not sum). Existing favorites/queue ordering and current selection are retained where present. Missing catalog GUIDs are kept and surfaced rather than discarded.
+- Cross-tab snapshot mismatch aborts the import, prevents follow-up stale writes and requires reload. General cross-tab live synchronization remains outside the existing architecture.
+- Speed/volume remain unchanged during merge/replacement; each can be restored explicitly afterward through its existing localStorage key. Preference-storage failure preserves the current value.
+- Recency now updates on actual playback rather than paused persistence/seeking. Queue actions have status feedback, per-episode labels and focus recovery; tabs use a roving tab stop. Cards use live current-player progress, and details expose listening position/completed history with semantic progress bars.
+- Cold 503 investigation: the pinned Angular worker falls back on network failure/timeout, not a completed HTTP 503. Milestone 4 already demonstrated cached data surviving connection loss but not the responding 503. This is a real cold-start fallback limitation with cache present, not merely an empty-cache case. No catalog architecture was changed.
 
-Acceptance: sharing works at the deployed base path; an export/import round trip preserves valid local data; unsupported/malformed files cannot corrupt the library; no login is required and passwords/tokens are never persisted.
+Verification: complete automated suite and production build pass; actual desktop browser checks at 1280×720 cover guest persistence, export/import equality, invalid/version/oversized files, duplicates/repeated merge, conflicting records, all library tabs, queue actions, native sharing cancellation, clipboard copying, deep-link reload and real audio progress restored paused. Exact results/counts are in [VERIFICATION.md](VERIFICATION.md) and [the backup format/merge guide](docs/LIBRARY_BACKUP.md).
 
-Tests: backup version validation, import failures, migration/merge behavior, persistence and browser sharing/clipboard flows.
+Still unverified by explicit user choice: new mobile/tablet/theme/language interaction matrix, controlled native-browser IndexedDB abort UI, denied clipboard/manual-copy UI, final share-focus fix in a browser, live two-tab conflict UI, and a fresh Milestone 5 cold-503 browser replay. Automated tests cover the failure/focus/conflict logic; they are not physical-device or native-browser substitutes. A disposable failure-test build was prepared, but navigation never completed, so it supplies no browser pass.
 
-Dependencies: stable library schema and approved import conflict behavior. Authentication remains an explicit prototype.
+Next steps: review Milestone 5, complete those browser checks before release, and retain separate approval gates for Git/publishing and later milestones. Authentication remains mocked; no backend, Firebase, Android or Extras implementation was added.
 
 ## Milestone 6 — Extras
 
@@ -185,3 +188,7 @@ Dependencies: stable feature behavior from earlier approved milestones; approval
 - **Phase 2:** real authentication/OAuth, cloud identity and synchronization, server-side functionality and protected/premium entitlement design.
 - **Phase 3:** Capacitor, native Android packaging, Android-specific dependencies and platform integration.
 - Neither phase is part of current work. The immediate goal is completion and release quality of the responsive web frontend/PWA.
+
+### RSS architecture decision — 12 November 2026
+
+Retain the existing Actions importer and published JSON. Buzzsprout's redirect and XML response allow CORS (*), but the requested local-origin browser fetch returned HTTP 504; successful browser fetching remains unverified. Startup already checks the public JSON without login. Episodes now exposes a bilingual manual refresh through the same loader. Both paths consume the latest published catalog and retain valid in-memory data on failure; they do not trigger a new RSS import. No architecture changes or publishing activation were performed. See VERIFICATION.md for evidence and limitations.

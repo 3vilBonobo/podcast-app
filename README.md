@@ -137,6 +137,12 @@ Listening minutes are calculated from real active playback intervals, excluding 
 
 **Plus.** The application links to the [official subscription page](https://www.buzzsprout.com/2006539/subscribe) and [Buzzsprout's private RSS instructions](https://www.buzzsprout.com/help/186-personal-rss). It never asks for or stores a private RSS URL. There is no payment or subscription management UI pretending to be functional.
 
+## Library backup and episode sharing
+
+Profile now provides versioned JSON export/import for the guest library: favorites, queue, progress, completed/recent history, selected episode and playback preferences. Import validates the file, previews changes and defaults to non-destructive merge. Replacement requires explicit acknowledgment. The library snapshot commits in one existing IndexedDB transaction; a failed import preserves it. Speed and volume stay unchanged until restored individually through the separate preference buttons, as approved for the existing localStorage boundary.
+
+Episode Details and the full player provide native sharing and copy-link controls, with a manual permalink fallback when clipboard access fails. Links respect the GitHub Pages `/podcast-app/` base path. No sign-in is required and backups contain no credentials or demo identity. See the [backup format and merge rules](docs/LIBRARY_BACKUP.md) and [actual verification/limits](VERIFICATION.md).
+
 ## Editorial metadata and discovery
 
 Search ignores Greek accents, case and final-sigma differences. Every search word must match somewhere in the title, description or reviewed tags. Selected categories use OR; season, collection and search use AND. Publication-date sorting and filter URLs work together.

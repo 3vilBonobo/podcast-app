@@ -30,6 +30,7 @@ export class AudioPlayerService {
   private history: string[] = [];
   private intent = 0;
   private restored = false;
+  private restoringLibrary = false;
   constructor() {
     this.audio.preload = 'metadata';
     this.audio.volume = this.volume();
@@ -59,6 +60,7 @@ export class AudioPlayerService {
       }
       this.status.set('playing');
       const id = this.current()!.id;
+      this.library.savePosition(id, this.position(), this.duration(), 0, false, true);
       if (this.library.state().queue.includes(id)) this.library.removeFromQueue(id);
       this.lastTime = performance.now();
       this.setMediaState('playing');
@@ -133,6 +135,7 @@ export class AudioPlayerService {
     return Number.isFinite(value) ? Math.min(max, Math.max(min, value)) : fallback;
   }
   play(episode: Episode): void {
+    if (this.restoringLibrary) return;
     if (episode.id === this.current()?.id) {
       this.toggle();
       return;
@@ -154,7 +157,12 @@ export class AudioPlayerService {
     }
     this.applySelection(episode, autoplay, rememberHistory);
   }
-  private applySelection(episode: Episode, autoplay: boolean, rememberHistory: boolean): void {
+  private applySelection(
+    episode: Episode,
+    autoplay: boolean,
+    rememberHistory: boolean,
+    rememberSelection = true,
+  ): void {
     if (rememberHistory && this.current() && this.current()?.id !== episode.id)
       this.history.push(this.current()!.id);
     this.current.set(episode);
@@ -166,11 +174,12 @@ export class AudioPlayerService {
     this.duration.set(episode.duration);
     this.audio.src = episode.audioUrl; // The original enclosure URL is deliberately preserved.
     this.audio.playbackRate = this.speed();
-    this.library.setCurrent(episode.id);
+    if (rememberSelection) this.library.setCurrent(episode.id);
     this.setMetadata(episode);
     if (autoplay && !this.checkSleep()) void this.resume();
   }
   async resume(): Promise<void> {
+    if (this.restoringLibrary) return;
     if (!this.current()) return;
     const intent = ++this.intent;
     this.wantsPlayback = true;
@@ -207,7 +216,62 @@ export class AudioPlayerService {
     if (this.status() !== 'error') this.status.set(this.current() ? 'paused' : 'idle');
     this.persist();
   }
+  captureProgress(): void {
+    this.persist();
+  }
+  prepareLibraryRestore(): void {
+    this.pause();
+    this.restoringLibrary = true;
+    this.clearForLibraryRestore();
+  }
+  private clearForLibraryRestore(): void {
+    this.intent++;
+    this.wantsPlayback = false;
+    this.current.set(null);
+    this.audio.pause();
+    this.audio.removeAttribute('src');
+    this.audio.load();
+    this.pendingPosition = null;
+    this.listenedDelta = 0;
+    this.elapsedSinceSave = 0;
+    this.history = [];
+    this.restored = true;
+    this.position.set(0);
+    this.duration.set(0);
+    this.error.set('');
+    this.status.set('idle');
+    this.setSleep(0);
+    this.setMediaState('paused');
+  }
+  restoreLibrarySelection(): void {
+    this.clearForLibraryRestore();
+    this.restoringLibrary = false;
+    const episode = this.podcast.find(this.library.state().currentId ?? '');
+    if (episode) this.applySelection(episode, false, false, false);
+  }
+  restorePreference(key: 'speed' | 'volume', value: number): boolean {
+    if (!Number.isFinite(value) || (key === 'speed' ? value < 0.5 || value > 2 : value < 0 || value > 1))
+      return false;
+    const previous = key === 'speed' ? this.speed() : this.volume();
+    try {
+      if (key === 'speed') this.audio.playbackRate = value;
+      else this.audio.volume = value;
+      localStorage.setItem(`dd:${key}`, String(value));
+    } catch {
+      try {
+        if (key === 'speed') this.audio.playbackRate = previous;
+        else this.audio.volume = previous;
+      } catch {
+        /* Unsupported media capability. */
+      }
+      return false;
+    }
+    if (key === 'speed') this.speed.set(value);
+    else this.volume.set(value);
+    return true;
+  }
   seek(seconds: number): void {
+    if (this.restoringLibrary) return;
     if (!this.current() || !Number.isFinite(seconds)) return;
     const position = Math.max(0, Math.min(seconds, this.duration()));
     if (this.audio.readyState > 0 && this.mediaIsCurrent()) {
@@ -240,6 +304,7 @@ export class AudioPlayerService {
     this.sleepRemaining.set(minutes * 60);
   }
   previous(): void {
+    if (this.restoringLibrary) return;
     if (this.position() > 3) {
       this.seek(0);
       return;
@@ -252,6 +317,7 @@ export class AudioPlayerService {
     else this.seek(0);
   }
   next(fromEnded = false): void {
+    if (this.restoringLibrary) return;
     const queue = this.library.state().queue;
     const queued = queue.map((id) => this.podcast.find(id)).find((e) => e && e.id !== this.current()?.id);
     const episode =

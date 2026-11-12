@@ -112,6 +112,9 @@ class FakeAudio extends EventTarget {
   ended = false;
   currentSrc = '';
   error: { code: number } | null = null;
+  removeAttribute(name: string): void {
+    if (name === 'src') this.src = '';
+  }
   load = vi.fn(() => {
     this.error = null;
     this.readyState = 0;
@@ -174,6 +177,66 @@ describe('audio controls', () => {
     expect(player.current()).toBeNull();
     expect(player.status()).toBe('idle');
     expect(audio.play).not.toHaveBeenCalled();
+  });
+  it('restores an imported selection paused and clears stale transport/timer state without rewriting history', async () => {
+    const { player, library, audio } = await setup();
+    player.play(episode('a'));
+    await Promise.resolve();
+    player.pause();
+    player.setSleep(15);
+    const record = {
+      episodeId: 'b',
+      position: 123,
+      duration: 600,
+      completed: false,
+      lastPlayed: 10,
+      listenedSeconds: 22,
+    };
+    player.prepareLibraryRestore();
+    player.play(episode('c'));
+    expect(player.current()).toBeNull();
+    audio.dispatchEvent(new Event('pause')); // A delayed event must not recreate the outgoing record.
+    await library.restore(() => ({ ...emptyLibrary(), currentId: 'b', records: { b: record } }));
+    audio.play.mockClear();
+    const writes = vi.spyOn(library.repository, 'write');
+    player.restoreLibrarySelection();
+    await library.flush();
+    expect(writes).not.toHaveBeenCalled();
+    expect(player.current()?.id).toBe('b');
+    expect(player.position()).toBe(123);
+    expect(player.status()).toBe('paused');
+    expect(player.sleepUntil()).toBeNull();
+    expect(audio.play).not.toHaveBeenCalled();
+    expect(library.record('b')).toEqual(record);
+    expect(library.record('a')).toBeUndefined();
+    await library.restore(() => emptyLibrary());
+    player.restoreLibrarySelection();
+    expect(player.current()).toBeNull();
+    expect(player.status()).toBe('idle');
+    await library.restore(() => ({
+      ...emptyLibrary(),
+      currentId: 'b',
+      records: { b: { ...record, completed: true, position: 600 } },
+    }));
+    player.restoreLibrarySelection();
+    expect(player.position()).toBe(0);
+    expect(library.record('b')?.completed).toBe(true);
+    expect(audio.play).not.toHaveBeenCalled();
+  });
+  it('restores each playback preference independently and preserves the current value on storage failure', async () => {
+    const { player, audio } = await setup();
+    expect(player.restorePreference('speed', 0.5)).toBe(true);
+    expect(player.speed()).toBe(0.5);
+    expect(audio.playbackRate).toBe(0.5);
+    expect(localStorage.getItem('dd:speed')).toBe('0.5');
+    const set = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new DOMException('Denied', 'SecurityError');
+    });
+    expect(player.restorePreference('volume', 0.4)).toBe(false);
+    expect(player.volume()).toBe(0.8);
+    expect(audio.volume).toBe(0.8);
+    set.mockRestore();
+    expect(player.restorePreference('speed', 9)).toBe(false);
   });
   it('restores the saved episode and position paused until the listener presses play', async () => {
     await new LocalStorageRepository().write({

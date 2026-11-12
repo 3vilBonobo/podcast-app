@@ -6,8 +6,9 @@ import { LibraryService } from '../../core/library.service';
 import { AudioPlayerService } from '../../core/audio-player.service';
 import { IconComponent } from '../../shared/icon';
 import type { Theme, Language } from '../../core/models';
+import { LibraryBackupPanelComponent } from './library-backup-panel';
 @Component({
-  imports: [TranslocoDirective, RouterLink, IconComponent],
+  imports: [TranslocoDirective, RouterLink, IconComponent, LibraryBackupPanelComponent],
   template: `<ng-container *transloco="let t"
     ><div class="page">
       <div class="page-intro">
@@ -102,6 +103,9 @@ import type { Theme, Language } from '../../core/models';
               [value]="player.speed()"
               (change)="player.setSpeed(+$any($event.target).value)"
             >
+              @if (!speeds.includes(player.speed())) {
+                <option [value]="player.speed()">{{ player.speed() }}×</option>
+              }
               @for (speed of speeds; track speed) {
                 <option [value]="speed" [selected]="speed === player.speed()">{{ speed }}×</option>
               }
@@ -127,6 +131,7 @@ import type { Theme, Language } from '../../core/models';
           </div>
         </section>
       </div>
+      <dd-library-backup />
       <section class="settings-panel account-panel">
         <div>
           <p class="eyebrow">{{ t('profile.yourAccount') }}</p>

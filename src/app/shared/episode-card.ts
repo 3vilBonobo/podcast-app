@@ -8,6 +8,7 @@ import { AudioPlayerService } from '../core/audio-player.service';
 import { IconComponent } from './icon';
 import { MinutesPipe } from './format';
 import type { Episode } from '../core/models';
+import { listeningProgress } from '../core/listening-progress';
 @Component({
   selector: 'dd-episode-card',
   imports: [TranslocoDirective, DatePipe, RouterLink, IconComponent, MinutesPipe],
@@ -56,7 +57,15 @@ import type { Episode } from '../core/models';
             <button
               class="icon-button small"
               (click)="library.enqueue(episode().id)"
-              [attr.aria-label]="t('common.queue') + ' ' + episode().title"
+              [attr.aria-label]="
+                t(
+                  library.state().queue.includes(episode().id)
+                    ? 'libraryFeedback.alreadyQueued'
+                    : 'common.queue'
+                ) +
+                ' ' +
+                episode().title
+              "
               [class.selected]="library.state().queue.includes(episode().id)"
             >
               <dd-icon name="queue" /></button
@@ -74,8 +83,11 @@ import type { Episode } from '../core/models';
         @if (record() && !record()?.completed) {
           <div
             class="listening-progress"
-            [attr.aria-label]="t('common.listeningProgress') + ' ' + progress() + '%'"
-            role="img"
+            [attr.aria-label]="t('common.listeningProgress') + ' ' + episode().title"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [attr.aria-valuenow]="progress()"
           >
             <span [style.width.%]="progress()"></span>
           </div>
@@ -91,11 +103,13 @@ export class EpisodeCardComponent {
   readonly player = inject(AudioPlayerService);
   readonly record = computed(() => this.library.record(this.episode().id));
   readonly progress = computed(() =>
-    Math.min(
-      100,
-      Math.round(
-        ((this.record()?.position ?? 0) / (this.record()?.duration || this.episode().duration || 1)) * 100,
-      ),
+    listeningProgress(
+      this.player.current()?.id === this.episode().id
+        ? this.player.position()
+        : (this.record()?.position ?? 0),
+      this.player.current()?.id === this.episode().id
+        ? this.player.duration()
+        : this.record()?.duration || this.episode().duration,
     ),
   );
   readonly isPlaying = computed(

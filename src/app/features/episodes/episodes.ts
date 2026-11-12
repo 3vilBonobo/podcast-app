@@ -26,6 +26,9 @@ import { TranslocoService } from '@jsverse/transloco';
         <span class="issue-note">OPEN THE CASE FILE<br /><strong>PUBLIC RSS ARCHIVE</strong></span>
       </div>
       <div class="catalog-toolbar">
+        <button type="button" class="button secondary" [disabled]="podcast.loading()" (click)="podcast.load()">
+          {{ t('episodes.refreshEpisodes') }}
+        </button>
         <div class="search-field">
           <dd-icon name="search" /><input
             #searchField

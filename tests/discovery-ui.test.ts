@@ -1,4 +1,4 @@
-import { afterEach, expect, it } from 'vitest';
+import { afterEach, expect, it, vi } from 'vitest';
 import { TestBed } from '@angular/core/testing';
 import { Component, Input, signal } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -32,6 +32,7 @@ class StubIcon {
 
 afterEach(() => TestBed.resetTestingModule());
 it('returns keyboard focus to search when clearing an empty result removes the active button', async () => {
+  const refresh = vi.fn();
   const params = new BehaviorSubject(convertToParamMap({ q: 'no-match' }));
   TestBed.configureTestingModule({
     providers: [
@@ -61,6 +62,7 @@ it('returns keyboard focus to search when clearing an empty result removes the a
           loading: signal(false),
           error: signal(''),
           catalog: signal(null),
+          load: refresh,
         },
       },
     ],
@@ -74,6 +76,16 @@ it('returns keyboard focus to search when clearing an empty result removes the a
   try {
     fixture.detectChanges();
     await fixture.whenStable();
+    fixture.detectChanges();
+    const refreshButton = Array.from(fixture.nativeElement.querySelectorAll('button'))
+      .find((button: any) => button.textContent.includes('Refresh Episodes')) as HTMLButtonElement;
+    expect(refreshButton).toBeTruthy();
+    refreshButton.click();
+    expect(refresh).toHaveBeenCalledOnce();
+    TestBed.inject(PodcastService).loading.set(true);
+    fixture.detectChanges();
+    expect(refreshButton.disabled).toBe(true);
+    TestBed.inject(PodcastService).loading.set(false);
     fixture.detectChanges();
     const buttons = fixture.nativeElement.querySelectorAll('.load-more button');
     expect(buttons).toHaveLength(1);

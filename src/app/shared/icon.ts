@@ -6,6 +6,9 @@ interface CrimeGlyph {
   blood: string;
 }
 const icons: Record<string, CrimeGlyph> = {
+  share: { outline: 'M5 12h14M12 5l7 7-7 7M4 4v16', blood: 'M7 17v4m9-16v3' },
+  copy: { outline: 'M8 7h12v14H8ZM4 17V3h12M11 11h6m-6 4h5', blood: 'M16 18v4M4 7h2' },
+  backup: { outline: 'M4 4h16v17H4ZM8 4v6h8V4M8 21v-6h8v6', blood: 'M18 12v4M6 5v3' },
   home: {
     outline:
       'M3 21V9l3-3 3 3v12m6 0V9l3-3 3 3v12M7 21V10l5-8 5 8v11M10 21v-6q2-4 4 0v6M2 21h20M5 12v2m14-2v2M11 8h2',

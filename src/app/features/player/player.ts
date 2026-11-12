@@ -7,8 +7,16 @@ import { LibraryService } from '../../core/library.service';
 import { IconComponent } from '../../shared/icon';
 import { TimePipe } from '../../shared/format';
 import { EmptyStateComponent } from '../../shared/empty-state';
+import { EpisodeShareComponent } from '../../shared/episode-share';
 @Component({
-  imports: [TranslocoDirective, RouterLink, IconComponent, TimePipe, EmptyStateComponent],
+  imports: [
+    TranslocoDirective,
+    RouterLink,
+    IconComponent,
+    TimePipe,
+    EmptyStateComponent,
+    EpisodeShareComponent,
+  ],
   template: `<ng-container *transloco="let t"
     ><div class="page player-page">
       @if (player.current(); as episode) {
@@ -126,6 +134,9 @@ import { EmptyStateComponent } from '../../shared/empty-state';
                 [value]="player.speed()"
                 (change)="player.setSpeed(+$any($event.target).value)"
               >
+                @if (!speeds.includes(player.speed())) {
+                  <option [value]="player.speed()">{{ player.speed() }}×</option>
+                }
                 @for (speed of speeds; track speed) {
                   <option [value]="speed" [selected]="speed === player.speed()">{{ speed }}×</option>
                 }
@@ -170,6 +181,7 @@ import { EmptyStateComponent } from '../../shared/empty-state';
                 : t('player.addToListeningQueue')
             }}
           </button>
+          <dd-episode-share [episode]="episode" />
           <p class="privacy-note player-browser-note">
             {{ t('player.audioIsDeliveredByTheOfficialBuzzsproutService') }}
           </p>
