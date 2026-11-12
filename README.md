@@ -38,11 +38,31 @@ npm run build -- --base-href=/podcast-app/
 
 In Windows PowerShell, use `npm.cmd run build -- --base-href=/podcast-app/` if the npm PowerShell shim does not forward the extra arguments.
 
-The artifact directory is `dist/dumb-and-dahmer/browser`. The workflow deploys the checked-in public RSS snapshot, without depending on Buzzsprout during deployment. Refresh it locally with `npm run refresh:catalog`, then commit the updated catalog and images when you want new episodes included. No GitHub secret is required: Pages uses the workflow's built-in, restricted `GITHUB_TOKEN` permissions.
+The artifact directory is `dist/dumb-and-dahmer/browser`. Normal application releases use the checked-in public snapshot without depending on Buzzsprout. The prepared RSS refresh workflow uses the same validated build/Pages publication pipeline. No custom secret or paid service is required; it uses the built-in `GITHUB_TOKEN`.
 
 If deployment reports “Pages not enabled,” check that **Source = GitHub Actions**. If the workflow never starts, confirm that you pushed to `master` and that Actions are enabled. For a custom domain, change the build base to `/` and configure the domain in Pages settings before deployment.
 
 See [GitHub's official custom workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) for Pages permissions, artifact upload and deployment details.
+
+## Automatic public catalog refresh
+
+Schedules run only after their workflow definitions are approved and published to the repository's default branch. Editing local files does not activate GitHub Actions. Commit, push, deployment and activation require the project's explicit approval; see VERIFICATION.md for the current implementation and activation status.
+
+After approval and publication, **Actions → Refresh public RSS catalog → Run workflow** refreshes manually. Its two schedules are `5 7 * * 3` and `5 7 13 * *`, each with `timezone: Europe/Athens`: Wednesday and the monthly 13th at 07:05 local time. GitHub supports [IANA timezone schedules and DST](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule); scheduled execution may be delayed by Actions load. The Wednesday run owns an overlapping Wednesday/13th refresh, while manual refresh remains available.
+
+The importer reads only the official public Buzzsprout feed, validates XML and consumed metadata, and compares normalized data with the published catalog. Timestamps and derived packaged-image paths do not trigger publication. Unchanged runs do not build, commit or deploy. Invalid/unavailable feeds, duplicate GUIDs, missing existing GUIDs or unusable metadata fail before replacing the previous catalog. A feed reduction stops for review rather than guessing whether episodes were intentionally removed.
+
+Changed data is tested and built before the prepared workflow commits only the generated catalog/artwork to `master` and deploys the artifact. Publication is serialized with normal releases; stale-source checks block superseded builds. A failed deployment can retry against the published baseline without another timestamp-only commit. Repository policy must permit the bot's restricted `contents: write` push; branch protection is not bypassed. [Built-in-token pushes do not start another push workflow](https://docs.github.com/en/actions/concepts/security/github_token), so the same reusable pipeline performs the deployment directly.
+
+For a read-only local comparison:
+
+```sh
+npm run refresh:catalog -- --dry-run --published-url https://3vilbonobo.github.io/podcast-app/
+```
+
+Run `npm run refresh:catalog` to update local generated files after review; `--all-artwork` retains the optional full artwork packaging mode. Official GUIDs, enclosure URLs and preview identification are preserved. Changed catalogs are atomically replaced after validation; existing artwork references are retained, including entries moving out of the newest 24.
+
+Once the updated client/service worker is adopted, catalog JSON uses network-first data caching with a bounded offline fallback, independent of application asset versions. Open clients recheck every 15 minutes while visible and on return after that interval. A failed/invalid background response retains the valid in-memory catalog and does not interrupt playback. Existing installations need the initial client/service-worker upgrade; future catalog changes require no new application feature release. This does not provide offline audio.
 
 ## Run locally
 
@@ -117,9 +137,27 @@ Listening minutes are calculated from real active playback intervals, excluding 
 
 **Plus.** The application links to the [official subscription page](https://www.buzzsprout.com/2006539/subscribe) and [Buzzsprout's private RSS instructions](https://www.buzzsprout.com/help/186-personal-rss). It never asks for or stores a private RSS URL. There is no payment or subscription management UI pretending to be functional.
 
+## Editorial metadata and discovery
+
+Search ignores Greek accents, case and final-sigma differences. Every search word must match somewhere in the title, description or reviewed tags. Selected categories use OR; season, collection and search use AND. Publication-date sorting and filter URLs work together.
+
+Host-reviewed categories, additional tags, collections and featured selections are kept separately in [editorial/overrides.json](editorial/overrides.json), keyed by exact RSS GUIDs. The original RSS snapshot and official audio/artwork remain unchanged. Episode details distinguish importer suggestions from reviewed categories. Overrides are initially empty; no editorial decisions have been invented.
+
+The [host guide](editorial/README.md) explains the editable [Other review CSV](editorial/review-other.csv) and these local tools:
+
+```sh
+npm run editorial:review
+npm run editorial:apply
+npm run editorial:check
+```
+
+Review only episodes the hosts have actually checked. CSV application ignores rows without `reviewed=yes`; generation preserves prior decisions and notes. Collections require host-supplied titles and memberships. These commands never publish or perform Git operations. Editorial updates use the normal application build; automatic RSS updates retain their independent Milestone 3 path.
+
 ## PWA and browser behavior
 
 Production builds generate an Angular service worker and web manifest. The worker caches the application shell and locally packaged catalog/artwork, not external episode audio. A previously visited shell can be available offline; podcast streaming still needs internet. Service worker registration is disabled during development. The supplied SVG icon is scalable; dedicated raster/maskable icons can be added for broader install support before a public release.
+
+The catalog's network-first cache can fall back on connection loss/timeouts after a successful visit. A cold reload receiving an HTTP error such as 503 instead shows Retry; Angular does not treat HTTP error responses as connection failures. Already-open clients retain their valid in-memory catalog on either failure. See the Milestone 4 verification entry for the exercised cases and remaining hosted-deployment limits.
 
 Background audio, lock-screen controls, volume changes, install prompts and timers depend on the browser and mobile OS. Background playback is not guaranteed, and a suspended browser may apply the sleep timer only when it resumes. Volume controls can be ignored by iOS. Real-device testing remains necessary before a public release.
 

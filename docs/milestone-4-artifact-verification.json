@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-12",
+  "baseHref": "/podcast-app/",
+  "mainModule": "main-JO46UU4R.js",
+  "catalogEntries": 172,
+  "otherEntries": 98,
+  "plusPreviews": 18,
+  "artworkReferencesPresent": 25,
+  "sourceCatalogSha256": "8c6364af68c734299ffe512167756a4edc1d04aafbcf2f9ab8cba859e1981c66",
+  "originalReportSha256": "c16664837543f8a36e72cf0f6cdb86af46451fc309b25445b2afc0c7028dadb2",
+  "editorialDecisions": {
+    "episodes": 0,
+    "collections": 0,
+    "featured": 0
+  },
+  "catalogExcludedFromAssetHashes": true,
+  "catalogDataPolicy": {
+    "name": "public-catalog",
+    "patterns": [
+      "\\/data\\/catalog\\.json"
+    ],
+    "strategy": "freshness",
+    "maxSize": 1,
+    "maxAge": 2592000000,
+    "timeoutMs": 5000,
+    "cacheQueryOptions": {
+      "ignoreVary": true,
+      "ignoreSearch": true
+    },
+    "version": 1
+  }
+}

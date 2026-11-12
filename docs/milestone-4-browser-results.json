@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-12",
+  "method": "Codex in-app browser, production builds and simulated desktop/tablet/mobile CSS viewports; no physical devices",
+  "origins": [
+    "http://127.0.0.1:4205/podcast-app/",
+    "http://127.0.0.1:4206/podcast-app/ (disposable editorial fixture)",
+    "http://127.0.0.1:4207/podcast-app/ (controlled catalog responses)",
+    "http://localhost:4207/podcast-app/ (final build)"
+  ],
+  "browserVerifiedModule": "main-G65ISMWP.js",
+  "geometrySamples": 30,
+  "widths": [
+    360,
+    390,
+    768,
+    1024,
+    1280
+  ],
+  "geometryHeight": 800,
+  "themes": [
+    "noir",
+    "archive",
+    "after-hours"
+  ],
+  "languages": [
+    "el",
+    "en"
+  ],
+  "horizontalOverflowSamples": 0,
+  "clippedDiscoveryControls": 0,
+  "checks": {
+    "greekNormalizationAndCrossFieldWords": "PASS",
+    "categoryOrSeasonAndSorting": "PASS",
+    "noSeasonOption": "PASS",
+    "emptyResultsAndSettledClearFocus": "PASS",
+    "keyboardTabAndVisibleFocus": "PASS",
+    "tabletKeyboardCategoryToggle": "PASS",
+    "pagination40ThenFilterResets20": "PASS",
+    "episodeDeepLinkReloadAndHistoryReturn": "PASS",
+    "unknownGuidPrimaryHeadingAndRecovery": "PASS",
+    "plusPreviewLabel": "PASS",
+    "qaOnlyCuratedCollectionTagsAndFeatured": "PASS",
+    "qaCollectionTitleLanguageSwitch": "PASS",
+    "catalogOnlyChangeWithSameMainModule": "PASS",
+    "malformedOptionalMetadata": "PASS",
+    "serverConnectionLossCacheFallback": "PASS",
+    "coldHttp503CacheFallback": "LIMITATION: Retry shown; cached data used only on connection loss/timeouts",
+    "physicalDevicesAndScreenReader": "UNVERIFIED",
+    "hostedGithubActionsAndPages": "UNVERIFIED"
+  },
+  "finalCapturedWarningsErrors": [],
+  "notes": [
+    "Early browser connection attempts timed out; a reachable server was started outside the sandbox.",
+    "QA metadata used real GUIDs with clearly labeled test selections and unchanged categories; real overrides restored empty before final tests/build.",
+    "Router navigation was awaited before dependent UI actions; immediate reads can precede asynchronous URL settlement.",
+    "Temporary catalog responses and local outage testing never changed public/data/catalog.json.",
+    "The later raw-tag ownership validation guard was tested by regression/full suite and a production rebuild; it was not separately re-run in the browser."
+  ]
+}

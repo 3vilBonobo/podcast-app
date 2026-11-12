@@ -1,0 +1,42 @@
+name: Refresh public RSS catalog
+
+on:
+  schedule:
+    - cron: '5 7 * * 3'
+      timezone: Europe/Athens
+    - cron: '5 7 13 * *'
+      timezone: Europe/Athens
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    outputs:
+      should_refresh: ${{ steps.schedule.outputs.should_refresh }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: master
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      # Guard before entering the shared publishing queue: only the Wednesday run
+      # owns an overlapping Wednesday/13th refresh.
+      - id: schedule
+        env:
+          CATALOG_SCHEDULE: ${{ github.event.schedule }}
+        run: node scripts/catalog-schedule.mjs
+
+  publish:
+    needs: schedule
+    if: needs.schedule.outputs.should_refresh == 'true'
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      refresh_catalog: true

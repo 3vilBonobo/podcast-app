@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-12",
+  "environment": "In-app Chromium; local production preview under /podcast-app/",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "source": {
+    "checkedInEpisodes": 172,
+    "readOnlyOfficialRssDryRunEpisodes": 173,
+    "repositoryCatalogModified": false
+  },
+  "catalog": {
+    "controlledTitleUpdateVisible": true,
+    "applicationModuleUnchangedDuringDataOnlyTest": true,
+    "moduleDuringDataOnlyTest": "main-5R3EX3IT.js",
+    "localOriginServerStoppedAndCachedCatalogReloaded": true,
+    "offlineAudioTested": false
+  },
+  "audio": {
+    "realPublicPlaybackAcrossNavigationSeconds": 36,
+    "pausedReloadPositionSeconds": 38,
+    "controlledFailure": "Temporary QA-only audio URL returned HTTP 503",
+    "failedQueueEntryRetained": true,
+    "retryRedirectedToOfficialPublicAudio": true,
+    "retryPlaybackObservedSeconds": 40,
+    "queueCountBeforeSuccess": 2,
+    "queueCountAfterSuccess": 1,
+    "rapidNextPreviousRetainedIntendedEpisode": true,
+    "mobileLoadingActionLabel": "Παύση",
+    "loadingCancellationVerified": true,
+    "finalPaused": true,
+    "finalSpeed": 1,
+    "finalSleepTimer": "0"
+  },
+  "finalModule": "main-QC7T3QND.js",
+  "console": {
+    "capturedWarningsOrErrors": [],
+    "comprehensiveUncaughtExceptionDetection": false
+  },
+  "limits": [
+    "No hosted Actions run, commit, push, deployment or schedule activation",
+    "No physical devices, Safari, OS lock-screen/interruption or forced process-termination tests",
+    "Media Session and suspended-timer behavior exercised with unit simulations, not OS controls",
+    "15-minute foreground refresh cadence verified with fake-time HTTP tests",
+    "Controlled browser catalog/audio fixtures stayed in ignored tmp files and were restored"
+  ]
+}

@@ -1,4 +1,4 @@
-import { XMLParser } from 'fast-xml-parser';
+import { XMLParser, XMLValidator } from 'fast-xml-parser';
 import { classifyEpisode } from './crime-categories.mjs';
 
 export function durationSeconds(value) {
@@ -28,7 +28,8 @@ const https = (value) => {
     return '';
   }
 };
-export function normalizeFeed(xml, fetchedAt = new Date().toISOString()) {
+export function normalizeFeed(xml, fetchedAt = new Date().toISOString(), { strict = false } = {}) {
+  if (XMLValidator.validate(xml) !== true) throw new Error('Malformed RSS XML');
   const parsed = new XMLParser({
     ignoreAttributes: false,
     attributeNamePrefix: '@_',
@@ -39,6 +40,21 @@ export function normalizeFeed(xml, fetchedAt = new Date().toISOString()) {
   if (!channel) throw new Error('Expected a public RSS channel.');
   const artwork = https(channel['itunes:image']?.['@_href'] || channel.image?.url);
   const items = Array.isArray(channel.item) ? channel.item : channel.item ? [channel.item] : [];
+  if (
+    strict &&
+    (!channel.title ||
+      channel.description === undefined ||
+      !artwork ||
+      items.some(
+        (item) =>
+          !String(item.guid?.['#text'] ?? item.guid ?? '').trim() ||
+          !plainText(item.title) ||
+          !https(item.enclosure?.['@_url']) ||
+          durationSeconds(item['itunes:duration']) <= 0 ||
+          !Number.isFinite(new Date(item.pubDate).getTime()),
+      ))
+  )
+    throw new Error('Incomplete RSS channel or episode metadata');
   const episodes = items.flatMap((item) => {
     const audioUrl = https(item.enclosure?.['@_url']);
     const guid = String(item.guid?.['#text'] ?? item.guid ?? item.link ?? audioUrl);
@@ -77,6 +93,11 @@ export function normalizeFeed(xml, fetchedAt = new Date().toISOString()) {
     ];
   });
   if (!episodes.length) throw new Error('No playable public episodes found; existing catalog was preserved.');
+  if (
+    strict &&
+    (episodes.length !== items.length || new Set(episodes.map((e) => e.id)).size !== items.length)
+  )
+    throw new Error('Incomplete RSS or duplicate episode GUIDs');
   return {
     schemaVersion: 1,
     source: 'https://feeds.buzzsprout.com/2006539.rss',

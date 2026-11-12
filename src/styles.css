@@ -1331,6 +1331,20 @@ select {
   border: 1px solid var(--line);
   border-radius: 6px;
 }
+.curated-select {
+  margin: 0 0 24px;
+  max-width: 100%;
+}
+.detail-editorial {
+  margin: 32px 0;
+}
+.detail-editorial .category-chips {
+  margin-bottom: 20px;
+}
+.detail-editorial .category-chip {
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
 .search-field {
   display: flex;
   align-items: center;

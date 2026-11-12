@@ -180,7 +180,7 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
         <button
           class="play-button mobile-play"
           (click)="player.toggle()"
-          [attr.aria-label]="player.playing() ? t('shell.pause') : t('shell.play')"
+          [attr.aria-label]="player.playing() || player.busy() ? t('shell.pause') : t('shell.play')"
         >
           <dd-icon [name]="player.playing() || player.busy() ? 'pause' : 'play'" />
         </button>

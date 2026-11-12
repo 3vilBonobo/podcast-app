@@ -4,35 +4,55 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      refresh_catalog:
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 concurrency:
   group: github-pages
-  cancel-in-progress: true
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pages: read
+    outputs:
+      ready: ${{ steps.publication.outputs.ready }}
+      sha: ${{ steps.publication.outputs.sha }}
     steps:
       - name: Check out source
         uses: actions/checkout@v6
+        with:
+          ref: master
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
           node-version: '22'
           cache: npm
       - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm ci
+      - name: Refresh public catalog against the published snapshot
+        if: inputs.refresh_catalog == true
+        id: sync
+        env:
+          PUBLISHED_URL: ${{ steps.pages.outputs.base_url }}/
+        run: node scripts/import-rss.mjs --published-url "$PUBLISHED_URL"
       - name: Test
+        if: inputs.refresh_catalog != true || steps.sync.outputs.changed == 'true' || steps.sync.outputs.should_publish == 'true'
         run: npm test
       - name: Build for the repository URL
+        if: inputs.refresh_catalog != true || steps.sync.outputs.changed == 'true' || steps.sync.outputs.should_publish == 'true'
         shell: bash
         run: |
           repository_name="${GITHUB_REPOSITORY#*/}"
@@ -43,21 +63,49 @@ jobs:
           npm run build -- --base-href "${base_href}"
           cp dist/dumb-and-dahmer/browser/index.html dist/dumb-and-dahmer/browser/404.html
           touch dist/dumb-and-dahmer/browser/.nojekyll
+      - name: Reject stale source and preserve the generated snapshot
+        if: inputs.refresh_catalog != true || steps.sync.outputs.changed == 'true' || steps.sync.outputs.should_publish == 'true'
+        shell: bash
+        env:
+          REFRESH_CHANGED: ${{ steps.sync.outputs.changed }}
+        run: |
+          git fetch origin master
+          test "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"
+          if [[ "$REFRESH_CHANGED" == "true" ]] && ! git diff --quiet -- public/data/catalog.json public/images; then
+            git add -- public/data/catalog.json public/images
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Refresh public podcast catalog"
+            git push origin HEAD:master
+          fi
+      - name: Mark publication ready
+        if: inputs.refresh_catalog != true || steps.sync.outputs.should_publish == 'true'
+        id: publication
+        shell: bash
+        run: |
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Upload Pages artifact
+        if: steps.publication.outputs.ready == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist/dumb-and-dahmer/browser
 
   deploy:
     needs: build
+    if: needs.build.outputs.ready == 'true'
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Reject publication superseded by a newer master
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SHA: ${{ needs.build.outputs.sha }}
+        run: test "$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/master" --jq .object.sha)" = "$EXPECTED_SHA"
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

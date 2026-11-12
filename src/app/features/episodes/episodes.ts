@@ -1,5 +1,5 @@
 import { TranslocoDirective } from '@jsverse/transloco';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, linkedSignal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { PodcastService } from '../../core/podcast.service';
@@ -8,6 +8,9 @@ import { EmptyStateComponent } from '../../shared/empty-state';
 import { IconComponent } from '../../shared/icon';
 import { CRIME_CATEGORIES } from '../../core/categories';
 import type { CrimeCategory } from '../../core/models';
+import { matchesSearch } from '../../core/discovery';
+import { editorialText } from '../../core/editorial.mjs';
+import { TranslocoService } from '@jsverse/transloco';
 @Component({
   imports: [TranslocoDirective, EpisodeCardComponent, EmptyStateComponent, IconComponent],
   template: `<ng-container *transloco="let t"
@@ -25,6 +28,7 @@ import type { CrimeCategory } from '../../core/models';
       <div class="catalog-toolbar">
         <div class="search-field">
           <dd-icon name="search" /><input
+            #searchField
             type="search"
             [placeholder]="t('episodes.aTitleANameOrADarkLittle')"
             [attr.aria-label]="t('shell.searchEpisodes')"
@@ -51,6 +55,18 @@ import type { CrimeCategory } from '../../core/models';
           </select></label
         >
       </div>
+      @if (podcast.collections().length) {
+        <label class="select-label curated-select"
+          >{{ t('discovery.collection') }}
+          <select [value]="collection() || ''" (change)="setFilter('collection', $any($event.target).value)">
+            <option value="">{{ t('discovery.allCollections') }}</option>
+            <option value="long">{{ t('home.oneMoreHour') }}</option>
+            @for (item of podcast.collections(); track item.id) {
+              <option [value]="item.id">{{ collectionTitle(item.title) }}</option>
+            }
+          </select>
+        </label>
+      }
       <section class="category-section" [attr.aria-label]="t('episodes.crimeCategories')">
         <div class="category-topline">
           <p class="eyebrow">{{ t('episodes.chooseYourCase') }}</p>
@@ -80,14 +96,14 @@ import type { CrimeCategory } from '../../core/models';
         </div>
       </section>
       <div class="results-line">
-        <span
+        <span role="status" aria-live="polite" aria-atomic="true"
           >{{ filtered().length }} {{ t('episodes.episodes') }}
           @if (collection() === 'long') {
             {{ t('episodes.overAnHour') }}
           }
         </span>
-        @if (search() || season() !== 'all' || collection() || selectedCategories().length) {
-          <button class="text-button" (click)="clear()">
+        @if (hasFilters()) {
+          <button class="text-button" (click)="clear(searchField)">
             {{ t('episodes.clearFilters') }} <dd-icon name="close" />
           </button>
         }
@@ -109,6 +125,13 @@ import type { CrimeCategory } from '../../core/models';
           title="episodes.thisCaseWasNotFound"
           description="episodes.tryAnotherWordOrRemoveAFilter"
         />
+        @if (hasFilters()) {
+          <div class="load-more">
+            <button class="button secondary" (click)="clear(searchField)">
+              {{ t('episodes.clearFilters') }}
+            </button>
+          </div>
+        }
       } @else {
         <div class="episode-grid catalog-grid">
           @for (episode of visible(); track episode.id) {
@@ -141,40 +164,63 @@ export class EpisodesComponent {
   readonly podcast = inject(PodcastService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly transloco = inject(TranslocoService);
+  readonly collectionTitle = (title: Parameters<typeof editorialText>[0]) =>
+    editorialText(title, this.transloco.getActiveLang());
   private readonly params = toSignal(this.route.queryParamMap, {
     initialValue: this.route.snapshot.queryParamMap,
   });
   readonly search = computed(() => this.params().get('q') ?? '');
-  readonly season = computed(() => this.params().get('season') ?? 'all');
-  readonly sort = computed(() => this.params().get('sort') ?? 'newest');
-  readonly collection = computed(() => this.params().get('collection'));
+  readonly season = computed(() => {
+    const value = this.params().get('season') ?? 'all';
+    return value === 'none' ||
+      this.podcast.episodes().some((e) => e.season !== null && String(e.season) === value)
+      ? value
+      : 'all';
+  });
+  readonly sort = computed(() => (this.params().get('sort') === 'oldest' ? 'oldest' : 'newest'));
+  readonly collection = computed(() => {
+    const id = this.params().get('collection');
+    return id === 'long' || this.podcast.collections().some((c) => c.id === id) ? id : null;
+  });
   readonly selectedCategories = computed(() =>
     (this.params().get('category') ?? '')
       .split(',')
       .filter((id): id is CrimeCategory => CRIME_CATEGORIES.some((category) => category.id === id)),
   );
-  readonly limit = signal(20);
+  readonly limit = linkedSignal({ source: this.params, computation: () => 20 });
+  readonly hasFilters = computed(
+    () =>
+      !!(
+        this.search() ||
+        this.season() !== 'all' ||
+        this.collection() ||
+        this.selectedCategories().length ||
+        this.sort() !== 'newest'
+      ),
+  );
   readonly addPage = (n: number): number => n + 20;
   readonly filtered = computed(() => {
-    const q = this.search().trim().toLocaleLowerCase('el');
+    const curated = this.podcast.collections().find((c) => c.id === this.collection());
     return this.podcast
       .episodes()
       .filter(
         (e) =>
-          (!q || `${e.title} ${e.description}`.toLocaleLowerCase('el').includes(q)) &&
+          matchesSearch(this.search(), e.title, e.description, ...(e.tags ?? [])) &&
           (this.season() === 'all' ||
             (this.season() === 'none' ? e.season === null : String(e.season) === this.season())) &&
-          (this.collection() !== 'long' || e.duration >= 3600),
+          (this.collection() !== 'long' || e.duration >= 3600) &&
+          (!curated || curated.episodeIds.includes(e.id)),
       )
       .filter(
         (e) =>
           !this.selectedCategories().length ||
           this.selectedCategories().some((category) => e.categories.includes(category)),
       )
-      .sort((a, b) =>
-        this.sort() === 'oldest'
-          ? a.publishedAt.localeCompare(b.publishedAt)
-          : b.publishedAt.localeCompare(a.publishedAt),
+      .sort(
+        (a, b) =>
+          (this.sort() === 'oldest' ? 1 : -1) * (Date.parse(a.publishedAt) - Date.parse(b.publishedAt)) ||
+          a.id.localeCompare(b.id),
       );
   });
   readonly visible = computed(() => this.filtered().slice(0, this.limit()));
@@ -199,8 +245,9 @@ export class EpisodesComponent {
       replaceUrl: true,
     });
   }
-  clear(): void {
+  clear(searchField?: HTMLInputElement): void {
     this.limit.set(20);
     void this.router.navigate([], { relativeTo: this.route, queryParams: {} });
+    searchField?.focus();
   }
 }

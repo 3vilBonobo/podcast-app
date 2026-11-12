@@ -22,7 +22,8 @@ export class AudioPlayerService {
   readonly playing = computed(() => this.status() === 'playing');
   readonly busy = computed(() => this.status() === 'loading' || this.status() === 'buffering');
   readonly remaining = computed(() => Math.max(0, this.duration() - this.position()));
-  private pendingPosition = 0;
+  private pendingPosition: number | null = null;
+  private wantsPlayback = false;
   private lastTime = performance.now();
   private listenedDelta = 0;
   private elapsedSinceSave = 0;
@@ -34,42 +35,58 @@ export class AudioPlayerService {
     this.audio.volume = this.volume();
     this.audio.playbackRate = this.speed();
     this.audio.addEventListener('loadedmetadata', () => {
+      if (!this.mediaIsCurrent()) return;
       this.duration.set(
         Number.isFinite(this.audio.duration) ? this.audio.duration : (this.current()?.duration ?? 0),
       );
-      if (this.pendingPosition > 0)
+      if (this.pendingPosition !== null) {
         this.audio.currentTime = Math.min(this.pendingPosition, Math.max(0, this.duration() - 1));
-      this.pendingPosition = 0;
+        this.position.set(this.audio.currentTime);
+      }
+      this.pendingPosition = null;
       this.updateMediaPosition();
     });
     this.audio.addEventListener('timeupdate', () => {
+      if (!this.mediaIsCurrent() || this.pendingPosition !== null) return;
       this.position.set(this.audio.currentTime);
       this.updateMediaPosition();
     });
     this.audio.addEventListener('playing', () => {
+      if (!this.mediaIsCurrent() || this.audio.paused) return;
+      if (!this.wantsPlayback || this.checkSleep()) {
+        this.audio.pause();
+        return;
+      }
       this.status.set('playing');
+      const id = this.current()!.id;
+      if (this.library.state().queue.includes(id)) this.library.removeFromQueue(id);
       this.lastTime = performance.now();
       this.setMediaState('playing');
     });
     this.audio.addEventListener('pause', () => {
+      if (!this.audio.paused || !this.mediaIsCurrent()) return;
       if (this.status() !== 'error') this.status.set('paused');
       this.persist();
       this.setMediaState('paused');
     });
     this.audio.addEventListener('waiting', () => {
-      if (!this.audio.paused) this.status.set('buffering');
+      if (this.wantsPlayback && this.mediaIsCurrent() && !this.audio.paused) this.status.set('buffering');
     });
     this.audio.addEventListener('seeking', () => {
       this.lastTime = performance.now();
     });
     this.audio.addEventListener('ended', () => {
+      if (!this.wantsPlayback || !this.mediaIsCurrent() || !this.audio.ended) return;
+      this.position.set(this.duration());
       this.persist(true);
+      if (this.checkSleep()) return;
       this.next(true);
     });
     this.audio.addEventListener('error', () => {
-      if (this.current()) this.fail();
+      if (this.audio.error && this.mediaIsCurrent()) this.fail();
     });
     const tick = window.setInterval(() => {
+      if (this.checkSleep()) return;
       const now = performance.now();
       const delta = (now - this.lastTime) / 1000;
       this.lastTime = now;
@@ -81,23 +98,24 @@ export class AudioPlayerService {
           this.elapsedSinceSave = 0;
         }
       }
-      const until = this.sleepUntil();
-      if (until !== null) {
-        this.sleepRemaining.set(Math.max(0, Math.ceil((until - Date.now()) / 1000)));
-        if (Date.now() >= until) {
-          this.pause();
-          this.setSleep(0);
-        }
-      }
     }, 1000);
+    const pagehide = () => {
+      this.persist();
+      void this.library.flush();
+    };
+    const visibility = () => {
+      if (document.hidden) pagehide();
+      else this.checkSleep();
+    };
     inject(DestroyRef).onDestroy(() => {
       window.clearInterval(tick);
+      this.wantsPlayback = false;
       this.audio.pause();
+      window.removeEventListener('pagehide', pagehide);
+      document.removeEventListener('visibilitychange', visibility);
     });
-    window.addEventListener('pagehide', () => this.persist());
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) this.persist();
-    });
+    window.addEventListener('pagehide', pagehide);
+    document.addEventListener('visibilitychange', visibility);
     effect(() => {
       const loaded = this.library.loaded();
       const episodes = this.podcast.episodes();
@@ -107,7 +125,7 @@ export class AudioPlayerService {
         if (saved && !this.current()) this.select(saved, false);
       }
     });
-    this.setupMediaSession();
+    inject(DestroyRef).onDestroy(this.setupMediaSession());
   }
   private preference(key: string, fallback: number, min: number, max: number): number {
     const raw = readPreference(key);
@@ -122,11 +140,23 @@ export class AudioPlayerService {
     this.select(episode, true);
   }
   private select(episode: Episode, autoplay: boolean, rememberHistory = true): void {
+    this.restored = true;
+    const intent = ++this.intent;
+    this.wantsPlayback = false;
     this.persist();
+    this.audio.pause();
+    if (!this.library.loaded()) {
+      this.status.set(autoplay ? 'loading' : 'paused');
+      void this.library.ready.then(() => {
+        if (intent === this.intent) this.applySelection(episode, autoplay, rememberHistory);
+      });
+      return;
+    }
+    this.applySelection(episode, autoplay, rememberHistory);
+  }
+  private applySelection(episode: Episode, autoplay: boolean, rememberHistory: boolean): void {
     if (rememberHistory && this.current() && this.current()?.id !== episode.id)
       this.history.push(this.current()!.id);
-    this.intent++;
-    this.audio.pause();
     this.current.set(episode);
     this.error.set('');
     this.status.set(autoplay ? 'loading' : 'paused');
@@ -137,13 +167,13 @@ export class AudioPlayerService {
     this.audio.src = episode.audioUrl; // The original enclosure URL is deliberately preserved.
     this.audio.playbackRate = this.speed();
     this.library.setCurrent(episode.id);
-    if (this.library.state().queue.includes(episode.id)) this.library.removeFromQueue(episode.id);
     this.setMetadata(episode);
-    if (autoplay) void this.resume();
+    if (autoplay && !this.checkSleep()) void this.resume();
   }
   async resume(): Promise<void> {
     if (!this.current()) return;
     const intent = ++this.intent;
+    this.wantsPlayback = true;
     this.error.set('');
     this.status.set('loading');
     try {
@@ -152,9 +182,17 @@ export class AudioPlayerService {
         this.audio.load();
       }
       await this.audio.play();
+      if (!this.wantsPlayback) {
+        this.audio.pause();
+        return;
+      }
       if (intent === this.intent && !this.audio.paused) this.status.set('playing');
     } catch (error) {
-      if (intent !== this.intent || (error instanceof DOMException && error.name === 'AbortError')) return;
+      if (intent !== this.intent) return;
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        this.pause();
+        return;
+      }
       this.fail();
     }
   }
@@ -164,16 +202,17 @@ export class AudioPlayerService {
   }
   pause(): void {
     this.intent++;
+    this.wantsPlayback = false;
     this.audio.pause();
-    if (this.current() && this.status() !== 'error') this.status.set('paused');
+    if (this.status() !== 'error') this.status.set(this.current() ? 'paused' : 'idle');
     this.persist();
   }
   seek(seconds: number): void {
-    if (!this.current()) return;
+    if (!this.current() || !Number.isFinite(seconds)) return;
     const position = Math.max(0, Math.min(seconds, this.duration()));
-    if (this.audio.readyState > 0) {
+    if (this.audio.readyState > 0 && this.mediaIsCurrent()) {
       this.audio.currentTime = position;
-      this.pendingPosition = 0;
+      this.pendingPosition = null;
     } else this.pendingPosition = position;
     this.position.set(position);
     this.persist();
@@ -188,12 +227,14 @@ export class AudioPlayerService {
     savePreference('speed', String(speed));
   }
   setVolume(volume: number): void {
+    if (!Number.isFinite(volume)) return;
     const safe = Math.min(1, Math.max(0, volume));
     this.volume.set(safe);
     this.audio.volume = safe;
     savePreference('volume', String(safe));
   }
   setSleep(minutes: number): void {
+    if (!Number.isFinite(minutes) || minutes < 0) return;
     this.sleepMinutes.set(minutes);
     this.sleepUntil.set(minutes > 0 ? Date.now() + minutes * 60000 : null);
     this.sleepRemaining.set(minutes * 60);
@@ -216,7 +257,6 @@ export class AudioPlayerService {
     const episode =
       queued ??
       this.podcast.episodes()[this.podcast.episodes().findIndex((e) => e.id === this.current()?.id) + 1];
-    if (queued) this.library.removeFromQueue(queued.id);
     if (episode) this.select(episode, true);
     else {
       this.pause();
@@ -226,10 +266,19 @@ export class AudioPlayerService {
   private persist(ended = false): void {
     const episode = this.current();
     if (!episode) return;
+    if (
+      this.pendingPosition === null &&
+      this.mediaIsCurrent() &&
+      this.audio.readyState > 0 &&
+      Number.isFinite(this.audio.currentTime)
+    )
+      this.position.set(this.audio.currentTime);
     this.library.savePosition(episode.id, this.position(), this.duration(), this.listenedDelta, ended);
     this.listenedDelta = 0;
   }
   private fail(): void {
+    this.wantsPlayback = false;
+    this.audio.pause();
     this.status.set('error');
     this.error.set('common.audioCouldNotStartCheckYourConnectionAnd');
     this.setMediaState('paused');
@@ -259,8 +308,20 @@ export class AudioPlayerService {
       }
     }
   }
-  private setupMediaSession(): void {
-    if (!('mediaSession' in navigator)) return;
+  private mediaIsCurrent(): boolean {
+    return !!this.current() && (!this.audio.currentSrc || this.audio.currentSrc === this.audio.src);
+  }
+  private checkSleep(): boolean {
+    const until = this.sleepUntil();
+    if (until === null) return false;
+    this.sleepRemaining.set(Math.max(0, Math.ceil((until - Date.now()) / 1000)));
+    if (Date.now() < until) return false;
+    this.pause();
+    this.setSleep(0);
+    return true;
+  }
+  private setupMediaSession(): () => void {
+    if (!('mediaSession' in navigator)) return () => {};
     const handlers: Partial<Record<MediaSessionAction, MediaSessionActionHandler>> = {
       play: () => {
         void this.resume();
@@ -281,5 +342,14 @@ export class AudioPlayerService {
         /* Unsupported actions are ignored. */
       }
     }
+    return () => {
+      for (const action of Object.keys(handlers)) {
+        try {
+          navigator.mediaSession.setActionHandler(action as MediaSessionAction, null);
+        } catch {
+          /* Optional capability. */
+        }
+      }
+    };
   }
 }

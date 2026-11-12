@@ -13,7 +13,16 @@
       "name": "catalog",
       "installMode": "lazy",
       "updateMode": "prefetch",
-      "resources": { "files": ["/data/**", "/images/**", "/media/**"] }
+      "resources": { "files": ["/images/**", "/media/**"] }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "public-catalog",
+      "version": 1,
+      "urls": ["/data/catalog.json"],
+      "cacheConfig": { "strategy": "freshness", "maxSize": 1, "maxAge": "30d", "timeout": "5s" },
+      "cacheQueryOptions": { "ignoreSearch": true }
     }
   ]
 }

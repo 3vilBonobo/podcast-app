@@ -14,7 +14,9 @@ export interface Episode {
   episodeType: 'full' | 'trailer' | 'bonus';
   contentKind: 'public-episode' | 'promotional-preview';
   categories: CrimeCategory[];
-  categorySource: 'editorial-keywords';
+  categorySource: 'editorial-keywords' | 'reviewed';
+  suggestedCategories?: CrimeCategory[];
+  tags?: string[];
   link: string;
   access: 'public';
 }

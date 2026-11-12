@@ -9,6 +9,7 @@ import { LibraryService } from '../../core/library.service';
 import { IconComponent } from '../../shared/icon';
 import { MinutesPipe } from '../../shared/format';
 import { EmptyStateComponent } from '../../shared/empty-state';
+import { CRIME_CATEGORIES } from '../../core/categories';
 @Component({
   imports: [TranslocoDirective, RouterLink, DatePipe, IconComponent, MinutesPipe, EmptyStateComponent],
   template: `<ng-container *transloco="let t"
@@ -85,6 +86,32 @@ import { EmptyStateComponent } from '../../shared/empty-state';
           <p class="eyebrow">{{ t('episodes.episodeNotes') }}</p>
           <h2>{{ t('episodes.theCaseFile') }}</h2>
           <p class="preserve-lines">{{ episode.description }}</p>
+          <div class="detail-editorial">
+            <p class="eyebrow">
+              {{
+                t(
+                  episode.categorySource === 'reviewed'
+                    ? 'discovery.reviewedCategories'
+                    : 'discovery.suggestedCategories'
+                )
+              }}
+            </p>
+            <div class="category-chips">
+              @for (category of episode.categories; track category) {
+                <a class="category-chip" routerLink="/episodes" [queryParams]="{ category }">{{
+                  t(categoryLabel(category))
+                }}</a>
+              }
+            </div>
+            @if (episode.tags?.length) {
+              <p class="eyebrow">{{ t('discovery.reviewedTags') }}</p>
+              <div class="category-chips">
+                @for (tag of episode.tags; track tag) {
+                  <a class="category-chip" routerLink="/episodes" [queryParams]="{ q: tag }">{{ tag }}</a>
+                }
+              </div>
+            }
+          </div>
           @if (episode.link) {
             <a [href]="episode.link" target="_blank" rel="noopener noreferrer" class="text-button"
               >{{ t('episodes.thisEpisodeOnBuzzsprout') }} <dd-icon name="external"
@@ -93,6 +120,7 @@ import { EmptyStateComponent } from '../../shared/empty-state';
         </section>
       } @else if (!podcast.loading()) {
         <dd-empty
+          [headingLevel]="1"
           title="episodes.theCaseFileWasNotFound"
           description="episodes.thisEpisodeMayHaveBeenRemovedFromThe"
           link="/episodes"
@@ -104,6 +132,8 @@ export class EpisodeDetailsComponent {
   readonly podcast = inject(PodcastService);
   readonly player = inject(AudioPlayerService);
   readonly library = inject(LibraryService);
+  readonly categoryLabel = (id: string) =>
+    CRIME_CATEGORIES.find((category) => category.id === id)?.label ?? 'categories.otherCases';
   private readonly route = inject(ActivatedRoute);
   private readonly params = toSignal(this.route.paramMap, { initialValue: this.route.snapshot.paramMap });
   readonly episode = computed(() => this.podcast.find(this.params().get('id') ?? ''));

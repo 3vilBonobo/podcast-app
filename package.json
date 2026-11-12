@@ -6,6 +6,9 @@
     "start": "ng serve --host 127.0.0.1",
     "build": "ng build",
     "refresh:catalog": "node scripts/import-rss.mjs",
+    "editorial:review": "node scripts/editorial-review.mjs generate",
+    "editorial:apply": "node scripts/editorial-review.mjs apply",
+    "editorial:check": "node scripts/editorial-review.mjs check",
     "test": "vitest run"
   },
   "dependencies": {

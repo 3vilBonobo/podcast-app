@@ -299,6 +299,14 @@
     "thisAppOnlyPlaysPublicEpisodesItDoes": "Η εφαρμογή αυτή παίζει μόνο δημόσια επεισόδια. Δεν ζητά το προσωπικό RSS σου και δεν διαχειρίζεται συνδρομές.",
     "goToThePublicArchive": "Στο δημόσιο αρχείο"
   },
+  "discovery": {
+    "collection": "Συλλογή",
+    "allCollections": "Όλες οι συλλογές",
+    "featured": "Επιλογές των παρουσιαστριών",
+    "reviewedCategories": "Κατηγορίες ελεγμένες από τις παρουσιάστριες",
+    "suggestedCategories": "Προτεινόμενες κατηγορίες · αναμένουν έλεγχο",
+    "reviewedTags": "Ετικέτες ελεγμένες από τις παρουσιάστριες"
+  },
   "profile": {
     "blackVelvetBloodRedAccents": "Μαύρο βελούδο & αιματηρό μπορντό",
     "aStoryInTheLight": "Μια ιστορία στο φως",

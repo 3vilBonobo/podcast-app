@@ -109,6 +109,13 @@ class FakeAudio extends EventTarget {
   duration = 600;
   readyState = 4;
   seeking = false;
+  ended = false;
+  currentSrc = '';
+  error: { code: number } | null = null;
+  load = vi.fn(() => {
+    this.error = null;
+    this.readyState = 0;
+  });
   play = vi.fn(async () => {
     this.paused = false;
     this.dispatchEvent(new Event('playing'));
@@ -230,9 +237,11 @@ describe('audio controls', () => {
     const { player, audio, library } = await setup();
     player.play(episode('a'));
     await Promise.resolve();
+    audio.ended = true;
     audio.dispatchEvent(new Event('ended'));
     expect(library.record('a')?.completed).toBe(true);
     expect(player.current()?.id).toBe('b');
+    audio.error = { code: 2 };
     audio.dispatchEvent(new Event('error'));
     expect(player.status()).toBe('error');
     expect(player.error()).not.toBe('');
@@ -256,5 +265,161 @@ describe('audio controls', () => {
     await vi.advanceTimersByTimeAsync(1001);
     expect(player.sleepUntil()).toBeNull();
     expect(player.status()).toBe('paused');
+  });
+  it('waits for library hydration before resuming a saved episode after an early Play click', async () => {
+    let hydrate!: (value: ReturnType<typeof emptyLibrary>) => void;
+    const pending = new Promise<ReturnType<typeof emptyLibrary>>((resolve) => {
+      hydrate = resolve;
+    });
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: LocalStorageRepository,
+          useValue: { read: () => pending, write: async () => {}, error: signal('') },
+        },
+        {
+          provide: PodcastService,
+          useValue: {
+            episodes: signal([episode('a')]),
+            find: (id: string) => (id === 'a' ? episode('a') : undefined),
+            image: () => '/icon.svg',
+          },
+        },
+      ],
+    });
+    vi.stubGlobal('Audio', FakeAudio);
+    const library = TestBed.inject(LibraryService),
+      player = TestBed.inject(AudioPlayerService);
+    const audio = player.audio as unknown as FakeAudio;
+    player.play(episode('a'));
+    expect(audio.play).not.toHaveBeenCalled();
+    hydrate({
+      ...emptyLibrary(),
+      currentId: 'a',
+      records: {
+        a: {
+          episodeId: 'a',
+          position: 123,
+          duration: 600,
+          completed: false,
+          lastPlayed: 1,
+          listenedSeconds: 20,
+        },
+      },
+    });
+    await library.ready;
+    await Promise.resolve();
+    TestBed.tick();
+    audio.dispatchEvent(new Event('loadedmetadata'));
+    expect(player.current()?.id).toBe('a');
+    expect(player.position()).toBe(123);
+    expect(player.playing()).toBe(true);
+  });
+  it('ignores late playing and pause events after the listener changed intent', async () => {
+    const { player, audio } = await setup();
+    player.play(episode('a'));
+    await Promise.resolve();
+    player.pause();
+    audio.paused = false;
+    audio.dispatchEvent(new Event('playing'));
+    expect(audio.paused).toBe(true);
+    expect(player.status()).toBe('paused');
+    player.play(episode('b'));
+    await Promise.resolve();
+    audio.dispatchEvent(new Event('pause'));
+    expect(player.playing()).toBe(true);
+  });
+  it('keeps failed queued playback available for retry until it actually starts', async () => {
+    const { player, audio, library } = await setup();
+    library.enqueue('b');
+    audio.play.mockRejectedValueOnce(new Error('network failure'));
+    player.next();
+    await Promise.resolve();
+    expect(player.status()).toBe('error');
+    expect(library.state().queue).toEqual(['b']);
+    await player.resume();
+    expect(player.playing()).toBe(true);
+    expect(library.state().queue).toEqual([]);
+  });
+  it('ignores an obsolete ended event when the current media has not ended', async () => {
+    const { player, audio, library } = await setup();
+    player.play(episode('a'));
+    player.play(episode('b'));
+    await Promise.resolve();
+    audio.ended = false;
+    audio.dispatchEvent(new Event('ended'));
+    expect(player.current()?.id).toBe('b');
+    expect(library.record('b')?.completed).not.toBe(true);
+  });
+  it('clamps restored position consistently when actual media is shorter than the feed', async () => {
+    const { player, audio, library } = await setup();
+    library.savePosition('a', 900, 1000);
+    player.play(episode('a'));
+    audio.dispatchEvent(new Event('loadedmetadata'));
+    expect(audio.currentTime).toBe(599);
+    expect(player.position()).toBe(599);
+  });
+  it('honors the absolute sleep deadline when a suspended tab becomes visible', async () => {
+    vi.useFakeTimers({ toFake: ['setInterval', 'clearInterval', 'Date', 'performance'] });
+    vi.spyOn(document, 'hidden', 'get').mockReturnValue(false);
+    const { player } = await setup();
+    player.play(episode('a'));
+    await Promise.resolve();
+    player.setSleep(1);
+    vi.setSystemTime(Date.now() + 61_000);
+    document.dispatchEvent(new Event('visibilitychange'));
+    expect(player.sleepUntil()).toBeNull();
+    expect(player.status()).toBe('paused');
+  });
+  it('does not let an earlier rejected play overwrite the newly playing episode', async () => {
+    const { player, audio } = await setup();
+    let reject!: (error: Error) => void;
+    audio.play.mockImplementationOnce(
+      () =>
+        new Promise<void>((_, fail) => {
+          reject = fail;
+        }),
+    );
+    player.play(episode('a'));
+    player.play(episode('b'));
+    await Promise.resolve();
+    reject(new Error('old request failed'));
+    await Promise.resolve();
+    expect(player.current()?.id).toBe('b');
+    expect(player.playing()).toBe(true);
+    expect(player.error()).toBe('');
+  });
+  it('supports optional Media Session actions and releases handlers on teardown', async () => {
+    const old = Object.getOwnPropertyDescriptor(navigator, 'mediaSession');
+    const handlers = new Map<string, MediaSessionActionHandler | null>();
+    Object.defineProperty(navigator, 'mediaSession', {
+      configurable: true,
+      value: {
+        setActionHandler: (action: string, handler: MediaSessionActionHandler | null) =>
+          handlers.set(action, handler),
+        setPositionState: vi.fn(),
+        playbackState: 'none',
+      },
+    });
+    try {
+      const { player } = await setup();
+      player.play(episode('a'));
+      await Promise.resolve();
+      handlers.get('seekforward')?.({
+        action: 'seekforward',
+        seekOffset: 30,
+      } as MediaSessionSeekActionDetails);
+      expect(player.position()).toBe(30);
+      handlers.get('pause')?.({ action: 'pause' });
+      expect(player.status()).toBe('paused');
+      handlers.get('play')?.({ action: 'play' });
+      await Promise.resolve();
+      expect(player.playing()).toBe(true);
+      TestBed.resetTestingModule();
+      expect(handlers.get('play')).toBeNull();
+    } finally {
+      if (old) Object.defineProperty(navigator, 'mediaSession', old);
+      else Reflect.deleteProperty(navigator, 'mediaSession');
+    }
   });
 });

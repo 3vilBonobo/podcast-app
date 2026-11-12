@@ -299,6 +299,14 @@
     "thisAppOnlyPlaysPublicEpisodesItDoes": "This app only plays public episodes. It does not ask for your private RSS or manage subscriptions.",
     "goToThePublicArchive": "Go to the public archive"
   },
+  "discovery": {
+    "collection": "Collection",
+    "allCollections": "All collections",
+    "featured": "Selected by the hosts",
+    "reviewedCategories": "Categories reviewed by the hosts",
+    "suggestedCategories": "Suggested categories · awaiting host review",
+    "reviewedTags": "Tags reviewed by the hosts"
+  },
   "profile": {
     "blackVelvetBloodRedAccents": "Black velvet & blood-red accents",
     "aStoryInTheLight": "A story in the light",

@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, convertToParamMap } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { EpisodesComponent } from '../src/app/features/episodes/episodes';
 import { PodcastService } from '../src/app/core/podcast.service';
+import { TranslocoService } from '@jsverse/transloco';
 import type { Episode } from '../src/app/core/models';
 
 describe('catalog filters', () => {
@@ -45,12 +46,13 @@ describe('catalog filters', () => {
     navigate.mockClear();
     TestBed.configureTestingModule({
       providers: [
+        { provide: TranslocoService, useValue: { getActiveLang: () => 'el' } },
         {
           provide: ActivatedRoute,
           useValue: { queryParamMap: params, snapshot: { queryParamMap: params.value } },
         },
         { provide: Router, useValue: { navigate } },
-        { provide: PodcastService, useValue: { episodes: signal(sample) } },
+        { provide: PodcastService, useValue: { episodes: signal(sample), collections: signal([]) } },
       ],
     });
   });
@@ -84,5 +86,95 @@ describe('catalog filters', () => {
         replaceUrl: true,
       }),
     );
+  });
+  it('matches Greek case, accents, decomposed accents and final sigma across title and description', () => {
+    const catalog = TestBed.inject(PodcastService).episodes as ReturnType<typeof signal<Episode[]>>;
+    catalog.set([
+      { ...sample[0], title: 'Ο Δολοφόνος', description: 'Στην ΑΘΗΝΑ, ένας μάρτυρας.' },
+      { ...sample[1], title: 'Άλλη υπόθεση', description: 'Χωρίς αντιστοιχία' },
+    ]);
+    const view = component();
+    for (const q of ['δολοφονοσ αθηνα', 'ΑΘΉΝΑ δολοφόνος', '  δολοφονος   ΜΑΡΤΥΡΑΣ ']) {
+      params.next(convertToParamMap({ q }));
+      expect(view.filtered().map((e) => e.id)).toEqual(['a']);
+    }
+  });
+  it('combines reviewed tags with categories, season, collection and sorting', () => {
+    const catalog = TestBed.inject(PodcastService).episodes as ReturnType<typeof signal<Episode[]>>;
+    catalog.set([
+      { ...sample[0], tags: ['Μαρτυρίες'] },
+      { ...sample[2], tags: ['Μαρτυρίες'] },
+    ]);
+    const view = component();
+    params.next(
+      convertToParamMap({
+        q: 'cult μαρτυριες',
+        category: 'cults,robberies',
+        season: '2',
+        collection: 'long',
+        sort: 'oldest',
+      }),
+    );
+    expect(view.filtered().map((e) => e.id)).toEqual(['c']);
+    params.next(convertToParamMap({ q: 'missing' }));
+    expect(view.filtered()).toEqual([]);
+  });
+  it('resets expanded pagination when URL filters change externally', () => {
+    const view = component();
+    view.limit.set(60);
+    params.next(convertToParamMap({ season: '2' }));
+    expect(view.limit()).toBe(20);
+  });
+  it('falls back safely for unknown season and sort values and exposes sort-only clearing', () => {
+    const view = component();
+    params.next(convertToParamMap({ season: 'missing', sort: 'invalid' }));
+    expect(view.season()).toBe('all');
+    expect(view.sort()).toBe('newest');
+    expect(view.filtered().map((e) => e.id)).toEqual(['c', 'b', 'a']);
+    params.next(convertToParamMap({ sort: 'oldest' }));
+    expect(view.hasFilters()).toBe(true);
+  });
+  it('distinguishes the explicit no-season option from malformed null URL strings', () => {
+    const catalog = TestBed.inject(PodcastService).episodes as ReturnType<typeof signal<Episode[]>>;
+    catalog.set([{ ...sample[0], season: null }, sample[1]]);
+    const view = component();
+    params.next(convertToParamMap({ season: 'null' }));
+    expect(view.season()).toBe('all');
+    params.next(convertToParamMap({ season: 'none' }));
+    expect(view.filtered().map((e) => e.id)).toEqual(['a']);
+  });
+  it('applies a reviewed collection together with tags, multi-category selection and season', () => {
+    const service = TestBed.inject(PodcastService);
+    (service.episodes as ReturnType<typeof signal<Episode[]>>).set(
+      sample.map((e) => ({ ...e, tags: ['Μαρτυρίες'] })),
+    );
+    (service.collections as ReturnType<typeof signal<any[]>>).set([
+      { id: 'qa', title: 'QA fixture', reviewed: true, episodeIds: ['b', 'c'] },
+    ]);
+    const view = component();
+    params.next(
+      convertToParamMap({
+        collection: 'qa',
+        category: 'cults,robberies',
+        q: 'μαρτυριες',
+        season: '2',
+        sort: 'oldest',
+      }),
+    );
+    expect(view.filtered().map((e) => e.id)).toEqual(['b', 'c']);
+    params.next(convertToParamMap({ collection: 'unknown' }));
+    expect(view.collection()).toBeNull();
+    expect(view.filtered()).toHaveLength(3);
+  });
+  it('sorts valid timestamp offsets chronologically with stable GUID ordering for ties', () => {
+    const catalog = TestBed.inject(PodcastService).episodes as ReturnType<typeof signal<Episode[]>>;
+    catalog.set([
+      { ...sample[0], publishedAt: '2026-01-01T01:00:00+03:00' },
+      { ...sample[2], publishedAt: '2025-12-31T22:30:00Z' },
+      { ...sample[1], publishedAt: '2025-12-31T22:30:00Z' },
+    ]);
+    const view = component();
+    params.next(convertToParamMap({ sort: 'oldest' }));
+    expect(view.filtered().map((e) => e.id)).toEqual(['a', 'b', 'c']);
   });
 });

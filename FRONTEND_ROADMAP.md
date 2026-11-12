@@ -5,7 +5,7 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 ## Working scope and approval gates
 
 - Current product phase: complete the existing responsive web application and PWA.
-- Current milestone: **Milestone 2, responsive design, UX and visual quality — implemented and locally verified, awaiting user review**. Milestone 1 was accepted and subsequently committed/pushed under explicit authorization (`7fd1573`). Its keyboard/no-autoplay fixes and tests remain intact. Milestone 2 adds responsive/player, theme contrast, touch-target and auth/accessibility refinements; see [VERIFICATION.md](VERIFICATION.md) for current results and limits. Milestone 3 remains unstarted.
+- Current milestone: **Milestone 4, episode catalog, discovery and editorial metadata — implemented and locally verified; ready for review**. Milestone 3 was accepted locally; its RSS automation was reviewed without rebuilding or activating it. Milestones 1 and 2 were committed/pushed under their separate authorizations (`7fd1573`, `a3794c3`). Their keyboard, responsive and no-autoplay fixes remain intact. Publication and schedule activation still require separate approval. Current evidence and limits are in [VERIFICATION.md](VERIFICATION.md).
 - Keep `master` as the branch convention. Preserve the existing architecture, Gothic Noir identity, public Buzzsprout audio delivery and local library.
 - The untracked `IMPLEMENTATION_REPORT.md` existed before this pass and must be preserved.
 - No staging, commits, pushes, branch operations, deployments, dependency installations or backend/native infrastructure are authorized by this document.
@@ -16,9 +16,9 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 | Milestone | Current status | Dependency / exit gate |
 | --- | --- | --- |
 | 1. Current-state audit and stabilization | Accepted; committed/pushed as `7fd1573` under separate authorization | Preserve the completed fixes and regressions |
-| 2. Responsive design and UX | Implemented and locally verified: 510 layout samples, browser interactions, 40 tests and production build pass | User review; physical devices and formal assistive-technology verification remain outside the executed checks |
-| 3. Audio player reliability | Functional player exists; expanded reliability audit pending | Approved scope; preserve working web playback and library |
-| 4. Catalog and RSS improvements | Existing catalog and filters; curated overrides and automation missing | Editorial decisions and approved refresh configuration |
+| 2. Responsive design and UX | Delivered; committed/pushed as `a3794c3` under separate authorization | Preserve completed fixes; physical-device/assistive-technology limits remain documented |
+| 3. Audio reliability and approved RSS synchronization | Accepted locally; completed regressions preserved and automation reviewed again in Milestone 4 | Separate Git/publication/activation approval; real device/OS and hosted execution remain unverified |
+| 4. Catalog discovery and editorial improvements | Delivered locally; 108 tests/14 files, production build and actual browser discovery/metadata checks pass | Review; hosts must supply editorial decisions. Cold HTTP-error reload limitation documented |
 | 5. Library and frontend features | Existing local library; sharing and backup features missing | Stable persistence contract and approved import/merge behavior |
 | 6. Extras | Five intentional placeholders; no completed game | Product review of Waking Machine specification and supplied/approved content |
 | 7. PWA and release quality | Manifest/service worker exist; comprehensive release verification incomplete | Stable earlier milestones and a documented browser/device matrix |
@@ -52,7 +52,7 @@ Relevant checks: `npm.cmd test`; `npm.cmd run build -- --base-href=/podcast-app/
 
 ## Milestone 2 — responsive design and UX
 
-Status: **implemented and locally verified within the approved scope**. The user authorized this milestone after accepting Milestone 1. No Milestone 2 changes have been staged, committed, pushed or deployed.
+Status: **delivered and locally verified within the approved scope**. The user authorized this milestone after accepting Milestone 1, then separately authorized staging/commit/push as `a3794c3`. The verification entry preserves what was checked before that publication step.
 
 Tasks:
 
@@ -80,7 +80,7 @@ Dependency: completed, accepted Milestone 1. No redesign, new feature, dependenc
 
 ## Milestone 3 — audio player reliability
 
-Status: one root audio service, mini/full players, queue, timer, Media Session hooks and local positions are implemented. Extended interruption/race testing is pending.
+Status: **implemented and locally verified under the approved scope**, including the additional automatic RSS synchronization request. No Milestone 3 work has been staged, committed, pushed, deployed or activated. Device/OS interruption behavior remains explicitly unverified.
 
 Tasks:
 
@@ -90,33 +90,41 @@ Tasks:
 - Check sleep-timer state, cancellation and browser suspension behavior.
 - Audit persistence timing, library hydration and stale media-event handling.
 - Check supported Media Session controls and document unsupported browser/OS behavior.
+- Prepare Wednesday `5 7 * * 3` and monthly `5 7 13 * *` schedules, both with `Europe/Athens`, plus manual dispatch (implemented; not activated).
+- Compare meaningful RSS/catalog data against the published baseline; retain source bytes/timestamp on unchanged imports; reject failed/incomplete imports before replacement; preserve GUIDs, audio URLs, preview classification and existing artwork references (implemented and tested).
+- Reuse the Pages pipeline with serialized publication, stale-source checks, no-change gating and Wednesday/13th overlap handling. Prepared bot commits are limited to generated catalog/artwork and require separate activation approval.
+- Decouple catalog JSON from versioned service-worker assets; recheck visible clients without interrupting audio, retaining valid cached/in-memory data where available (implemented; focused browser cache checks pass).
 
 Acceptance: reproduced failures have targeted fixes and tests; transitions are predictable; failed playback does not silently lose saved progress or queue intent; no native code is introduced. Actual streaming observations are recorded separately from fake-audio unit tests.
 
-Tests: expanded audio/state regressions and real-browser playback checks; website/PWA device matrix for Safari and Chrome.
+Tests: **73 tests across 11 files** pass; production build passes. Six audio regressions were reproduced red then corrected; added rapid-request and optional Media Session checks, importer changed/unchanged/failure/CLI tests, Athens DST/overlap checks, YAML syntax/contracts and runtime refresh tests. Real Chromium playback, queue failure/retry, rapid switching, paused reload, unchanged-module catalog refresh and local-origin offline cached catalog were verified. Safari/physical device/OS suspension checks are not claimed.
 
-Dependency: separate scope approval after review of Milestone 2. Recommended next scope is the reliability work above, prioritizing hydration/event races, network errors/retry, persistence timing and interruption behavior. Preserve paused startup and the current audio architecture; do not replace it without evidence requiring it. Milestone 3 has not begun.
+Publication gate: the user approved implementation/testing only. Review the prepared workflows and branch/environment permissions before explicitly authorizing commit, push, deployment or schedule activation. The public 172-entry source snapshot remains unchanged; a read-only live check found 173 entries on 12 November. The first rollout must adopt the new client/service worker, after which catalog-only refreshes are independent of app feature releases. No backend, paid service, IndexedDB schema or native Android changes were introduced.
 
-## Milestone 4 — catalog and RSS improvements
+## Milestone 4 — episode catalog, discovery and editorial metadata
 
-Status: public RSS normalization and static import, metadata, preview labels, filters and stable GUID routes exist. Search normalization, curated overrides and refresh automation are incomplete.
+Status: **implemented and locally verified under explicit approval**. No staging, commit, push, deployment, schedule activation or Milestone 5 work was performed. Milestone 1–3 tests/functionality and the existing IndexedDB schema remain intact.
 
-Tasks:
+Delivered:
 
-- Improve Greek search, season/category navigation, sorting, details and metadata fallbacks.
-- Introduce a GUID-keyed override file for reviewed categories and curated collections while retaining original feed fields and attribution.
-- Distinguish suggested keyword tags from approved editorial classifications.
-- Produce a review list of the currently 98 Other entries; leave decisions unresolved until editorial input is supplied.
-- Preserve verified public Plus-preview identification and original audio enclosure URLs.
-- Add a manual RSS-refresh GitHub Actions workflow and configurable publication-day schedules after configuration approval.
-- Detect meaningful catalog changes; skip deployment of unchanged catalogs.
-- Preserve the last known-good catalog on failed imports.
+- Accent/case/decomposed-accent/final-sigma normalization, with every query word matched across episode title, description and reviewed tags. Categories remain OR; season, search and collection remain AND.
+- Safe unknown URL values, explicit no-season navigation, chronological timestamp sorting with deterministic GUID ties, pagination reset on URL changes, sort-only clearing, live result counts and empty-result recovery that restores keyboard focus.
+- Missing episode deep links now request a primary empty-state heading and retain archive recovery. Valid GUID links, reloads, browser history and public Plus-preview labels were exercised.
+- Separate, validated GUID-based [editorial overrides](editorial/overrides.json), searchable reviewed tags, collection filtering and ordered featured selections. Original RSS fields/audio/artwork remain recoverable and unchanged. The latest hero remains chronological.
+- A host-editable [98-row review CSV](editorial/review-other.csv), [host guide](editorial/README.md), and generate/apply/check tools. Regeneration preserves review work; only explicitly reviewed rows are applied. All actual overrides, collections and featured selections remain empty pending host decisions.
+- Runtime optional-metadata fallbacks without relaxing the strict RSS publication validator or replacing invalid identities/audio URLs. Malformed optional values no longer reject an otherwise valid catalog. Official URLs and verified preview flags are preserved.
+- Read-only review of the existing Milestone 3 automation: direct reusable artifact publication avoids the built-in-token push-trigger limitation; permissions, default-branch scheduling, Athens timezone/DST, overlap guard, stale-source guards and service-worker policy were checked. No RSS/schedule/refresh system was rebuilt.
 
-Acceptance: overrides apply by stable GUID, feed metadata remains recoverable, unreviewed tags are not treated as authoritative, unchanged refreshes do not deploy, and failed refreshes preserve valid catalog data.
+Verification: **108 tests across 14 files pass**, including all earlier regressions; `/podcast-app/` production build passes. Actual browser interactions cover search/filter/sort combinations, keyboard focus, pagination, deep links, curated QA fixtures, public preview labeling and independent catalog updates. Thirty discovery geometry samples cover five widths × two languages × three themes. Detailed evidence and remaining limits are in [VERIFICATION.md](VERIFICATION.md).
 
-Tests: normalization/override validation, Greek search cases, preview labeling, meaningful-change detection and failed/no-change imports.
+Remaining decisions/limits:
 
-Dependencies: approved editorial taxonomy/collection decisions and publication-day configuration. No runtime RSS proxy, backend or paid infrastructure.
+- Hosts must review the Other list, assign classifications/tags and author any collection names, translations, membership and featured ordering. No content or classifications have been invented.
+- A cold reload receiving HTTP 503 shows Retry rather than cached data; connection loss fallback and retention in an already-open client work. A dedicated validated last-known-good cold-start fallback would need a separately reviewed persistence/cache design; it was documented rather than rebuilding Milestone 3 or changing IndexedDB.
+- Hosted token/branch/environment permissions and scheduled Pages delivery remain unverified until separately authorized. Schedules are best-effort and need the workflow on the repository's default branch. Existing installations first need the Milestone 3 client/service-worker update.
+- Editorial configuration is bundled and uses the normal app publication/update. Subsequent RSS-only catalog changes remain independent of app feature releases. Physical devices and formal assistive-technology testing remain outstanding.
+
+Next gate: review Milestone 4. Milestone 5 remains the existing library/sharing/backup scope below and requires its own approval; it has not begun.
 
 ## Milestone 5 — library and frontend features
 

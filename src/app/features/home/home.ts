@@ -105,6 +105,18 @@ import { MinutesPipe } from '../../shared/format';
           }
         </div>
       </section>
+      @if (podcast.featured().length) {
+        <section class="content-section">
+          <div class="section-heading">
+            <h2>{{ t('discovery.featured') }}</h2>
+          </div>
+          <div class="episode-grid">
+            @for (episode of podcast.featured(); track episode.id) {
+              <dd-episode-card [episode]="episode" />
+            }
+          </div>
+        </section>
+      }
       @if (continueListening().length) {
         <section class="content-section">
           <div class="section-heading">

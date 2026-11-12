@@ -154,3 +154,138 @@ PASS: actual keyboard focus outlines measured 2px on player/range controls; form
 PASS: final diff/whitespace review and artifact inspection; Pages base/worker paths, 172 catalog entries and all 25 packaged artwork references remain valid. Test tabs were closed, viewport overrides reset, preferences returned to Greek/system theme/1×, and playback left paused. Temporary QA servers were stopped. No library data was cleared; IMPLEMENTATION_REPORT.md retains SHA-256 `C16664837543F8A36E72CF0F6CDB86AF46451FC309B25445B2AFC0C7028DADB2`.
 
 Remaining limitations: one Chromium engine; no physical iOS/Android, screen-reader session, actual reduced-motion emulation, background/lock-screen/network-interruption certification, offline/install or hosted Pages deployment test. Existing loading/error/empty UI is retained; this pass exercised library/queue and empty-player states but did not inject catalog/network failures. Milestone 3 should next address audio hydration/event races, failure/retry, persistence timing, rapid transitions, sleep-timer suspension and supported Media Session/device interruptions under separately approved scope. No Milestone 3 implementation was performed.
+
+## Milestone 3 — audio reliability and approved automatic RSS synchronization — 12 November 2026
+
+Status: implemented and locally verified, ready for review. The additional scheduling/publishing scope was explicitly approved for implementation/testing only. **No changes from this milestone have been staged, committed, pushed, deployed or activated.** HEAD remains the Milestone 2 commit `a3794c3`. Workflow files are local preparations; the hosted repository retains its previous configuration until separate approval. Backend, Firebase, paid infrastructure, native Android, IndexedDB schema changes and the remaining Milestone 4 discovery/editorial work were not introduced.
+
+### Prepared synchronization and publication
+
+- `.github/workflows/refresh-catalog.yml` defines Wednesday `5 7 * * 3` and monthly `5 7 13 * *`, each with `timezone: Europe/Athens`, plus `workflow_dispatch`. Native [timezone/DST scheduling and concurrency queueing](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule) were verified against GitHub's current documentation. GitHub scheduling remains best-effort and can be delayed.
+- A dependency-free preflight skips the monthly trigger on an Athens Wednesday/13th before entering the shared publication queue. The Wednesday event remains active, and manual refresh is never skipped. Winter/summer overlap and non-overlapping monthly dates are covered by executable tests.
+- The existing Pages workflow is reusable by the refresh workflow. It preserves normal `master` push/manual releases and uses a shared `github-pages` concurrency queue with `queue: max` and no cancellation of in-progress publication. Scheduled and normal publications cannot run through that pipeline concurrently.
+- Refreshes read the official public feed and compare normalized content against the **published** catalog using the configured Pages base URL. Timestamp and derived local-artwork fields are excluded from meaningful comparison. Source bytes/mtime remain unchanged for an unchanged import; no artwork requests, build, commit, artifact upload or deployment are needed on that normal no-change path.
+- XML validity, required metadata, duplicate GUIDs, consumed JSON field shapes and continuity of existing GUIDs are checked before replacement. Missing existing episodes or durations stop for review as a conservative incomplete-feed guard; legitimate removals require review rather than automatic deletion. Previous catalog bytes/artwork remain intact on failure.
+- Existing local artwork mappings survive new entries pushing older episodes beyond the initial 24-image window. New artwork uses hashed filenames; the importer does not overwrite images referenced by the previous valid catalog. GUIDs, public Plus-preview classification and original enclosure URLs/queries remain preserved.
+- The prepared pipeline runs tests/build before committing generated catalog/artwork only, refuses stale `master` snapshots, and checks again before Pages publication. Built-in-token commits do not rely on triggering another push workflow: publication happens in the same reusable pipeline. If deployment failed after its catalog commit, a later refresh compares with the older published version and retries publication without a timestamp-only source write.
+- Failures exit nonzero before publication outputs are emitted. Branch protection/Actions write permissions and environment approvals are respected; their hosted behavior has not been exercised or changed. The generated source commit/push/deploy steps exist only in the prepared YAML and were **not executed locally**.
+
+### Catalog caching and runtime behavior
+
+Catalog JSON moved out of versioned asset caching into a `freshness` data group (5-second network timeout, one cached catalog, 30-day maximum age, query-insensitive cache lookup). Images remain versioned assets. Cache-busted HTTP requests avoid stale browser HTTP responses. Visible clients recheck at 15-minute intervals and on return after that interval, without overlapping requests or replacing valid in-memory data on malformed/unavailable responses. Initial requests have a bounded 20-second failure/retry path.
+
+The [Angular data-group configuration](https://angular.dev/ecosystem/service-workers/config) supports data updates independently of application asset versions. Existing installations must adopt this initial client/service-worker change; later valid catalog data does not need another application feature release. Offline fallback applies to a cached valid response when the network is unavailable/too slow. This is not offline audio support or an offline-install certification. An HTTP error response is handled by the app's initial error/retry or preservation of an already loaded catalog; it is not claimed to have the same fallback behavior as a disconnected network.
+
+PASS: a live **read-only** dry run against the public feed and published catalog returned `{changed:true, shouldPublish:true, count:173}`. The checked-in/public build snapshot remains **172 entries**; no live catalog import was written to it and no episode was published by this work.
+
+### Audio regressions and corrections
+
+Six newly added tests failed against the previous audio service and pass after the corrections:
+
+| Reproduced behavior | Correction |
+| --- | --- |
+| Early Play read positions before IndexedDB hydration | Defer selection until hydration; cancel superseded intents and preserve saved progress |
+| Late playing/pause events overrode the listener's new intent | Track playback intent and check native/source state; a paused intent cannot silently resume |
+| Failed queued playback consumed its entry | Consume the entry only on actual `playing`; error/retry preserves queue intent |
+| Obsolete ended events advanced a newer track | Check current media/native ended state before completion/next handling |
+| Restored position exceeded shorter actual media while UI kept the old value | Clamp and synchronize the native and displayed position after metadata |
+| Suspended tab retained an overdue sleep timer | Check the absolute deadline on visibility return and relevant playback/tick transitions |
+
+Additional regressions cover rapid earlier-play rejection and optional Media Session actions/teardown. Position persistence reads current native time when valid; pagehide/visibility handlers and Media Session handlers are cleaned up. Seeking/volume/timer inputs reject non-finite values. The mobile mini-player now labels its loading action Pause consistently with its cancel behavior. Paused startup, one root audio element, official audio integration and existing database schema remain intact.
+
+### Executed browser checks
+
+Used in-app Chromium with the optimized build at `http://127.0.0.1:4204/podcast-app/`, at 1280×720 and a simulated 390×844 viewport. Controlled fixture files/server live only under ignored `tmp/` and were not placed in public assets. Detailed observations are saved in [Milestone 3 browser evidence](docs/milestone-3-verification-results.json).
+
+- PASS: fresh startup had no selected player/autoplay. Explicit real public playback reached 0:36 while navigating between catalog/full-player routes. A paused reload restored 0:38 and 1.25×; preferences were returned to 1× afterwards. Timer selection/cancellation and route persistence worked.
+- PASS: changing only the temporary served catalog title became visible after reload while the application module remained `main-5R3EX3IT.js`; no rebuild/feature release was used for that data change. Stopping the local origin server and reloading still displayed the last cached catalog and a paused player. The server was then restarted. This tests loss of the **local origin**, not a device-wide offline radio or offline streaming.
+- PASS: a clearly labeled QA-only audio URL deliberately returned HTTP 503. The player displayed its error/retry notice and retained the queued entry. After the server allowed retry via the official public audio, real elapsed playback reached 0:40, the notice cleared and the queue changed from two entries to one, removing only the successfully started entry. Rapid Next/Previous kept the intended episode selected.
+- PASS: the delayed-failure mobile fixture showed the accessible loading action `Παύση`; cancelling returned it to Play. The final real catalog was restored, the test queue entry removed and the real Lead Masks episode left paused at 0:38. Final module `main-QC7T3QND.js` matched the build. Natural typing retained focus after initial navigation settled.
+- PASS within exercised scope: captured console warnings/errors were empty. Comprehensive uncaught-exception detection was not separately exercised.
+- Evidence: [controlled error UI](docs/screenshots/milestone-3/controlled-audio-error.jpg) and [final restored paused player](docs/screenshots/milestone-3/restored-paused-player.jpg). The browser tab was closed, viewport override reset and temporary server stopped. Existing library data was not cleared.
+
+### Automated results and limits
+
+- PASS: `npm.cmd test` — **73 tests across 11 files**, including all earlier milestone regressions. New coverage includes disk-based changed/unchanged/malformed/partial/unavailable imports, duplicate/lost GUIDs, artwork continuity, real CLI output gating, published-baseline retry, runtime refresh/validation, YAML syntax/contracts and Athens schedules.
+- PASS: `npm.cmd run build -- --base-href=/podcast-app/` — production compilation; initial output approximately **473.47 kB raw / 119.08 kB estimated transfer**, excluding lazy chunks and media.
+- PASS: final formatting/diff checks and generated artifacts: correct Pages/worker base paths, 172 source entries, all 25 packaged artwork references present, catalog absent from versioned asset hashes, and generated freshness data policy with 5000ms timeout/query-insensitive lookup. Dependencies, database/schema files, public catalog/artwork and crime taxonomy are unchanged. No staged changes or QA listeners remain. IMPLEMENTATION_REPORT.md retains SHA-256 `C16664837543F8A36E72CF0F6CDB86AF46451FC309B25445B2AFC0C7028DADB2`.
+- YAML was parsed locally with the installed Prettier YAML parser and its schedule/publication contract tested. Importer/CLI changed, unchanged and failed cases were actually executed in disposable filesystem fixtures. The GitHub Actions orchestration, bot push permissions, Pages environments and scheduled delivery itself remain **UNVERIFIED** until explicit approval allows a hosted run.
+- Real Safari/physical iOS/Android, OS lock-screen/Media Session controls, forced process termination and sustained background/network interruption behavior remain unverified. Media Session and sleep-after-suspension checks used unit simulations; the foreground refresh interval used fake-time HTTP tests. A browser cannot guarantee a JavaScript timer executes at its deadline while the OS suspends it; the implemented check handles the overdue deadline when execution resumes. Asynchronous unload writes cannot guarantee recovery after an abrupt process kill.
+- No source/public catalog, package dependency, database schema, crime taxonomy or editorial override changes were made. The original untracked implementation report remains unchanged. Remaining Milestone 4 search/discovery/categorization/editorial tasks retain their prior scope.
+
+Next gate: review these local changes and the prepared generated-data bot writes before separately authorizing any commit/push/deployment/schedule activation. No activation action is assumed from this implementation approval.
+
+## Milestone 4 — catalog discovery and editorial metadata — 12 November 2026
+
+Status: **implemented and verified locally; ready for review**. Milestone 3 was accepted locally before this work. Its scheduling, meaningful-change detection, importer/publication behavior and network-first refresh architecture were preserved. No staging, commit, push, merge, deployment, activation, dependency installation, IndexedDB schema change, backend, Android, unrelated Extras or Milestone 5 work was performed. The untracked implementation report and pre-existing Milestone 3 changes remain in place.
+
+### Confirmed findings and corrections
+
+- FIXED: lowercasing alone missed equivalent Greek spellings. Search now normalizes case, accents (including decomposed Unicode) and final sigma. Query words can match across title, description and reviewed tags. Every word is required; categories are OR, while season/search/collection are AND. No transliteration or invented episode translations were added.
+- FIXED: expanded pagination survived externally changed URL filters. A linked page limit now resets for query-parameter changes. Invalid season/sort values previously left selects blank; unknown values now resolve safely. The explicit no-season option remains distinct from a malformed `season=null` URL. Date sorting handles valid timezone offsets and ties consistently.
+- FIXED: sort-only changes had no Clear action. Empty results now expose recovery, and result counts have a polite status announcement. A real browser reproduced focus falling to BODY when clearing removed the active button; clearing now returns focus to search. Dependent browser actions awaited URL settlement so asynchronous routing was not mistaken for final state.
+- FIXED: unknown episode deep links lacked a primary heading. They now use the shared empty state's level-one heading and retain the archive recovery link. Actual final production rendering and recovery were verified.
+- ROBUSTNESS: controlled malformed optional descriptions, season/episode numbers, duration, episode artwork/local references, audio MIME, episode type and links are repaired for presentation. Identity/date/audio/category contract failures still reject the response and retain valid in-memory data. The strict incoming RSS/publication validator is unchanged. Verified promotional-preview flags and official audio URLs are preserved. These malformed values were QA fixtures, not a claim about defects in the current public feed.
+- FIXED during final review: raw catalog `tags`/`suggestedCategories` could bypass the editorial layer, including malformed non-array tags that could break search. The derived catalog now accepts these fields exclusively from validated host overrides. The raw input remains unchanged. A targeted regression failed before the guard and passes afterward.
+
+Four new discovery regressions failed against the pre-fix search/filter code. Focus and missing-heading defects were also reproduced in the browser before correction. Tests cover Greek normalization, combinations, no-season/invalid URLs, curated collection membership, date offsets/ties, pagination, focus recovery, metadata safety and authoring errors. Route/focus tests stub shared signal-input presentation components because the plain Vitest TypeScript transform does not generate Angular AOT input metadata; production browser checks verify their actual rendering.
+
+### Editorial system and files
+
+| Area | Files/components changed in Milestone 4 | Result |
+| --- | --- | --- |
+| Discovery | `src/app/core/discovery.ts`, `features/episodes/episodes.ts`, `tests/filters.test.ts` | Normalized word matching, combinations, URL/pagination handling, clear/status UX |
+| Metadata layer | `src/app/core/editorial.mjs`, declaration, `models.ts`, `podcast.service.ts` | GUID-based reviewed categories/tags; derived catalog preserves source suggestions and official fields |
+| Catalog validation | `catalog-contract.mjs` and declaration | Added runtime optional-field normalization; publication assertions and comparison semantics retained |
+| Presentation | Episode details, Home, shared stylesheet, Greek/English dictionaries | Suggested/reviewed provenance, linked tags/categories, conditional collections and featured section; existing design retained |
+| Host authoring | `editorial/overrides.json`, `editorial/review-other.csv`, `editorial/README.md`, `scripts/editorial-review.mjs`, package scripts | UTF-8 spreadsheet review, reviewed-only application, validation and preservation of earlier review work |
+| Regression coverage | `tests/editorial.test.mjs`, `editorial-review.test.mjs`, `discovery-ui.test.ts`, extended workflow test | Unknown GUID/category/field rejection, unchanged source, CSV round trips, invalid-write preservation and UI regressions |
+| Documentation/evidence | README, roadmap, this report, `docs/milestone-4-*.json`, screenshots | Actual results, provenance and publication limitations |
+
+The real overrides file contains **zero episode decisions, zero collections and zero featured picks**. The CSV includes **all 98 current Other entries**, exact GUIDs/titles and the existing suggested category IDs, with no approved decisions. Generation preserves existing decisions/notes by GUID; application validates first and only applies explicitly reviewed rows. Hosts still need to supply classifications, tags, collection titles/translations/membership and featured ordering. Original Buzzsprout text, audio URLs, artwork and the packaged 172-entry snapshot were not rewritten.
+
+Editorial metadata ships through the normal app build/update. RSS-only data refresh remains independent of an app feature release after the Milestone 3 client/service-worker upgrade. Missing editorial GUIDs in an older cached catalog are safely ignored until those episodes arrive.
+
+### Actual browser coverage
+
+Production previews ran beneath `/podcast-app/` on disposable local ports 4205–4207. The initial sandbox preview was unreachable from the browser; after diagnosing socket access, a permitted server outside the sandbox responded and the browser pass completed. No browser failure was counted as a pass.
+
+| Check | Result/evidence |
+| --- | --- |
+| Greek title + description search | PASS: sequential `ΜΑΣΚΕΣ ΒΡΑΖΙΛΙΑΣ` and final-sigma lowercase variants found Lead Masks; focus stayed in search |
+| Category/season/search/sort combinations | PASS: season 5 + Unsolved/Historical retained the matching result; season 4 + Cults/Robberies produced six chronologically sorted results |
+| Seasons and sorting | PASS: no-season returned the trailer; oldest-first began with the 25 June 2022 trailer followed by Dean Corll |
+| Empty results/keyboard | PASS: no-match feedback, Clear recovery, empty search value and focus returned to INPUT after URL settlement; Tab reached the labeled select with a visible 2px outline |
+| Tablet pagination/category keyboard | PASS at 768×900: More expanded 20→40; keyboard Space on Other reset to 20 of 98; sorting and no-match recovery remained usable |
+| Episode navigation | PASS: stable GUID details, direct reload, browser-history return to search, linked category/tag discovery, unknown GUID recovery; public Chernobyl preview kept its clip explanation |
+| Responsive discovery | PASS: **30 geometry samples**, 360/390/768/1024/1280×800, both languages × Noir/Archive/After Hours; zero horizontal overflow or clipped discovery controls. Mobile 390×844 and tablet 768×900 were also exercised |
+| Curated metadata | PASS using a separate, unpublished **QA-only build**: a real GUID with unchanged categories, a clearly labeled test tag/collection and featured pick; collection + tags + season/category matching, detail provenance, tag links, home section and translated collection title worked. The real configuration was restored empty before final tests/build |
+| Catalog-only refresh | PASS: a temporary title change and malformed optional fields loaded after reload while `main-TWIJGLAG.js` stayed unchanged; no rebuild was used for that data change |
+| Connection-loss fallback | PASS: with the local origin server stopped, reload retained the cached QA catalog; this was local-origin connection loss, not device-wide radio/offline audio testing |
+| Cold HTTP 503 | LIMITATION: a responding server's HTTP 503 on cold reload showed Retry, even with cached data. This differs from connection loss/timeouts. Existing in-memory retention on background errors still passes the Milestone 3 regressions |
+| Browser-verified production UI | PASS: real catalog restored, empty overrides, `main-G65ISMWP.js` observed; unknown-GUID H1, recovery and normalized search passed. Captured warn/error logs were empty |
+
+Evidence: [geometry measurements](docs/milestone-4-discovery-geometry.json), [browser results](docs/milestone-4-browser-results.json), [artifact verification](docs/milestone-4-artifact-verification.json), [final desktop](docs/screenshots/milestone-4/final-desktop-discovery.jpg), [final mobile](docs/screenshots/milestone-4/final-mobile-discovery.jpg), and the explicitly [QA-only collection screenshot](docs/screenshots/milestone-4/qa-only-curated-collection.jpg). Viewport changes were simulations, not physical-device tests. The viewport override was reset, the created tab closed and all three QA servers stopped. Existing user library data was not cleared; temporary metadata/catalog responses never replaced `public/data/catalog.json`.
+
+The final raw-tag ownership guard was added after the UI browser pass. Its regression, the full suite and a fresh production build passed; it was not separately re-exercised in the browser. The final artifact is `main-JO46UU4R.js`, recorded in artifact verification. The screenshots/browser module identify the build actually observed, rather than claiming a browser run against the later guard.
+
+### Milestone 3 automation review — no activation
+
+- PASS by source review and executable local importer/contract tests: changed RSS → validate against published/current catalogs → test/build → preserve generated snapshot with a limited bot commit → upload artifact → **direct deploy inside the same reusable workflow**. Unchanged content skips publication; published-baseline retry and failed-import preservation still pass. No workflow source or importer/schedule logic was rebuilt in Milestone 4.
+- The direct deploy is essential: a built-in-token push does **not** start a second push workflow or Pages build. The prepared pipeline already avoids that dependency. This matches [GitHub's token documentation](https://docs.github.com/en/actions/concepts/security/github_token).
+- PASS by inspection: caller grants `contents: write`, `pages: write`, `id-token: write`; build uses content write and Pages read; deploy uses Pages write/OIDC and the `github-pages` environment with a build dependency. Tests/build precede source writes, and stale-source checks precede publication. These are the permissions/dependency pattern described in [GitHub's custom Pages workflow guidance](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages). Actual repository rules can still restrict them.
+- PASS locally: exact Wednesday `5 7 * * 3` and monthly `5 7 13 * *`, both `Europe/Athens`, manual dispatch, overlap guard and serialized queue are preserved. GitHub supports IANA timezones/DST, but schedules require the workflow on the default branch, may be delayed/dropped, and public-repository schedules can be disabled after 60 days without repository activity. See [GitHub's schedule reference](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule). The actual remote default branch, token restrictions, branch protection, environment approvals and hosted delivery remain **UNVERIFIED**.
+- PASS: generated catalog JSON is outside versioned asset hashes, with a freshness data group, query-insensitive cache lookup, 5-second timeout and 30-day maximum cached age. A catalog-only change was actually observed without an application module change. Angular documents the [network-first cache behavior](https://angular.dev/ecosystem/service-workers/config#strategy); local worker-source inspection and the browser distinguish connection failure from a completed HTTP error response.
+
+Conclusion: the prepared changed-catalog path includes publication and does not rely on a prohibited token-trigger chain. **Actual hosted publication is not proven until separately authorized and run.** No remote setting was changed and no workflow was dispatched. Existing installations need the initial Milestone 3 client/service-worker adoption; refreshed editorial bundles use normal application updates.
+
+### Final automated results, preservation and remaining limits
+
+- PASS: final `npm.cmd test` — **108 tests in 14 files**, exit 0, including all Milestone 1–3 regressions (35 added checks compared with the accepted 73-test baseline). Fake-time/audio tests remain simulations.
+- PASS: final `npm.cmd run build -- --base-href=/podcast-app/` — exit 0; **478.85 kB raw / 120.39 kB estimated initial transfer**, excluding lazy chunks/media. Base href, worker index/data policy, packaged/source catalog equality and all 25 packaged artwork references were checked.
+- PASS: `npm.cmd run editorial:check` — zero decisions/collections/featured entries. Generated CSV contains 98 unresolved rows. Invalid application tests preserve the prior JSON; source/audio/artwork/preview invariants pass.
+- PASS: final diff/whitespace review; no staged changes. Public catalog/artwork, dependency versions/lockfile, persistence/schema files, first-visit theme policy and unrelated features remain unchanged. The original report SHA-256 remains `C16664837543F8A36E72CF0F6CDB86AF46451FC309B25445B2AFC0C7028DADB2`.
+- Remaining: host editorial decisions; actual GitHub execution/permissions/environment/schedules; physical iOS/Android/Safari, formal screen-reader sessions and comprehensive uncaught-exception detection remain unverified. No new real-audio playback claim is made in this milestone; accepted Milestone 3 playback evidence and tests are preserved.
+- Remaining cache limitation: cold HTTP errors require Retry. A durable, validated last-known-good cold-start catalog fallback would need its own reviewed persistence/cache design and failure/expiry policy. It was not added by changing IndexedDB or replacing the approved Milestone 3 caching architecture.
+
+Next gate: review Milestone 4 and provide host editorial decisions when ready. Milestone 5 remains the existing sharing/copy-link and versioned library backup/import scope, with explicit merge/replace confirmation and failure-safe preservation; it has not started. Commit/push/deployment/schedule activation remain separately gated.
