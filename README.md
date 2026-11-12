@@ -9,20 +9,19 @@ A complete, Greek-first Angular frontend for the Dumb and Dahmer podcast. There 
 Repository: [3vilBonobo/podcast-app](https://github.com/3vilBonobo/podcast-app). The included [deployment workflow](.github/workflows/deploy-pages.yml) installs dependencies, runs tests, builds the Angular frontend and deploys its static output. No backend or separate hosting service is required.
 
 1. Create the `podcast-app` repository under `3vilBonobo` if it does not already exist. For GitHub Free, use a public repository. If it is a new repository, create it empty without a generated README so it can receive these files cleanly.
-2. Push this project and its `package-lock.json` to the repository's `main` branch. If this folder is not yet a Git repository, use the commands below. If it is already connected, use your normal commit and push workflow; do not add a duplicate remote.
+2. Push this project and its `package-lock.json` to the repository's `master` branch. This repository uses `master`; keep that branch convention. If the folder is already connected, use your normal commit and push workflow; do not reinitialize it or add a duplicate remote.
 3. In GitHub, open **Settings → Pages → Build and deployment → Source**, then select **GitHub Actions**. This workflow publishes built artifacts; do not select “Deploy from a branch.”
-4. Open **Actions → Deploy to GitHub Pages**. The push to `main` starts deployment automatically. If necessary, select **Run workflow → main → Run workflow** after enabling Pages.
-5. When both `build` and `deploy` are green, open [the live app](https://3vilbonobo.github.io/podcast-app/). Later pushes to `main` publish updates automatically.
+4. Open **Actions → Deploy to GitHub Pages**. The push to `master` starts deployment automatically. If necessary, select **Run workflow → master → Run workflow** after enabling Pages.
+5. When both `build` and `deploy` are green, open [the live app](https://3vilbonobo.github.io/podcast-app/). Later pushes to `master` publish updates automatically.
 
 First push from this project folder, for a new empty repository:
 
 ```sh
-git init
+git init --initial-branch=master
 git add .
 git commit -m "Build Dumb and Dahmer frontend"
-git branch -M main
 git remote add origin https://github.com/3vilBonobo/podcast-app.git
-git push -u origin main
+git push -u origin master
 ```
 
 If the remote already contains commits, clone it into another folder and copy this project into that clone before committing. Do not force-push over existing work. Git may ask you to authenticate with your GitHub account.
@@ -41,7 +40,7 @@ In Windows PowerShell, use `npm.cmd run build -- --base-href=/podcast-app/` if t
 
 The artifact directory is `dist/dumb-and-dahmer/browser`. The workflow deploys the checked-in public RSS snapshot, without depending on Buzzsprout during deployment. Refresh it locally with `npm run refresh:catalog`, then commit the updated catalog and images when you want new episodes included. No GitHub secret is required: Pages uses the workflow's built-in, restricted `GITHUB_TOKEN` permissions.
 
-If deployment reports “Pages not enabled,” check that **Source = GitHub Actions**. If the workflow never starts, confirm that you pushed to `main` and that Actions are enabled. For a custom domain, change the build base to `/` and configure the domain in Pages settings before deployment.
+If deployment reports “Pages not enabled,” check that **Source = GitHub Actions**. If the workflow never starts, confirm that you pushed to `master` and that Actions are enabled. For a custom domain, change the build base to `/` and configure the domain in Pages settings before deployment.
 
 See [GitHub's official custom workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) for Pages permissions, artifact upload and deployment details.
 

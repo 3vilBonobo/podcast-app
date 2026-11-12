@@ -1,5 +1,5 @@
 import { TranslocoDirective } from '@jsverse/transloco';
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -13,7 +13,14 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
   selector: 'app-root',
   imports: [TranslocoDirective, RouterOutlet, RouterLink, RouterLinkActive, IconComponent, TimePipe],
   template: `<ng-container *transloco="let t">
-    <a href="#main-content" class="skip-link">{{ t('shell.skipToContent') }}</a>
+    <a
+      [routerLink]="[]"
+      queryParamsHandling="preserve"
+      fragment="main-content"
+      (click)="mainContent.focus()"
+      class="skip-link"
+      >{{ t('shell.skipToContent') }}</a
+    >
     <aside class="sidebar">
       <a routerLink="/" class="brand" [attr.aria-label]="t('shell.dumbAndDahmerHome')"
         ><span class="brand-mark">d<span>&</span>d<span class="brand-dot">.</span></span
@@ -75,7 +82,7 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
           /></a>
         </div>
       </header>
-      <main id="main-content" tabindex="-1"><router-outlet /></main>
+      <main #mainContent id="main-content" tabindex="-1"><router-outlet /></main>
       <footer class="site-footer">
         <a routerLink="/" class="footer-brand">dumb & dahmer.</a
         ><span
@@ -193,13 +200,25 @@ import { I18nService, MockAuthService, ThemeService } from './core/preferences.s
 })
 export class AppComponent {
   constructor() {
-    inject(Router)
-      .events.pipe(
+    const router = inject(Router);
+    let previousPath = router.url.split(/[?#]/, 1)[0];
+    let focusTimeout: number | undefined;
+    inject(DestroyRef).onDestroy(() => window.clearTimeout(focusTimeout));
+    router.events
+      .pipe(
         filter((event) => event instanceof NavigationEnd),
         takeUntilDestroyed(),
       )
-      .subscribe(() => {
-        window.setTimeout(() => document.getElementById('main-content')?.focus({ preventScroll: true }), 0);
+      .subscribe((event) => {
+        window.clearTimeout(focusTimeout);
+        const path = event.urlAfterRedirects.split(/[?#]/, 1)[0];
+        // Filters, tabs and fragments must retain the user's current keyboard focus.
+        if (path === previousPath) return;
+        previousPath = path;
+        focusTimeout = window.setTimeout(
+          () => document.getElementById('main-content')?.focus({ preventScroll: true }),
+          0,
+        );
       });
   }
   readonly theme = inject(ThemeService);

@@ -161,6 +161,42 @@ describe('audio controls', () => {
     return { player, library, audio: player.audio as unknown as FakeAudio };
   }
   afterEach(() => vi.unstubAllGlobals());
+  it('opens an empty library without starting audio', async () => {
+    const { player, audio } = await setup();
+    TestBed.tick();
+    expect(player.current()).toBeNull();
+    expect(player.status()).toBe('idle');
+    expect(audio.play).not.toHaveBeenCalled();
+  });
+  it('restores the saved episode and position paused until the listener presses play', async () => {
+    await new LocalStorageRepository().write({
+      ...emptyLibrary(),
+      currentId: 'a',
+      records: {
+        a: {
+          episodeId: 'a',
+          position: 123,
+          duration: 600,
+          completed: false,
+          lastPlayed: 10,
+          listenedSeconds: 22,
+        },
+      },
+    });
+    const { player, audio } = await setup();
+    TestBed.tick();
+    audio.dispatchEvent(new Event('loadedmetadata'));
+    expect(player.current()?.id).toBe('a');
+    expect(player.position()).toBe(123);
+    expect(audio.currentTime).toBe(123);
+    expect(player.status()).toBe('paused');
+    expect(audio.paused).toBe(true);
+    expect(audio.play).not.toHaveBeenCalled();
+    player.toggle();
+    await Promise.resolve();
+    expect(audio.play).toHaveBeenCalledOnce();
+    expect(player.playing()).toBe(true);
+  });
   it('plays the unchanged public URL, seeks, changes rate/volume and pauses', async () => {
     const { player, audio } = await setup();
     player.play(episode('a'));
