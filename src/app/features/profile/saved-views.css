@@ -1,0 +1,97 @@
+:host {
+  display: block;
+}
+.space-heading {
+  margin-bottom: 24px;
+}
+.space-heading h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 8px 0;
+}
+.space-heading > p:last-child {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.saved-view-list {
+  display: grid;
+  gap: 14px;
+}
+.saved-view,
+.saved-view-empty {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+}
+.saved-view-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.saved-view-heading > dd-icon,
+.saved-view-empty > dd-icon {
+  color: var(--accent);
+  font-size: 24px;
+}
+.saved-view h3 {
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+.saved-view-heading .tag {
+  margin-left: auto;
+}
+.saved-view-summary,
+.saved-view-empty p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 12px 0 20px;
+}
+.saved-view-actions,
+.view-name-form > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.saved-view-actions button {
+  min-height: 44px;
+}
+.view-name-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.view-name-form input {
+  min-width: 0;
+  flex: 1 1 180px;
+  max-width: 100%;
+}
+.saved-view-empty {
+  text-align: center;
+  padding: 40px 24px;
+}
+.saved-view-empty h3 {
+  margin-top: 16px;
+  font-size: 22px;
+}
+.saved-view-browse {
+  margin-top: 24px;
+}
+.privacy-note {
+  font-size: 13px;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .saved-view {
+    padding: 20px;
+  }
+  .saved-view-heading .tag {
+    margin-left: 0;
+  }
+  .saved-view-actions {
+    gap: 12px;
+  }
+}

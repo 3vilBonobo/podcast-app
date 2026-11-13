@@ -1,7 +1,8 @@
 export interface Extra {
   slug: string;
   title: string;
-  greek: string;
+  tagline: string;
+  pending: string;
   description: string;
   icon: string;
   number: string;
@@ -10,8 +11,9 @@ export interface Extra {
 export const EXTRAS: Extra[] = [
   {
     slug: 'waking-machine',
-    title: 'THE WAKING MACHINE',
-    greek: 'extras.doNotCloseYourEyes',
+    title: 'extras.names.waking',
+    tagline: 'extras.doNotCloseYourEyes',
+    pending: 'extras.pending.waking',
     description: 'extras.anInteractiveMysteryIsTakingShapeTheMachine',
     icon: 'eye',
     number: '001',
@@ -19,8 +21,9 @@ export const EXTRAS: Extra[] = [
   },
   {
     slug: 'secret-archive',
-    title: 'SECRET ARCHIVE',
-    greek: 'extras.notEverythingBelongsInTheArchive',
+    title: 'extras.names.secret',
+    tagline: 'extras.notEverythingBelongsInTheArchive',
+    pending: 'extras.pending.secret',
     description: 'extras.aFutureHomeForHiddenCluesAndPodcast',
     icon: 'folder',
     number: '002',
@@ -28,8 +31,9 @@ export const EXTRAS: Extra[] = [
   },
   {
     slug: 'seasonal-events',
-    title: 'SEASONAL EVENTS',
-    greek: 'extras.everySeasonHasItsGhosts',
+    title: 'extras.names.seasonal',
+    tagline: 'extras.everySeasonHasItsGhosts',
+    pending: 'extras.pending.seasonal',
     description: 'extras.themedExperiencesAndLittleSurprisesFromHalloweenTo',
     icon: 'moon',
     number: '003',
@@ -37,8 +41,9 @@ export const EXTRAS: Extra[] = [
   },
   {
     slug: 'rewards',
-    title: 'REWARDS',
-    greek: 'extras.forYourDevotionToTheDark',
+    title: 'extras.names.rewards',
+    tagline: 'extras.forYourDevotionToTheDark',
+    pending: 'extras.pending.rewards',
     description: 'extras.futureBadgesAppearancesAndExperiencesTheRulesHave',
     icon: 'gift',
     number: '004',
@@ -46,8 +51,9 @@ export const EXTRAS: Extra[] = [
   },
   {
     slug: 'behind-the-mic',
-    title: 'BEHIND THE MIC',
-    greek: 'extras.whenTheRedLightGoesOut',
+    title: 'extras.names.behind',
+    tagline: 'extras.whenTheRedLightGoesOut',
+    pending: 'extras.pending.behind',
     description: 'extras.aFutureSpaceForBehindTheScenesStories',
     icon: 'mic',
     number: '005',

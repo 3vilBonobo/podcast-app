@@ -1,0 +1,216 @@
+:host {
+  display: block;
+}
+.space-identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+}
+.space-identity strong {
+  font-size: 15px;
+}
+.space-identity p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.space-identity > .tag {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.space-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 28px;
+  align-items: start;
+}
+.space-nav {
+  display: grid;
+  gap: 5px;
+  position: sticky;
+  top: 24px;
+}
+.space-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  color: var(--muted);
+}
+.space-nav a > dd-icon:last-child {
+  margin-left: auto;
+  font-size: 12px;
+}
+.space-nav a > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.space-nav a > dd-icon {
+  flex-shrink: 0;
+}
+.space-nav a:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+.space-nav a[aria-current] {
+  background: var(--surface);
+  color: var(--accent);
+  border-color: var(--line);
+  font-weight: 600;
+}
+.space-content {
+  min-width: 0;
+}
+.space-heading {
+  margin-bottom: 24px;
+}
+.space-heading h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 8px 0;
+}
+.space-heading > p:last-child {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 65ch;
+}
+.personal-space .stats-grid {
+  gap: 12px;
+  margin: 20px 0;
+}
+.personal-space .stats-grid > * {
+  padding: 18px;
+}
+.personal-space .stats-grid strong {
+  font-size: 36px;
+}
+.personal-space .stats-grid .eyebrow {
+  font-size: 11px;
+}
+.personal-space .stats-grid > * > span:last-child {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.space-shortcuts {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+.space-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+}
+.space-shortcut > dd-icon {
+  color: var(--accent);
+  font-size: 22px;
+}
+.space-shortcut > dd-icon:last-child {
+  margin-left: auto;
+  font-size: 16px;
+}
+.space-shortcut strong {
+  font-size: 16px;
+}
+.space-shortcut small {
+  display: block;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.space-saved-preview {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+.space-saved-preview a {
+  justify-self: start;
+  overflow-wrap: anywhere;
+}
+.personal-space .account-panel {
+  margin: 0;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.personal-space .privacy-note {
+  font-size: 13px;
+  line-height: 1.8;
+}
+@media (max-width: 1000px) {
+  .space-layout {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .space-nav a {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .space-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .space-nav {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .space-nav a {
+    border-color: var(--line);
+    min-height: 48px;
+  }
+  .space-nav a:last-child {
+    grid-column: 1 / -1;
+  }
+  .space-identity {
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .space-identity > div:nth-child(2) {
+    flex: 1;
+    min-width: 150px;
+  }
+  .space-identity > .tag {
+    margin-left: 0;
+  }
+  .personal-space .stats-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .personal-space .stats-grid > * {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 4px 12px;
+  }
+  .personal-space .stats-grid strong {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    font-size: 30px;
+  }
+  .personal-space .stats-grid .eyebrow {
+    min-height: 0;
+  }
+}

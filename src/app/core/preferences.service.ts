@@ -30,11 +30,11 @@ export class ThemeService {
   }
   private saved(): Theme | 'system' {
     const value = readPreference('theme');
-    return value === 'noir' || value === 'archive' || value === 'after-hours' ? value : 'system';
+    return value === 'noir' || value === 'archive' || value === 'after-hours' || value === 'system' ? value : 'noir';
   }
   set(theme: Theme | 'system'): void {
     this.choice.set(theme);
-    savePreference('theme', theme === 'system' ? null : theme);
+    savePreference('theme', theme);
     this.apply();
   }
   private apply(): void {

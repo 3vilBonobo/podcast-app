@@ -73,7 +73,7 @@ npm ci
 npm start
 ```
 
-Open **http://127.0.0.1:4200/**. Guest mode supports the entire public listening experience. Profile → “Μπες στο Demo Account” enables only a local, clearly marked mock profile.
+Open **http://127.0.0.1:4200/**. Guest mode supports the entire public listening experience. Profile → Account → “Μπες στο Demo Account” enables only a local, clearly marked mock profile.
 
 ```sh
 npm test
@@ -127,21 +127,28 @@ All route components are standalone and lazy loaded. Shared state uses Angular S
 
 Listening minutes are calculated from real active playback intervals, excluding seeks, pauses and buffering. Delayed or suspended browser timers are conservatively capped to avoid counting time that cannot be verified. The completed count uses actual ended events. New users start at zero; replaying a completed episode does not remove its completed history. Playback tests use an isolated database and do not seed production listening statistics.
 
-**Appearance.** The default dark Noir theme uses velvet black, oxblood, blood-red details and candlelit brass inspired by the supplied brand reference. Self-hosted Inter Variable supplies modern Greek and Latin typography; its OFL license is included in `public/Inter-LICENSE.txt`. Original SVG icons use mansion architecture, evidence files, blades, seals and blood-ink details, with familiar functional silhouettes. Noir, Archive and After Hours use semantic tokens for surfaces, text, borders, cards, controls, navigation and player UI. Noir is the dark default. With no explicit choice, system light preference selects Archive and system dark selects Noir. Choosing “Ακολούθησε το σύστημα” clears the explicit preference. Explicit choices persist locally. Reduced motion, visible keyboard focus, a skip link, labeled controls and navigation focus handling are included.
+**Appearance.** The default dark Noir theme uses velvet black, oxblood, blood-red details and candlelit brass inspired by the supplied brand reference. Self-hosted Inter Variable supplies modern Greek and Latin typography; its OFL license is included in `public/Inter-LICENSE.txt`. Original SVG icons use mansion architecture, evidence files, blades, seals and blood-ink details, with familiar functional silhouettes. Noir, Archive and After Hours use semantic tokens for surfaces, text, borders, cards, controls, navigation and player UI. Noir is the dark default. With no saved choice, Noir is selected regardless of the system appearance. Choosing “Ακολούθησε το σύστημα” saves an explicit system preference, selecting Archive for system light and Noir for system dark. Explicit choices persist locally. Earlier versions represented system-following by an absent key; those installations now receive the requested Noir default. Reduced motion, visible keyboard focus, a skip link, labeled controls and navigation focus handling are included.
 
 **Language.** Greek is the default. **Transloco 8** provides complete Greek and English interface dictionaries in `src/app/i18n/el.json` and `en.json`. The EN/EL control in the header and the Profile language setting switch navigation, page titles, controls, forms, settings, Extras, errors and empty states immediately. The choice persists locally. Both dictionaries are bundled for offline switching. RSS titles and descriptions retain their original Greek; the application does not invent translated episode content.
 
 **Mock identity.** Only a boolean demo-session flag is stored. Entered passwords are reset after submission and never stored, transmitted, logged or turned into tokens. Google and password actions display explicit prototype feedback. Recovery never sends an email. Demo users cannot access protected or premium resources. The library is independent of mock identity and remains available after demo logout.
 
-**Extras.** Five clickable cards each have their own route, illustration, coming-soon status and expandable preview. The content is explicitly UI concept copy, not an announcement of released podcast benefits. Collections on Home are labeled application selections and are computed by chronology or actual public duration.
+**Extras.** Waking Machine is the featured concept, with an original static SVG illustration; four supporting concepts have their own detail routes. Bilingual availability explanations, native concept-note disclosures and related links make their placeholder status explicit. No game, event, reward or subscriber entitlement is available. Waking Machine awaits host approval of its [product/content proposal](docs/EXTRAS_WAKING_MACHINE_PROPOSAL.md). Collections on Home are labeled application selections and are computed by chronology or actual public duration.
 
 **Plus.** The application links to the [official subscription page](https://www.buzzsprout.com/2006539/subscribe) and [Buzzsprout's private RSS instructions](https://www.buzzsprout.com/help/186-personal-rss). It never asks for or stores a private RSS URL. There is no payment or subscription management UI pretending to be functional.
 
 ## Library backup and episode sharing
 
-Profile now provides versioned JSON export/import for the guest library: favorites, queue, progress, completed/recent history, selected episode and playback preferences. Import validates the file, previews changes and defaults to non-destructive merge. Replacement requires explicit acknowledgment. The library snapshot commits in one existing IndexedDB transaction; a failed import preserves it. Speed and volume stay unchanged until restored individually through the separate preference buttons, as approved for the existing localStorage boundary.
+Profile → Your data provides versioned JSON export/import for the guest library: favorites, queue, progress, completed/recent history, selected episode and playback preferences. Import validates the file, previews changes and defaults to non-destructive merge. Replacement requires explicit acknowledgment. The library snapshot commits in one existing IndexedDB transaction; a failed import preserves it. Speed and volume stay unchanged until restored individually through the separate preference buttons, as approved for the existing localStorage boundary.
 
 Episode Details and the full player provide native sharing and copy-link controls, with a manual permalink fallback when clipboard access fails. Links respect the GitHub Pages `/podcast-app/` base path. No sign-in is required and backups contain no credentials or demo identity. See the [backup format and merge rules](docs/LIBRARY_BACKUP.md) and [actual verification/limits](VERIFICATION.md).
+
+
+## Personal space and saved archive views
+
+Profile is organized into Overview, Preferences, Saved views, Your data and Account, with device-local identity information and compact listening statistics. Preferences group appearance and language separately from playback speed; speed changes current playback immediately and persists. All three themes and explicit system-following remain available, with Noir as the fresh default.
+
+In Episodes, **Save this view** stores the current search, content type, season, country, sorting, collection, categories and tags as a named shortcut. Profile → Saved views supports opening, renaming, removing and undoing the latest removal while that panel remains open. Opening replaces catalog filters and never starts playback. Saved views live under `dd:saved-views` in localStorage, independently of guest/demo identity. They are not included in version-1 library backups. No automatic catalog defaults or listening/timer presets have been introduced. See [scope and verification](docs/PROFILE_REDESIGN.md).
 
 ## Editorial metadata and discovery
 

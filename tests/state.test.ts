@@ -19,7 +19,7 @@ afterEach(() => {
   vi.useRealTimers();
 });
 describe('appearance and mock identity', () => {
-  it('persists every theme and follows system when cleared', () => {
+  it('persists every theme including an explicit system choice', () => {
     const theme = new ThemeService();
     theme.set('archive');
     expect(document.documentElement.dataset['theme']).toBe('archive');
@@ -29,8 +29,27 @@ describe('appearance and mock identity', () => {
     theme.set('noir');
     expect(new ThemeService().theme()).toBe('noir');
     theme.set('system');
-    expect(localStorage.getItem('dd:theme')).toBeNull();
+    expect(localStorage.getItem('dd:theme')).toBe('system');
+    expect(new ThemeService().choice()).toBe('system');
     expect(theme.theme()).toBe('noir');
+  });
+  it('defaults to Noir on a light system and follows that system only when explicitly selected', () => {
+    const callbacks: (() => void)[] = [];
+    const onChange = () => callbacks.forEach(callback => callback());
+    const media = {matches: false, addEventListener: (_event: string, callback: () => void) => { callbacks.push(callback); }};
+    vi.spyOn(window, 'matchMedia').mockReturnValue(media as unknown as MediaQueryList);
+    const theme = new ThemeService();
+    expect(theme.choice()).toBe('noir');
+    expect(theme.theme()).toBe('noir');
+    theme.set('system');
+    expect(theme.theme()).toBe('archive');
+    expect(new ThemeService().theme()).toBe('archive');
+    media.matches = true;
+    onChange();
+    expect(theme.theme()).toBe('noir');
+    theme.set('after-hours');
+    onChange();
+    expect(theme.theme()).toBe('after-hours');
   });
   it('starts as a guest, restores demo state, and logs out without credentials', () => {
     const auth = new MockAuthService();

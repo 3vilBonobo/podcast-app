@@ -11,8 +11,9 @@ import type { CrimeCategory } from '../../core/models';
 import { matchesSearch } from '../../core/discovery';
 import { editorialText } from '../../core/editorial.mjs';
 import { TranslocoService } from '@jsverse/transloco';
+import { SaveViewComponent } from '../../shared/save-view';
 @Component({
-  imports: [TranslocoDirective, EpisodeCardComponent, EmptyStateComponent, IconComponent],
+  imports: [TranslocoDirective, EpisodeCardComponent, EmptyStateComponent, IconComponent, SaveViewComponent],
   template: `<ng-container *transloco="let t"
     ><div class="page catalog-page">
       <div class="page-intro">
@@ -119,6 +120,7 @@ import { TranslocoService } from '@jsverse/transloco';
         </div>
       </section>
       </div>
+      <dd-save-view [filters]="savedFilters()" />
       <div class="results-line">
         <span role="status" aria-live="polite" aria-atomic="true"
           >{{ filtered().length }} {{ t('episodes.episodes') }}
@@ -247,6 +249,12 @@ export class EpisodesComponent {
       ),
   );
   readonly addPage = (n: number): number => n + 20;
+  readonly savedFilters = computed(() => Object.fromEntries(Object.entries({
+    q: this.search(), view: this.contentType() === 'all' ? '' : this.contentType(),
+    season: this.season() === 'all' ? '' : this.season(), country: this.country(),
+    sort: this.sort() === 'newest' ? '' : this.sort(), collection: this.collection() ?? '',
+    category: this.selectedCategories().join(','), tag: this.selectedTags().join(','),
+  }).filter(([, value]) => value)));
   readonly filtered = computed(() => {
     const curated = this.podcast.collections().find((c) => c.id === this.collection());
     return this.collectionEpisodes()

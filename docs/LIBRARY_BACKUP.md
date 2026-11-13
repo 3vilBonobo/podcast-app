@@ -1,6 +1,6 @@
 # Local library backup and restore
 
-Open **Profile → Back up your library**. No account is needed. Files are read locally; import does not upload them. Keep the downloaded file somewhere you can find again.
+Open **Profile → Your data → Back up your library**. No account is needed. Files are read locally; import does not upload them. Keep the downloaded file somewhere you can find again.
 
 ## Download and restore
 

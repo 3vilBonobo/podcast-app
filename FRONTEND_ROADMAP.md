@@ -7,7 +7,7 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 Verification cadence follows [project working instructions](AGENTS.md): targeted tests and short visual/browser checks during implementation; one sequential complete suite, production build and focused browser regression at milestone completion; complete release-readiness checks before publication. Reuse unaffected successful evidence, report deferrals, and never run full-suite/build workloads concurrently. This applies to the current All / Regular / Plus catalog work and subsequent milestones; historical checklists below do not require repeating completed checks during every iteration.
 
 - Current product phase: complete the existing responsive web application and PWA.
-- Current milestone: **Milestone 5, library, sharing and frontend listening features — implementation delivered locally with passing automated checks and partial desktop browser verification**. After browser automation repeatedly timed out, the user explicitly chose to finish with remaining browser checks marked unverified. Milestones 3–4 were accepted locally and subsequently committed/pushed under separate authorization as `12fa35b`; milestones 1–2 as `7fd1573` and `a3794c3`. No Git publishing, deployment or schedule operation is authorized for Milestone 5. Current evidence and limits are in [VERIFICATION.md](VERIFICATION.md).
+- Current milestone: **Milestone 6, Extras — presentation delivered locally; Waking Machine functionality blocked on specification/content approval**. Milestone 5 is feature-complete locally with outstanding browser acceptance scenarios retained for release verification. Catalog/Milestone 5 work was separately authorized for commit/push as `771e848` on `codex/milestone-5-library-completion`; that branch push did not deploy Pages. No Git publication, deployment, schedule activation or Milestone 7 work is authorized for this Extras pass. Current evidence and limits are in [VERIFICATION.md](VERIFICATION.md).
 - Keep `master` as the branch convention. Preserve the existing architecture, Gothic Noir identity, public Buzzsprout audio delivery and local library.
 - The untracked `IMPLEMENTATION_REPORT.md` existed before this pass and must be preserved.
 - No staging, commits, pushes, branch operations, deployments, dependency installations or backend/native infrastructure are authorized by this document.
@@ -22,7 +22,7 @@ Verification cadence follows [project working instructions](AGENTS.md): targeted
 | 3. Audio reliability and approved RSS synchronization | Accepted; included in separately authorized commit/push `12fa35b`; regressions preserved | No new publishing/activation action in Milestone 5; real device/OS and hosted execution remain unverified |
 | 4. Catalog discovery and editorial improvements | Accepted locally; included in `12fa35b` | Hosts still supply editorial decisions; cold HTTP-error reload limitation remains documented |
 | 5. Library and frontend features | Implemented locally; tests/build pass; actual desktop IndexedDB round trip and listening/sharing flows verified | Review the delivery and remaining unverified responsive/failure browser checks before release |
-| 6. Extras | Five intentional placeholders; no completed game | Product review of Waking Machine specification and supplied/approved content |
+| 6. Extras | Polished bilingual concept index/detail routes, verified locally; no game implemented | Approve Waking Machine purpose, interaction and complete bilingual content; see proposal |
 | 7. PWA and release quality | Manifest/service worker exist; comprehensive release verification incomplete | Stable earlier milestones and a documented browser/device matrix |
 
 ## Milestone 1 — current-state audit and stabilization
@@ -153,21 +153,19 @@ Next steps: review Milestone 5 implementation and close the explicit browser acc
 
 ## Milestone 6 — Extras
 
-Status: Waking Machine, Secret Archive, Seasonal Events, Rewards and Behind the Mic have detail routes and coming-soon previews.
+Status (13 November 2026): **approved presentation scope complete locally; full milestone blocked on Waking Machine specification/content approval**. Audit of the roadmap, README, historical audit/report and existing components found five concept placeholders and no approved functional specification for any of them.
 
-Tasks:
+Delivered:
 
-- Review navigation, consistent placeholders, focus and reusable presentation components.
-- Prepare a focused Waking Machine gameplay/content specification for product review.
-- Specify interaction/state model, content ownership, accessibility, persistence needs and observable completion behavior.
-- Implement the web frontend only after concept and content are approved.
-- Keep the other four experiences as intentional placeholders until defined.
+- Waking Machine leads the Extras index with an original, static instrument/eye SVG; four supporting concepts use the existing custom icon language. Rounded components and semantic theme tokens are scoped to Extras; no global redesign or generated horror imagery.
+- Greek/English names, availability labels and specific explanations distinguish concepts from released experiences, events, rewards or subscriber benefits. No release date or working entitlement is implied.
+- Detail routes show availability immediately, provide native keyboard-accessible concept notes, related-concept navigation and a link back to the unified episode catalog. Keyed route rendering resets disclosure state between concepts. Unknown slugs expose a primary-heading recovery view. Static bundled content requires no artificial loading/error workflow.
+- [Waking Machine proposal](docs/EXTRAS_WAKING_MACHINE_PROPOSAL.md): proposed untimed, text-only, host-authored fiction mystery with three clues and an explanation; deterministic frontend state, session-only progress, mobile/desktop/accessibility approach and estimated scope. **This is not an approved game specification.** No story or game was implemented.
+- Secret Archive, Seasonal Events, Rewards and Behind the Mic remain honest placeholders. Waking Machine also remains unavailable until approved content and interaction exist.
 
-Acceptance: coherent navigation across all five routes; the specification is approved before game implementation; no invented official stories, jokes, audio, reward rules, payments or entitlements.
+Verification: targeted Extras/localization **11/11 PASS**; completion full suite **182/182 PASS across 22 files**, then Pages production build PASS, then focused real-browser checks. All five concept routes, native disclosure keyboard/reset behavior, Greek/English, Noir/Archive/After Hours, desktop 1280×720/900 and simulated mobile 390×844 were exercised. No observed page overflow or captured warning/error logs; actual public audio advanced across Extras navigation. Formal screen-reader, physical-device and hosted-release verification remain unclaimed. See VERIFICATION.md for exact results and evidence.
 
-Tests: route/focus checks, placeholder interactions, then approved game-state/accessibility tests after the product gate.
-
-Dependencies: explicit gameplay/content approval. This roadmap does not approve a game concept.
+Next gate: hosts approve or replace the proposed purpose, fiction format, interaction and session-only policy, then supply/approve complete bilingual story content and any warning/assets. Full Milestone 6 is **not complete** without that decision. No gameplay, rewards, backend, dependencies, schema, catalog/library/RSS automation or Milestone 7 changes. No staging, commit, push, merge, deployment or publishing activation in this pass.
 
 ## Milestone 7 — PWA and release quality
 

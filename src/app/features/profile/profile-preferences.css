@@ -1,0 +1,84 @@
+:host {
+  display: block;
+}
+.settings-grid {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 0;
+}
+.settings-panel {
+  padding: 24px;
+}
+.settings-panel h2 {
+  font-size: 24px;
+}
+.settings-panel > p:not(.eyebrow) {
+  font-size: 14px;
+}
+.theme-option {
+  padding: 12px;
+}
+.theme-option > strong {
+  font-size: 14px;
+}
+.theme-option > small {
+  font-size: 12px;
+  max-width: 90%;
+  line-height: 1.6;
+}
+.theme-swatch {
+  height: 72px;
+}
+.theme-option > dd-icon {
+  right: 8px;
+  bottom: 10px;
+}
+.system-theme {
+  min-height: 44px;
+  font-size: 14px;
+}
+.setting-row strong {
+  font-size: 14px;
+}
+.setting-row small {
+  font-size: 13px;
+  max-width: 38ch;
+  line-height: 1.7;
+}
+.setting-row select {
+  font-size: 14px;
+  min-height: 44px;
+  max-width: 150px;
+}
+@media (max-width: 480px) {
+  .settings-panel {
+    padding: 20px;
+  }
+  .theme-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .theme-option {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    column-gap: 14px;
+    align-items: center;
+  }
+  .theme-swatch {
+    grid-row: 1 / 3;
+    height: 60px;
+  }
+  .theme-option > strong {
+    margin: 0;
+  }
+  .theme-option > small {
+    font-size: 12px;
+  }
+  .setting-row {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .setting-row select {
+    width: 100%;
+    max-width: none;
+  }
+}
