@@ -38,3 +38,25 @@ it('returns focus to the invoking control after native share cancellation', asyn
     fixture.nativeElement.remove();
   }
 });
+
+it('does not schedule focus recovery when sharing settles after navigation destroys the view', async () => {
+  let cancel!: (reason: unknown) => void;
+  Object.defineProperty(navigator, 'share', {
+    configurable: true,
+    value: vi.fn(
+      () =>
+        new Promise<void>((_resolve, reject) => {
+          cancel = reject;
+        }),
+    ),
+  });
+  TestBed.overrideComponent(EpisodeShareComponent, { set: { imports: [], template: '' } });
+  const fixture = TestBed.createComponent(EpisodeShareComponent);
+  Object.defineProperty(fixture.componentInstance, 'episode', {
+    value: () => ({ id: 'Buzzsprout-1', title: 'Test' }),
+  });
+  const sharing = fixture.componentInstance.run('share');
+  fixture.destroy();
+  cancel(new DOMException('Cancelled', 'AbortError'));
+  await expect(sharing).resolves.toBeUndefined();
+});

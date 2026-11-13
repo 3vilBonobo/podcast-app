@@ -4,6 +4,8 @@ Prepared 12 November 2026 from the supplied development roadmap and current loca
 
 ## Working scope and approval gates
 
+Verification cadence follows [project working instructions](AGENTS.md): targeted tests and short visual/browser checks during implementation; one sequential complete suite, production build and focused browser regression at milestone completion; complete release-readiness checks before publication. Reuse unaffected successful evidence, report deferrals, and never run full-suite/build workloads concurrently. This applies to the current All / Regular / Plus catalog work and subsequent milestones; historical checklists below do not require repeating completed checks during every iteration.
+
 - Current product phase: complete the existing responsive web application and PWA.
 - Current milestone: **Milestone 5, library, sharing and frontend listening features — implementation delivered locally with passing automated checks and partial desktop browser verification**. After browser automation repeatedly timed out, the user explicitly chose to finish with remaining browser checks marked unverified. Milestones 3–4 were accepted locally and subsequently committed/pushed under separate authorization as `12fa35b`; milestones 1–2 as `7fd1573` and `a3794c3`. No Git publishing, deployment or schedule operation is authorized for Milestone 5. Current evidence and limits are in [VERIFICATION.md](VERIFICATION.md).
 - Keep `master` as the branch convention. Preserve the existing architecture, Gothic Noir identity, public Buzzsprout audio delivery and local library.
@@ -128,7 +130,7 @@ Next gate: review Milestone 4. Milestone 5 remains the existing library/sharing/
 
 ## Milestone 5 — library and frontend features
 
-Status: **implementation delivered locally; review required, with explicit browser verification limits**. The user approved this milestone and chose separate explicit playback-preference restoration. After repeated browser connection failures, the user instructed finishing with remaining browser checks marked unverified. This is not a claim of complete responsive or release verification. No Milestone 6 work has begun.
+Status: **implementation complete locally; acceptance verification remains partial** (13 November 2026). The completion audit found the requested library, listening, sharing and backup functionality already implemented. This pass corrected five untranslated Profile labels and a late native-share completion error after navigation, with a reproducing regression. No redundant services, persistence schema changes or Milestone 6 work were introduced. This is not complete responsive or release certification.
 
 Delivered:
 
@@ -143,9 +145,11 @@ Delivered:
 
 Verification: complete automated suite and production build pass; actual desktop browser checks at 1280×720 cover guest persistence, export/import equality, invalid/version/oversized files, duplicates/repeated merge, conflicting records, all library tabs, queue actions, native sharing cancellation, clipboard copying, deep-link reload and real audio progress restored paused. Exact results/counts are in [VERIFICATION.md](VERIFICATION.md) and [the backup format/merge guide](docs/LIBRARY_BACKUP.md).
 
-Still unverified by explicit user choice: new mobile/tablet/theme/language interaction matrix, controlled native-browser IndexedDB abort UI, denied clipboard/manual-copy UI, final share-focus fix in a browser, live two-tab conflict UI, and a fresh Milestone 5 cold-503 browser replay. Automated tests cover the failure/focus/conflict logic; they are not physical-device or native-browser substitutes. A disposable failure-test build was prepared, but navigation never completed, so it supplies no browser pass.
+Completion-pass evidence: full suite **174/174 PASS across 21 files**, followed sequentially by production builds. A subsequently discovered isolated share-lifecycle bug reproduced in a new test, then **7/7 affected sharing tests passed** after the guard; the unchanged full-suite evidence was reused. Final Pages build passed (`main-H3TRMHNJ.js`). Fresh browser checks passed guest IndexedDB reload, all library tabs, favorites, queue reorder/removal/end-of-episode handoff, completion, stored statistics, export/import replacement round trip, invalid JSON rejection, explicit preference restoration, translated Profile settings and Pages deep links. See VERIFICATION.md for exact artifact and failure history.
 
-Next steps: review Milestone 5, complete those browser checks before release, and retain separate approval gates for Git/publishing and later milestones. Authentication remains mocked; no backend, Firebase, Android or Extras implementation was added.
+Remaining acceptance/release checks: mobile/tablet Library/Profile verification (viewport override remained at actual 1280×720), native clipboard payload/denial and manual-copy UI, controlled native IndexedDB abort and live two-tab conflict UI, plus cold-503/cache and physical-device release checks. Native share cancellation/focus was observed before the final guard; final-build copy focus and navigation during sharing passed, but late native completion after navigation has automated regression evidence rather than a fully observed final native-dialog round trip. Automated tests cover these failure paths; no unexecuted browser check is counted as passing.
+
+Next steps: review Milestone 5 implementation and close the explicit browser acceptance gaps before publication. Retain separate approval gates for Git/publishing and later milestones. Authentication remains mocked; no backend, Firebase, Android or Extras implementation was added.
 
 ## Milestone 6 — Extras
 
@@ -196,3 +200,19 @@ Retain the existing Actions importer and published JSON. Buzzsprout's redirect a
 ## Catalog, discovery and creative UX refinement — 12 November 2026
 
 Local implementation after 96e688e: consolidated discovery panel, responsive chip rails, public/Plus separation, GUID-based country/guest/format/season metadata, validated cache warm-start and meaningful manual-refresh feedback. Live snapshot now 173 entries (155 public / 18 previews). Final tests: 155/20 PASS; production build PASS. See [the implementation and readiness report](docs/CATALOG_UX_OVERHAUL.md) for exact coverage, screenshots, tag counts and editorial gaps. This is ready for local design review, not a claim of completed independent research for every case. No later milestone, backend, Git publication or workflow activation was started.
+
+### Focused acceptance correction — 13 November 2026
+
+Country's asynchronous URL selection defect is fixed with explicit option selection driven by the URL signal. Complete suite **157/20 PASS**, production build PASS (`main-KVLBX27X.js`), and public/Plus cold reloads verified in the real production browser. The isolated 18-test importer suite passed too; the historical timeout remains documented and has not reproduced normally. No design or persistence schema changed.
+
+Technical follow-up before unconditional discovery acceptance: resolve or explicitly accept the existing unavailable-season edge case when switching public Season 1 to Plus (URL remains Season 1 while the select displays All seasons). Physical-device, cold-cache/offline and hosted publication limits remain. No additional implementation is authorized by this roadmap entry.
+
+Editorial acceptance is separate: 104 category decisions remain pending, including 75 still needing independent research; 27 country gaps and 20 nationality flags remain open. Twelve populated country assignments were audited: Nilsen US → GB is a confirmed factual correction awaiting host approval, three cases need expansion/historical-geography decisions, and eight retain their current mapping with stated evidence limits. The main CSV has 33 externally researched rows; the earlier 32-row summary is historical. Other populated assignments are not certified by this sample. Preserve GUID overrides and apply nothing automatically. See [verification](VERIFICATION.md) and [country audit](editorial/populated-country-audit.csv). No Git publication, workflow activation, backend or Android work.
+
+### Unified episode catalog — 13 November 2026
+
+Approved All / Regular / Plus implementation delivered locally. Episodes defaults to the complete mixed RSS archive (currently 173 entries), with a compact translated content-type control in the existing discovery panel. Regular and Plus narrow the same catalog; preview badges/playback/details are preserved. Unavailable seasons now reset atomically with type switches and are normalized after asynchronous deep-link loading. This resolves the prior Season 1 → Plus blocker. Other applicable filters persist; Clear restores All. No global redesign, taxonomy/editorial application or persistence change.
+
+**Ready for technical acceptance of this scope:** targeted checks 43 PASS; one completion full suite **174 tests / 21 files PASS**; production build PASS (`main-LHH7KYPP.js`, final `styles-VBVZIAKC.css`); focused production browser checks passed counts, season/URL state, combinations, pagination, preview playback, refresh during playback (including HTTP 503), details, languages, themes and desktop/mobile presentation. A hover-only CSS refinement required one rebuild, with unchanged logic/full-suite evidence reused. See [executed results and limits](VERIFICATION.md).
+
+Editorial uncertainties above remain unapproved and unchanged. Full publication verification, physical devices and hosted/service-worker rollout remain release gates. No subsequent milestone, research backlog, backend/Android work or publication operation was started.

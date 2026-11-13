@@ -14,6 +14,38 @@ import { AudioPlayerService } from '../src/app/core/audio-player.service';
 import { LibraryService } from '../src/app/core/library.service';
 import { EmptyStateComponent } from '../src/app/shared/empty-state';
 import { IconComponent } from '../src/app/shared/icon';
+import { EpisodeCardComponent } from '../src/app/shared/episode-card';
+
+@Component({ selector: 'dd-episode-card', template: '' })
+class StubCard { @Input() episode: unknown; }
+
+it.each(['', 'regular', 'plus'])('restores URL country after asynchronous catalog initialization in collection %s', async (view) => {
+  const episodes = signal<any[]>([]);
+  const params = new BehaviorSubject(convertToParamMap({country:'GB',tag:'double-slashers',season:'1',sort:'oldest',view}));
+  TestBed.configureTestingModule({providers:[
+    provideTransloco({config:{availableLangs:['en','el'],defaultLang:'en',prodMode:true},loader:BundledTranslationLoader}),
+    {provide:ActivatedRoute,useValue:{queryParamMap:params,snapshot:{queryParamMap:params.value}}},
+    {provide:Router,useValue:{navigate:vi.fn()}},
+    {provide:PodcastService,useValue:{episodes,collections:signal([]),loading:signal(false),refreshing:signal(false),refreshStatus:signal('idle'),error:signal(''),catalog:signal(null)}}
+  ]});
+  TestBed.overrideComponent(EpisodesComponent,{remove:{imports:[EpisodeCardComponent,IconComponent]},add:{imports:[StubCard,StubIcon]}});
+  const fixture=TestBed.createComponent(EpisodesComponent);
+  fixture.detectChanges(); await fixture.whenStable();
+  const select=fixture.nativeElement.querySelector('.country-filter select') as HTMLSelectElement;
+  expect(select.options).toHaveLength(1);
+  expect(fixture.componentInstance.country()).toBe('GB');
+  await Promise.resolve();
+  episodes.set([ {id:'qa',title:'Case',description:'',countries:['GB'],tags:['double-slashers'],categories:['other'],season:1,publishedAt:'2020-01-01',duration:3600,contentKind:view==='plus'?'promotional-preview':'public-episode'} ]);
+  fixture.detectChanges(); await fixture.whenStable(); fixture.detectChanges();
+  expect(select.value).toBe('GB');
+  expect(select.selectedOptions[0].textContent).toContain('United Kingdom');
+  expect(fixture.componentInstance.filtered().map(e=>e.id)).toEqual(['qa']);
+  expect(fixture.componentInstance.sort()).toBe('oldest');
+  params.next(convertToParamMap({country:'GB',tag:'double-slashers',season:'1',sort:'newest',view}));
+  fixture.detectChanges();
+  expect(select.value).toBe('GB');
+  fixture.destroy();
+});
 
 // Vitest's TS transform does not generate Angular's AOT signal-input metadata.
 // Stub shared presentational inputs; exercise the route's bindings and focus behavior.

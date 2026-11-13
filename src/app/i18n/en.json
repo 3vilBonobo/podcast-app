@@ -375,6 +375,8 @@
     "suggestedCategories": "Suggested categories · awaiting host review",
     "reviewedTags": "Tags reviewed by the hosts",
     "listenTo": "Browse the archive",
+    "contentTypes": { "all": "All Episodes", "regular": "Regular Episodes", "plus": "Plus Previews" },
+    "allDescription": "episodes and public Plus previews. Browse the complete archive.",
     "publicListening": "Public episodes",
     "plusPreviews": "Plus previews",
     "checking": "Checking…",
@@ -401,6 +403,11 @@
     "previewDescription": "public promotional previews. Full Plus episodes are available through Buzzsprout."
   },
   "profile": {
+    "guestListener": "GUEST LISTENER",
+    "localDemoAccount": "LOCAL DEMO ACCOUNT",
+    "makeYourselfAtHome": "MAKE YOURSELF AT HOME",
+    "justTheWayYouLikeIt": "JUST THE WAY YOU LIKE IT",
+    "onDevice": "ON DEVICE",
     "blackVelvetBloodRedAccents": "Black velvet & blood-red accents",
     "aStoryInTheLight": "A story in the light",
     "forAfterMidnight": "For after midnight",

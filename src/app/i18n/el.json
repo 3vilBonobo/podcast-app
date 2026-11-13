@@ -375,6 +375,8 @@
     "suggestedCategories": "Προτεινόμενες κατηγορίες · αναμένουν έλεγχο",
     "reviewedTags": "Ετικέτες ελεγμένες από τις παρουσιάστριες",
     "listenTo": "Περιήγηση στο αρχείο",
+    "contentTypes": { "all": "Όλα τα επεισόδια", "regular": "Κανονικά επεισόδια", "plus": "Προεπισκοπήσεις Plus" },
+    "allDescription": "επεισόδια και δημόσιες προεπισκοπήσεις Plus. Περιηγήσου σε ολόκληρο το αρχείο.",
     "publicListening": "Δημόσια επεισόδια",
     "plusPreviews": "Προεπισκοπήσεις Plus",
     "checking": "Έλεγχος…",
@@ -401,6 +403,11 @@
     "previewDescription": "δημόσιες προωθητικές προεπισκοπήσεις. Τα πλήρη Plus επεισόδια διατίθενται στο Buzzsprout."
   },
   "profile": {
+    "guestListener": "ΕΠΙΣΚΕΠΤΗΣ ΑΚΡΟΑΤΗΣ",
+    "localDemoAccount": "ΤΟΠΙΚΟΣ ΔΟΚΙΜΑΣΤΙΚΟΣ ΛΟΓΑΡΙΑΣΜΟΣ",
+    "makeYourselfAtHome": "ΣΑΝ ΣΤΟ ΣΠΙΤΙ ΣΟΥ",
+    "justTheWayYouLikeIt": "ΟΠΩΣ ΣΟΥ ΑΡΕΣΕΙ",
+    "onDevice": "ΣΤΗ ΣΥΣΚΕΥΗ",
     "blackVelvetBloodRedAccents": "Μαύρο βελούδο & αιματηρό μπορντό",
     "aStoryInTheLight": "Μια ιστορία στο φως",
     "forAfterMidnight": "Για μετά τα μεσάνυχτα",

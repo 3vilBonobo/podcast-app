@@ -66,6 +66,8 @@ describe('catalog filters', () => {
       {...sample[2], countries:['GR'], tags:['double-slashers'], contentKind:'promotional-preview'},
     ]);
     const view=component();
+    expect(view.collectionEpisodes().map(e=>e.id)).toEqual(['a','b','c']);
+    params.next(convertToParamMap({view:'regular'}));
     expect(view.collectionEpisodes().map(e=>e.id)).toEqual(['a','b']);
     params.next(convertToParamMap({category:'cults,robberies',tag:'double-slashers,with-guests',country:'GR'}));
     expect(view.filtered().map(e=>e.id)).toEqual(['a']);

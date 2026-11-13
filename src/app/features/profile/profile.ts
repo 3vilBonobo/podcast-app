@@ -21,7 +21,9 @@ import { LibraryBackupPanelComponent } from './library-backup-panel';
       <section class="profile-card">
         <div class="avatar large-avatar">{{ auth.guest() ? t('shell.g') : t('shell.n') }}</div>
         <div>
-          <p class="eyebrow accent">{{ auth.guest() ? 'GUEST LISTENER' : 'LOCAL DEMO ACCOUNT' }}</p>
+          <p class="eyebrow accent">
+            {{ t(auth.guest() ? 'profile.guestListener' : 'profile.localDemoAccount') }}
+          </p>
           <h2>{{ auth.guest() ? t('profile.welcomeGuest') : t('common.nightListener') }}</h2>
           <p>
             {{
@@ -61,7 +63,7 @@ import { LibraryBackupPanelComponent } from './library-backup-panel';
       }
       <div class="settings-grid">
         <section class="settings-panel">
-          <p class="eyebrow">MAKE YOURSELF AT HOME</p>
+          <p class="eyebrow">{{ t('profile.makeYourselfAtHome') }}</p>
           <h2>{{ t('profile.yourOwnAtmosphere') }}</h2>
           <p class="muted">{{ t('profile.chooseTheLightForYourNextStory') }}</p>
           <div class="theme-grid" role="group" [attr.aria-label]="t('profile.chooseATheme')">
@@ -92,7 +94,7 @@ import { LibraryBackupPanelComponent } from './library-backup-panel';
           </button>
         </section>
         <section class="settings-panel">
-          <p class="eyebrow">JUST THE WAY YOU LIKE IT</p>
+          <p class="eyebrow">{{ t('profile.justTheWayYouLikeIt') }}</p>
           <h2>{{ t('profile.listeningPreferences') }}</h2>
           <label class="setting-row"
             ><span
@@ -127,7 +129,7 @@ import { LibraryBackupPanelComponent } from './library-backup-panel';
             <span
               ><strong>{{ t('home.yourLibrary') }}</strong
               ><small>{{ t('profile.localStorageWithIndexeddb') }}</small></span
-            ><span class="tag">ON DEVICE</span>
+            ><span class="tag">{{ t('profile.onDevice') }}</span>
           </div>
         </section>
       </div>

@@ -1,5 +1,5 @@
 import { TranslocoDirective } from '@jsverse/transloco';
-import { Component, computed, inject, linkedSignal, signal } from '@angular/core';
+import { Component, computed, effect, inject, linkedSignal, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { PodcastService } from '../../core/podcast.service';
@@ -20,21 +20,22 @@ import { TranslocoService } from '@jsverse/transloco';
           <p class="eyebrow accent">{{ t('episodes.everyCaseHasItsPlace') }}</p>
           <h1>{{ t('episodes.theArchive') }}<span class="accent">.</span></h1>
           <p class="intro-description">
-            {{ collectionEpisodes().length }} {{ t(previews() ? 'discovery.previewDescription' : 'episodes.publicEpisodesWhereWillTheNextStoryFind') }}
+            {{ collectionEpisodes().length }} {{ t(contentType() === 'plus' ? 'discovery.previewDescription' : contentType() === 'regular' ? 'episodes.publicEpisodesWhereWillTheNextStoryFind' : 'discovery.allDescription') }}
           </p>
         </div>
         <button type="button" class="text-button refresh-control" [disabled]="podcast.refreshing()" (click)="refresh()">
           <dd-icon name="refresh" /> {{ t(podcast.refreshing() ? 'discovery.checking' : 'episodes.refreshEpisodes') }}
         </button>
       </div>
-      <div class="collection-switch" role="group" [attr.aria-label]="t('discovery.listenTo')">
-        <button type="button" [class.active]="!previews()" [attr.aria-pressed]="!previews()" (click)="setFilter('view', '')">{{ t('discovery.publicListening') }}</button>
-        <button type="button" [class.active]="previews()" [attr.aria-pressed]="previews()" (click)="setFilter('view', 'plus')">{{ t('discovery.plusPreviews') }}</button>
-      </div>
       @if (manualRefresh() && podcast.refreshStatus() !== 'idle') {
         <p class="refresh-feedback" role="status" aria-live="polite">{{ t(refreshMessage()) }}</p>
       }
       <div class="discovery-panel">
+      <div class="collection-switch" role="group" [attr.aria-label]="t('discovery.listenTo')">
+        @for (type of contentTypes; track type) {
+          <button type="button" [class.active]="contentType() === type" [attr.aria-pressed]="contentType() === type" (click)="setFilter('view', type === 'all' ? '' : type)">{{ t(contentLabel(type)) }}</button>
+        }
+      </div>
       <div class="catalog-toolbar">
         <div class="search-field">
           <dd-icon name="search" /><input
@@ -55,7 +56,7 @@ import { TranslocoService } from '@jsverse/transloco';
                 {{ t('episodes.season105') }} {{ season }}
               </option>
             }
-            <option value="none">{{ t('episodes.noSeasonListed') }}</option>
+            @if (hasUnseasoned()) { <option value="none" [selected]="season() === 'none'">{{ t('episodes.noSeasonListed') }}</option> }
           </select></label
         >
         <label class="select-label country-filter">{{ t('discovery.country') }}
@@ -63,7 +64,7 @@ import { TranslocoService } from '@jsverse/transloco';
             <dd-icon name="case-country" />
             <select [value]="country()" [attr.aria-label]="t('discovery.country')" [attr.title]="t('discovery.countryHelp')" (change)="setFilter('country', $any($event.target).value)">
               <option value="">{{ t('discovery.allCountries') }}</option>
-              @for (code of countries(); track code) { <option [value]="code">{{ countryName(code) }}</option> }
+              @for (code of countries(); track code) { <option [value]="code" [selected]="code === country()">{{ countryName(code) }}</option> }
             </select>
           </span>
         </label>
@@ -199,18 +200,27 @@ export class EpisodesComponent {
     initialValue: this.route.snapshot.queryParamMap,
   });
   readonly search = computed(() => this.params().get('q') ?? '');
-  readonly previews = computed(() => this.params().get('view') === 'plus');
-  readonly collectionEpisodes = computed(() => this.podcast.episodes().filter(e => (e.contentKind === 'promotional-preview') === this.previews()));
+  readonly contentTypes = ['all', 'regular', 'plus'] as const;
+  contentLabel(type: string): string { return 'discovery.contentTypes.' + type; }
+  readonly contentType = computed(() => {
+    const view = this.params().get('view');
+    return view === 'plus' || view === 'regular' ? view : 'all';
+  });
+  private episodesFor(type: string) {
+    return this.podcast.episodes().filter(e => type === 'all' || (e.contentKind === 'promotional-preview') === (type === 'plus'));
+  }
+  readonly collectionEpisodes = computed(() => this.episodesFor(this.contentType()));
+  readonly hasUnseasoned = computed(() => this.collectionEpisodes().some(e => e.season === null));
   readonly availableSeasons = computed(() => [...new Set(this.collectionEpisodes().map(e => e.season).filter((s): s is number => s !== null))].sort((a,b) => b-a));
-  readonly countries = computed(() => [...new Set(this.collectionEpisodes().flatMap(e => e.countries ?? []))].sort());
+  // Keep geography choices stable when changing content type; a valid country may have no matches.
+  readonly countries = computed(() => [...new Set(this.podcast.episodes().flatMap(e => e.countries ?? []))].sort());
   readonly country = computed(() => this.params().get('country') ?? '');
   readonly selectedTags = computed(() => (this.params().get('tag') ?? '').split(',').filter(t => this.discoveryTags.includes(t)));
   countryName(code: string): string { return new Intl.DisplayNames([this.transloco.getActiveLang()], {type: 'region'}).of(code) ?? code; }
   toggleTag(tag: string): void { this.setFilter('tag', (this.selectedTags().includes(tag) ? this.selectedTags().filter(t => t !== tag) : [...this.selectedTags(), tag]).join(',')); }
   readonly season = computed(() => {
     const value = this.params().get('season') ?? 'all';
-    return value === 'none' ||
-      this.podcast.episodes().some((e) => e.season !== null && String(e.season) === value)
+    return this.validSeason(value, this.collectionEpisodes())
       ? value
       : 'all';
   });
@@ -232,7 +242,7 @@ export class EpisodesComponent {
         this.season() !== 'all' ||
         this.collection() ||
         this.selectedCategories().length ||
-        this.selectedTags().length || this.country() || this.previews() ||
+        this.selectedTags().length || this.country() || this.contentType() !== 'all' ||
         this.sort() !== 'newest'
       ),
   );
@@ -276,11 +286,29 @@ export class EpisodesComponent {
   }
   setFilter(key: string, value: string): void {
     this.limit.set(20);
+    const changes: Record<string, string | null> = { [key]: value || null };
+    if (key === 'view' && this.podcast.episodes().length) {
+      const destination = this.episodesFor(value || 'all');
+      if (!this.validSeason(this.params().get('season') ?? 'all', destination)) changes['season'] = null;
+    }
     void this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { [key]: value || null },
+      queryParams: changes,
       queryParamsHandling: 'merge',
       replaceUrl: true,
+    });
+  }
+  private validSeason(value: string, episodes: ReturnType<PodcastService['episodes']>): boolean {
+    return value === 'all' || episodes.some(e => value === 'none' ? e.season === null : e.season !== null && String(e.season) === value);
+  }
+  constructor() {
+    effect(() => {
+      // Do not discard deep-link selections while the first catalog is still loading.
+      if (!this.podcast.episodes().length) return;
+      const requested = this.params().get('season');
+      if (requested && !this.validSeason(requested, this.collectionEpisodes())) {
+        void this.router.navigate([], {relativeTo: this.route, queryParams: {season: null}, queryParamsHandling: 'merge', replaceUrl: true});
+      }
     });
   }
   clear(searchField?: HTMLInputElement): void {

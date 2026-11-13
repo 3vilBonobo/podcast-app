@@ -1,0 +1,18 @@
+{
+  "reviewWindow": "2026-11-12/2026-11-13 Europe/Athens",
+  "inventory": 173,
+  "externalEvidenceRows": 32,
+  "externalEvidenceCategoryBacklogRows": 29,
+  "runtimeCategoryDecisionsStillUnapproved": 104,
+  "runtimeMissingCountryMappings": 27,
+  "missingCountryTriage": {
+    "fiction-setting-policy-host-pending": 7,
+    "evidence-backed-proposal-host-pending": 8,
+    "no-single-case-in-RSS-host-pending": 10,
+    "international-waters-policy-host-pending": 2
+  },
+  "greekLocationCasesStillHostPending": 20,
+  "runtimeOverridesChanged": false,
+  "audioOrTranscriptsReviewed": false,
+  "warning": "Evidence-backed facts and proposed taxonomy are separate. No host approval is inferred. Existing category_status/country_status/greek_case columns describe the unchanged runtime baseline."
+}

@@ -1,4 +1,13 @@
-import { Component, Injector, afterNextRender, computed, inject, input, signal } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  Injector,
+  afterNextRender,
+  computed,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { copyEpisodeLink, episodePermalink, shareEpisode } from '../core/episode-sharing';
 import type { Episode } from '../core/models';
@@ -32,6 +41,7 @@ import { IconComponent } from './icon';
 })
 export class EpisodeShareComponent {
   private readonly injector = inject(Injector);
+  private readonly destroyRef = inject(DestroyRef);
   readonly episode = input.required<Episode>();
   readonly link = computed(() => episodePermalink(this.episode().id));
   readonly busy = signal(false);
@@ -50,12 +60,13 @@ export class EpisodeShareComponent {
       );
     } finally {
       this.busy.set(false);
-      afterNextRender(
-        () => {
-          if (button?.isConnected) button.focus();
-        },
-        { injector: this.injector },
-      );
+      if (!this.destroyRef.destroyed)
+        afterNextRender(
+          () => {
+            if (button?.isConnected) button.focus();
+          },
+          { injector: this.injector },
+        );
     }
   }
 }
